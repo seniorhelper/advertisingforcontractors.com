@@ -456,6 +456,9 @@ header{position:sticky;top:0;z-index:900;background:var(--white);
 .card-go::after{content:'→';transition:transform .18s}
 .card:hover .card-go::after{transform:translateX(4px)}
 
+.tool-card{border-top:4px solid var(--lime)}
+.tool-card .card-go::before{content:'\2193';margin-right:6px;font-weight:700}
+
 /* trade tiles */
 .trades{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px}
 .trade{position:relative;border-radius:8px;overflow:hidden;text-decoration:none;color:#fff;
@@ -735,6 +738,14 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         <a href="/contractor-facebook-ads/">Facebook &amp; Social Ads</a>
         <a href="/contractor-lead-generation/">Lead Generation</a>
         <a href="/ai-search-optimization-contractors/">AI Search Optimization</a>
+      </div>
+      <div class="nav-col">
+        <h2>Free Tools</h2>
+        <a href="/contractor-marketing-tools/">All Free Tools</a>
+        <a href="/contractor-marketing-plan-builder/">Marketing Plan Builder</a>
+        <a href="/contractor-website-scorecard/">Website Scorecard</a>
+        <a href="/contractor-marketing-tools/#tracker">Lead &amp; Job Tracker</a>
+        <a href="/#calculator">Break-Even Lead Cost Worksheet</a>
       </div>
       <div class="nav-col">
         <h2>Company</h2>
@@ -1281,6 +1292,9 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         <a href="/contractor-lead-generation/">Contractor lead generation</a>
         <a href="/ai-search-optimization-contractors/">AI search optimization</a>
         <a href="/free-contractor-marketing-audit/">Free marketing audit</a>
+        <a href="/contractor-marketing-tools/">Free contractor tools</a>
+        <a href="/contractor-marketing-plan-builder/">Marketing plan builder</a>
+        <a href="/contractor-website-scorecard/">Website scorecard</a>
       </div>
 
       <div class="ft-col">
@@ -1300,6 +1314,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
 
     <div class="ft-bot">
       <p>&copy; 2026 Advertising For Contractors. All rights reserved.
+        <a href="/accessibility/">Accessibility</a> &middot;
         <a href="https://eyetoad.com/privacy-policy/" rel="noopener">Privacy policy</a></p>
       <div class="ft-powered">
         <span style="font-family:var(--mono);font-size:.78rem;color:var(--slate)">Powered by</span>
@@ -1405,6 +1420,8 @@ var form   = document.getElementById('afcForm'),
     msg    = document.getElementById('afcMsg'),
     submit = document.getElementById('afcSubmit'),
     loadedAt = Date.now();
+
+if (form && msg && submit){
 
 document.getElementById('fPageUrl').value = location.href;
 
@@ -1528,6 +1545,8 @@ form.addEventListener('submit', function(e){
     iframePost(data, finish);
   }
 });
+
+} /* end form guard */
 
 })();
 </script>
