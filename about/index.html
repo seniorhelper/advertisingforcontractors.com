@@ -1866,7 +1866,10 @@ document.addEventListener('keydown', function(e){
 
 /* ─── Scroll reveal ─── */
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var revealables = document.querySelectorAll('.rv');
+/* Every reveal variant, not just .rv. The directional classes set
+   opacity:0 in page CSS, so anything the observer misses stays
+   invisible forever — which is exactly what happened. */
+var revealables = document.querySelectorAll('.rv, .rv-l, .rv-s');
 if (reduce || !('IntersectionObserver' in window)){
   for (var i=0;i<revealables.length;i++) revealables[i].classList.add('in');
 } else {
@@ -1917,6 +1920,14 @@ var form   = document.getElementById('afcForm'),
     msg    = document.getElementById('afcMsg'),
     submit = document.getElementById('afcSubmit'),
     loadedAt = Date.now();
+
+/* Read the button's own label and the page's own success wording rather
+   than hardcoding the audit form's. Otherwise a contact form relabels
+   itself to "Send my free audit request" the moment you submit it. */
+var submitLabel = submit ? submit.textContent : '';
+var okCopy = (form && form.getAttribute('data-ok'))
+  || 'Got it — that is confirmed on our end. Someone will get back to you within one '
+   + 'business day, usually sooner. If you would rather not wait, call 1-800-481-8638.';
 
 if (form && msg && submit){
 
@@ -2014,9 +2025,9 @@ form.addEventListener('submit', function(e){
   function finish(state){
     if (done) return; done = true;
     submit.disabled = false;
-    submit.textContent = 'Send my free audit request';
+    submit.textContent = submitLabel;
     if (state === 'confirmed'){
-      show('msg-ok', 'Got it — that is confirmed on our end. We will have your audit back within one business day, usually sooner. If you would rather not wait, call 1-800-481-8638.');
+      show('msg-ok', okCopy);
       form.reset();
       document.getElementById('fPageUrl').value = location.href;
     } else if (state === 'unconfirmed'){
