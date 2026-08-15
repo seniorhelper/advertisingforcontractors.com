@@ -1614,7 +1614,10 @@ document.addEventListener('keydown', function(e){
 
 /* ─── Scroll reveal ─── */
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var revealables = document.querySelectorAll('.rv');
+/* Every reveal variant, not just .rv. The directional classes set
+   opacity:0 in page CSS, so anything the observer misses stays
+   invisible forever — which is exactly what happened. */
+var revealables = document.querySelectorAll('.rv, .rv-l, .rv-s');
 if (reduce || !('IntersectionObserver' in window)){
   for (var i=0;i<revealables.length;i++) revealables[i].classList.add('in');
 } else {
