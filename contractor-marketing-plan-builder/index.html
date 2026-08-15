@@ -9,17 +9,20 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Advertising For Contractors — powered by Eye To Ad Media">
 <meta name="publisher" content="Eye To Ad Media">
+<meta name="article:modified_time" content="2026-08-15T00:00:00-06:00">
 
 <meta name="GPTBot" content="index">
 <meta name="OAI-SearchBot" content="index">
 <meta name="ChatGPT-User" content="index">
 <meta name="Google-Extended" content="index">
 <meta name="PerplexityBot" content="index">
+<meta name="Perplexity-User" content="index">
 <meta name="anthropic-ai" content="index">
 <meta name="Claude-Web" content="index">
 <meta name="ClaudeBot" content="index">
 <meta name="Applebot-Extended" content="index">
 <meta name="CCBot" content="index">
+<meta name="meta-externalagent" content="index">
 <meta name="ai-content-type" content="tool, calculator, contractor-marketing, planning">
 
 <meta property="og:type" content="website">
@@ -29,6 +32,8 @@
 <meta property="og:description" content="Seven questions, one twelve-month marketing plan. Break-even cost per lead, budget split and phased actions, benchmarked against real 2026 contractor lead costs. Free, no email wall.">
 <meta property="og:image" content="https://advertisingforcontractors.com/images/contractor-tools-tape-measure-marketing-plan.jpg">
 <meta property="og:image:alt" content="Contractor tools beside a written marketing plan">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="426">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Contractor Marketing Plan Builder | 12-Month Plan in 7 Questions">
 <meta name="twitter:description" content="Seven questions, one twelve-month marketing plan. Break-even cost per lead, budget split and phased actions, benchmarked against real 2026 contractor lead costs. Free, no email wall.">
@@ -42,232 +47,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ── shared sub-page hero ── */
-.phero{background:var(--ink);color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
-.phero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;
-  background:linear-gradient(90deg,var(--lime),var(--amber))}
-.phero-in{position:relative;z-index:2}
-.phero h1{color:#fff;max-width:20ch;font-size:clamp(2.4rem,5.6vw,4.1rem)}
-.bcrumb{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;color:#7E8894;margin-bottom:26px}
-.bcrumb a{color:var(--lime);text-decoration:none}
-.bcrumb a:hover{text-decoration:underline}
-.bcrumb span{margin:0 7px}
-.bcrumb span[aria-current]{color:#C6CDD6;margin:0}
-.sec-paper .card{background:var(--white)}
-.btn-ghost{background:transparent;border-color:var(--line);color:var(--slate)}
-.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
-.btn-ghost:disabled{opacity:.35;cursor:not-allowed}
-
-/* ══ WIZARD ══ */
-.pb{background:var(--white);border:1px solid var(--line);border-radius:8px;
-  box-shadow:var(--shadow-lg);max-width:900px;margin:0 auto;overflow:hidden}
-.pb-top{background:var(--ink);color:#fff;padding:22px 28px;display:flex;
-  justify-content:space-between;align-items:center;gap:18px}
-.pb-h{color:#fff;font-size:1.4rem;margin:0}
-.pb-step{font-family:var(--mono);font-size:.74rem;letter-spacing:.11em;color:var(--lime);margin-top:5px}
-.pb-pct{font-family:var(--display);font-size:2.1rem;font-weight:800;color:var(--lime);line-height:1}
-.pb-bar{height:4px;background:var(--paper-2)}
-.pb-bar-f{height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--lime));
-  transition:width .38s cubic-bezier(.4,0,.2,1)}
-.pb-body{padding:34px 28px;min-height:340px}
-.pb-s{display:none;border:0;padding:0;margin:0}
-.pb-s.is-on{display:block;animation:pbIn .28s ease}
-@keyframes pbIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
-.pb-q{font-family:var(--display);font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;
-  text-transform:uppercase;color:var(--ink);line-height:1.08;padding:0;margin-bottom:8px;display:block}
-.pb-q2{margin-top:0}
-.pb-hint{font-size:.97rem;color:var(--slate);margin-bottom:22px;line-height:1.6}
-.pb-note{font-family:var(--mono);font-size:.8rem;color:var(--slate);margin-top:16px;line-height:1.65}
-.pb-div{height:1px;background:var(--line);margin:30px 0 26px}
-
-.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.opt-wide{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.opt{font-family:var(--body);text-align:left;background:var(--white);border:2px solid var(--line);
-  border-radius:6px;padding:16px 18px;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink);
-  transition:border-color .16s,background .16s,transform .16s;line-height:1.35}
-.opt:hover{border-color:var(--amber);transform:translateY(-2px)}
-.opt.is-on{border-color:var(--lime);background:rgba(166,206,57,.13)}
-.opt b{display:block;font-weight:700;font-size:1.04rem;margin-bottom:4px}
-.opt span{display:block;font-weight:400;font-size:.87rem;color:var(--slate);line-height:1.45}
-
-.num-row{display:flex;gap:12px;flex-wrap:wrap}
-.num-box{display:inline-flex;align-items:center;gap:6px;background:var(--paper);
-  border:2px solid var(--line);border-radius:6px;padding:12px 18px;transition:border-color .16s}
-.num-box:focus-within{border-color:var(--lime)}
-.num-box span{font-family:var(--mono);font-size:1.3rem;color:var(--slate);font-weight:600}
-.num-box .per{font-size:.9rem}
-.num-box input{border:0;outline:0;background:transparent;font-family:var(--mono);font-size:1.7rem;
-  font-weight:600;color:var(--ink);width:160px;max-width:44vw}
-.num-box input::-webkit-outer-spin-button,.num-box input::-webkit-inner-spin-button{
-  -webkit-appearance:none;margin:0}
-.num-box input[type=number]{-moz-appearance:textfield}
-
-.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.chip{font-family:var(--mono);font-size:.84rem;font-weight:600;background:var(--paper);
-  border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;color:var(--slate);
-  transition:all .15s}
-.chip:hover{border-color:var(--lime);color:var(--ink);background:rgba(166,206,57,.12)}
-
-.slide-wrap{margin-top:22px;max-width:420px}
-.slide-wrap input[type=range]{width:100%;accent-color:var(--lime);height:26px}
-.slide-lbl{display:flex;justify-content:space-between;font-family:var(--mono);
-  font-size:.74rem;color:var(--slate)}
-
-.ten-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:520px}
-.ten{font-family:var(--display);font-size:1.25rem;font-weight:800;aspect-ratio:1;
-  background:var(--paper);border:2px solid var(--line);border-radius:5px;cursor:pointer;
-  color:var(--slate);transition:all .14s;display:flex;align-items:center;justify-content:center}
-.ten:hover{border-color:var(--amber);color:var(--ink)}
-.ten.is-on{background:var(--lime);border-color:var(--lime);color:var(--ink)}
-.ten.is-lit{background:rgba(166,206,57,.28);border-color:var(--lime);color:var(--ink)}
-@media(max-width:560px){.ten-grid{grid-template-columns:repeat(5,1fr)}}
-
-/* ── ranking ── */
-.rank{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.rk{display:flex;align-items:center;gap:12px;background:var(--paper);border:2px solid var(--line);
-  border-radius:6px;padding:13px 15px;cursor:grab;transition:border-color .15s,box-shadow .15s,opacity .15s}
-.rk:hover{border-color:var(--amber)}
-.rk:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
-.rk.drag{opacity:.4;cursor:grabbing}
-.rk.over{border-color:var(--lime);box-shadow:0 0 0 3px rgba(166,206,57,.22)}
-.rk-grip{font-size:1.1rem;color:var(--slate);flex-shrink:0;line-height:1}
-.rk-n{font-family:var(--display);font-size:1.35rem;font-weight:800;color:var(--ink);
-  background:var(--lime);width:32px;height:32px;border-radius:5px;display:flex;
-  align-items:center;justify-content:center;flex-shrink:0}
-.rk-t{flex:1;min-width:0}
-.rk-t b{display:block;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3}
-.rk-t i{display:block;font-style:normal;font-size:.86rem;color:var(--slate);line-height:1.45;margin-top:2px}
-.rk-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
-.rk-b{width:30px;height:22px;border:1px solid var(--line);background:var(--white);border-radius:4px;
-  cursor:pointer;color:var(--slate);font-size:.65rem;line-height:1;transition:all .14s;padding:0}
-.rk-b:hover{border-color:var(--lime);color:var(--ink);background:rgba(166,206,57,.14)}
-
-.pb-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding:20px 28px;border-top:1px solid var(--line);background:var(--paper)}
-.pb-dots{display:flex;gap:6px}
-.pb-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
-.pb-dot.is-on{background:var(--lime);transform:scale(1.35)}
-.pb-dot.done{background:var(--amber)}
-@media(max-width:560px){
-  .pb-dots{display:none}
-  .pb-nav .btn{flex:1}
-  .pb-body{padding:26px 18px}
-  .pb-top{padding:18px 18px}
-}
-
-/* ══ PLAN OUTPUT ══ */
-.plan{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--lime);
-  border-radius:8px;box-shadow:var(--shadow-lg);max-width:940px;margin:0 auto;padding:36px 34px}
-.plan-head{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;
-  padding-bottom:24px;border-bottom:2px solid var(--ink);margin-bottom:30px;flex-wrap:wrap}
-.plan-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:9px}
-.plan-title{font-size:clamp(1.8rem,4vw,2.7rem);margin:0;color:var(--ink)}
-.plan-meta{font-family:var(--mono);font-size:.83rem;color:var(--slate);margin-top:9px;line-height:1.75}
-.plan-logo{width:180px;height:61px;object-fit:contain;flex-shrink:0}
-.plan-sec{margin-bottom:38px}
-.plan-h{font-size:1.35rem;color:var(--ink);margin-bottom:16px;padding-bottom:10px;
-  border-bottom:1px solid var(--line)}
-.plan-p{font-size:1rem;color:var(--slate);line-height:1.72;margin-bottom:18px}
-.plan-note{font-size:.93rem;color:var(--slate);line-height:1.68;margin-top:16px}
-.plan-src{font-family:var(--mono);font-size:.75rem;color:var(--slate);line-height:1.7;display:block;margin-top:8px}
-.plan-foot{border-top:2px solid var(--ink);padding-top:20px;margin-top:8px}
-.plan-foot p{font-size:.88rem;color:var(--slate);line-height:1.7}
-
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-.kpi{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--lime);
-  border-radius:6px;padding:18px 18px}
-.kpi-l{font-family:var(--mono);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--slate);margin-bottom:8px;line-height:1.4}
-.kpi-n{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ink);line-height:1}
-.kpi-s{font-size:.82rem;color:var(--slate);margin-top:8px;line-height:1.5}
-
-.verdict{margin-top:20px;padding:20px 22px;border-radius:6px;font-size:1rem;line-height:1.7}
-.verdict h4{font-size:1.05rem;margin-bottom:8px;letter-spacing:.02em}
-.v-good{background:rgba(166,206,57,.14);border:1px solid var(--lime)}
-.v-good h4{color:#4E6B10}
-.v-warn{background:rgba(180,118,60,.11);border:1px solid var(--amber)}
-.v-warn h4{color:#7A4C1E}
-.v-bad{background:rgba(212,90,70,.10);border:1px solid #D45A46}
-.v-bad h4{color:#8E2F20}
-
-.bt-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;
-  border-bottom:1px solid var(--line);font-size:.97rem;flex-wrap:wrap}
-.bt-row:last-child{border-bottom:none}
-.bt-l{flex:1;min-width:190px;color:var(--ink)}
-.bt-l small{display:block;color:var(--slate);font-size:.83rem;margin-top:2px}
-.bt-v{font-family:var(--mono);font-weight:600;color:var(--ink);white-space:nowrap}
-.bt-f{font-family:var(--mono);font-size:.73rem;padding:4px 11px;border-radius:99px;
-  font-weight:600;white-space:nowrap}
-.f-ok{background:rgba(166,206,57,.2);color:#4E6B10}
-.f-no{background:rgba(212,90,70,.13);color:#8E2F20}
-.f-na{background:var(--paper-2);color:var(--slate)}
-
-.split-bars{display:grid;gap:12px}
-.sb{display:grid;grid-template-columns:200px 1fr 92px;gap:14px;align-items:center}
-.sb-l{font-size:.95rem;color:var(--ink);font-weight:600}
-.sb-t{height:26px;background:var(--paper-2);border-radius:4px;overflow:hidden}
-.sb-f{height:100%;background:linear-gradient(90deg,var(--amber),var(--lime));width:0;
-  transition:width .7s cubic-bezier(.4,0,.2,1)}
-.sb-v{font-family:var(--mono);font-size:.95rem;font-weight:600;color:var(--ink);text-align:right}
-@media(max-width:620px){.sb{grid-template-columns:1fr 74px;gap:8px}.sb-l{grid-column:1/-1}}
-
-.phases{display:grid;gap:16px}
-.ph{border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.ph-h{background:var(--ink);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;
-  align-items:center;gap:14px;flex-wrap:wrap}
-.ph-h b{font-family:var(--display);font-size:1.2rem;font-weight:800;text-transform:uppercase;
-  letter-spacing:.03em}
-.ph-h span{font-family:var(--mono);font-size:.74rem;color:var(--lime);letter-spacing:.1em}
-.ph-b{padding:18px 20px;background:var(--paper)}
-.ph-b ul{list-style:none;margin:0;padding:0}
-.ph-b li{padding:9px 0 9px 26px;position:relative;font-size:.97rem;line-height:1.62;
-  border-bottom:1px solid var(--line);color:var(--ink)}
-.ph-b li:last-child{border-bottom:none}
-.ph-b li::before{content:'';position:absolute;left:2px;top:17px;width:9px;height:9px;
-  background:var(--lime);border-radius:2px}
-.ph-b li b{color:var(--ink)}
-
-.wins{margin:0;padding-left:0;list-style:none;counter-reset:w}
-.wins li{counter-increment:w;position:relative;padding:14px 0 14px 46px;
-  border-bottom:1px solid var(--line);font-size:.99rem;line-height:1.66;color:var(--ink)}
-.wins li:last-child{border-bottom:none}
-.wins li::before{content:counter(w);position:absolute;left:0;top:13px;width:30px;height:30px;
-  background:var(--lime);color:var(--ink);border-radius:5px;display:flex;align-items:center;
-  justify-content:center;font-family:var(--display);font-weight:800;font-size:1.05rem}
-
-.tl{display:grid;gap:0;border-left:3px solid var(--lime);padding-left:22px}
-.tl-i{padding:12px 0;position:relative}
-.tl-i::before{content:'';position:absolute;left:-29px;top:19px;width:11px;height:11px;
-  background:var(--white);border:3px solid var(--lime);border-radius:50%}
-.tl-w{font-family:var(--mono);font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--amber);font-weight:600}
-.tl-t{font-size:.99rem;color:var(--ink);margin-top:4px;line-height:1.6}
-
-.plan-acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:940px;
-  margin:26px auto 0}
-.pb-email{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--lime);
-  border-radius:8px;box-shadow:var(--shadow);max-width:700px;margin:26px auto 0;padding:32px 30px}
-.pb-email h3{margin-bottom:10px}
-.pb-email>p{font-size:.96rem;color:var(--slate);margin-bottom:22px;line-height:1.65}
-
-/* ══ PRINT ══ */
-@media print{
-  .util,header,.nav,.phero,.pb,.plan-acts,.pb-email,.band,footer,.sec:not(.sec-paper),
-  #how,#tools,.faq,.sec-ink{display:none!important}
-  body{background:#fff;font-size:11.5pt}
-  .sec{padding:0!important;background:#fff!important}
-  .wrap{max-width:100%;padding:0}
-  .plan{box-shadow:none;border:none;border-top:none;padding:0;max-width:100%}
-  .plan-sec{page-break-inside:avoid;margin-bottom:22px}
-  .ph,.kpi,.verdict{page-break-inside:avoid}
-  .plan-h{page-break-after:avoid}
-  a{text-decoration:none;color:#000}
-  .sb-f{background:#A6CE39!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .kpi,.ph-h,.verdict,.wins li::before,.rk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
-</style>
 
 <script type="application/ld+json">
 {
@@ -288,9 +67,14 @@
       "image": {
         "@id": "https://advertisingforcontractors.com/#logo"
       },
+      "description": "Advertising and lead generation for trade contractors, founded in 2012.",
       "telephone": "+1-800-481-8638",
       "email": "info@eyetoad.com",
       "foundingDate": "2012",
+      "sameAs": [
+        "https://eyetoad.com/",
+        "https://www.facebook.com/EyeToAd/"
+      ],
       "parentOrganization": {
         "@type": "Organization",
         "name": "Eye To Ad Media",
@@ -340,6 +124,14 @@
       "speakable": {
         "@id": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#speakable"
       },
+      "breadcrumb": {
+        "@id": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#app"
+      },
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
       "inLanguage": "en-US"
     },
     {
@@ -363,6 +155,12 @@
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Free Tools",
+          "item": "https://advertisingforcontractors.com/contractor-marketing-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Marketing Plan Builder",
           "item": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/"
         }
@@ -387,11 +185,81 @@
         "2026 cost-per-lead benchmarks by trade",
         "Twelve-month phased plan",
         "Recommended budget allocation",
-        "Printable and emailable output"
+        "Printable and emailable output",
+        "Runs entirely in the browser with no account"
       ],
       "provider": {
         "@id": "https://advertisingforcontractors.com/#organization"
       }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#howto",
+      "name": "How to build a twelve-month contractor marketing plan",
+      "description": "Work out your break-even cost per lead, compare it against published 2026 lead costs for your trade, and sequence twelve months of marketing around what your numbers can actually support.",
+      "totalTime": "PT4M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "0"
+      },
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Your average job value, gross margin and close rate"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick your trade",
+          "text": "Choose from roofing, plumbing, HVAC, electrical, solar, general contracting, painting, remodeling, pool building, fencing, or any other trade. This selects which published 2026 cost-per-lead benchmarks your numbers are measured against. Specialty trades use blended home-services figures, clearly labelled as such.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "State your growth stage",
+          "text": "One truck in one town, two to four crews, multi-city coverage or scaling toward market dominance. Stage changes the right sequence more than trade does.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Set your service area",
+          "text": "One town, one metro, multiple counties or statewide. Radius determines how many service and service-area pages the plan calls for.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Enter your average job value",
+          "text": "What a typical completed job invoices at, not the largest one you have ever run.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Enter your gross profit margin",
+          "text": "What is left after materials and labour, before overhead. Most trades run between 25% and 45%.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Enter your close rate",
+          "text": "Out of ten real leads, how many become signed jobs. This has more effect on the result than any other single input.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Set your budget and rank your priorities",
+          "text": "What you can genuinely fund each month, then drag four priorities into order. The plan sequences twelve months around your top priority.",
+          "url": "https://advertisingforcontractors.com/contractor-marketing-plan-builder/#builder"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -421,7 +289,15 @@
           "name": "Where do the lead cost benchmarks come from?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Published 2026 contractor advertising data, cited by source and date inside your plan. Local Services Ads and Google Ads figures come from SearchLight Digital benchmarks covering tracked spend across hundreds of contractors, with additional trade figures from LocaliQ and Estatehub 2026 data. For trades where no specific benchmark has been published, the plan tells you that instead of showing an invented number."
+            "text": "Published 2026 contractor advertising data, cited by source and date inside your plan. Local Services Ads and Google Ads figures come from SearchLight Digital benchmarks covering tracked spend across hundreds of contractors, with additional trade figures from LocaliQ and Estatehub 2026 data. For trades where no specific benchmark has been published — including anything you select under Another trade — the plan uses blended home-services averages and labels every one of them as blended rather than presenting it as your trade's number. It will never show you an invented figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My trade is not on the list. Can I still use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pick Another trade on the first step and, if you like, type what you actually do — it goes on the plan. Landscaping, concrete, masonry, garage doors, gutters, flooring, septic, tree work and dozens of others have no published cost-per-lead benchmark that we could verify, so the plan uses blended home-services figures and says so on every row rather than dressing an average up as your trade's number. Everything else — the break-even calculation, the budget split, the twelve-month sequence — works exactly the same, because that arithmetic depends on your numbers rather than your trade. Worth knowing: specialty trades are often the best value in local search precisely because nobody publishes benchmarks for them, which usually means fewer competitors have bothered to optimise."
           }
         },
         {
@@ -434,10 +310,26 @@
         },
         {
           "@type": "Question",
+          "name": "What happens if the plan tells me paid advertising will not work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It says so directly, and it explains why. That result means your break-even cost per lead sits below what the cheapest verified channel in your trade actually costs, so the first job would lose money. The plan then points at the three levers that move the ceiling — average job value, gross margin and close rate — and puts you on the free channels in the meantime. A tool that told every contractor to start advertising would be an advert, not a tool."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does this replace hiring a marketing company?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "For some contractors, honestly yes. If your service area is small and your plan comes back as profile work, reviews and response time, you can execute all of that yourself and should. The plan is most useful as a way to know what you are buying before anyone quotes you, so you can tell the difference between a real proposal and a package built for the average client."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it with a keyboard or a screen reader?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every control works from the keyboard, including the priority ranking, which responds to the up and down arrow keys as well as dragging and has explicit move buttons. Each step is a labelled fieldset, errors are announced rather than only shown in colour, and the finished plan is ordinary text you can read, print or have read aloud."
           }
         },
         {
@@ -453,7 +345,9 @@
   ]
 }
 </script>
+
 <style>
+
 /* ═══════════════════════════════════════════════════════════
    AFC — Advertising For Contractors
    Palette derived from the AFC mark: ink black, lime level
@@ -469,6 +363,9 @@
   --paper:#F4F4F1;
   --paper-2:#EAEAE4;
   --white:#FFFFFF;
+  /* Plain white. The logo PNG is #FEFEFE with no alpha, so anything other
+     than white puts a visible rectangle around the mark. */
+  --hdr-bg:#FFFFFF;
   --slate:#5C6672;
   --slate-lt:#8A939E;
   --line:#DDDDD6;
@@ -476,7 +373,7 @@
   --shadow:0 12px 40px rgba(13,17,23,.10);
   --shadow-lg:0 24px 70px rgba(13,17,23,.16);
   --wrap:1200px;
-  --hdr:96px;
+  --hdr:196px;
   --display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;
   --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'Courier New',monospace;
@@ -500,7 +397,7 @@ a{color:inherit}
 /* ── Type scale ── */
 h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.02;
   letter-spacing:-.005em;text-transform:uppercase}
-h1{font-size:clamp(2.9rem,7.4vw,5.4rem)}
+h1{font-size:clamp(2.7rem,6.4vw,4.9rem)}
 h2{font-size:clamp(2.1rem,4.7vw,3.5rem)}
 h3{font-size:clamp(1.3rem,2.2vw,1.7rem);letter-spacing:.005em}
 h4{font-size:1.08rem;letter-spacing:.03em}
@@ -541,19 +438,29 @@ strong{font-weight:700;color:var(--ink)}
 .util a:hover{color:var(--lime-hi);text-decoration:underline}
 .util-r{display:flex;gap:18px;align-items:center}
 
-header{position:sticky;top:0;z-index:900;background:var(--white);
+header{position:sticky;top:0;z-index:900;background:var(--hdr-bg);
   border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(13,17,23,.04)}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;
-  padding:14px 0;min-height:var(--hdr)}
+  padding:11px 0;min-height:var(--hdr)}
+/* Full-size logo where it earns attention, compact once reading starts.
+   A 176px bar pinned to the top of a laptop viewport costs too much. */
+.hdr-in{transition:padding .22s ease,min-height .22s ease}
+header.shrunk .hdr-in{padding:7px 0;min-height:0}
+header.shrunk .brand img{width:210px;height:118px}
+header.shrunk{box-shadow:0 6px 22px rgba(13,17,23,.11)}
 .brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
-.brand img{width:300px;height:102px;object-fit:contain;object-position:left center}
+/* Box matches the PNG's native 1.777:1 exactly. Off-ratio boxes get
+   letterboxed by object-fit:contain, which is what kept the mark small no
+   matter how much the box grew. At 308px the artwork renders 232px. */
+.brand img{width:308px;height:173px;object-fit:contain;object-position:left center;
+  transition:width .22s ease,height .22s ease}
 .hdr-r{display:flex;align-items:center;gap:14px}
 .hdr-tel{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);
   font-size:1.35rem;font-weight:800;letter-spacing:.02em;color:var(--ink);
   text-decoration:none;white-space:nowrap}
 .hdr-tel:hover{color:var(--amber)}
 .burger{width:56px;height:52px;border:2px solid var(--ink);border-radius:4px;
-  background:var(--white);cursor:pointer;display:flex;flex-direction:column;
+  background:var(--hdr-bg);cursor:pointer;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:6px;flex-shrink:0;transition:background .16s}
 .burger:hover{background:var(--paper)}
 .burger span{display:block;width:26px;height:3px;background:var(--ink);border-radius:2px;
@@ -561,6 +468,53 @@ header{position:sticky;top:0;z-index:900;background:var(--white);
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+
+/* ═══ DESKTOP NAV ═══
+   Ten trade pages and six service pages are the money pages. Hiding them
+   behind a hamburger on a wide screen costs clicks for no gain, so the
+   full nav shows >=1081px and the hamburger takes over below that. */
+.hdr-stack{display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+.hdr-top{display:flex;align-items:center;gap:14px}
+.btn-mini{font-family:var(--display);font-size:.95rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  background:var(--lime);color:var(--ink);padding:9px 17px;border-radius:4px;
+  box-shadow:0 4px 0 #7EA323;transition:background .16s,transform .16s;display:none}
+.btn-mini:hover{background:var(--lime-hi);transform:translateY(-1px)}
+
+.dnav{display:none;align-items:center;gap:3px}
+.dnav > a,.dd-t{font-family:var(--display);font-size:1.06rem;font-weight:700;
+  letter-spacing:.045em;text-transform:uppercase;color:var(--ink);
+  text-decoration:none;padding:9px 13px;border-radius:4px;background:none;
+  border:none;cursor:pointer;line-height:1;display:inline-flex;align-items:center;
+  gap:6px;transition:background .14s,color .14s;white-space:nowrap;font-family:var(--display)}
+.dnav > a:hover,.dd-t:hover,.dd.open .dd-t{background:rgba(13,17,23,.07);color:var(--amber)}
+.dnav > a[aria-current="page"]{color:var(--amber);box-shadow:inset 0 -3px 0 var(--lime)}
+.dd{position:relative}
+.dd-t svg{transition:transform .2s}
+.dd.open .dd-t svg{transform:rotate(180deg)}
+/* The bridge. Without it the 10px gap between button and panel breaks the
+   hover chain and the menu closes before you can reach the links. */
+.dd-p::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
+.dd-p{position:absolute;top:calc(100% + 10px);right:0;background:var(--ink);
+  border-radius:6px;box-shadow:0 22px 60px rgba(13,17,23,.34);padding:16px;
+  display:none;z-index:920;border:1px solid rgba(255,255,255,.08)}
+.dd.open .dd-p{display:grid}
+.dd-p.cols-2{grid-template-columns:repeat(2,minmax(196px,1fr));gap:0 22px}
+.dd-p.cols-1{grid-template-columns:minmax(232px,1fr)}
+.dd-p a{display:block;color:#DCE2EA;text-decoration:none;padding:8px 10px;
+  font-family:var(--body);font-size:.94rem;font-weight:500;text-transform:none;
+  letter-spacing:0;border-radius:4px;transition:background .13s,color .13s;white-space:nowrap}
+.dd-p a:hover{background:rgba(166,206,57,.14);color:var(--lime)}
+.dd-p a[aria-current="page"]{color:var(--lime);background:rgba(166,206,57,.10)}
+.dd-p .dd-h{font-family:var(--mono);font-size:.66rem;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--amber);padding:6px 10px 8px;grid-column:1/-1}
+
+@media(min-width:1081px){
+  .dnav{display:flex}
+  .btn-mini{display:inline-flex}
+  .burger{display:none}
+}
 
 .nav{position:fixed;left:0;right:0;bottom:0;background:var(--ink);z-index:880;
   overflow-y:auto;padding:34px 0 60px;display:none}
@@ -574,21 +528,30 @@ header{position:sticky;top:0;z-index:900;background:var(--white);
 .nav-col a:hover{color:var(--lime);padding-left:7px}
 .nav-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 
-/* ═══ HERO ═══ */
-.hero{position:relative;background:var(--ink);overflow:hidden;isolation:isolate}
+/* ═══ HERO ═══
+   The hero now owns a real height instead of being sized by the text
+   inside it. A background video cropped into a short, wide band reads
+   as a letterbox strip — giving the section vertical room is what lets
+   the footage actually read as footage.                              */
+.hero{position:relative;background:var(--ink);overflow:hidden;isolation:isolate;
+  min-height:82vh;display:flex;align-items:center}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
-  opacity:.62}
-#heroVidMobile{display:none}
+  opacity:.74;object-position:center 42%}
+/* Scrim runs left-to-right so the copy side stays legible while the
+   right side of the frame is left open enough to see.                */
 .hero-scrim{position:absolute;inset:0;z-index:1;background:
-  linear-gradient(180deg,rgba(13,17,23,.90) 0%,rgba(13,17,23,.60) 34%,rgba(13,17,23,.78) 72%,rgba(13,17,23,.96) 100%),
-  radial-gradient(1100px 620px at 18% 42%,rgba(13,17,23,.34),transparent 72%)}
-.hero-in{position:relative;z-index:2;padding:96px 0 84px;color:#fff}
+  linear-gradient(90deg,rgba(13,17,23,.94) 0%,rgba(13,17,23,.80) 38%,rgba(13,17,23,.36) 78%,rgba(13,17,23,.20) 100%),
+  linear-gradient(180deg,rgba(13,17,23,.55) 0%,transparent 26%,transparent 66%,rgba(13,17,23,.90) 100%)}
+.hero-in{position:relative;z-index:2;padding:84px 0;color:#fff;width:100%}
 .hero-eyebrow{font-family:var(--mono);font-size:.79rem;font-weight:600;letter-spacing:.24em;
   text-transform:uppercase;color:var(--lime);margin-bottom:20px}
-.hero h1{color:#fff;max-width:16ch;text-shadow:0 3px 26px rgba(0,0,0,.55)}
+.hero h1{color:#fff;max-width:34ch;text-shadow:0 3px 26px rgba(0,0,0,.55)}
 .hero h1 em{font-style:normal;color:var(--lime);display:block}
 .hero-sub{font-size:clamp(1.08rem,1.9vw,1.32rem);line-height:1.62;color:#D7DEE7;
   max-width:60ch;margin-top:26px}
+/* Global `strong` is ink-black. On the hero it sits over dark video,
+   so it has to be overridden or the emphasis disappears. */
+.hero-sub strong{color:var(--lime-hi);font-weight:700}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
 .hero-trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;
   padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
@@ -796,9 +759,10 @@ header{position:sticky;top:0;z-index:900;background:var(--white);
 .band-cta{display:flex;gap:13px;flex-wrap:wrap}
 
 /* ═══ FOOTER (white, to blend with the logo plate) ═══ */
-footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34px}
+footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 34px}
 .ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px}
-.ft-brand img{width:260px;height:auto;margin-bottom:20px}
+.ft-brand img{width:260px;height:146px;object-fit:contain;object-position:left center;
+  margin-bottom:20px}
 .ft-brand p{font-size:.95rem;color:var(--slate);line-height:1.7;max-width:38ch}
 .ft-contact{margin-top:20px;font-family:var(--mono);font-size:.86rem;line-height:2}
 .ft-contact a{color:var(--ink);text-decoration:none;font-weight:600}
@@ -814,7 +778,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
 .ft-bot a{color:var(--ink);font-weight:600;text-decoration:none}
 .ft-bot a:hover{color:var(--amber);text-decoration:underline}
 .ft-powered{display:flex;align-items:center;gap:11px}
-.ft-powered img{width:112px;height:auto;opacity:.82}
+.ft-powered img{width:112px;height:38px;object-fit:contain;opacity:.82}
 
 /* ═══ SCROLL REVEAL ═══ */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .62s ease,transform .62s ease}
@@ -828,21 +792,28 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
   .step:last-child{border-bottom:none}
 }
 @media(max-width:820px){
-  :root{--hdr:78px}
-  .brand img{width:230px;height:78px}
+  :root{--hdr:164px}
+  .brand img{width:250px;height:141px}
+  header.shrunk .brand img{width:180px;height:101px}
   .hdr-tel{font-size:1.08rem}
   .util-in{justify-content:center;text-align:center;font-size:.7rem}
-  #heroVid{display:none}
-  #heroVidMobile{display:block}
-  .hero-in{padding:64px 0 58px}
+  /* Portrait source in a portrait viewport — scrim goes vertical. */
+  .hero{min-height:78vh}
+  .hero-scrim{background:
+    linear-gradient(180deg,rgba(13,17,23,.88) 0%,rgba(13,17,23,.58) 38%,
+    rgba(13,17,23,.72) 72%,rgba(13,17,23,.95) 100%)}
+  .hero-in{padding:58px 0}
   .sec{padding:62px 0}
   .pad-row{grid-template-columns:1fr;gap:9px}
   .pad-inp input{text-align:left}
   .band-in{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:640px){
+  :root{--hdr:142px}
   body{font-size:16px}
   .wrap{padding:0 18px}
+  .brand img{width:210px;height:118px}
+  header.shrunk .brand img{width:160px;height:90px}
   .hdr-tel span{display:none}
   .form-grid{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
@@ -854,6 +825,312 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
     scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
 }
+
+/* ── shared sub-page hero ── */
+.phero{background:var(--ink);color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
+.phero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:linear-gradient(90deg,var(--lime),var(--amber))}
+.phero::before{content:'';position:absolute;inset:0;opacity:.30;
+  background-image:linear-gradient(rgba(166,206,57,.10) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(166,206,57,.10) 1px,transparent 1px);
+  background-size:52px 52px;
+  -webkit-mask-image:radial-gradient(720px 400px at 14% 42%,#000,transparent 78%);
+  mask-image:radial-gradient(720px 400px at 14% 42%,#000,transparent 78%)}
+.phero-in{position:relative;z-index:2}
+.phero h1{color:#fff;max-width:20ch;font-size:clamp(2.4rem,5.6vw,4.1rem)}
+.bcrumb{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;color:#7E8894;margin-bottom:26px}
+.bcrumb a{color:var(--lime);text-decoration:none}
+.bcrumb a:hover{text-decoration:underline}
+.bcrumb i{font-style:normal;margin:0 7px;color:#4E5763}
+.bcrumb span[aria-current]{color:#C6CDD6}
+.phero-meta{font-family:var(--mono);font-size:.75rem;letter-spacing:.07em;color:#8A939E;
+  margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.13)}
+.sec-paper .card{background:var(--white)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--slate)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:disabled{opacity:.35;cursor:not-allowed}
+
+/* directional reveals with per-element stagger */
+.rv-l{opacity:0;transform:translateX(-26px);transition:opacity .66s ease,transform .66s ease;
+  transition-delay:var(--d,0s)}
+.rv-l.in{opacity:1;transform:none}
+.rv-s{opacity:0;transform:scale(.965);transition:opacity .6s ease,transform .6s ease;
+  transition-delay:var(--d,0s)}
+.rv-s.in{opacity:1;transform:none}
+
+/* ══ WHAT YOU GET ══ */
+.wyg{background:var(--ink-2);border-top:3px solid var(--lime);padding:44px 0}
+.wyg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.wy{background:rgba(255,255,255,.035);border:1px solid var(--line-dk);border-radius:6px;
+  padding:22px 20px;position:relative;overflow:hidden}
+.wy::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime)}
+.wy-n{font-family:var(--display);font-size:clamp(1.8rem,3.6vw,2.4rem);font-weight:800;
+  color:var(--lime);line-height:1.05}
+.wy-l{font-size:.88rem;color:#B7C0CB;margin-top:8px;line-height:1.5}
+
+/* ══ WIZARD ══ */
+.pb{background:var(--white);border:1px solid var(--line);border-radius:8px;
+  box-shadow:var(--shadow-lg);max-width:900px;margin:0 auto;overflow:hidden}
+.pb-top{background:var(--ink);color:#fff;padding:22px 28px;display:flex;
+  justify-content:space-between;align-items:center;gap:18px}
+.pb-h{color:#fff;font-size:1.4rem;margin:0}
+.pb-step{font-family:var(--mono);font-size:.74rem;letter-spacing:.11em;color:var(--lime);margin-top:5px}
+.pb-pct{font-family:var(--display);font-size:2.1rem;font-weight:800;color:var(--lime);line-height:1}
+.pb-bar{height:4px;background:var(--paper-2)}
+.pb-bar-f{height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--lime));
+  transition:width .38s cubic-bezier(.4,0,.2,1)}
+.pb-body{padding:34px 28px;min-height:340px}
+.pb-s{display:none;border:0;padding:0;margin:0}
+.pb-s.is-on{display:block;animation:pbIn .28s ease}
+@keyframes pbIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.pb-q{font-family:var(--display);font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;
+  text-transform:uppercase;color:var(--ink);line-height:1.08;padding:0;margin-bottom:8px;display:block}
+.pb-q2{margin-top:0}
+.pb-hint{font-size:.97rem;color:var(--slate);margin-bottom:22px;line-height:1.6}
+.pb-note{font-family:var(--mono);font-size:.8rem;color:var(--slate);margin-top:16px;line-height:1.65}
+.pb-div{height:1px;background:var(--line);margin:30px 0 26px}
+
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.opt-wide{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.opt{font-family:var(--body);text-align:left;background:var(--white);border:2px solid var(--line);
+  border-radius:6px;padding:16px 18px;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink);
+  transition:border-color .16s,background .16s,transform .16s;line-height:1.35}
+.opt:hover{border-color:var(--amber);transform:translateY(-2px)}
+.opt.is-on{border-color:var(--lime);background:rgba(166,206,57,.13)}
+.opt b{display:block;font-weight:700;font-size:1.04rem;margin-bottom:4px}
+.opt span{display:block;font-weight:400;font-size:.87rem;color:var(--slate);line-height:1.45}
+
+/* Optional free-text trade name, revealed only when "Another trade" is picked. */
+.oth{display:none;margin-top:20px;padding-top:20px;border-top:1px dashed var(--line)}
+.oth.on{display:block;animation:pbIn .24s ease}
+.oth label{display:block;font-family:var(--display);font-size:1.1rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-bottom:9px}
+.oth label span{font-family:var(--body);font-size:.85rem;font-weight:400;text-transform:none;
+  letter-spacing:0;color:var(--slate);display:block;margin-top:3px}
+.oth input{width:100%;max-width:460px;padding:13px 15px;border:2px solid var(--line);
+  border-radius:6px;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--white)}
+.oth input:focus{outline:none;border-color:var(--lime)}
+.num-row{display:flex;gap:12px;flex-wrap:wrap}
+.num-box{display:inline-flex;align-items:center;gap:6px;background:var(--paper);
+  border:2px solid var(--line);border-radius:6px;padding:12px 18px;transition:border-color .16s}
+.num-box:focus-within{border-color:var(--lime)}
+.num-box span{font-family:var(--mono);font-size:1.3rem;color:var(--slate);font-weight:600}
+.num-box .per{font-size:.9rem}
+.num-box input{border:0;outline:0;background:transparent;font-family:var(--mono);font-size:1.7rem;
+  font-weight:600;color:var(--ink);width:160px;max-width:44vw}
+.num-box input::-webkit-outer-spin-button,.num-box input::-webkit-inner-spin-button{
+  -webkit-appearance:none;margin:0}
+.num-box input[type=number]{-moz-appearance:textfield}
+
+.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{font-family:var(--mono);font-size:.84rem;font-weight:600;background:var(--paper);
+  border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;color:var(--slate);
+  transition:all .15s}
+.chip:hover{border-color:var(--lime);color:var(--ink);background:rgba(166,206,57,.12)}
+
+.slide-wrap{margin-top:22px;max-width:420px}
+.slide-wrap input[type=range]{width:100%;accent-color:var(--lime);height:26px}
+.slide-lbl{display:flex;justify-content:space-between;font-family:var(--mono);
+  font-size:.74rem;color:var(--slate)}
+
+.ten-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:520px}
+.ten{font-family:var(--display);font-size:1.25rem;font-weight:800;aspect-ratio:1;
+  background:var(--paper);border:2px solid var(--line);border-radius:5px;cursor:pointer;
+  color:var(--slate);transition:all .14s;display:flex;align-items:center;justify-content:center}
+.ten:hover{border-color:var(--amber);color:var(--ink)}
+.ten.is-on{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+.ten.is-lit{background:rgba(166,206,57,.28);border-color:var(--lime);color:var(--ink)}
+@media(max-width:560px){.ten-grid{grid-template-columns:repeat(5,1fr)}}
+
+/* ── ranking ── */
+.rank{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.rk{display:flex;align-items:center;gap:12px;background:var(--paper);border:2px solid var(--line);
+  border-radius:6px;padding:13px 15px;cursor:grab;transition:border-color .15s,box-shadow .15s,opacity .15s}
+.rk:hover{border-color:var(--amber)}
+.rk:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.rk.drag{opacity:.4;cursor:grabbing}
+.rk.over{border-color:var(--lime);box-shadow:0 0 0 3px rgba(166,206,57,.22)}
+.rk-grip{font-size:1.1rem;color:var(--slate);flex-shrink:0;line-height:1}
+.rk-n{font-family:var(--display);font-size:1.35rem;font-weight:800;color:var(--ink);
+  background:var(--lime);width:32px;height:32px;border-radius:5px;display:flex;
+  align-items:center;justify-content:center;flex-shrink:0}
+.rk-t{flex:1;min-width:0}
+.rk-t b{display:block;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3}
+.rk-t i{display:block;font-style:normal;font-size:.86rem;color:var(--slate);line-height:1.45;margin-top:2px}
+.rk-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
+.rk-b{width:30px;height:22px;border:1px solid var(--line);background:var(--white);border-radius:4px;
+  cursor:pointer;color:var(--slate);font-size:.65rem;line-height:1;transition:all .14s;padding:0}
+.rk-b:hover{border-color:var(--lime);color:var(--ink);background:rgba(166,206,57,.14)}
+
+.pb-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:20px 28px;border-top:1px solid var(--line);background:var(--paper)}
+.pb-dots{display:flex;gap:6px}
+.pb-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+.pb-dot.is-on{background:var(--lime);transform:scale(1.35)}
+.pb-dot.done{background:var(--amber)}
+@media(max-width:560px){
+  .pb-dots{display:none}
+  .pb-nav .btn{flex:1}
+  .pb-body{padding:26px 18px}
+  .pb-top{padding:18px 18px}
+}
+
+/* ══ PLAN OUTPUT ══ */
+.plan{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--lime);
+  border-radius:8px;box-shadow:var(--shadow-lg);max-width:940px;margin:0 auto;padding:36px 34px}
+.plan-head{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;
+  padding-bottom:24px;border-bottom:2px solid var(--ink);margin-bottom:30px;flex-wrap:wrap}
+.plan-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:9px}
+.plan-title{font-size:clamp(1.8rem,4vw,2.7rem);margin:0;color:var(--ink)}
+.plan-meta{font-family:var(--mono);font-size:.83rem;color:var(--slate);margin-top:9px;line-height:1.75}
+.plan-logo{width:180px;height:101px;object-fit:contain;object-position:left center;flex-shrink:0}
+.plan-sec{margin-bottom:38px}
+.plan-h{font-size:1.35rem;color:var(--ink);margin-bottom:16px;padding-bottom:10px;
+  border-bottom:1px solid var(--line)}
+.plan-p{font-size:1rem;color:var(--slate);line-height:1.72;margin-bottom:18px}
+.plan-note{font-size:.93rem;color:var(--slate);line-height:1.68;margin-top:16px}
+.plan-src{font-family:var(--mono);font-size:.75rem;color:var(--slate);line-height:1.7;display:block;margin-top:8px}
+.plan-foot{border-top:2px solid var(--ink);padding-top:20px;margin-top:8px}
+.plan-foot p{font-size:.88rem;color:var(--slate);line-height:1.7}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--lime);
+  border-radius:6px;padding:18px 18px}
+.kpi-l{font-family:var(--mono);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);margin-bottom:8px;line-height:1.4}
+.kpi-n{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ink);line-height:1}
+.kpi-s{font-size:.82rem;color:var(--slate);margin-top:8px;line-height:1.5}
+
+.verdict{margin-top:20px;padding:20px 22px;border-radius:6px;font-size:1rem;line-height:1.7}
+.verdict h4{font-size:1.05rem;margin-bottom:8px;letter-spacing:.02em}
+.v-good{background:rgba(166,206,57,.14);border:1px solid var(--lime)}
+.v-good h4{color:#4E6B10}
+.v-warn{background:rgba(180,118,60,.11);border:1px solid var(--amber)}
+.v-warn h4{color:#7A4C1E}
+.v-bad{background:rgba(212,90,70,.10);border:1px solid #D45A46}
+.v-bad h4{color:#8E2F20}
+
+.bt-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;
+  border-bottom:1px solid var(--line);font-size:.97rem;flex-wrap:wrap}
+.bt-row:last-child{border-bottom:none}
+.bt-l{flex:1;min-width:190px;color:var(--ink)}
+.bt-l small{display:block;color:var(--slate);font-size:.83rem;margin-top:2px}
+.bt-v{font-family:var(--mono);font-weight:600;color:var(--ink);white-space:nowrap}
+.bt-f{font-family:var(--mono);font-size:.73rem;padding:4px 11px;border-radius:99px;
+  font-weight:600;white-space:nowrap}
+.f-ok{background:rgba(166,206,57,.2);color:#4E6B10}
+.f-no{background:rgba(212,90,70,.13);color:#8E2F20}
+.f-na{background:var(--paper-2);color:var(--slate)}
+
+.split-bars{display:grid;gap:12px}
+.sb{display:grid;grid-template-columns:200px 1fr 92px;gap:14px;align-items:center}
+.sb-l{font-size:.95rem;color:var(--ink);font-weight:600}
+.sb-t{height:26px;background:var(--paper-2);border-radius:4px;overflow:hidden}
+.sb-f{height:100%;background:linear-gradient(90deg,var(--amber),var(--lime));width:0;
+  transition:width .7s cubic-bezier(.4,0,.2,1)}
+.sb-v{font-family:var(--mono);font-size:.95rem;font-weight:600;color:var(--ink);text-align:right}
+@media(max-width:620px){.sb{grid-template-columns:1fr 74px;gap:8px}.sb-l{grid-column:1/-1}}
+
+.phases{display:grid;gap:16px}
+.ph{border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ph-h{background:var(--ink);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;
+  align-items:center;gap:14px;flex-wrap:wrap}
+.ph-h b{font-family:var(--display);font-size:1.2rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.03em}
+.ph-h span{font-family:var(--mono);font-size:.74rem;color:var(--lime);letter-spacing:.1em}
+.ph-b{padding:18px 20px;background:var(--paper)}
+.ph-b ul{list-style:none;margin:0;padding:0}
+.ph-b li{padding:9px 0 9px 26px;position:relative;font-size:.97rem;line-height:1.62;
+  border-bottom:1px solid var(--line);color:var(--ink)}
+.ph-b li:last-child{border-bottom:none}
+.ph-b li::before{content:'';position:absolute;left:2px;top:17px;width:9px;height:9px;
+  background:var(--lime);border-radius:2px}
+.ph-b li b{color:var(--ink)}
+
+.wins{margin:0;padding-left:0;list-style:none;counter-reset:w}
+.wins li{counter-increment:w;position:relative;padding:14px 0 14px 46px;
+  border-bottom:1px solid var(--line);font-size:.99rem;line-height:1.66;color:var(--ink)}
+.wins li:last-child{border-bottom:none}
+.wins li::before{content:counter(w);position:absolute;left:0;top:13px;width:30px;height:30px;
+  background:var(--lime);color:var(--ink);border-radius:5px;display:flex;align-items:center;
+  justify-content:center;font-family:var(--display);font-weight:800;font-size:1.05rem}
+
+.tl{display:grid;gap:0;border-left:3px solid var(--lime);padding-left:22px}
+.tl-i{padding:12px 0;position:relative}
+.tl-i::before{content:'';position:absolute;left:-29px;top:19px;width:11px;height:11px;
+  background:var(--white);border:3px solid var(--lime);border-radius:50%}
+.tl-w{font-family:var(--mono);font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--amber);font-weight:600}
+.tl-t{font-size:.99rem;color:var(--ink);margin-top:4px;line-height:1.6}
+
+.plan-acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:940px;
+  margin:26px auto 0}
+.pb-email{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--lime);
+  border-radius:8px;box-shadow:var(--shadow);max-width:700px;margin:26px auto 0;padding:32px 30px}
+.pb-email h3{margin-bottom:10px}
+.pb-email>p{font-size:.96rem;color:var(--slate);margin-bottom:22px;line-height:1.65}
+
+/* ══ WORKED EXAMPLE ══
+   The arithmetic written out longhand. Built to be quotable — an answer
+   engine can lift this whole block and it stands on its own. */
+.we{background:var(--white);border:1px solid var(--line);border-radius:8px;
+  box-shadow:var(--shadow-lg);overflow:hidden;max-width:920px;margin:0 auto}
+.we-h{background:var(--ink);color:#fff;padding:18px 26px;display:flex;justify-content:space-between;
+  align-items:center;gap:14px;flex-wrap:wrap}
+.we-h h3{color:#fff;margin:0;font-size:1.3rem}
+.we-h span{font-family:var(--mono);font-size:.71rem;letter-spacing:.13em;color:var(--lime)}
+.we-b{padding:26px}
+.we-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 0;
+  border-bottom:1px dashed var(--line)}
+.we-row:last-of-type{border-bottom:none}
+.we-row.tot{border-top:2px solid var(--ink);border-bottom:none;margin-top:8px;padding-top:18px}
+.we-l{font-size:1rem;color:#39414C;line-height:1.6}
+.we-l b{color:var(--ink)}
+.we-l small{display:block;font-family:var(--mono);font-size:.8rem;color:var(--slate);margin-top:3px}
+.we-v{font-family:var(--mono);font-size:1.22rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.we-row.tot .we-v{font-family:var(--display);font-size:2.1rem;font-weight:800;color:#4E6B10}
+.we-foot{background:var(--paper);padding:20px 26px;border-top:1px solid var(--line);
+  font-size:.97rem;line-height:1.7;color:#39414C}
+
+/* ══ FULL-BLEED ══ */
+.bleed{position:relative;min-height:clamp(340px,44vh,470px);display:flex;align-items:center;
+  overflow:hidden;isolation:isolate;background:var(--ink)}
+.bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  opacity:.38;transform:scale(1.07);transition:transform 1.5s ease,opacity 1.5s ease}
+.bleed.in img{transform:scale(1);opacity:.48}
+.bleed::after{content:'';position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgba(13,17,23,.95) 0%,rgba(13,17,23,.78) 46%,rgba(13,17,23,.38) 100%)}
+.bleed-in{position:relative;z-index:2;width:100%;padding:56px 0}
+.bleed h2{color:#fff;max-width:20ch}
+.bleed p{color:#CFD6DF;font-size:1.08rem;max-width:56ch;margin-top:18px;line-height:1.68}
+.bleed .btn{margin-top:28px}
+@media(max-width:820px){
+  .phero{padding:52px 0 58px}
+  .bleed{min-height:auto}
+  .bleed-in{padding:48px 0}
+  .bleed::after{background:linear-gradient(180deg,rgba(13,17,23,.88),rgba(13,17,23,.94))}
+  .we-row{grid-template-columns:1fr}
+}
+
+/* ══ PRINT ══
+   The plan is the deliverable. Everything else disappears, including the
+   chat widget, which is handled in rivet.js. */
+@media print{
+  .util,header,.nav,.phero,.pb,.plan-acts,.pb-email,.band,footer,.sec:not(.sec-paper),
+  #how,#tools,.faq,.sec-ink,.wyg,.bleed,.we{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .sec{padding:0!important;background:#fff!important}
+  .wrap{max-width:100%;padding:0}
+  .plan{box-shadow:none;border:none;border-top:none;padding:0;max-width:100%}
+  .plan-sec{page-break-inside:avoid;margin-bottom:22px}
+  .ph,.kpi,.verdict{page-break-inside:avoid}
+  .plan-h{page-break-after:avoid}
+  a{text-decoration:none;color:#000}
+  .sb-f{background:#A6CE39!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .kpi,.ph-h,.verdict,.wins li::before,.rk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
 </style>
 </head>
 <body>
@@ -876,16 +1153,69 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
     <a class="brand" href="/" aria-label="Advertising For Contractors — home">
       <img src="/images/advertising-for-contractors-afc-logo.png"
            alt="AFC — Advertising For Contractors logo"
-           width="300" height="102" fetchpriority="high">
+           width="308" height="173" fetchpriority="high">
     </a>
     <div class="hdr-r">
-      <a class="hdr-tel" href="tel:18004818638" aria-label="Call 1-800-481-8638">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
-        </svg>
-        <span>1-800-481-8638</span>
-      </a>
+      <div class="hdr-stack">
+        <div class="hdr-top">
+          <a class="hdr-tel" href="tel:18004818638" aria-label="Call 1-800-481-8638">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+            </svg>
+            <span>1-800-481-8638</span>
+          </a>
+          <a class="btn-mini" href="/free-contractor-marketing-audit/">Free Audit</a>
+        </div>
+        <nav class="dnav" id="dnav" aria-label="Primary navigation">
+        <div class="dd">
+          <button class="dd-t" type="button" id="ddTradesBtn" aria-expanded="false"
+                  aria-controls="ddTradesPanel" aria-haspopup="true">Trades <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="dd-p cols-2" id="ddTradesPanel" role="group" aria-labelledby="ddTradesBtn">
+            <span class="dd-h">Trades we serve</span>
+            <a href="/roofing-marketing/">Roofing Marketing</a>
+            <a href="/plumbing-marketing/">Plumbing Marketing</a>
+            <a href="/hvac-marketing/">HVAC Marketing</a>
+            <a href="/electrical-contractor-marketing/">Electrical Contractors</a>
+            <a href="/solar-contractor-marketing/">Solar Contractors</a>
+            <a href="/general-contractor-marketing/">General Contractors</a>
+            <a href="/painting-contractor-marketing/">Painting Contractors</a>
+            <a href="/remodeling-marketing/">Remodeling &amp; Home Improvement</a>
+            <a href="/pool-builder-marketing/">Pool Builders</a>
+            <a href="/fence-company-advertising/">Fence Companies</a>
+          </div>
+        </div>
+        <div class="dd">
+          <button class="dd-t" type="button" id="ddServicesBtn" aria-expanded="false"
+                  aria-controls="ddServicesPanel" aria-haspopup="true">Services <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="dd-p cols-1" id="ddServicesPanel" role="group" aria-labelledby="ddServicesBtn">
+            <span class="dd-h">What we do</span>
+            <a href="/contractor-seo/">Contractor SEO</a>
+            <a href="/local-seo-contractors/">Local SEO &amp; Google Business Profile</a>
+            <a href="/google-ads-contractors/">Google Ads for Contractors</a>
+            <a href="/contractor-facebook-ads/">Facebook &amp; Social Ads</a>
+            <a href="/contractor-lead-generation/">Lead Generation</a>
+            <a href="/ai-search-optimization-contractors/">AI Search Optimization</a>
+          </div>
+        </div>
+        <div class="dd">
+          <button class="dd-t" type="button" id="ddToolsBtn" aria-expanded="false"
+                  aria-controls="ddToolsPanel" aria-haspopup="true">Free Tools <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="dd-p cols-1" id="ddToolsPanel" role="group" aria-labelledby="ddToolsBtn">
+            <span class="dd-h">Free, no email required</span>
+            <a href="/contractor-marketing-tools/">All Free Tools</a>
+            <a href="/contractor-marketing-plan-builder/" aria-current="page">Marketing Plan Builder</a>
+            <a href="/contractor-website-scorecard/">Website Scorecard</a>
+            <a href="/contractor-marketing-tools/#tracker">Lead &amp; Job Tracker</a>
+            <a href="/#calculator">Break-Even Lead Cost Worksheet</a>
+          </div>
+        </div>
+          <a href="/pricing/">Pricing</a>
+          <a href="/results/">Results</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
       <button class="burger" id="burger" type="button" aria-expanded="false"
               aria-controls="nav" aria-label="Open navigation menu">
         <span></span><span></span><span></span>
@@ -949,15 +1279,14 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
     </div>
   </div>
 </nav>
-
 <main id="main">
 
 <!-- ══════════ PAGE HERO ══════════ -->
 <section class="phero">
   <div class="wrap phero-in">
     <nav class="bcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a> <span>/</span>
-      <a href="/contractor-marketing-tools/">Free Tools</a> <span>/</span>
+      <a href="/">Home</a><i>/</i>
+      <a href="/contractor-marketing-tools/">Free Tools</a><i>/</i>
       <span aria-current="page">Marketing Plan Builder</span>
     </nav>
     <div class="hero-eyebrow">Free tool &middot; No email required</div>
@@ -969,6 +1298,32 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
     <div class="hero-cta">
       <a class="btn btn-go" href="#builder">Start building</a>
       <a class="btn btn-line" href="#how">How it works</a>
+    </div>
+    <p class="phero-meta">Runs entirely in your browser &nbsp;&middot;&nbsp; Takes about four minutes
+      &nbsp;&middot;&nbsp; Benchmarks last reviewed August 15, 2026</p>
+  </div>
+</section>
+
+<!-- ══════════ WHAT YOU GET ══════════ -->
+<section class="wyg" aria-label="What the plan builder produces">
+  <div class="wrap">
+    <div class="wyg-grid">
+      <div class="wy">
+        <div class="wy-n">7</div>
+        <div class="wy-l">Questions, most of them a single tap</div>
+      </div>
+      <div class="wy">
+        <div class="wy-n">12</div>
+        <div class="wy-l">Months of sequenced actions, phased in order</div>
+      </div>
+      <div class="wy">
+        <div class="wy-n">2026</div>
+        <div class="wy-l">Lead-cost benchmarks, cited by source and date</div>
+      </div>
+      <div class="wy">
+        <div class="wy-n">$0</div>
+        <div class="wy-l">Cost, and no email address required to see it</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1007,6 +1362,15 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
             <button type="button" class="opt" data-f="trade" data-v="remodeling">Remodeling</button>
             <button type="button" class="opt" data-f="trade" data-v="pool">Pool building</button>
             <button type="button" class="opt" data-f="trade" data-v="fencing">Fencing</button>
+            <button type="button" class="opt" data-f="trade" data-v="other">Another trade</button>
+          </div>
+          <div class="oth" id="othWrap">
+            <label for="othName">What trade is it? <span>Optional &mdash; it goes on your plan</span></label>
+            <input type="text" id="othName" maxlength="60" autocomplete="off"
+                   placeholder="Landscaping, concrete, garage doors, gutters, masonry…">
+            <p class="pb-note">No published cost-per-lead benchmark exists for most specialty trades.
+              Your plan will use blended home-services figures for orientation and will say so plainly
+              rather than presenting them as your trade’s numbers.</p>
           </div>
         </fieldset>
 
@@ -1123,39 +1487,39 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
             priority.</p>
           <ul class="rank" id="rank" aria-label="Rank your priorities, most important first">
             <li class="rk" draggable="true" data-p="volume" tabindex="0">
-              <span class="rk-grip" aria-hidden="true">⠿</span>
+              <span class="rk-grip" aria-hidden="true">&#10287;</span>
               <span class="rk-n">1</span>
               <span class="rk-t"><b>More leads, fast</b><i>I need the phone ringing sooner rather than later</i></span>
               <span class="rk-btns">
-                <button type="button" class="rk-b" data-move="up" aria-label="Move More leads fast up">▲</button>
-                <button type="button" class="rk-b" data-move="down" aria-label="Move More leads fast down">▼</button>
+                <button type="button" class="rk-b" data-move="up" aria-label="Move More leads fast up">&#9650;</button>
+                <button type="button" class="rk-b" data-move="down" aria-label="Move More leads fast down">&#9660;</button>
               </span>
             </li>
             <li class="rk" draggable="true" data-p="cost" tabindex="0">
-              <span class="rk-grip" aria-hidden="true">⠿</span>
+              <span class="rk-grip" aria-hidden="true">&#10287;</span>
               <span class="rk-n">2</span>
               <span class="rk-t"><b>Lower cost per job</b><i>I'm getting work but paying too much for it</i></span>
               <span class="rk-btns">
-                <button type="button" class="rk-b" data-move="up" aria-label="Move Lower cost per job up">▲</button>
-                <button type="button" class="rk-b" data-move="down" aria-label="Move Lower cost per job down">▼</button>
+                <button type="button" class="rk-b" data-move="up" aria-label="Move Lower cost per job up">&#9650;</button>
+                <button type="button" class="rk-b" data-move="down" aria-label="Move Lower cost per job down">&#9660;</button>
               </span>
             </li>
             <li class="rk" draggable="true" data-p="quality" tabindex="0">
-              <span class="rk-grip" aria-hidden="true">⠿</span>
+              <span class="rk-grip" aria-hidden="true">&#10287;</span>
               <span class="rk-n">3</span>
               <span class="rk-t"><b>Better quality leads</b><i>Too many tire-kickers and price shoppers</i></span>
               <span class="rk-btns">
-                <button type="button" class="rk-b" data-move="up" aria-label="Move Better quality leads up">▲</button>
-                <button type="button" class="rk-b" data-move="down" aria-label="Move Better quality leads down">▼</button>
+                <button type="button" class="rk-b" data-move="up" aria-label="Move Better quality leads up">&#9650;</button>
+                <button type="button" class="rk-b" data-move="down" aria-label="Move Better quality leads down">&#9660;</button>
               </span>
             </li>
             <li class="rk" draggable="true" data-p="own" tabindex="0">
-              <span class="rk-grip" aria-hidden="true">⠿</span>
+              <span class="rk-grip" aria-hidden="true">&#10287;</span>
               <span class="rk-n">4</span>
               <span class="rk-t"><b>Stop renting leads</b><i>I want channels I own, not marketplace fees</i></span>
               <span class="rk-btns">
-                <button type="button" class="rk-b" data-move="up" aria-label="Move Stop renting leads up">▲</button>
-                <button type="button" class="rk-b" data-move="down" aria-label="Move Stop renting leads down">▼</button>
+                <button type="button" class="rk-b" data-move="up" aria-label="Move Stop renting leads up">&#9650;</button>
+                <button type="button" class="rk-b" data-move="down" aria-label="Move Stop renting leads down">&#9660;</button>
               </span>
             </li>
           </ul>
@@ -1180,7 +1544,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
           <div class="plan-meta" id="planMeta"></div>
         </div>
         <img class="plan-logo" src="/images/advertising-for-contractors-afc-logo.png"
-             alt="Advertising For Contractors" width="180" height="61">
+             alt="Advertising For Contractors" width="180" height="101">
       </div>
 
       <!-- numbers -->
@@ -1285,6 +1649,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
                       placeholder="Optional — tell us what you're stuck on and we'll take a look."></textarea>
           </div>
         </div>
+        <!-- FormSubmit server-side spam filter. Field name must be exactly "_honey". -->
         <div class="hp" aria-hidden="true">
           <label for="_honey">Leave this field empty</label>
           <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off">
@@ -1306,8 +1671,66 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
   </div>
 </section>
 
+<!-- ══════════ WORKED EXAMPLE ══════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center rv" style="max-width:72ch">
+      <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
+        <span class="level-lbl">The arithmetic, longhand</span></div>
+      <h2>What is a break-even cost per lead, worked all the way through?</h2>
+      <p class="spk-answer">Your break-even cost per lead is your gross profit per job multiplied by your
+        close rate. It is the most you can pay for one lead before the first job stops making money. Here
+        it is with real numbers, so you can check the tool's arithmetic against your own.</p>
+    </div>
+
+    <div class="we rv-s">
+      <div class="we-h">
+        <h3>Worked example &mdash; a typical remodeling job</h3>
+        <span>AFC &middot; No. 003</span>
+      </div>
+      <div class="we-b">
+        <div class="we-row">
+          <span class="we-l"><b>Average job value</b>
+            <small>What a typical completed job invoices at</small></span>
+          <span class="we-v">$8,500</span>
+        </div>
+        <div class="we-row">
+          <span class="we-l"><b>Gross profit margin</b>
+            <small>After materials and labour, before overhead</small></span>
+          <span class="we-v">&times; 30%</span>
+        </div>
+        <div class="we-row">
+          <span class="we-l"><b>Gross profit per job</b>
+            <small>$8,500 &times; 0.30</small></span>
+          <span class="we-v">$2,550</span>
+        </div>
+        <div class="we-row">
+          <span class="we-l"><b>Lead-to-job close rate</b>
+            <small>One booked job for every four real leads</small></span>
+          <span class="we-v">&times; 25%</span>
+        </div>
+        <div class="we-row tot">
+          <span class="we-l"><b>Break-even cost per lead</b>
+            <small>$2,550 &times; 0.25 &mdash; your ceiling</small></span>
+          <span class="we-v">$638</span>
+        </div>
+      </div>
+      <div class="we-foot">
+        Against that ceiling, a $57 plumbing lead on Local Services Ads is not expensive &mdash; it is a
+        rounding error. A $183 non-branded Google Ads lead still clears comfortably. The number is also
+        deliberately conservative: it counts only the first job, and ignores repeat work, referrals and
+        maintenance agreements, all of which raise the real ceiling.
+        <br><br>
+        <strong>The lever most contractors overlook is the close rate.</strong> Moving from 25% to 35% on
+        the same job value and margin lifts the ceiling from $638 to $893 &mdash; a 40% increase, bought
+        with a better first phone call rather than a bigger budget.
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ HOW IT WORKS ══════════ -->
-<section class="sec" id="how">
+<section class="sec sec-paper" id="how">
   <div class="wrap">
     <div class="sec-head rv" style="max-width:80ch">
       <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
@@ -1319,8 +1742,8 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         in the plan follows from it.</p>
     </div>
 
-    <div class="grid-3 rv">
-      <div class="card">
+    <div class="grid-3">
+      <div class="card rv-s">
         <span class="card-tag">Step one</span>
         <h3>Your ceiling comes first</h3>
         <p>If your average job is $8,500 at a 30% margin, each job carries $2,550 in gross profit. At a 25%
@@ -1328,15 +1751,15 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
           loses money. That's your ceiling, and it's the only number that decides whether a channel is
           viable for you.</p>
       </div>
-      <div class="card">
+      <div class="card rv-s" style="--d:.08s">
         <span class="card-tag">Step two</span>
         <h3>Real benchmarks, not estimates</h3>
         <p>We compare your ceiling against published 2026 cost-per-lead data for your specific trade &mdash;
           Local Services Ads and Google Ads figures drawn from tracked contractor spend, with the source and
           date shown. Where no trade-specific benchmark has been published, the plan says so rather than
-          inventing one.</p>
+          inventing one, and it will not call an unverified estimate a benchmark.</p>
       </div>
-      <div class="card">
+      <div class="card rv-s" style="--d:.16s">
         <span class="card-tag">Step three</span>
         <h3>Sequence beats selection</h3>
         <p>Knowing which channels work isn't the same as knowing what to do first. The plan orders twelve
@@ -1354,11 +1777,27 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
   </div>
 </section>
 
+<!-- ══════════ FULL-BLEED BAND ══════════ -->
+<section class="bleed rv">
+  <img src="/images/contractor-tools-tape-measure-marketing-plan.jpg"
+       alt="Tape measure, framing square and marking tools laid out beside a written contractor marketing plan"
+       width="640" height="426" loading="lazy" decoding="async">
+  <div class="wrap bleed-in">
+    <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
+      <span class="level-lbl" style="color:var(--lime)">Measure first</span></div>
+    <h2>Nobody bids a job without measuring it.</h2>
+    <p>You wouldn't quote a roof from the driveway, and you shouldn't buy marketing without knowing what a
+      lead can cost you. That's the entire idea behind this tool: work out the number first, then decide
+      what to spend. It takes four minutes and it will occasionally tell you not to spend anything at all.</p>
+    <a class="btn btn-go" href="#builder">Run my numbers</a>
+  </div>
+</section>
+
 <!-- ══════════ WHY THE WEBSITE MATTERS ══════════ -->
 <section class="sec sec-ink">
   <div class="wrap">
-    <div class="split rv">
-      <div>
+    <div class="split">
+      <div class="rv-l">
         <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
           <span class="level-lbl">The bottleneck</span></div>
         <h2>Why does the plan always start with your website?</h2>
@@ -1380,7 +1819,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
           <a href="/contractor-website-scorecard/" style="color:var(--lime)">website scorecard</a> runs 25
           checks and gives you a graded fix list.</p>
       </div>
-      <figure class="split-media">
+      <figure class="split-media rv-s" style="--d:.12s">
         <img src="/images/contractor-lead-generation-phone-calls.png"
              alt="Contractor lead generation dashboard showing incoming phone calls, new leads and appointments booked"
              width="1536" height="1024" loading="lazy" decoding="async">
@@ -1402,54 +1841,47 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
 
       <details>
         <summary>Is the marketing plan builder really free?</summary>
-        <div class="faq-a">Yes, and there is no email wall. The plan generates in your browser and you can
-          read it, print it or save it as a PDF without giving us anything. Emailing it to yourself is
-          optional, and if you use that option we see a copy, which is the only benefit we get from
-          offering it.</div>
+        <div class="faq-a">Yes, and there is no email wall. The plan generates in your browser and you can read it, print it or save it as a PDF without giving us anything. Emailing it to yourself is optional, and if you use that option we see a copy, which is the only benefit we get from offering it.</div>
       </details>
 
       <details>
         <summary>How is my break-even cost per lead calculated?</summary>
-        <div class="faq-a">Gross profit per job multiplied by your close rate. If your average job is
-          $8,500 at a 30% gross margin, that job carries $2,550 in gross profit. At a 25% close rate you
-          need four leads to book one job, so you can afford up to $638 per lead before the first job stops
-          making money. Repeat work, referrals and maintenance agreements all raise that ceiling in
-          practice, which is why the number is conservative.</div>
+        <div class="faq-a">Gross profit per job multiplied by your close rate. If your average job is $8,500 at a 30% gross margin, that job carries $2,550 in gross profit. At a 25% close rate you need four leads to book one job, so you can afford up to $638 per lead before the first job stops making money. Repeat work, referrals and maintenance agreements all raise that ceiling in practice, which is why the number is conservative.</div>
       </details>
 
       <details>
         <summary>Where do the lead cost benchmarks come from?</summary>
-        <div class="faq-a">Published 2026 contractor advertising data, cited by source and date inside your
-          plan. Local Services Ads and Google Ads figures come from SearchLight Digital benchmarks covering
-          tracked spend across hundreds of contractors, with additional trade figures from LocaliQ and
-          Estatehub 2026 data. For trades where no specific benchmark has been published, the plan tells you
-          that instead of showing an invented number.</div>
+        <div class="faq-a">Published 2026 contractor advertising data, cited by source and date inside your plan. Local Services Ads and Google Ads figures come from SearchLight Digital benchmarks covering tracked spend across hundreds of contractors, with additional trade figures from LocaliQ and Estatehub 2026 data. For trades where no specific benchmark has been published — including anything you select under Another trade — the plan uses blended home-services averages and labels every one of them as blended rather than presenting it as your trade's number. It will never show you an invented figure.</div>
+      </details>
+
+      <details>
+        <summary>My trade is not on the list. Can I still use it?</summary>
+        <div class="faq-a">Yes. Pick Another trade on the first step and, if you like, type what you actually do — it goes on the plan. Landscaping, concrete, masonry, garage doors, gutters, flooring, septic, tree work and dozens of others have no published cost-per-lead benchmark that we could verify, so the plan uses blended home-services figures and says so on every row rather than dressing an average up as your trade's number. Everything else — the break-even calculation, the budget split, the twelve-month sequence — works exactly the same, because that arithmetic depends on your numbers rather than your trade. Worth knowing: specialty trades are often the best value in local search precisely because nobody publishes benchmarks for them, which usually means fewer competitors have bothered to optimise.</div>
       </details>
 
       <details>
         <summary>What if my budget is only fifty dollars a month?</summary>
-        <div class="faq-a">Then the plan will tell you to spend it on the things that work at that level
-          rather than pretend a small paid campaign will perform. A complete Google Business Profile, a
-          steady review process and a website that converts are the highest-return work available to a
-          contractor with a small budget, and they cost time rather than money. We would rather give you
-          that plan than sell you a campaign that cannot clear your ceiling.</div>
+        <div class="faq-a">Then the plan will tell you to spend it on the things that work at that level rather than pretend a small paid campaign will perform. A complete Google Business Profile, a steady review process and a website that converts are the highest-return work available to a contractor with a small budget, and they cost time rather than money. We would rather give you that plan than sell you a campaign that cannot clear your ceiling.</div>
+      </details>
+
+      <details>
+        <summary>What happens if the plan tells me paid advertising will not work?</summary>
+        <div class="faq-a">It says so directly, and it explains why. That result means your break-even cost per lead sits below what the cheapest verified channel in your trade actually costs, so the first job would lose money. The plan then points at the three levers that move the ceiling — average job value, gross margin and close rate — and puts you on the free channels in the meantime. A tool that told every contractor to start advertising would be an advert, not a tool.</div>
       </details>
 
       <details>
         <summary>Does this replace hiring a marketing company?</summary>
-        <div class="faq-a">For some contractors, honestly yes. If your service area is small and your plan
-          comes back as profile work, reviews and response time, you can execute all of that yourself and
-          should. The plan is most useful as a way to know what you are buying before anyone quotes you, so
-          you can tell the difference between a real proposal and a package built for the average
-          client.</div>
+        <div class="faq-a">For some contractors, honestly yes. If your service area is small and your plan comes back as profile work, reviews and response time, you can execute all of that yourself and should. The plan is most useful as a way to know what you are buying before anyone quotes you, so you can tell the difference between a real proposal and a package built for the average client.</div>
+      </details>
+
+      <details>
+        <summary>Can I use it with a keyboard or a screen reader?</summary>
+        <div class="faq-a">Yes. Every control works from the keyboard, including the priority ranking, which responds to the up and down arrow keys as well as dragging and has explicit move buttons. Each step is a labelled fieldset, errors are announced rather than only shown in colour, and the finished plan is ordinary text you can read, print or have read aloud.</div>
       </details>
 
       <details>
         <summary>Do you store the numbers I enter?</summary>
-        <div class="faq-a">No. The entire calculation runs in your browser and nothing leaves your device
-          unless you choose to email the plan to yourself. If you do use that option, we receive the plan
-          and the inputs you entered so we can answer questions about it. We do not sell data and we do not
-          add anyone to a mailing list.</div>
+        <div class="faq-a">No. The entire calculation runs in your browser and nothing leaves your device unless you choose to email the plan to yourself. If you do use that option, we receive the plan and the inputs you entered so we can answer questions about it. We do not sell data and we do not add anyone to a mailing list.</div>
       </details>
 
     </div>
@@ -1480,7 +1912,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
       <div class="ft-brand">
         <img src="/images/advertising-for-contractors-afc-logo.png"
              alt="Advertising For Contractors — marketing and lead generation for the trades"
-             width="260" height="88" loading="lazy">
+             width="260" height="146" loading="lazy">
         <p>Advertising and lead generation built for contracting companies. Founded by a contractor who got
           tired of paying for reports instead of results.</p>
         <div class="ft-contact">
@@ -1568,6 +2000,24 @@ window.addEventListener('scroll', function(){
 }, {passive:true});
 measureHeader();
 
+
+/* ─── Header shrink on scroll ───
+       Class toggles only on threshold crossing, and measureHeader() runs
+       only when the class actually changed — a full remeasure on every
+       scroll event would thrash layout. */
+var hdrEl = document.getElementById('hdr'), shrunk = false;
+function syncHeader(){
+  var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var want = y > 90;
+  if (want !== shrunk){
+    shrunk = want;
+    hdrEl.classList.toggle('shrunk', want);
+    setTimeout(measureHeader, 240);
+  }
+}
+window.addEventListener('scroll', syncHeader, {passive:true});
+syncHeader();
+
 /* ─── Hamburger ─── */
 var burger = document.getElementById('burger'), nav = document.getElementById('nav');
 function closeNav(){
@@ -1586,6 +2036,57 @@ burger.addEventListener('click', function(){
 nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') closeNav(); });
 document.addEventListener('keydown', function(e){
   if (e.key === 'Escape' && nav.classList.contains('open')){ closeNav(); burger.focus(); }
+});
+
+
+/* ─── Desktop nav dropdowns ───
+       Click to toggle everywhere; hover-open only on devices with a real
+       pointer, so a touch on a hybrid laptop doesn't open and instantly
+       close the panel. Escape and outside-click both close. */
+var dds = document.querySelectorAll('.dd');
+function closeDd(dd){
+  dd.classList.remove('open');
+  dd.querySelector('.dd-t').setAttribute('aria-expanded','false');
+}
+function closeAllDd(except){
+  for (var i=0;i<dds.length;i++){ if (dds[i] !== except) closeDd(dds[i]); }
+}
+var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+for (var q=0;q<dds.length;q++){
+  (function(dd){
+    var t = dd.querySelector('.dd-t');
+    t.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = dd.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      closeAllDd(open ? dd : null);
+    });
+    if (fine){
+      var shut = null;
+      dd.addEventListener('mouseenter', function(){
+        if (shut){ clearTimeout(shut); shut = null; }
+        closeAllDd(dd);
+        dd.classList.add('open');
+        t.setAttribute('aria-expanded','true');
+      });
+      /* Grace period, which also covers a diagonal move toward a
+         right-aligned panel where the pointer clips outside .dd. */
+      dd.addEventListener('mouseleave', function(){
+        if (shut) clearTimeout(shut);
+        shut = setTimeout(function(){ closeDd(dd); shut = null; }, 220);
+      });
+    }
+    dd.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') closeDd(dd);
+    });
+    dd.addEventListener('focusout', function(e){
+      if (!dd.contains(e.relatedTarget)) closeDd(dd);
+    });
+  })(dds[q]);
+}
+document.addEventListener('click', function(){ closeAllDd(null); });
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeAllDd(null);
 });
 
 /* ─── Scroll reveal ─── */
@@ -1641,6 +2142,14 @@ var form   = document.getElementById('afcForm'),
     msg    = document.getElementById('afcMsg'),
     submit = document.getElementById('afcSubmit'),
     loadedAt = Date.now();
+
+/* Read the button's own label and the page's own success wording rather
+   than hardcoding the audit form's. Otherwise a contact form relabels
+   itself to "Send my free audit request" the moment you submit it. */
+var submitLabel = submit ? submit.textContent : '';
+var okCopy = (form && form.getAttribute('data-ok'))
+  || 'Got it — that is confirmed on our end. Someone will get back to you within one '
+   + 'business day, usually sooner. If you would rather not wait, call 1-800-481-8638.';
 
 if (form && msg && submit){
 
@@ -1738,9 +2247,9 @@ form.addEventListener('submit', function(e){
   function finish(state){
     if (done) return; done = true;
     submit.disabled = false;
-    submit.textContent = 'Send my free audit request';
+    submit.textContent = submitLabel;
     if (state === 'confirmed'){
-      show('msg-ok', 'Got it — that is confirmed on our end. We will have your audit back within one business day, usually sooner. If you would rather not wait, call 1-800-481-8638.');
+      show('msg-ok', okCopy);
       form.reset();
       document.getElementById('fPageUrl').value = location.href;
     } else if (state === 'unconfirmed'){
@@ -1771,6 +2280,7 @@ form.addEventListener('submit', function(e){
 
 })();
 </script>
+
 <script>
 (function(){
 'use strict';
@@ -1782,8 +2292,9 @@ form.addEventListener('submit', function(e){
 
    Every benchmark below is a published 2026 figure with its source
    recorded. Where no trade-specific benchmark has been published, the
-   trade carries note:'none' and the plan says so rather than showing
-   an invented number.
+   trade carries s:'none' and the plan says so rather than showing an
+   invented number — and, importantly, the verdict and phase copy never
+   describe an unverified estimate as a benchmark.
    ════════════════════════════════════════════════════════════════════ */
 
 var SRC = {
@@ -1792,7 +2303,9 @@ var SRC = {
   bd:  'BaaDigi contractor growth benchmarks, April 2026, citing LocaliQ and Estatehub 2026 data.',
   wt:  'Web Tonic plumbing Google Ads benchmarks, Q1 2026 ($14.6M spend across 524 contractors).',
   none:'No trade-specific cost-per-lead benchmark has been published for this trade that we could verify. ' +
-       'Blended home-services figures are shown for orientation only.'
+       'Blended home-services figures are shown for orientation only.',
+  bl:  'Figures marked as blended are published home-services averages rather than measurements of one ' +
+       'specific trade. They are real data, but they are not your trade\u2019s data.'
 };
 
 var TRADES = {
@@ -1848,6 +2361,14 @@ var TRADES = {
     book:null,seas:'warm',
     ins:'Pool building searches arrive months before the buying decision and the project value is high enough that a single job justifies substantial acquisition cost. Early capture and long nurture beat aggressive closing pressure.'},
 
+  /* Specialty trades: real published blended figures, flagged bl:1 so the
+     plan never presents a home-services average as trade-specific. */
+  other:{n:'Other Trade',
+    ch:[{k:'Google Local Services Ads (blended home services)',v:53,s:'sl',bl:1},
+        {k:'Paid search (blended home services)',v:150,lo:30,hi:500,s:'none'}],
+    book:43.9,seas:'steady',
+    ins:'Specialty trades are frequently the best value in local search precisely because nobody publishes benchmarks for them — which means fewer competitors have bothered to optimise. The blended Local Services Ads figure across 888 contractors was about $53 per lead with a 43.9% book rate, and that is a reasonable starting assumption until you have ninety days of your own tracked data. Your own numbers will beat any average you read, including ours.'},
+
   fencing:{n:'Fencing',
     ch:[{k:'Paid search and Local Services Ads',v:62,lo:40,hi:85,s:'bd'}],
     book:22,seas:'warm',
@@ -1874,7 +2395,7 @@ var PRIO = {
 };
 
 /* ─── state ─── */
-var S = {trade:'',stage:'',area:'',ticket:8500,margin:30,close:25,budget:1500,
+var S = {trade:'',otherName:'',stage:'',area:'',ticket:8500,margin:30,close:25,budget:1500,
          prio:['volume','cost','quality','own']};
 var step = 1, MAX = 7;
 
@@ -1956,10 +2477,21 @@ Array.prototype.forEach.call(document.querySelectorAll('.opt'), function(b){
       document.querySelectorAll('.opt[data-f="'+f+'"]'), function(x){ x.classList.remove('is-on'); });
     b.classList.add('is-on');
     S[f] = b.getAttribute('data-v');
-    if (f === 'trade') tradeHint();
+    if (f === 'trade'){
+      tradeHint();
+      var ow = $('othWrap');
+      if (ow) ow.classList.toggle('on', S.trade === 'other');
+    }
     var err = document.querySelector('.pb-err'); if (err) err.parentNode.removeChild(err);
   });
 });
+
+/* What to call the trade in output — their words if they gave any. */
+function tradeLabel(){
+  var t = TRADES[S.trade];
+  if (S.trade === 'other' && S.otherName) return S.otherName;
+  return t ? t.n : 'Your trade';
+}
 
 function tradeHint(){
   var t = TRADES[S.trade]; if (!t) return;
@@ -1977,6 +2509,10 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-f]'), function(el)
     if (f === 'margin'){ $('pbMarginR').value = Math.max(5, Math.min(70, S.margin)); }
   });
 });
+(function(){
+  var on = $('othName');
+  if (on) on.addEventListener('input', function(){ S.otherName = on.value.trim(); });
+})();
 $('pbMarginR').addEventListener('input', function(){
   S.margin = +this.value; $('pbMargin').value = this.value;
 });
@@ -2050,7 +2586,7 @@ Array.prototype.forEach.call(rank.querySelectorAll('.rk'), function(li){
 Array.prototype.forEach.call(rank.querySelectorAll('.rk-b'), function(b){
   b.addEventListener('click', function(e){
     e.stopPropagation();
-    var li = b.closest('.rk');
+    var li = b.parentNode.parentNode;
     if (b.getAttribute('data-move') === 'up' && li.previousElementSibling)
       rank.insertBefore(li, li.previousElementSibling);
     if (b.getAttribute('data-move') === 'down' && li.nextElementSibling)
@@ -2069,27 +2605,47 @@ function compute(){
   var lpj    = 100 / S.close;
   var jobs   = profit > 0 ? (S.budget / profit) : 0;
 
-  // cheapest verified channel for this trade
-  var cheapest = null, viable = [], blocked = [];
+  /* Cheapest VERIFIED channel drives every judgement below. A trade whose
+     only figure is a blended estimate (s:'none') must never have that number
+     described as a benchmark — the table would say "no verified benchmark"
+     while the verdict called it verified, which is a contradiction a reader
+     will spot immediately. */
+  var cheapestVerified = null, cheapestAny = null, viable = [], blocked = [], verified = [];
+  var hasTradeSpecific = false;
   for (var i=0;i<t.ch.length;i++){
     var c = t.ch[i];
-    if (cheapest === null || c.v < cheapest) cheapest = c.v;
+    if (cheapestAny === null || c.v < cheapestAny) cheapestAny = c.v;
+    if (c.s !== 'none'){
+      verified.push(c);
+      if (!c.bl) hasTradeSpecific = true;
+      if (cheapestVerified === null || c.v < cheapestVerified) cheapestVerified = c.v;
+    }
     (c.v <= be ? viable : blocked).push(c);
   }
+  var hasVerified = verified.length > 0;
+  var ref = hasVerified ? cheapestVerified : cheapestAny;
 
   var tier;
-  if (be < cheapest * 0.85)      tier = 'blocked';
-  else if (be < cheapest * 1.6)  tier = 'tight';
-  else if (be < cheapest * 4)    tier = 'workable';
-  else                           tier = 'strong';
+  if (be < ref * 0.85)      tier = 'blocked';
+  else if (be < ref * 1.6)  tier = 'tight';
+  else if (be < ref * 4)    tier = 'workable';
+  else                      tier = 'strong';
 
-  // budget sanity — 6–12% of revenue is the published healthy band
+  /* 6–12% of revenue is the published healthy band for home services */
   var impliedRevLow  = (S.budget * 12) / 0.12;
   var impliedRevHigh = (S.budget * 12) / 0.06;
 
-  return {t:t,profit:profit,be:be,lpj:lpj,jobs:jobs,cheapest:cheapest,
+  return {t:t,profit:profit,be:be,lpj:lpj,jobs:jobs,
+          cheapest:ref,hasVerified:hasVerified,hasTradeSpecific:hasTradeSpecific,verified:verified,
           viable:viable,blocked:blocked,tier:tier,
           revLow:impliedRevLow,revHigh:impliedRevHigh};
+}
+
+/* Wording that adapts to whether a verified benchmark exists for the trade. */
+function refPhrase(m){
+  if (m.hasTradeSpecific) return 'cheapest verified channel in your trade';
+  if (m.hasVerified)      return 'cheapest published home-services benchmark we could source';
+  return 'cheapest blended home-services estimate available';
 }
 
 function budgetBand(b){
@@ -2129,7 +2685,7 @@ function splitFor(m, band){
   }
   if (m.tier === 'blocked') s = [['Foundation: profile, reviews, website fixes',100]];
 
-  // priority shifts weight without breaking the total
+  /* priority shifts weight without breaking the total */
   if (band !== 'micro' && m.tier !== 'blocked'){
     var shift = 0;
     if (top === 'volume')  shift =  8;
@@ -2145,8 +2701,8 @@ function splitFor(m, band){
   }
   var tot = 0; for (var j=0;j<s.length;j++) tot += s[j][1];
   if (tot !== 100 && s.length) s[0][1] += (100 - tot);
-  // Present largest allocation first so the split always reads coherently,
-  // even when a priority shift moves organic above paid.
+  /* Present largest allocation first so the split always reads coherently,
+     even when a priority shift moves organic above paid. */
   s.sort(function(a,b){ return b[1] - a[1]; });
   return s;
 }
@@ -2166,13 +2722,13 @@ function buildPhases(m, band){
     p1.push('<b>Write the qualifying questions into your intake now.</b> Since lead quality is your first priority, the filter belongs at the front of the process, not in the ad settings.');
 
   if (m.tier === 'blocked'){
-    p2.push('<b>Do not start paid advertising yet.</b> Your break-even of ' + usd(m.be) + ' per lead sits below the cheapest verified channel in your trade at ' + usd(m.cheapest) + '. Paid acquisition would lose money on the first job at these numbers.');
+    p2.push('<b>Do not start paid advertising yet.</b> Your break-even of ' + usd(m.be) + ' per lead sits below the ' + refPhrase(m) + ' at ' + usd(m.cheapest) + '. Paid acquisition would lose money on the first job at these numbers.');
     p2.push('<b>Raise the ceiling instead.</b> Any of three levers works: increase average job value, improve gross margin, or lift close rate. A close rate moving from ' + S.close + '% to ' + Math.min(100, S.close + 10) + '% alone raises your ceiling to ' + usd(m.profit * ((S.close+10)/100)) + ' per lead.');
     p2.push('<b>Compete on the free channels.</b> Map pack ranking, review velocity and response speed cost time rather than money, and they are where a contractor with a tight ceiling genuinely can win.');
     p2.push('<b>Build ' + pages + ' service and service-area pages.</b> Organic search has no cost per lead once it ranks, which makes it the right channel for exactly your situation.');
   } else {
-    // Never call a channel "efficient" when it sits above the ceiling. When
-    // nothing clears, say so and name the lever that would change it.
+    /* Never call a channel "efficient" when it sits above the ceiling. When
+       nothing clears, say so and name the lever that would change it. */
     if (m.viable.length){
       var primary = m.viable[0];
       p2.push('<b>Launch ' + primary.k + ' first.</b> At roughly ' + usd(primary.v) + ' per lead against your ' + usd(m.be) + ' ceiling, this is your most efficient starting channel. Start narrow geographically and widen only once the cost per booked job holds.');
@@ -2180,7 +2736,7 @@ function buildPhases(m, band){
       var near = m.t.ch[0];
       for (var vi=0; vi<m.t.ch.length; vi++) if (m.t.ch[vi].v < near.v) near = m.t.ch[vi];
       var gapClose = Math.ceil(S.close * (near.v / m.be) - S.close);
-      p2.push('<b>Do not launch paid yet — you are close, but not there.</b> The cheapest verified channel in your trade runs about ' + usd(near.v) + ' per lead and your ceiling is ' + usd(m.be) + '. At today\u2019s numbers the first job would break even at best. Lifting your close rate by roughly ' + gapClose + ' points, or raising your average job value, closes that gap and makes this channel profitable.');
+      p2.push('<b>Do not launch paid yet — you are close, but not there.</b> The ' + refPhrase(m) + ' runs about ' + usd(near.v) + ' per lead and your ceiling is ' + usd(m.be) + '. At today\u2019s numbers the first job would break even at best. Lifting your close rate by roughly ' + gapClose + ' points, or raising your average job value, closes that gap and makes this channel profitable.');
       p2.push('<b>Run the free channels hard in the meantime.</b> Map pack position, review velocity and response speed cost time rather than money, and they are genuinely where a contractor sitting near the line can win work this quarter.');
     }
     p2.push('<b>Build ' + pages + ' service and service-area pages.</b> One page per service crossed with your priority markets. These are what rank organically and what paid traffic should land on instead of your homepage.');
@@ -2196,6 +2752,9 @@ function buildPhases(m, band){
     if (top === 'own')
       p2.push('<b>Start moving spend off rented channels now.</b> Since owning your pipeline is your first priority, treat any marketplace leads as a bridge and shift budget toward search and profile work each quarter.');
   }
+
+  if (!m.hasTradeSpecific)
+    p2.push('<b>Track your own cost per lead from day one and trust it over any published figure.</b> No benchmark specific to your trade has been published, so the numbers in this plan are orientation rather than targets. Ninety days of your own tracked data beats every industry average you will ever read.');
 
   p3.push('<b>Deepen organic coverage.</b> Add the questions your customers actually ask, with real answers. This is what earns both rankings and citations in AI-generated answers.');
   p3.push('<b>Structure the site for AI search.</b> Clean structured data, consistent business information everywhere, complete profile, steady reviews. Research published in 2026 estimates only about 1.2% of local businesses get surfaced in AI recommendations — the work overlaps almost entirely with local SEO, so it is sequencing rather than a separate budget.');
@@ -2229,7 +2788,7 @@ function generate(){
   var m = compute(), band = budgetBand(S.budget), t = m.t;
   var stage = STAGE[S.stage], area = AREA[S.area];
 
-  $('planTitle').textContent = t.n + ' Marketing Plan';
+  $('planTitle').textContent = tradeLabel() + ' Marketing Plan';
   var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   $('planMeta').innerHTML =
     esc(stage.n) + ' &middot; ' + esc(area.n) + '<br>' +
@@ -2248,43 +2807,51 @@ function generate(){
   if (m.tier === 'blocked'){
     v.className = 'verdict v-bad';
     h = 'Paid advertising will not clear your ceiling yet';
-    b = 'Your break-even of ' + usd(m.be) + ' per lead sits below the cheapest verified channel in ' +
-        t.n.toLowerCase() + ' at ' + usd(m.cheapest) + '. That is not a reason to give up — it means the ' +
-        'fix is upstream of advertising. Raise your average job value, improve your margin, or lift your ' +
-        'close rate, and the ceiling moves with it. Meanwhile the free channels in Phase 1 below are ' +
-        'genuinely where you can win.';
+    b = 'Your break-even of ' + usd(m.be) + ' per lead sits below the ' + refPhrase(m) + ' at ' +
+        usd(m.cheapest) + '. That is not a reason to give up — it means the fix is upstream of ' +
+        'advertising. Raise your average job value, improve your margin, or lift your close rate, and ' +
+        'the ceiling moves with it. Meanwhile the free channels in Phase 1 below are genuinely where ' +
+        'you can win.';
   } else if (m.tier === 'tight'){
     v.className = 'verdict v-warn';
     h = 'Workable, but the margin for error is thin';
-    b = 'At ' + usd(m.be) + ' per lead you can afford your cheapest channel at ' + usd(m.cheapest) +
+    b = 'At ' + usd(m.be) + ' per lead you can afford the ' + refPhrase(m) + ' at ' + usd(m.cheapest) +
         ', but not by much. Focus everything on one channel done well, and treat lead quality and close ' +
         'rate as the real levers — a few points of close rate moves your ceiling more than any bidding ' +
         'strategy will.';
   } else if (m.tier === 'workable'){
     v.className = 'verdict v-good';
     h = 'The numbers work';
-    b = 'A ceiling of ' + usd(m.be) + ' against a cheapest verified channel at ' + usd(m.cheapest) +
+    b = 'A ceiling of ' + usd(m.be) + ' against a ' + refPhrase(m) + ' at ' + usd(m.cheapest) +
         ' gives you real room. You can run paid acquisition profitably and still have margin to invest ' +
         'in organic underneath it. That combination is what compounds.';
   } else {
     v.className = 'verdict v-good';
     h = 'You have room to compete aggressively';
-    b = 'At ' + usd(m.be) + ' per lead you are well above every published benchmark in your trade. ' +
+    b = 'At ' + usd(m.be) + ' per lead you are well above every published figure in your trade. ' +
         'High-ticket work like this rewards market coverage — the constraint is usually crew capacity ' +
         'rather than lead cost, so build the plan around what you can actually deliver.';
+  }
+  if (!m.hasTradeSpecific){
+    b += ' One caveat worth stating plainly: no cost-per-lead benchmark specific to your trade has been ' +
+         'published that we could source, so the figures above are blended home-services averages. ' +
+         'They are real data, but they are not your trade\u2019s data. Treat them as orientation and ' +
+         'replace them with your own tracked numbers as soon as you have ninety days of them.';
   }
   v.innerHTML = '<h4>' + h + '</h4><p>' + b + '</p>';
 
   /* benchmarks */
   $('benchIntro').textContent =
     'Your ceiling is ' + usd(m.be) + ' per lead. Here is how that compares against published 2026 ' +
-    'cost-per-lead data for ' + t.n.toLowerCase() + '. Anything marked profitable earns money on the ' +
+    'cost-per-lead data for ' + tradeLabel().toLowerCase() + '. Anything marked profitable earns money on the ' +
     'first job alone, before repeat work or referrals.';
   var rows = '', srcKeys = {};
   for (var i=0;i<t.ch.length;i++){
     var c = t.ch[i], ok = c.v <= m.be, na = (c.s === 'none');
     srcKeys[c.s] = 1;
+    if (c.bl) srcKeys.bl = 1;
     var range = (c.lo && c.hi) ? '<small>Typical range ' + usd(c.lo) + '–' + usd(c.hi) + '</small>' : '';
+    if (c.bl) range += '<small>Blended home-services average — not specific to your trade</small>';
     rows += '<div class="bt-row"><span class="bt-l">' + esc(c.k) + range + '</span>' +
             '<span class="bt-v">' + usd(c.v) + '</span>' +
             '<span class="bt-f ' + (na ? 'f-na' : (ok ? 'f-ok' : 'f-no')) + '">' +
@@ -2358,7 +2925,8 @@ function generate(){
   PLAN = plainText(m, band, split, ph, wins);
   $('pePlanText').value = PLAN;
   $('peInputs').value = [
-    'Trade: ' + t.n, 'Stage: ' + stage.n, 'Service area: ' + area.n,
+    'Trade: ' + tradeLabel() + (S.trade === 'other' ? ' (specialty)' : ''),
+    'Stage: ' + stage.n, 'Service area: ' + area.n,
     'Average job: ' + usd(S.ticket), 'Margin: ' + S.margin + '%',
     'Close rate: ' + S.close + '%', 'Budget: ' + usd(S.budget) + '/mo',
     'Break-even CPL: ' + usd(m.be),
@@ -2377,7 +2945,7 @@ function generate(){
 function plainText(m, band, split, ph, wins){
   var t = m.t, L = [];
   function strip(s){ return String(s).replace(/<[^>]+>/g,''); }
-  L.push('CONTRACTOR MARKETING PLAN — ' + t.n.toUpperCase());
+  L.push('CONTRACTOR MARKETING PLAN — ' + tradeLabel().toUpperCase());
   L.push('Generated at advertisingforcontractors.com');
   L.push('');
   L.push('YOUR INPUTS');
@@ -2453,6 +3021,7 @@ $('pbEmailOpen').addEventListener('click', function(){
    hidden-iframe form POST as fallback. Reports confirmed / unconfirmed /
    failed honestly — never claims a delivery it cannot verify.            */
 var pf = $('planForm'), pmsg = $('peMsg'), psub = $('peSubmit'), pLoaded = Date.now();
+var psubLabel = psub ? psub.textContent : 'Send me the plan';
 
 function pShow(kind, text){
   pmsg.className = 'form-msg show ' + kind;
@@ -2518,7 +3087,7 @@ pf.addEventListener('submit', function(e){
   var done = false;
   function finish(st){
     if (done) return; done = true;
-    psub.disabled = false; psub.textContent = 'Send me the plan';
+    psub.disabled = false; psub.textContent = psubLabel;
     if (st === 'confirmed'){
       pShow('msg-ok','Sent and confirmed — check your inbox in the next couple of minutes. If you asked for a second opinion, someone will call within one business day.');
       pf.reset();
@@ -2540,7 +3109,7 @@ pf.addEventListener('submit', function(e){
 
 /* ─── init ─── */
 paint();
-// Preselect a visible, conservative default so the step is never ambiguous.
+/* Preselect a visible, conservative default so the step is never ambiguous. */
 (function(){
   var d = document.querySelector('.ten[data-close="20"]');
   if (d) d.click();
@@ -2549,5 +3118,7 @@ renumber();
 })();
 </script>
 
+<!-- RIVET — shared chatbot, one file, every page -->
+<script src="/rivet.js" defer></script>
 </body>
 </html>
