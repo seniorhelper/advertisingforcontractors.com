@@ -237,10 +237,9 @@
   --paper:#F4F4F1;
   --paper-2:#EAEAE4;
   --white:#FFFFFF;
-  /* Logo plate colour. The AFC PNG carries its own light background,
-     so header and footer match it rather than fighting it. Change
-     this one value to match the exported logo exactly. */
-  --hdr-bg:#F2F2EF;
+  /* Plain white. The logo PNG is #FEFEFE with no alpha, so anything other
+     than white puts a visible rectangle around the mark. */
+  --hdr-bg:#FFFFFF;
   --slate:#5C6672;
   --slate-lt:#8A939E;
   --line:#DDDDD6;
@@ -248,7 +247,7 @@
   --shadow:0 12px 40px rgba(13,17,23,.10);
   --shadow-lg:0 24px 70px rgba(13,17,23,.16);
   --wrap:1200px;
-  --hdr:156px;
+  --hdr:196px;
   --display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;
   --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'Courier New',monospace;
@@ -317,8 +316,18 @@ header{position:sticky;top:0;z-index:900;background:var(--hdr-bg);
   border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(13,17,23,.04)}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;
   padding:11px 0;min-height:var(--hdr)}
+/* Full-size logo where it earns attention, compact once reading starts.
+   A 176px bar pinned to the top of a laptop viewport costs too much. */
+.hdr-in{transition:padding .22s ease,min-height .22s ease}
+header.shrunk .hdr-in{padding:7px 0;min-height:0}
+header.shrunk .brand img{width:210px;height:118px}
+header.shrunk{box-shadow:0 6px 22px rgba(13,17,23,.11)}
 .brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
-.brand img{width:390px;height:133px;object-fit:contain;object-position:left center}
+/* Box matches the PNG's native 1.777:1 exactly. Off-ratio boxes get
+   letterboxed by object-fit:contain, which is what kept the mark small no
+   matter how much the box grew. At 308px the artwork renders 232px. */
+.brand img{width:308px;height:173px;object-fit:contain;object-position:left center;
+  transition:width .22s ease,height .22s ease}
 .hdr-r{display:flex;align-items:center;gap:14px}
 .hdr-tel{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);
   font-size:1.35rem;font-weight:800;letter-spacing:.02em;color:var(--ink);
@@ -358,6 +367,9 @@ header{position:sticky;top:0;z-index:900;background:var(--hdr-bg);
 .dd{position:relative}
 .dd-t svg{transition:transform .2s}
 .dd.open .dd-t svg{transform:rotate(180deg)}
+/* The bridge. Without it the 10px gap between button and panel breaks the
+   hover chain and the menu closes before you can reach the links. */
+.dd-p::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
 .dd-p{position:absolute;top:calc(100% + 10px);right:0;background:var(--ink);
   border-radius:6px;box-shadow:0 22px 60px rgba(13,17,23,.34);padding:16px;
   display:none;z-index:920;border:1px solid rgba(255,255,255,.08)}
@@ -623,7 +635,7 @@ header{position:sticky;top:0;z-index:900;background:var(--hdr-bg);
 /* ═══ FOOTER (white, to blend with the logo plate) ═══ */
 footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 34px}
 .ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px}
-.ft-brand img{width:300px;height:102px;object-fit:contain;object-position:left center;
+.ft-brand img{width:260px;height:146px;object-fit:contain;object-position:left center;
   margin-bottom:20px}
 .ft-brand p{font-size:.95rem;color:var(--slate);line-height:1.7;max-width:38ch}
 .ft-contact{margin-top:20px;font-family:var(--mono);font-size:.86rem;line-height:2}
@@ -654,8 +666,9 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
   .step:last-child{border-bottom:none}
 }
 @media(max-width:820px){
-  :root{--hdr:124px}
-  .brand img{width:300px;height:102px}
+  :root{--hdr:164px}
+  .brand img{width:250px;height:141px}
+  header.shrunk .brand img{width:180px;height:101px}
   .hdr-tel{font-size:1.08rem}
   .util-in{justify-content:center;text-align:center;font-size:.7rem}
   /* Portrait source in a portrait viewport — scrim goes vertical. */
@@ -670,10 +683,11 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
   .band-in{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:640px){
-  :root{--hdr:104px}
+  :root{--hdr:142px}
   body{font-size:16px}
   .wrap{padding:0 18px}
-  .brand img{width:240px;height:82px}
+  .brand img{width:210px;height:118px}
+  header.shrunk .brand img{width:160px;height:90px}
   .hdr-tel span{display:none}
   .form-grid{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
@@ -707,7 +721,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
     <a class="brand" href="/" aria-label="Advertising For Contractors — home">
       <img src="/images/advertising-for-contractors-afc-logo.png"
            alt="AFC — Advertising For Contractors logo"
-           width="390" height="133" fetchpriority="high">
+           width="308" height="173" fetchpriority="high">
     </a>
     <div class="hdr-r">
       <div class="hdr-stack">
@@ -1717,7 +1731,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
       <div class="ft-brand">
         <img src="/images/advertising-for-contractors-afc-logo.png"
              alt="Advertising For Contractors — marketing and lead generation for the trades"
-             width="300" height="102" loading="lazy">
+             width="260" height="146" loading="lazy">
         <p>Advertising and lead generation built for contracting companies. Founded by a contractor who got
           tired of paying for reports instead of results.</p>
         <div class="ft-contact">
@@ -1806,6 +1820,24 @@ window.addEventListener('scroll', function(){
 }, {passive:true});
 measureHeader();
 
+
+/* ─── Header shrink on scroll ───
+       Class toggles only on threshold crossing, and measureHeader() runs
+       only when the class actually changed — a full remeasure on every
+       scroll event would thrash layout. */
+var hdrEl = document.getElementById('hdr'), shrunk = false;
+function syncHeader(){
+  var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var want = y > 90;
+  if (want !== shrunk){
+    shrunk = want;
+    hdrEl.classList.toggle('shrunk', want);
+    setTimeout(measureHeader, 240);
+  }
+}
+window.addEventListener('scroll', syncHeader, {passive:true});
+syncHeader();
+
 /* ─── Hamburger ─── */
 var burger = document.getElementById('burger'), nav = document.getElementById('nav');
 function closeNav(){
@@ -1850,12 +1882,19 @@ for (var q=0;q<dds.length;q++){
       closeAllDd(open ? dd : null);
     });
     if (fine){
+      var shut = null;
       dd.addEventListener('mouseenter', function(){
+        if (shut){ clearTimeout(shut); shut = null; }
         closeAllDd(dd);
         dd.classList.add('open');
         t.setAttribute('aria-expanded','true');
       });
-      dd.addEventListener('mouseleave', function(){ closeDd(dd); });
+      /* Grace period, which also covers a diagonal move toward a
+         right-aligned panel where the pointer clips outside .dd. */
+      dd.addEventListener('mouseleave', function(){
+        if (shut) clearTimeout(shut);
+        shut = setTimeout(function(){ closeDd(dd); shut = null; }, 220);
+      });
     }
     dd.addEventListener('click', function(e){
       if (e.target.tagName === 'A') closeDd(dd);
@@ -2111,6 +2150,6 @@ if (hv){
 </script>
 
 <!-- ══════════ RIVET — shared chatbot. One file, all 26 pages. ══════════ -->
-<script src="/js/rivet.js" defer></script>
+<script src="/rivet.js" defer></script>
 </body>
 </html>
