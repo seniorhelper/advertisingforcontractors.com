@@ -408,6 +408,9 @@ header{position:sticky;top:0;z-index:900;background:var(--white);
 .card-go::after{content:'→';transition:transform .18s}
 .card:hover .card-go::after{transform:translateX(4px)}
 
+.tool-card{border-top:4px solid var(--lime)}
+.tool-card .card-go::before{content:'\2193';margin-right:6px;font-weight:700}
+
 /* trade tiles */
 .trades{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px}
 .trade{position:relative;border-radius:8px;overflow:hidden;text-decoration:none;color:#fff;
@@ -687,6 +690,14 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         <a href="/contractor-facebook-ads/">Facebook &amp; Social Ads</a>
         <a href="/contractor-lead-generation/">Lead Generation</a>
         <a href="/ai-search-optimization-contractors/">AI Search Optimization</a>
+      </div>
+      <div class="nav-col">
+        <h2>Free Tools</h2>
+        <a href="/contractor-marketing-tools/">All Free Tools</a>
+        <a href="/contractor-marketing-plan-builder/">Marketing Plan Builder</a>
+        <a href="/contractor-website-scorecard/">Website Scorecard</a>
+        <a href="/contractor-marketing-tools/#tracker">Lead &amp; Job Tracker</a>
+        <a href="/#calculator">Break-Even Lead Cost Worksheet</a>
       </div>
       <div class="nav-col">
         <h2>Company</h2>
@@ -1068,6 +1079,59 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════ FREE TOOLS ══════════ -->
+<section class="sec sec-paper" id="tools">
+  <div class="wrap">
+    <div class="sec-head rv" style="max-width:80ch">
+      <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
+        <span class="level-lbl">Free, no email required</span></div>
+      <h2>What free tools can help you figure this out?</h2>
+      <p class="spk-answer">Three of them, all free and none of them gated behind a form. Advertising is
+        genuinely confusing when it isn't your job, and most contractors are guessing about where to start.
+        These are built to replace the guessing with arithmetic. Use them and never call us &mdash; that's
+        fine.</p>
+    </div>
+
+    <div class="grid-3 rv">
+      <a class="card tool-card" href="/contractor-marketing-plan-builder/">
+        <span class="card-tag">Start here</span>
+        <h3>Marketing Plan Builder</h3>
+        <p>Answer seven questions about your trade, your numbers and your goals. You get a real
+          twelve-month plan back &mdash; what to fix first, which channels in what order, how to split the
+          budget, and your break-even measured against your trade's actual 2026 lead costs. Download it or
+          have it emailed to you.</p>
+        <span class="card-go">Build my plan</span>
+      </a>
+
+      <a class="card tool-card" href="/contractor-website-scorecard/">
+        <span class="card-tag">Most important asset</span>
+        <h3>Website Scorecard</h3>
+        <p>Your website is where every channel eventually sends people. If it doesn't convert, everything
+          upstream of it is wasted money. Twenty-five checks across speed, conversion path, trust signals,
+          local SEO and AI readiness. Weighted score, letter grade, and a fix list ordered by what's free
+          versus what's worth paying for.</p>
+        <span class="card-go">Score my website</span>
+      </a>
+
+      <a class="card tool-card" href="/contractor-marketing-tools/#tracker">
+        <span class="card-tag">Keep it working</span>
+        <h3>Lead &amp; Job Tracker</h3>
+        <p>A spreadsheet with the formulas already written. Log leads by source and date; it calculates
+          cost per lead, close rate, cost per booked job and revenue by channel automatically. Most
+          contractors can't answer which channel produced last month's customers. This answers it.</p>
+        <span class="card-go">Download the tracker</span>
+      </a>
+    </div>
+
+    <p class="rv" style="margin-top:28px;color:var(--slate);max-width:78ch">
+      No email wall, no drip sequence, no "unlock" step. If they're useful, use them. If you'd rather
+      someone just look at your specific situation, that's what the
+      <a href="/free-contractor-marketing-audit/">free audit</a> is for. See
+      <a href="/contractor-marketing-tools/">all free contractor tools</a>.
+    </p>
   </div>
 </section>
 
@@ -1571,6 +1635,9 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
         <a href="/contractor-lead-generation/">Contractor lead generation</a>
         <a href="/ai-search-optimization-contractors/">AI search optimization</a>
         <a href="/free-contractor-marketing-audit/">Free marketing audit</a>
+        <a href="/contractor-marketing-tools/">Free contractor tools</a>
+        <a href="/contractor-marketing-plan-builder/">Marketing plan builder</a>
+        <a href="/contractor-website-scorecard/">Website scorecard</a>
       </div>
 
       <div class="ft-col">
@@ -1590,6 +1657,7 @@ footer{background:var(--white);border-top:3px solid var(--ink);padding:64px 0 34
 
     <div class="ft-bot">
       <p>&copy; 2026 Advertising For Contractors. All rights reserved.
+        <a href="/accessibility/">Accessibility</a> &middot;
         <a href="https://eyetoad.com/privacy-policy/" rel="noopener">Privacy policy</a></p>
       <div class="ft-powered">
         <span style="font-family:var(--mono);font-size:.78rem;color:var(--slate)">Powered by</span>
@@ -1742,6 +1810,8 @@ var form   = document.getElementById('afcForm'),
     submit = document.getElementById('afcSubmit'),
     loadedAt = Date.now();
 
+if (form && msg && submit){
+
 document.getElementById('fPageUrl').value = location.href;
 
 function show(kind, text){
@@ -1864,6 +1934,8 @@ form.addEventListener('submit', function(e){
     iframePost(data, finish);
   }
 });
+
+} /* end form guard */
 
 /* ─── Hero video: don't fight autoplay policies, just fall back to the scrim ─── */
 ['heroVid','heroVidMobile'].forEach(function(id){
