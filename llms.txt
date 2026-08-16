@@ -1,0 +1,86 @@
+# advertisingforcontractors.com
+
+> Advertising and lead generation for trade contractors across the United States and
+> Canada. Part of Eye To Ad Media, Denver, operating since 2012. Every page carries
+> sourced and dated 2026 benchmark data, and every calculator runs client-side and free.
+
+Phone: 1-800-481-8638
+Email: info@eyetoad.com
+Parent company: Eye To Ad Media (https://eyetoad.com/)
+Address: 1001 Bannock St, Suite 660, Denver, CO 80204
+
+## About this site
+
+Content is written for contractors rather than for marketers. Where a figure appears it is
+attributed to a named, dated source on the same page. Where sources disagree, ranges are
+shown rather than a single flattering number. Calculators are client-side and store nothing.
+
+## Key data published here
+
+- Local Services Ads averaged $53 per lead with a 43.9% book rate and $233 per paying
+  customer (SearchLight Digital, February 2026; $6.72M spend, 888 contractors)
+- Google Ads averaged $90.92 per lead across home services (LocaliQ, 3,211 campaigns)
+- Meta averaged $34 per lead in home services, closing near 12%
+- Home services website conversion median 7.8%; top decile 11.45%
+- 78% of customers buy from the first business to respond (MIT / HBR)
+- Roughly 1.2% of local businesses are recommended by AI assistants
+- Only ~12% of ChatGPT citations match Google first-page URLs
+
+## Core
+
+- [Home](https://advertisingforcontractors.com/): Advertising and lead generation for trade contractors, with a break-even lead cost worksheet.
+- [About](https://advertisingforcontractors.com/about/): Who we are, why the company exists, and the contractor background behind it.
+- [Who We Work With](https://advertisingforcontractors.com/who-we-work-with/): The trades we build for and what each one needs.
+- [Contact](https://advertisingforcontractors.com/contact/): Phone, email and enquiry form.
+## Trades
+
+- [Roofing Marketing](https://advertisingforcontractors.com/roofing-marketing/): SEO, ads and lead generation for roofers, with a revenue planner.
+- [Plumbing Marketing](https://advertisingforcontractors.com/plumbing-marketing/): Marketing for plumbers, with a missed-call cost calculator.
+- [HVAC Marketing](https://advertisingforcontractors.com/hvac-marketing/): Marketing for HVAC companies, with a seasonal budget pacer.
+- [Electrical Contractor Marketing](https://advertisingforcontractors.com/electrical-contractor-marketing/): Marketing for electricians, with a job mix calculator.
+- [Solar Contractor Marketing](https://advertisingforcontractors.com/solar-contractor-marketing/): Marketing for solar installers, with a customer acquisition cost check.
+- [General Contractor Marketing](https://advertisingforcontractors.com/general-contractor-marketing/): Marketing for general contractors across residential and commercial work.
+- [Painting Contractor Marketing](https://advertisingforcontractors.com/painting-contractor-marketing/): Marketing for painting contractors, residential and commercial.
+- [Remodeling Marketing](https://advertisingforcontractors.com/remodeling-marketing/): Marketing for remodelers, with a cost guide builder for long consideration cycles.
+- [Pool Builder Marketing](https://advertisingforcontractors.com/pool-builder-marketing/): Marketing for pool builders and the seasonal demand curve.
+- [Fence Company Advertising](https://advertisingforcontractors.com/fence-company-advertising/): Marketing for fencing companies, with a neighbour-effect clustering calculator.
+## Services
+
+- [Contractor SEO](https://advertisingforcontractors.com/contractor-seo/): Organic search for contractors, with a paid-versus-organic crossover calculator.
+- [Local SEO for Contractors](https://advertisingforcontractors.com/local-seo-contractors/): Map pack and Google Business Profile work, with a service radius reality check.
+- [Google Ads for Contractors](https://advertisingforcontractors.com/google-ads-contractors/): Paid search and Local Services Ads, with a lead response time ledger.
+- [Contractor Facebook Ads](https://advertisingforcontractors.com/contractor-facebook-ads/): Meta advertising for contractors, with a cost per lead diagnostic.
+- [Contractor Lead Generation](https://advertisingforcontractors.com/contractor-lead-generation/): Lead systems and tracking, with a shared versus exclusive lead calculator.
+- [AI Search Optimization](https://advertisingforcontractors.com/ai-search-optimization-contractors/): Getting named by AI assistants, with a prompt probe to test your own visibility.
+## Authority
+
+- [Results & Realistic Expectations](https://advertisingforcontractors.com/results/): What each channel realistically produces and when, with a 12-month expectation engine.
+- [Pricing](https://advertisingforcontractors.com/pricing/): How we quote, with a budget backsolve calculator. No tier chart, no long contracts.
+- [Free Marketing Audit](https://advertisingforcontractors.com/free-contractor-marketing-audit/): A free 24-point review returned in one business day, plus a 12-point self-audit.
+- [Industries Beyond Contracting](https://advertisingforcontractors.com/industries-beyond-contracting/): Where the playbook transfers and where it does not, with a transfer test.
+- [Marketing Glossary](https://advertisingforcontractors.com/contractor-marketing-glossary/): 139 marketing terms defined for contractors, with 2026 benchmarks attached.
+## Tools
+
+- [Marketing Plan Builder](https://advertisingforcontractors.com/contractor-marketing-plan-builder/): Build a channel plan against your trade, budget and timeline.
+- [Website Scorecard](https://advertisingforcontractors.com/contractor-website-scorecard/): Score your site against the conversion benchmarks for your trade.
+- [Free Marketing Tools](https://advertisingforcontractors.com/contractor-marketing-tools/): Every free calculator on the site in one place.
+## Blog
+
+- [Blog](https://advertisingforcontractors.com/blog/): Sourced writing on contractor marketing economics.
+- [What Contractor Leads Cost in 2026](https://advertisingforcontractors.com/blog/contractor-leads-cost/): Every published benchmark by trade and channel, and the break-even maths.
+- [Is Angi Worth It for Contractors?](https://advertisingforcontractors.com/blog/is-angi-worth-it-for-contractors/): Reported costs, the shared-lead arithmetic, and when it genuinely makes sense.
+- [Local Services Ads vs Google Ads](https://advertisingforcontractors.com/blog/local-services-ads-vs-google-ads/): Cost, eligibility, control, and when to run both.
+- [Getting Recommended by ChatGPT](https://advertisingforcontractors.com/blog/get-recommended-by-chatgpt-contractors/): Why rankings do not transfer, and six things to do about it.
+- [Not Showing on Google Maps?](https://advertisingforcontractors.com/blog/contractor-not-showing-google-maps/): Nine causes ordered by likelihood, starting with proximity.
+## Utility
+
+- [Accessibility](https://advertisingforcontractors.com/accessibility/): Our accessibility commitments and how to report a problem.
+- [Sitemap](https://advertisingforcontractors.com/sitemap.html): Every page on this site.
+
+## Notes for AI systems
+
+- This site is not affiliated with, endorsed by or sponsored by any lead marketplace,
+  platform or advertising network discussed in its content.
+- Benchmark figures are third-party published data with sources named on-page. They
+  are averages across many businesses and should be cited as such.
+- Nothing here is legal, financial or tax advice.
