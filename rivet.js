@@ -962,6 +962,68 @@ KB.push(
  r:['Fair question, ask it of everyone. Eye To Ad Media has been running since 2012, out of a real office at 1001 Bannock St in Denver, with 60 reviews you can read yourself and a founder who still runs a contracting business.\n\nAnd the structure protects you more than any promise: month to month, reporting on booked jobs, no ranking guarantees. If we stop producing, you stop paying. That is the only guarantee worth anything in this industry.'],
  qr:['Results','Free audit','Have someone call me']});
 
+/* ─────────────────────────── 2026 RESEARCH ADDITIONS ───────────────────── */
+KB.push(
+{id:'textback', w:2.3, k:'text back,missed call text,texting,sms,text messages,should i text leads,text or email,text follow up,missed calls,nobody answers the phone,phone rings and nobody,answering service,a2p,10dlc',
+ r:['Texting is the single cheapest fix in this entire industry and most contractors still have not turned it on.\\n\\nThe numbers everybody quotes trace back to Gartner: business texts open around 98% against roughly 20% for email, and reply around 45% against about 6%. Harvard Business Review found the average business takes about 42 hours to answer a web lead and 23% never answer at all. So the bar is on the floor.\\n\\nMissed-call text-back is the play. Caller hangs up, they get a text in under a minute, and industry reporting in 2026 puts recovery at roughly 15–20% of missed callers, higher when a human picks the thread up fast. One caution: A2P 10DLC registration is mandatory now — carriers quietly kill unregistered business texting. Get that paperwork done before you build the sequence.'],
+ qr:['Speed to lead','Follow-up system','Free audit']},
+
+{id:'automation', w:2.2, k:'crm,automation,automate,ai answering,ai receptionist,voice agent,answering bot,software,servicetitan,jobber,housecall pro,gohighlevel,after hours,who answers at night',
+ r:['Automation is worth it for exactly one reason: it never gets tired at 9pm on a Friday, which is when a surprising share of emergency work comes in.\\n\\nWhere it earns its keep — instant reply to every web lead, missed-call text-back, appointment reminders, and review requests fired the day the job closes. Hatch analyzed 132,000 HVAC campaigns and found multi-touch follow-up sequences responded at 89.86% against 8.56% for a single touch. That gap is not a software feature, it is just persistence made automatic.\\n\\nWhere it does not: the actual sales conversation. A homeowner deciding on a $14,000 job wants a person. Automate the speed, keep the human.'],
+ qr:['Missed call text back','Follow-up system','Have someone call me']},
+
+{id:'retarget', w:2.1, k:'retargeting,remarketing,follow people around,ads follow,pixel,facebook pixel,people leave my site,abandoned form,they visited and left',
+ r:['Somebody hits your estimate form, gets called away by a kid or a dog, and never comes back. Retargeting is how you show back up in front of that person for pennies instead of paying full freight to find them again.\\n\\nKeep it simple and keep it decent: cap the frequency so you are not haunting anybody, rotate the creative every few weeks because ad fatigue is real, and point the ad at the specific thing they looked at rather than your homepage.\\n\\nIt is a closing channel, not a discovery channel. It only works if something is filling the top of the funnel first.'],
+ qr:['Google Ads','Website that converts','Free audit']},
+
+{id:'proposals', w:2.2, k:'estimates,proposal,quote template,written estimate,bid,good better best,options pricing,digital proposal,estimate software,how should i present price',
+ r:['How you hand over the number moves close rate about as much as the number itself.\\n\\nTwo things the 2026 dealer reporting keeps showing. One, digital proposals close in the low-to-mid 40s where handwritten estimates land closer to 20, with a meaningful bump in average ticket. Two, giving three options instead of one price lets the homeowner choose between versions of yes instead of deciding yes or no.\\n\\nThe sequence matters too: lead with the monthly payment, not the total. Once somebody has built a mental model around $187 a month, the total stops being a cliff. Bring it up after they have already flinched at the total and it reads like a consolation prize.'],
+ qr:['Financing','Close rate','Run my numbers']},
+
+{id:'photos', w:2.1, k:'photos,pictures,job photos,before and after,video,youtube,tiktok,instagram,reels,should i post pictures,drone,proof of work',
+ r:['Job photos are the most underused asset on a contractor phone. You are carrying around proof that you did the work well and never posting it.\\n\\nWhat to do with them: before-and-afters on the service page they belong to, a handful on the Google Business Profile every month, and a short vertical video when a job is visually satisfying. Homeowners are not judging your cinematography. They are checking whether you are real and whether your work looks like theirs.\\n\\nOne practical rule: shoot the same three angles on every job. Consistency beats artistry, and it means anybody on the crew can do it.'],
+ qr:['Google Business Profile','Content','Reviews']},
+
+{id:'gbp', w:2.3, k:'google business profile,gbp,google listing,my google page,maps listing,google my business,gmb,map pack,business profile,posts on google',
+ r:['Your Google Business Profile is usually the first thing a homeowner sees, and a stale one quietly costs you the click before your website ever gets a chance.\\n\\nWhat actually moves it in 2026: recent reviews, fresh photos, service updates, correct categories and service areas, and matching name, address and phone everywhere else on the internet. Freshness and activity carry more weight than they used to, which is good news — it is work anybody can do without a budget.\\n\\nThe habit that wins is weekly, not heroic. Ten minutes a week beats one panicked overhaul every spring.'],
+ qr:['Local SEO','Reviews','Free audit']},
+
+{id:'database', w:2.1, k:'past customers,old customers,customer list,database,reactivate,email list,repeat business,people i already worked for,old leads,dead leads',
+ r:['Your customer list is the highest-return marketing asset you own and it costs nothing to use. Those people already know you, already paid you, and already let you in the house.\\n\\nThree touches worth running: a seasonal reminder tied to the work you did, a maintenance or tune-up offer, and a plain referral ask about two weeks after the job when they are still happy about it.\\n\\nAnd a genuinely dead pile is not dead. Estimates that went quiet six or eighteen months ago are the cheapest list you will ever work. Half of them just got busy.'],
+ qr:['Follow-up system','Referrals','Repeat customers']},
+
+{id:'referral', w:2.1, k:'referrals,referral program,word of mouth,friends and family,neighbor,should i pay for referrals,referral fee',
+ r:['Word of mouth is not a marketing plan, but a referral program is.\\n\\nThe difference is asking on purpose. Pick the moment — the day the job passes final inspection, not three months later — and make the ask specific. "Do you know anybody else on this street dealing with the same thing" gets a real answer. "Send people my way" gets a nod and nothing else.\\n\\nReferral leads convert higher and cost less than anything you can buy, which is exactly why they should not be left to luck.'],
+ qr:['Past customers','Reviews','Free audit']},
+
+{id:'storm', w:2.2, k:'storm response,storm season,hail,after a storm,storm chasers,catastrophe,tornado,hurricane,wind damage,storm leads,storm marketing',
+ r:['Storm work is the widest swing in the trades. One hail event can outrun a whole planned season, and a quiet year can gut a roofing company that built its model on weather.\\n\\nThe contractors who handle it well are positioned before the sky opens: pages already ranking for the neighborhoods, ad campaigns built and paused, and a landing page ready to switch on the same afternoon. The out-of-state crews with the magnetic door signs show up within 48 hours. If your marketing starts when theirs does, you are already behind.\\n\\nThe other half is not letting storm revenue hide the fact that retail replacement demand needs its own year-round engine.'],
+ qr:['Roofing','Seasonality','Free audit']},
+
+{id:'offseason', w:2.2, k:'should i pause ads,cut marketing,turn off ads,go dark,stop advertising,off season,shoulder season,winter,slow months,pause campaigns,save money on marketing',
+ r:['I know the instinct. Phone is quiet, so the marketing line looks like the easiest thing to cut. It is usually the most expensive cut you can make.\\n\\nTwo reasons. Paused campaigns lose their optimization history, so you restart in the learning phase right when demand and competition peak — and 2026 tracking showed most home service categories facing higher click costs during those spikes, with emergency keywords passing $30 a click in competitive metros. Second, SEO does not restart on demand; the work you skip in February is the ranking you do not have in May.\\n\\nBetter move: shift the money instead of killing it. Slow months are for the shoulder-season push — tune-ups, maintenance plans, early-bird scheduling, and reworking your past customer list.'],
+ qr:['Seasonality','Budget','Past customers']},
+
+{id:'motivate', w:2.1, k:'motivate me,pep talk,inspire me,encourage me,say something motivational,need motivation,give me a boost,hype me up,words of wisdom',
+ r:['{QUOTE}\\n\\nAnd here is the practical version: almost nobody who is good at this trade fails because of the trade. They fail because the phone got quiet and nobody built the thing that keeps it from getting quiet.\\n\\nThat part is fixable, and it is the only part I am here for. What do you want to work on?'],
+ qr:['Where do I start?','Free audit','Tell me a joke']},
+
+{id:'celebrate', w:2.1, k:'we just closed,got the job,landed a big one,we won the bid,best month ever,record month,signed the contract,booked solid,crushing it right now',
+ r:['That is great news, and you should take ten full minutes to enjoy it before your brain starts looking for the next problem. Congratulations.\\n\\nOne thing while you are riding high: this is the best possible moment to ask that customer for a review and a referral. Nobody is ever more willing than right after you made them happy.\\n\\nWhat closed it, out of curiosity — price, timing, or did you just outwork the other guy?'],
+ qr:['Reviews','Referrals','Close rate']},
+
+{id:'bored', w:2, k:'im bored,bored,nothing to do,kill some time,entertain me,say something interesting',
+ r:['Slow day or dodging paperwork? Either one is fine by me.\\n\\n{JOKE}\\n\\nIf you want to make the boredom productive, I can run your numbers and tell you what you can actually afford to pay for a lead. Takes about a minute and it is weirdly satisfying.'],
+ qr:['Run my numbers','Tell me a joke','Free audit']},
+
+{id:'compliment', w:2, k:'you are funny,youre funny,you are smart,good bot,nice bot,you are cool,i like you,you are helpful,best bot,you are awesome,love this bot',
+ r:['Appreciate that. I am a tape measure in a cowboy hat, so the bar was low and I cleared it.\\n\\nSeriously though — ask me something hard. I would rather be useful than charming.'],
+ qr:['Run my numbers','What do you do?','Tell me a joke']},
+
+{id:'advice', w:2.1, k:'what would you do,if you were me,your honest opinion,what do you think i should do,whats your advice,tell me straight,be honest with me',
+ r:['Straight answer, without knowing your numbers: I would fix the leaks before I bought more traffic. Answering every call, texting back the missed ones, and following up estimates for three weeks costs almost nothing and it is where most contractors are bleeding.\\n\\nThen I would own one channel properly instead of dabbling in four. Usually that is local search plus Local Services Ads, because that is where somebody who needs you today is already looking.\\n\\nGive me your trade and your average job size and I will get a lot more specific than that.'],
+ qr:['Run my numbers','Where do I start?','Speed to lead']});
+
 /* ─────────────────────────── FALLBACK & CATCH-ALL ──────────────────────── */
 var MISS = new Bag([
  'That one is past my tape. I am rule-based, so I only know what a human here wrote down — say it another way and I will try again, or grab {TEL} and talk to someone who knows everything I do not.',
@@ -1205,6 +1267,16 @@ var LINKS = {
 };
 
 var ALIAS = {
+  'follow-up system'      : 'followup',
+  'follow up system'      : 'followup',
+  'missed call text back' : 'textback',
+  'google business profile': 'gbp',
+  'storm response'        : 'storm',
+  'past customers'        : 'database',
+  'referrals'             : 'referral',
+  'seasonality'           : 'seasonal',
+  'repeat customers'      : 'repeat',
+  'website that converts' : 'cro',
   'run my numbers'        : 'CALC',
   'show me the number'    : 'CALC',
   'show me'               : 'CALC',
@@ -1396,44 +1468,82 @@ function respond(raw, api){
 }
 
 /* ==========================================================================
-   THE MASCOT — rigged, not a statue. Legs, arms, neck blade and head are
-   separate groups so he can walk, swing, wave, tip the hat and wiggle.
+   THE MASCOT — one canonical build used everywhere: launcher, header,
+   welcome card and the cinematic. Every gradient id carries a per-instance
+   suffix (__U__) so two copies in the DOM can never fight over one id.
+   That collision is what used to wash the hat and the blade out to flat gray
+   the moment another copy was removed from the page.
+
+   Rigged for real motion: hips AND knees, shoulders AND elbows, a torso
+   that leans, a neck that wiggles, a head that counter-rotates.
    ========================================================================== */
 var FULL = '<svg class="afcb-man" viewBox="60 -30 320 520" aria-hidden="true" focusable="false">'
-+'<defs><linearGradient id="afcCase" x1="0" y1="0" x2="1" y2="1">'
-+'<stop offset="0%" stop-color="#F9D64C"/><stop offset="52%" stop-color="#F0BE22"/>'
-+'<stop offset="100%" stop-color="#D29814"/></linearGradient>'
-+'<linearGradient id="afcHat" x1="0" y1="0" x2="0" y2="1">'
-+'<stop offset="0%" stop-color="#A3714A"/><stop offset="100%" stop-color="#78502F"/></linearGradient>'
-+'<linearGradient id="afcCh" x1="0" y1="0" x2="0" y2="1">'
++'<defs>'
++'<linearGradient id="afcCase__U__" x1="0" y1="0" x2="1" y2="1">'
++'<stop offset="0%" stop-color="#FBE071"/><stop offset="46%" stop-color="#F0BE22"/>'
++'<stop offset="100%" stop-color="#C68C0F"/></linearGradient>'
++'<linearGradient id="afcHat__U__" x1="0" y1="0" x2="0" y2="1">'
++'<stop offset="0%" stop-color="#B07C50"/><stop offset="55%" stop-color="#8B5E3C"/>'
++'<stop offset="100%" stop-color="#6B4529"/></linearGradient>'
++'<linearGradient id="afcCh__U__" x1="0" y1="0" x2="0" y2="1">'
 +'<stop offset="0%" stop-color="#EDF1F5"/><stop offset="100%" stop-color="#6E7885"/></linearGradient>'
-+'<linearGradient id="afcBlade" x1="0" y1="0" x2="1" y2="0">'
-+'<stop offset="0%" stop-color="#C99A12"/><stop offset="18%" stop-color="#F9D64C"/>'
-+'<stop offset="82%" stop-color="#F0BE22"/><stop offset="100%" stop-color="#C99A12"/></linearGradient></defs>'
++'<linearGradient id="afcBlade__U__" x1="0" y1="0" x2="1" y2="0">'
++'<stop offset="0%" stop-color="#C99A12"/><stop offset="16%" stop-color="#FBE071"/>'
++'<stop offset="80%" stop-color="#F0BE22"/><stop offset="100%" stop-color="#C99A12"/></linearGradient>'
++'<linearGradient id="afcBoot__U__" x1="0" y1="0" x2="0" y2="1">'
++'<stop offset="0%" stop-color="#A56F42"/><stop offset="60%" stop-color="#7E5230"/>'
++'<stop offset="100%" stop-color="#5A3A20"/></linearGradient>'
++'<linearGradient id="afcGlove__U__" x1="0" y1="0" x2="0" y2="1">'
++'<stop offset="0%" stop-color="#D8A067"/><stop offset="100%" stop-color="#A4713F"/></linearGradient>'
++'</defs>'
 
 +'<g class="afcb-bob">'
-+'<ellipse class="afcb-shadow" cx="220" cy="468" rx="104" ry="13" fill="#000" opacity=".28"/>'
++'<ellipse class="afcb-shadow" cx="220" cy="468" rx="104" ry="13" fill="#000" opacity=".26"/>'
 
-/* ── legs, each its own group so they can stride ───────────────────────── */
+/* ── LEG A (our left) — hip group with a knee group inside ─────────────── */
 +'<g class="afcb-legA">'
- +'<rect x="189" y="346" width="17" height="80" rx="8" fill="#14181F"/>'
- +'<rect x="180" y="372" width="35" height="31" rx="11" fill="#2C333D"/>'
- +'<path d="M152 414 h60 v30 h-80 v-10 a20 20 0 0 1 20 -20 z" fill="#8B5E3C"/>'
- +'<rect x="124" y="440" width="94" height="20" rx="10" fill="#20262E"/>'
-+'</g>'
-+'<g class="afcb-legB">'
- +'<rect x="243" y="346" width="17" height="80" rx="8" fill="#14181F"/>'
- +'<rect x="234" y="372" width="35" height="31" rx="11" fill="#2C333D"/>'
- +'<path d="M230 414 h58 a20 20 0 0 1 20 20 v10 h-78 z" fill="#7A5232"/>'
- +'<rect x="224" y="440" width="92" height="20" rx="10" fill="#20262E"/>'
+ +'<rect x="188" y="342" width="19" height="64" rx="9" fill="#161B22"/>'
+ +'<rect x="188" y="352" width="19" height="6" fill="#242B34"/>'
+ +'<g class="afcb-shinA">'
+  +'<rect x="189" y="396" width="17" height="30" rx="7" fill="#11151B"/>'
+  +'<rect x="180" y="404" width="35" height="20" rx="8" fill="#2C333D"/>'
+  +'<path d="M182 414 h34 v40 h-66 q-12 0 -12 -9 q0 -7 9 -11 l24 -10 z"'
+  +' fill="url(#afcBoot__U__)" stroke="#3F2A17" stroke-width="3" stroke-linejoin="round"/>'
+  +'<path d="M186 420 h26 M184 428 h28 M185 436 h27" stroke="#3F2A17" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>'
+  +'<path d="M150 434 q-10 4 -12 11 q-1 6 8 7 h16 z" fill="#8F613A" opacity=".6"/>'
+  +'<path d="M138 450 h80 v9 q0 5 -6 5 h-68 q-9 0 -11 -6 q-1 -5 5 -8 z" fill="#181D24"/>'
+  +'<path d="M146 458 h6 M160 458 h6 M174 458 h6 M188 458 h6 M202 458 h6" stroke="#39434F" stroke-width="2.4" stroke-linecap="round"/>'
+ +'</g>'
 +'</g>'
 
-/* ── the case body ─────────────────────────────────────────────────────── */
+/* ── LEG B (our right) ─────────────────────────────────────────────────── */
++'<g class="afcb-legB">'
+ +'<rect x="242" y="342" width="19" height="64" rx="9" fill="#161B22"/>'
+ +'<rect x="242" y="352" width="19" height="6" fill="#242B34"/>'
+ +'<g class="afcb-shinB">'
+  +'<rect x="243" y="396" width="17" height="30" rx="7" fill="#11151B"/>'
+  +'<rect x="234" y="404" width="35" height="20" rx="8" fill="#2C333D"/>'
+  +'<path d="M267 414 h-34 v40 h66 q12 0 12 -9 q0 -7 -9 -11 l-24 -10 z"'
+  +' fill="url(#afcBoot__U__)" stroke="#3F2A17" stroke-width="3" stroke-linejoin="round"/>'
+  +'<path d="M263 420 h-26 M265 428 h-28 M264 436 h-27" stroke="#3F2A17" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>'
+  +'<path d="M299 434 q10 4 12 11 q1 6 -8 7 h-16 z" fill="#8F613A" opacity=".6"/>'
+  +'<path d="M311 450 h-80 v9 q0 5 6 5 h68 q9 0 11 -6 q1 -5 -5 -8 z" fill="#181D24"/>'
+  +'<path d="M303 458 h-6 M289 458 h-6 M275 458 h-6 M261 458 h-6 M247 458 h-6" stroke="#39434F" stroke-width="2.4" stroke-linecap="round"/>'
+ +'</g>'
++'</g>'
+
+/* ── TORSO: the tape case, hinged at the hips so he can lean ───────────── */
++'<g class="afcb-torso">'
 +'<rect x="152" y="198" width="136" height="158" rx="26" fill="#171C24"/>'
-+'<rect x="160" y="206" width="120" height="142" rx="20" fill="url(#afcCase)"/>'
++'<rect x="160" y="206" width="120" height="142" rx="20" fill="url(#afcCase__U__)"/>'
++'<path d="M168 214 q18 -6 36 0 v14 q-18 -6 -36 0 z" fill="#fff" opacity=".22"/>'
 +'<rect x="190" y="196" width="60" height="16" rx="6" fill="#0C0F14"/>'
 +'<rect x="175" y="226" width="30" height="40" rx="9" fill="#1C222B"/>'
 +'<rect x="180" y="232" width="20" height="20" rx="6" fill="#A6CE39"/>'
++'<circle cx="167" cy="213" r="3" fill="#8F6510" opacity=".8"/>'
++'<circle cx="273" cy="213" r="3" fill="#8F6510" opacity=".8"/>'
++'<circle cx="167" cy="341" r="3" fill="#8F6510" opacity=".8"/>'
++'<circle cx="273" cy="341" r="3" fill="#8F6510" opacity=".8"/>'
 +'<g transform="translate(220,292)">'
  +'<rect x="-52" y="-26" width="104" height="50" rx="9" fill="#12161C" stroke="#A6CE39" stroke-width="2.5"/>'
  +'<path d="M-36 10 L-25 -15 L-14 10" stroke="#F4F4F1" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
@@ -1442,68 +1552,104 @@ var FULL = '<svg class="afcb-man" viewBox="60 -30 320 520" aria-hidden="true" fo
  +'<text x="14" y="10" font-family="Barlow Condensed,Impact,sans-serif" font-size="32" font-weight="800" fill="#F4F4F1" text-anchor="middle">F</text>'
  +'<text x="38" y="10" font-family="Barlow Condensed,Impact,sans-serif" font-size="32" font-weight="800" fill="#F4F4F1" text-anchor="middle">C</text></g>'
 
-/* ── tool belt ─────────────────────────────────────────────────────────── */
+/* tool belt: hammer loop, tape clip, pouch */
 +'<rect x="134" y="312" width="172" height="34" rx="7" fill="#875A36" stroke="#3E2A18" stroke-width="3"/>'
-+'<rect x="196" y="306" width="48" height="46" rx="9" fill="url(#afcCh)" stroke="#1C222B" stroke-width="3"/>'
++'<path d="M140 318 h160 M140 340 h160" stroke="#6B4529" stroke-width="2" opacity=".7"/>'
++'<rect x="196" y="306" width="48" height="46" rx="9" fill="url(#afcCh__U__)" stroke="#1C222B" stroke-width="3"/>'
 +'<rect x="205" y="315" width="30" height="28" rx="5" fill="#12161C" opacity=".6"/>'
 +'<circle cx="220" cy="329" r="4" fill="#A6CE39"/>'
 +'<rect x="118" y="338" width="52" height="48" rx="8" fill="#6B4529" stroke="#3E2A18" stroke-width="3"/>'
++'<path d="M126 348 h36 M126 358 h36" stroke="#4C321C" stroke-width="2.2" opacity=".8"/>'
 +'<rect x="286" y="340" width="50" height="30" rx="9" fill="#A6CE39" stroke="#37460F" stroke-width="3"/>'
 +'<path d="M300 368 l-5 28 h22 l-3 -28 z" fill="#1C222B"/>'
++'</g>'
 
-/* ── arms, hinged at the shoulders ─────────────────────────────────────── */
+/* ── ARM A: shoulder group, elbow group inside ─────────────────────────── */
 +'<g class="afcb-armA">'
- +'<path d="M162 244 C 132 256 116 282 112 306" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
- +'<path d="M162 244 C 132 256 116 282 112 306" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
- +'<circle cx="110" cy="316" r="16" fill="#C8905A" stroke="#14181F" stroke-width="3"/>'
-+'</g>'
-+'<g class="afcb-wave">'
- +'<path d="M282 236 C 314 226 332 202 336 178" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
- +'<path d="M282 236 C 314 226 332 202 336 178" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
- +'<circle cx="338" cy="170" r="17" fill="#C8905A" stroke="#14181F" stroke-width="3"/>'
+ +'<path d="M164 242 C 140 256 126 276 120 298" stroke="#14181F" stroke-width="20" fill="none" stroke-linecap="round"/>'
+ +'<path d="M164 242 C 140 256 126 276 120 298" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
+ +'<g class="afcb-foreA">'
+  +'<path d="M120 298 C 114 316 110 332 110 344" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
+  +'<path d="M120 298 C 114 316 110 332 110 344" stroke="#F4F4F1" stroke-width="12" fill="none" stroke-linecap="round"/>'
+  +'<rect x="99" y="338" width="22" height="10" rx="5" fill="#A6CE39" stroke="#37460F" stroke-width="2"/>'
+  +'<circle cx="110" cy="360" r="16" fill="url(#afcGlove__U__)" stroke="#14181F" stroke-width="3"/>'
+  +'<path d="M101 356 q9 -5 18 0" stroke="#7A4E25" stroke-width="2.2" fill="none" stroke-linecap="round"/>'
+ +'</g>'
 +'</g>'
 
-/* ── the blade neck: a real run of tape, graduated, and it wiggles ─────── */
+/* ── ARM B: the waving, throwing, truck-hoisting arm ───────────────────── */
++'<g class="afcb-wave">'
+ +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#14181F" stroke-width="20" fill="none" stroke-linecap="round"/>'
+ +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
+ +'<g class="afcb-foreB">'
+  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
+  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#F4F4F1" stroke-width="12" fill="none" stroke-linecap="round"/>'
+  +'<rect x="328" y="158" width="22" height="10" rx="5" fill="#A6CE39" stroke="#37460F" stroke-width="2"/>'
+  +'<circle cx="340" cy="142" r="17" fill="url(#afcGlove__U__)" stroke="#14181F" stroke-width="3"/>'
+  +'<path d="M331 138 q9 -5 18 0" stroke="#7A4E25" stroke-width="2.2" fill="none" stroke-linecap="round"/>'
+ +'</g>'
++'</g>'
+
+/* ── THE BLADE NECK — a real run of graduated tape ─────────────────────── */
 +'<g class="afcb-neck">'
- +'<rect x="199" y="144" width="42" height="62" fill="url(#afcBlade)" stroke="#B9880E" stroke-width="1.5"/>'
- +'<rect x="199" y="144" width="42" height="4" fill="#C99A12" opacity=".55"/>'
+ +'<rect x="199" y="142" width="42" height="64" fill="url(#afcBlade__U__)" stroke="#B9880E" stroke-width="1.5"/>'
+ +'<rect x="199" y="142" width="42" height="4" fill="#C99A12" opacity=".55"/>'
+ +'<rect x="199" y="142" width="7" height="64" fill="#fff" opacity=".18"/>'
  +'<path d="M203 200 h17 M203 192 h9 M203 184 h9 M203 176 h17 M203 168 h9 M203 160 h9 M203 152 h17"'
  +' stroke="#1C222B" stroke-width="2" stroke-linecap="round"/>'
  +'<text x="233" y="203" font-family="monospace" font-size="10" fill="#1C222B" text-anchor="middle">1</text>'
  +'<text x="233" y="179" font-family="monospace" font-size="10" fill="#1C222B" text-anchor="middle">2</text>'
  +'<text x="233" y="155" font-family="monospace" font-size="10" fill="#1C222B" text-anchor="middle">3</text>'
 
-/* carpenter pencil behind the ear, drawn first so the head overlaps it */
- +'<g transform="translate(288,52) rotate(-26)">'
-  +'<rect x="0" y="-8" width="64" height="16" rx="2" fill="#E8A020" stroke="#8F6510" stroke-width="2"/>'
-  +'<rect x="0" y="-8" width="11" height="16" fill="#C9820F"/>'
-  +'<path d="M64 -8 L80 0 L64 8 Z" fill="#F2DFB4" stroke="#8F6510" stroke-width="2" stroke-linejoin="round"/>'
-  +'<path d="M75 -2.4 L80 0 L75 2.4 Z" fill="#2B2B2B"/>'
- +'</g>'
+/* ── HEAD group ────────────────────────────────────────────────────────── */
+ +'<g class="afcb-head">'
 
-/* head */
- +'<rect x="134" y="40" width="172" height="110" rx="28" fill="url(#afcCase)" stroke="#1C222B" stroke-width="5"/>'
- +'<circle cx="182" cy="90" r="27" fill="#fff" stroke="#1C222B" stroke-width="3"/>'
- +'<circle cx="258" cy="90" r="27" fill="#fff" stroke="#1C222B" stroke-width="3"/>'
- +'<circle class="afcb-pl" cx="182" cy="90" r="12" fill="#12161C"/>'
- +'<circle class="afcb-pr" cx="258" cy="90" r="12" fill="#12161C"/>'
- +'<g stroke="#12161C" fill="none" stroke-width="8" stroke-linecap="round">'
-  +'<rect x="149" y="59" width="66" height="62" rx="17" fill="rgba(255,255,255,.13)"/>'
-  +'<rect x="225" y="59" width="66" height="62" rx="17" fill="rgba(255,255,255,.13)"/>'
-  +'<path d="M215 85 q5 -9 10 0"/><path d="M149 78 l-20 -7"/><path d="M291 78 l20 -7"/></g>'
- +'<path d="M192 130 q28 22 56 0" stroke="#12161C" stroke-width="6" fill="none" stroke-linecap="round"/>'
+/* carpenter pencil, riding behind the ear and sticking way out */
+  +'<g transform="translate(296,40) rotate(-30)">'
+   +'<rect x="0" y="-9" width="84" height="18" rx="2.5" fill="#E8A020" stroke="#8F6510" stroke-width="2"/>'
+   +'<rect x="0" y="-9" width="13" height="18" fill="#C9820F"/>'
+   +'<rect x="20" y="-9" width="44" height="4" fill="#F6C664" opacity=".8"/>'
+   +'<path d="M84 -9 L102 0 L84 9 Z" fill="#F2DFB4" stroke="#8F6510" stroke-width="2" stroke-linejoin="round"/>'
+   +'<path d="M96 -2.7 L102 0 L96 2.7 Z" fill="#2B2B2B"/>'
+  +'</g>'
+
+/* head shell */
+  +'<rect x="134" y="40" width="172" height="110" rx="28" fill="url(#afcCase__U__)" stroke="#1C222B" stroke-width="5"/>'
+  +'<path d="M144 56 q30 -10 60 0 v12 q-30 -10 -60 0 z" fill="#fff" opacity=".2"/>'
+  +'<circle cx="182" cy="90" r="27" fill="#fff" stroke="#1C222B" stroke-width="3"/>'
+  +'<circle cx="258" cy="90" r="27" fill="#fff" stroke="#1C222B" stroke-width="3"/>'
+  +'<circle class="afcb-pl" cx="182" cy="90" r="12" fill="#12161C"/>'
+  +'<circle class="afcb-pr" cx="258" cy="90" r="12" fill="#12161C"/>'
+  +'<g stroke="#12161C" fill="none" stroke-width="8" stroke-linecap="round">'
+   +'<rect x="149" y="59" width="66" height="62" rx="17" fill="rgba(255,255,255,.13)"/>'
+   +'<rect x="225" y="59" width="66" height="62" rx="17" fill="rgba(255,255,255,.13)"/>'
+   +'<path d="M215 85 q5 -9 10 0"/><path d="M149 78 l-20 -7"/><path d="M291 78 l20 -7"/></g>'
+  +'<path d="M156 66 l16 14" stroke="#fff" stroke-width="5" opacity=".45" stroke-linecap="round"/>'
+  +'<path d="M232 66 l16 14" stroke="#fff" stroke-width="5" opacity=".45" stroke-linecap="round"/>'
+  +'<path d="M192 130 q28 22 56 0" stroke="#12161C" stroke-width="6" fill="none" stroke-linecap="round"/>'
 
 /* hat */
- +'<g class="afcb-hat">'
-  +'<ellipse cx="220" cy="46" rx="142" ry="30" fill="url(#afcHat)"/>'
-  +'<path d="M158 48 C 152 -14 180 -28 220 -28 C 260 -28 288 -14 282 48 Z" fill="url(#afcHat)" stroke="#5C3B21" stroke-width="4"/>'
-  +'<path d="M159 39 Q 220 61 281 39 L 281 25 Q 220 47 159 25 Z" fill="#4A3323"/>'
-  +'<path d="M265 29 l9 -6 l-1 10 z" fill="#A6CE39"/>'
+  +'<g class="afcb-hat">'
+   +'<ellipse cx="220" cy="46" rx="142" ry="30" fill="url(#afcHat__U__)"/>'
+   +'<ellipse cx="220" cy="44" rx="142" ry="30" fill="none" stroke="#5C3B21" stroke-width="3"/>'
+   +'<path d="M158 48 C 152 -14 180 -28 220 -28 C 260 -28 288 -14 282 48 Z" fill="url(#afcHat__U__)" stroke="#5C3B21" stroke-width="4"/>'
+   +'<path d="M186 -20 q34 -10 68 0 q-6 -8 -34 -8 q-28 0 -34 8 z" fill="#fff" opacity=".14"/>'
+   +'<path d="M159 39 Q 220 61 281 39 L 281 25 Q 220 47 159 25 Z" fill="#4A3323"/>'
+   +'<path d="M265 29 l9 -6 l-1 10 z" fill="#A6CE39"/>'
+  +'</g>'
  +'</g>'
 +'</g></g></svg>';
 
+/* one unique copy per call — kills the duplicate-id collision for good */
+var _mid = 0;
+function man(extra){
+  var u = 'x' + (++_mid);
+  return FULL.replace(/__U__/g, u)
+             .replace('class="afcb-man"', 'class="afcb-man' + (extra ? ' ' + extra : '') + '"');
+}
+
 /* ==========================================================================
-   THE TRUCK — and he is actually driving it this time.
+   THE TRUCK — with a door that actually opens, and a driver inside it.
    ========================================================================== */
 var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
 +'<defs><linearGradient id="afcTrk" x1="0" y1="0" x2="0" y2="1">'
@@ -1512,22 +1658,18 @@ var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
 +'<linearGradient id="afcChr2" x1="0" y1="0" x2="0" y2="1">'
 +'<stop offset="0%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#69737F"/></linearGradient></defs>'
 +'<g class="afcb-tilt">'
-/* exhaust stacks */
 +'<rect x="286" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
 +'<rect x="312" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
-/* light bar */
 +'<rect x="150" y="46" width="150" height="17" rx="6" fill="#14181F"/>'
 +'<g fill="#C9F04B" opacity=".9"><rect x="158" y="50" width="24" height="9" rx="3"/>'
 +'<rect x="188" y="50" width="24" height="9" rx="3"/><rect x="218" y="50" width="24" height="9" rx="3"/>'
 +'<rect x="248" y="50" width="24" height="9" rx="3"/></g>'
-/* cab + bed */
 +'<path d="M118 178 L118 130 Q118 116 134 112 L164 68 Q170 60 184 60 L268 60 Q282 60 286 70'
 +' L300 112 L392 112 Q412 112 416 130 L424 178 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="5" stroke-linejoin="round"/>'
 +'<rect x="300" y="104" width="122" height="12" rx="5" fill="#37460F"/>'
-/* glass */
 +'<path d="M170 108 L192 72 L226 72 L226 108 Z" fill="#BFD4E8" opacity=".92"/>'
-+'<path d="M236 72 L268 72 Q276 72 279 80 L288 108 L236 108 Z" fill="#BFD4E8" opacity=".92"/>'
-/* the driver — hat, glasses, one arm hanging out the window */
+/* the cab interior the open door reveals */
++'<rect x="230" y="68" width="66" height="104" rx="6" fill="#1A2029"/>'
 +'<g class="afcb-driver">'
  +'<rect x="240" y="80" width="34" height="24" rx="7" fill="#F0BE22" stroke="#1C222B" stroke-width="2"/>'
  +'<circle cx="249" cy="92" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
@@ -1537,21 +1679,23 @@ var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
  +'<path d="M244 78 C242 60 250 55 257 55 C264 55 272 60 270 78 Z" fill="#A3714A" stroke="#5C3B21" stroke-width="2"/>'
  +'<path class="afcb-elbow" d="M238 104 C 226 110 218 118 216 128" stroke="#F4F4F1" stroke-width="11" fill="none" stroke-linecap="round"/>'
 +'</g>'
-/* door with the AFC level mark */
-+'<rect x="236" y="116" width="58" height="52" rx="7" fill="#12161C" opacity=".9"/>'
-+'<path d="M248 158 L258 128 L268 158" stroke="#F4F4F1" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
-+'<rect x="250" y="140" width="17" height="8" rx="4" fill="#0D1117" stroke="#F4F4F1" stroke-width="1.4"/>'
-+'<circle cx="258.5" cy="144" r="2.2" fill="#A6CE39"/>'
-+'<text x="281" y="158" font-family="Barlow Condensed,Impact,sans-serif" font-size="30" font-weight="800" fill="#F4F4F1" text-anchor="middle">FC</text>'
-/* front end, bumper, winch */
+/* DOOR — hinged at the front edge so it can swing open and shut */
++'<g class="afcb-door">'
+ +'<path d="M232 70 L268 70 Q282 70 286 80 L294 112 L294 170 L232 170 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
+ +'<path d="M238 74 L268 74 Q276 74 279 82 L288 108 L238 108 Z" fill="#BFD4E8" opacity=".92"/>'
+ +'<rect x="236" y="116" width="54" height="48" rx="7" fill="#12161C" opacity=".9"/>'
+ +'<path d="M246 156 L256 128 L266 156" stroke="#F4F4F1" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+ +'<rect x="248" y="139" width="17" height="8" rx="4" fill="#0D1117" stroke="#F4F4F1" stroke-width="1.4"/>'
+ +'<circle cx="256.5" cy="143" r="2.2" fill="#A6CE39"/>'
+ +'<text x="279" y="156" font-family="Barlow Condensed,Impact,sans-serif" font-size="28" font-weight="800" fill="#F4F4F1" text-anchor="middle">FC</text>'
+ +'<rect x="272" y="112" width="18" height="6" rx="3" fill="url(#afcChr2)"/>'
++'</g>'
 +'<rect x="104" y="132" width="22" height="30" rx="5" fill="#F7E8A0"/>'
 +'<rect x="92" y="158" width="46" height="18" rx="6" fill="url(#afcChr2)"/>'
 +'<circle cx="112" cy="167" r="9" fill="#37460F"/>'
-/* suspension */
 +'<rect x="140" y="176" width="290" height="14" rx="6" fill="#20262E"/>'
 +'<rect x="168" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
 +'<rect x="386" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
-/* wheels */
 +'<g class="afcb-wh"><g transform="translate(176,222)">'
 +'<circle r="58" fill="#161A20"/><circle r="58" fill="none" stroke="#2C333D" stroke-width="9" stroke-dasharray="11 9"/>'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
@@ -1562,13 +1706,11 @@ var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
 +'<path d="M0 -31 L0 -14 M0 31 L0 14 M-31 0 L-14 0 M31 0 L14 0" stroke="#14181F" stroke-width="6"/>'
 +'</g></g>'
-/* mud flap */
 +'<rect x="424" y="150" width="14" height="46" rx="4" fill="#20262E"/>'
 +'</g></svg>';
 
 /* ==========================================================================
-   THE PORTAL — layered rings, a real event horizon, and a rim that
-   breathes. Thrown as a small disc, opened where it lands.
+   THE PORTAL — layered rings, a real event horizon, a rim that breathes.
    ========================================================================== */
 var PORTAL = '<svg viewBox="0 0 320 320" aria-hidden="true" focusable="false">'
 +'<defs>'
@@ -1598,7 +1740,7 @@ var PORTAL = '<svg viewBox="0 0 320 320" aria-hidden="true" focusable="false">'
 +'</g>'
 +'<ellipse cx="160" cy="160" rx="54" ry="66" fill="#000" opacity=".92"/></svg>';
 
-/* the seed he throws — same rings, tiny */
+/* the seed he throws */
 var DISC = '<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">'
 +'<circle cx="60" cy="60" r="40" fill="#0D1117" stroke="#C9F04B" stroke-width="6"/>'
 +'<circle cx="60" cy="60" r="26" fill="none" stroke="#A6CE39" stroke-width="4" stroke-dasharray="14 10"/>'
@@ -1609,61 +1751,144 @@ var MUD = '<svg viewBox="0 0 320 96" aria-hidden="true" focusable="false">'
 +'<path d="M16 64 C 44 34 96 30 134 46 C 168 60 206 32 248 46 C 292 60 306 76 280 84'
 +' C 224 96 62 96 24 84 C 8 79 8 72 16 64 Z" fill="#4A3323" opacity=".9"/>'
 +'<ellipse cx="160" cy="70" rx="104" ry="13" fill="#2E1F12" opacity=".55"/>'
++'<ellipse class="afcb-rip1" cx="128" cy="66" rx="26" ry="7" fill="none" stroke="#8B6A44" stroke-width="2.5" opacity=".5"/>'
++'<ellipse class="afcb-rip2" cx="212" cy="70" rx="18" ry="5" fill="none" stroke="#8B6A44" stroke-width="2" opacity=".4"/>'
 +'<ellipse cx="118" cy="60" rx="28" ry="6" fill="#6B4A2C" opacity=".45"/>'
 +'<ellipse cx="226" cy="64" rx="18" ry="5" fill="#6B4A2C" opacity=".35"/></svg>';
 
+/* storm clouds that drift across the top while he arrives */
+var CLOUD = '<svg viewBox="0 0 300 120" aria-hidden="true" focusable="false">'
++'<path d="M52 96 C 22 96 10 78 18 62 C 24 50 40 46 52 50 C 56 24 84 10 110 18'
++' C 128 4 160 4 176 20 C 200 10 228 22 232 44 C 260 42 276 58 272 76 C 268 92 250 96 232 96 Z"'
++' fill="#39434F" opacity=".92"/>'
++'<path d="M70 78 C 50 78 44 66 52 56 C 62 44 88 44 96 54 C 112 40 140 44 148 60 C 128 78 96 82 70 78 Z"'
++' fill="#4A5563" opacity=".85"/>'
++'<path d="M150 22 C 168 12 196 20 202 40 C 182 44 160 38 150 22 Z" fill="#5A6673" opacity=".7"/></svg>';
+
 /* ==========================================================================
    THE CINEMATIC
-   Arrival: forked lightning, fireworks across the whole screen, the truck
-   rolls in with him actually driving it, brakes, backs up, pops a wheelie,
-   peels out through the mud, he climbs down, waves, walks to the corner and
-   becomes the chat button. The puddle soaks in by itself.
-   Exit: he throws the portal clear across the page, it tears open, he
-   crouches and leaps through, slow enough to actually watch.
 
-   Accessibility: nothing strobes. Every element draws on, holds and fades
-   exactly once — no repeated flash, no rapid luminance change — and the
-   whole stage is skipped under prefers-reduced-motion. A skip control is
-   on screen the entire time.
+   Arrival: storm clouds roll in, rain slants across the top, real forked
+   lightning cracks down the sky, fireworks open across the whole width.
+   The truck comes in from the right on the back wheel — a wheelie held all
+   the way right to left — swings around, drives back left to right and
+   brakes in a wall of dust. The door swings open, Tex steps down like a
+   person (sometimes with a flip off the running board), throws the portal
+   to the top of the far side, then hoists the truck one-handed and heaves
+   it through. Portal shuts. He walks to the corner and becomes the button.
+
+   Exit: he throws a second portal across the page, crouches and leaps in.
+
+   Accessibility: nothing strobes. Every bolt, spark and shell draws on,
+   holds, and fades exactly once; strikes are spaced far enough apart that
+   the screen never pulses. The whole stage is skipped under
+   prefers-reduced-motion and a skip control is on screen the entire time.
    ========================================================================== */
-var BOLTS = '<svg class="afcb-boltsvg" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">'
-+'<g>'
-+'<path class="b1" d="M126 -20 L168 118 L112 136 L188 292 L146 306 L214 470"/>'
-+'<path class="b1b" d="M168 118 L96 182 L130 196"/>'
-+'<path class="b2" d="M986 -20 L1042 130 L978 148 L1052 286 L1008 302 L1064 452"/>'
-+'<path class="b2b" d="M1042 130 L1108 190 L1070 206"/>'
-+'<path class="b3" d="M604 -20 L646 96 L588 112 L652 236 L616 250 L664 388"/>'
-+'<path class="b3b" d="M646 96 L706 150 L672 162"/>'
-+'<path class="b4" d="M330 -20 L292 104 L344 122 L288 244"/>'
-+'<path class="b5" d="M840 -20 L806 92 L858 108 L812 218"/>'
-+'</g></svg>';
+
+/* ── real lightning, generated fresh every run ────────────────────────────
+   A bolt is a jagged main channel that wanders as it falls, thick at the
+   top and tapering toward the ground, with branches that fork off it and
+   sub-branches off those. Three stacked strokes per path give it a bloom:
+   a wide soft halo, the channel itself, and a hot white core.            */
+function boltPath(x, y, len, spread, segs){
+  var d = 'M' + Math.round(x) + ' ' + Math.round(y), pts = [[x, y]], i, step = len / segs;
+  for (i = 0; i < segs; i++){
+    x += rnd(-spread, spread);
+    y += step * rnd(.62, 1.38);
+    d += ' L' + Math.round(x) + ' ' + Math.round(y);
+    pts.push([x, y]);
+  }
+  return { d: d, pts: pts };
+}
+
+function boltGroup(x, len, spread){
+  var main = boltPath(x, -30, len, spread, 11 + Math.floor(rnd(0, 4))),
+      out  = [{ d: main.d, w: 9 }], i, from, b, sub;
+
+  for (i = 0; i < 3; i++){
+    from = main.pts[2 + Math.floor(rnd(0, main.pts.length - 4))];
+    b = boltPath(from[0], from[1], len * rnd(.22, .42), spread * 1.5, 5);
+    out.push({ d: b.d, w: 5 });
+    if (i < 2){
+      sub = boltPath(b.pts[2][0], b.pts[2][1], len * rnd(.1, .2), spread * 1.6, 3);
+      out.push({ d: sub.d, w: 3 });
+    }
+  }
+  return out;
+}
+
+function boltSVG(w, h, count){
+  var s = '<svg class="afcb-boltsvg" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" aria-hidden="true">',
+      i, j, parts, delay;
+  for (i = 0; i < count; i++){
+    parts = boltGroup(rnd(w * .06, w * .94), h * rnd(.55, .95), w * .035);
+    delay = (.25 + i * .78).toFixed(2);
+    s += '<g class="afcb-bolt" style="animation-delay:' + delay + 's">';
+    for (j = 0; j < parts.length; j++){
+      s += '<path class="hl" d="' + parts[j].d + '" stroke-width="' + (parts[j].w * 3.4) + '"/>'
+        +  '<path class="ch" d="' + parts[j].d + '" stroke-width="' + parts[j].w + '"/>'
+        +  '<path class="co" d="' + parts[j].d + '" stroke-width="' + (parts[j].w * .34) + '"/>';
+    }
+    s += '</g>';
+  }
+  return s + '</svg>';
+}
 
 var CINE_CSS = ''
-+'.afcb-stage{position:fixed;inset:0;z-index:2147481900;pointer-events:none;overflow:hidden;display:none}'
++'.afcb-stage{position:fixed;inset:0;z-index:2147481900;pointer-events:none;overflow:hidden;display:none;'
+ +'--hdoor:50vw;--hfront:41vw;--hcorner:90vw;--tstop:38vw;--tleft:2vw;--px:12vw;--py:-64vh}'
 +'.afcb-stage.on{display:block}'
++'.afcb-stage.m{--hdoor:42vw;--hfront:26vw;--hcorner:74vw;--tstop:8vw;--tleft:-8vw;--px:14vw;--py:-58vh}'
 
-/* ── lightning: slow draw, one fade, soft bloom, never a strobe ────────── */
-+'.afcb-bolts{position:absolute;top:0;left:0;width:100%;height:74vh;opacity:0}'
+/* ── the rig: every joint gets a real pivot ────────────────────────────── */
++'.afcb-man g{transform-box:view-box}'
++'.afcb-man .afcb-legA{transform-origin:197px 348px}'
++'.afcb-man .afcb-legB{transform-origin:251px 348px}'
++'.afcb-man .afcb-shinA{transform-origin:197px 404px}'
++'.afcb-man .afcb-shinB{transform-origin:251px 404px}'
++'.afcb-man .afcb-armA{transform-origin:164px 242px}'
++'.afcb-man .afcb-foreA{transform-origin:120px 298px}'
++'.afcb-man .afcb-wave{transform-origin:278px 238px}'
++'.afcb-man .afcb-foreB{transform-origin:328px 198px}'
++'.afcb-man .afcb-neck{transform-origin:220px 206px}'
++'.afcb-man .afcb-head{transform-origin:220px 150px}'
++'.afcb-man .afcb-hat{transform-origin:220px 48px}'
++'.afcb-man .afcb-torso{transform-origin:220px 352px}'
+
+/* ── storm sky ─────────────────────────────────────────────────────────── */
++'.afcb-weather{position:absolute;top:0;left:0;right:0;height:62vh;opacity:0;transition:opacity 1.4s ease}'
++'.afcb-stage.go .afcb-weather{opacity:1}'
++'.afcb-stage.clear .afcb-weather{opacity:0}'
++'.afcb-cloud{position:absolute;left:100%;opacity:.85;filter:drop-shadow(0 10px 22px rgba(13,17,23,.28))}'
++'.afcb-cloud svg{display:block;width:100%;height:auto}'
++'.afcb-stage.go .afcb-cloud{animation:afcbCloud var(--cd) linear forwards}'
++'@keyframes afcbCloud{0%{transform:translateX(0)}100%{transform:translateX(calc(-100vw - 120%))}}'
++'.afcb-rain{position:absolute;inset:0;overflow:hidden}'
++'.afcb-rain i{position:absolute;top:-14vh;width:2px;height:var(--len);border-radius:2px;'
+ +'background:linear-gradient(180deg,rgba(191,212,232,0),rgba(191,212,232,.75));'
+ +'transform:rotate(12deg)}'
++'.afcb-stage.go .afcb-rain i{animation:afcbRain var(--dur) linear infinite}'
++'@keyframes afcbRain{0%{transform:translate(0,0) rotate(12deg);opacity:0}'
+ +'10%{opacity:.7}90%{opacity:.5}100%{transform:translate(-14vh,88vh) rotate(12deg);opacity:0}}'
+
+/* ── lightning: draw on, hold, fade once. No strobe, ever ──────────────── */
++'.afcb-bolts{position:absolute;top:0;left:0;width:100%;height:78vh;opacity:0}'
 +'.afcb-boltsvg{width:100%;height:100%;display:block}'
-+'.afcb-bolts path{fill:none;stroke:#C9F04B;stroke-linecap:round;stroke-linejoin:round;'
- +'stroke-width:7;stroke-dasharray:1400;stroke-dashoffset:1400;'
- +'filter:drop-shadow(0 0 14px rgba(201,240,75,.6)) drop-shadow(0 0 34px rgba(201,240,75,.3))}'
-+'.afcb-bolts path.b1b,.afcb-bolts path.b2b,.afcb-bolts path.b3b{stroke-width:4;opacity:.85}'
-+'.afcb-bolts path.b4,.afcb-bolts path.b5{stroke-width:5;stroke:#E8F7AE}'
 +'.afcb-stage.go .afcb-bolts{opacity:1}'
-+'.afcb-stage.go .afcb-bolts path{animation:afcbStrike 3.6s cubic-bezier(.2,.7,.3,1) both}'
-+'.afcb-stage.go .afcb-bolts path.b1b{animation-delay:.34s}'
-+'.afcb-stage.go .afcb-bolts path.b2{animation-delay:.55s}'
-+'.afcb-stage.go .afcb-bolts path.b2b{animation-delay:.85s}'
-+'.afcb-stage.go .afcb-bolts path.b3{animation-delay:1.15s}'
-+'.afcb-stage.go .afcb-bolts path.b3b{animation-delay:1.45s}'
-+'.afcb-stage.go .afcb-bolts path.b4{animation-delay:1.9s}'
-+'.afcb-stage.go .afcb-bolts path.b5{animation-delay:2.5s}'
-+'@keyframes afcbStrike{0%{stroke-dashoffset:1400;opacity:0}'
- +'8%{opacity:.5}30%{stroke-dashoffset:0;opacity:.9}'
- +'55%{opacity:.6}100%{stroke-dashoffset:0;opacity:0}}'
++'.afcb-bolts path{fill:none;stroke-linecap:round;stroke-linejoin:round}'
++'.afcb-bolts .hl{stroke:#C9F04B;opacity:.16;filter:blur(6px)}'
++'.afcb-bolts .ch{stroke:#DFF59B;filter:drop-shadow(0 0 12px rgba(201,240,75,.55))}'
++'.afcb-bolts .co{stroke:#FFFFFF;opacity:.95}'
++'.afcb-bolt{opacity:0}'
++'.afcb-stage.go .afcb-bolt{animation:afcbStrike 2.9s cubic-bezier(.16,.8,.3,1) both}'
++'@keyframes afcbStrike{0%{opacity:0;stroke-dashoffset:var(--l)}'
+ +'9%{opacity:.85}22%{opacity:1;stroke-dashoffset:0}'
+ +'46%{opacity:.72;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:0}}'
++'.afcb-bolts path{stroke-dasharray:var(--l);stroke-dashoffset:var(--l)}'
++'.afcb-stage.go .afcb-bolts path{animation:afcbDraw 2.9s cubic-bezier(.16,.8,.3,1) both;animation-delay:inherit}'
++'@keyframes afcbDraw{0%{stroke-dashoffset:var(--l)}22%,100%{stroke-dashoffset:0}}'
 
-/* ── fireworks: shell rises, blooms, sparks drift out and fall ─────────── */
+/* ── fireworks: shell rises, blooms, sparks arc out and fall ───────────── */
 +'.afcb-sky{position:absolute;inset:0;overflow:hidden}'
 +'.afcb-shell{position:absolute;width:6px;height:6px;border-radius:50%;background:#F7E8A0;opacity:0;'
  +'box-shadow:0 0 12px rgba(247,232,160,.85);animation:afcbShell .85s cubic-bezier(.2,.6,.4,1) forwards}'
@@ -1671,174 +1896,255 @@ var CINE_CSS = ''
  +'14%{opacity:.9}100%{opacity:.25;transform:translateY(var(--rise)) scale(1)}}'
 +'.afcb-fw{position:absolute;width:0;height:0}'
 +'.afcb-fw b{position:absolute;left:0;top:0;width:230px;height:230px;margin:-115px;border-radius:50%;opacity:0;'
- +'background:radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(201,240,75,.26) 34%,rgba(166,206,57,0) 68%);'
- +'animation:afcbBloom 1.9s ease-out forwards}'
-+'@keyframes afcbBloom{0%{opacity:0;transform:scale(.18)}20%{opacity:.7}100%{opacity:0;transform:scale(1.6)}}'
-+'.afcb-fw i{position:absolute;left:0;top:0;width:7px;height:7px;margin:-3.5px;border-radius:50%;opacity:0;'
- +'animation:afcbSpark 2.4s cubic-bezier(.1,.72,.3,1) forwards}'
-+'@keyframes afcbSpark{0%{opacity:0;transform:translate(0,0) scale(.5)}'
- +'9%{opacity:.95}45%{opacity:.8}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.3)}}'
+ +'background:radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(201,240,75,.22) 42%,rgba(201,240,75,0) 70%);'
+ +'animation:afcbBloom 1.5s ease-out forwards}'
++'@keyframes afcbBloom{0%{opacity:0;transform:scale(.2)}18%{opacity:.9}100%{opacity:0;transform:scale(1.5)}}'
++'.afcb-fw i{position:absolute;left:0;top:0;width:5px;height:5px;border-radius:50%;opacity:0;'
+ +'animation:afcbSpark 1.9s cubic-bezier(.15,.7,.4,1) forwards}'
++'@keyframes afcbSpark{0%{opacity:0;transform:translate(0,0) scale(1)}'
+ +'12%{opacity:1}70%{opacity:.8}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.35)}}'
+
+/* ── dust and mud thrown off the tires ─────────────────────────────────── */
++'.afcb-grit{position:absolute;bottom:5vh;border-radius:42%;opacity:0;'
+ +'animation:afcbGrit 2.2s cubic-bezier(.2,.6,.4,1) forwards}'
++'@keyframes afcbGrit{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.5)}'
+ +'14%{opacity:.85}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(200deg) scale(1.25)}}'
++'.afcb-dust{position:absolute;bottom:4vh;width:220px;height:120px;border-radius:50%;opacity:0;'
+ +'background:radial-gradient(circle,rgba(217,199,168,.72) 0%,rgba(217,199,168,.3) 48%,rgba(217,199,168,0) 72%);'
+ +'animation:afcbDust 2.6s ease-out forwards}'
++'@keyframes afcbDust{0%{opacity:0;transform:translate(0,20px) scale(.35)}'
+ +'18%{opacity:.9}100%{opacity:0;transform:translate(var(--tx),-40px) scale(2)}}'
+
+/* ── the puddle: it ripples, then soaks away on its own ────────────────── */
++'.afcb-puddle{position:absolute;bottom:3vh;width:22vw;min-width:180px;max-width:330px;opacity:0}'
++'.afcb-puddle svg{width:100%;height:auto;display:block}'
++'.afcb-puddle.wet{animation:afcbPuddle 11s ease-out forwards}'
++'@keyframes afcbPuddle{0%{opacity:0;transform:scale(.2)}7%{opacity:.95;transform:scale(1.06)}'
+ +'12%{transform:scale(1)}70%{opacity:.8}100%{opacity:0;transform:scale(.86)}}'
++'.afcb-puddle.wet .afcb-rip1{animation:afcbRip 2.6s ease-out 2}'
++'.afcb-puddle.wet .afcb-rip2{animation:afcbRip 2.6s ease-out .7s 2}'
++'@keyframes afcbRip{0%{opacity:.6;transform:scale(.4)}100%{opacity:0;transform:scale(1.6)}}'
 
 /* ── the truck ─────────────────────────────────────────────────────────── */
-+'.afcb-truck{position:absolute;left:0;bottom:4px;width:min(520px,72vw);transform:translateX(120vw)}'
-+'.afcb-truck svg{width:100%;height:auto;display:block;filter:drop-shadow(0 16px 26px rgba(0,0,0,.45))}'
-+'.afcb-stage.go .afcb-truck{animation:afcbDrive 9s linear both}'
++'.afcb-truck{position:absolute;bottom:5vh;left:0;width:46vw;min-width:330px;max-width:660px;opacity:0;'
+ +'transform:translateX(120vw)}'
++'.afcb-truck svg{width:100%;height:auto;display:block;'
+ +'filter:drop-shadow(0 16px 22px rgba(13,17,23,.4))}'
++'.afcb-truck.drive{animation:afcbDrive 7.4s cubic-bezier(.3,.05,.25,1) forwards}'
 +'@keyframes afcbDrive{'
- +'0%{transform:translateX(120vw);animation-timing-function:cubic-bezier(.12,.72,.28,1)}'
- +'18%{transform:translateX(6vw);animation-timing-function:cubic-bezier(.5,0,.6,1)}'
- +'24%{transform:translateX(9vw);animation-timing-function:cubic-bezier(.35,0,.3,1)}'
- +'38%{transform:translateX(50vw);animation-timing-function:cubic-bezier(.4,0,.5,1)}'
- +'45%{transform:translateX(47vw);animation-timing-function:linear}'
- +'58%{transform:translateX(47vw);animation-timing-function:cubic-bezier(.25,.9,.3,1)}'
- +'66%{transform:translateX(33vw);animation-timing-function:linear}'
- +'78%{transform:translateX(32vw);animation-timing-function:cubic-bezier(.5,0,.85,.6)}'
- +'100%{transform:translateX(-95vw)}}'
-+'.afcb-tilt{transform-box:view-box;transform-origin:394px 222px}'
-+'.afcb-stage.go .afcb-tilt{animation:afcbWheelie 1.7s cubic-bezier(.3,.8,.35,1) 4.1s both}'
-+'@keyframes afcbWheelie{0%{transform:rotate(0)}22%{transform:rotate(-18deg)}'
- +'56%{transform:rotate(-15.5deg)}74%{transform:rotate(1.5deg)}88%{transform:rotate(-1deg)}100%{transform:rotate(0)}}'
-+'.afcb-stage.go .afcb-truck svg{animation:afcbShake .16s ease-in-out 5.65s 6}'
-+'@keyframes afcbShake{0%,100%{transform:translate(0,0)}25%{transform:translate(-3px,1px)}'
- +'75%{transform:translate(3px,-1px)}}'
-+'.afcb-wh,.afcb-wh2{transform-box:fill-box;transform-origin:center}'
-+'.afcb-stage.go .afcb-wh{animation:afcbSpinF 9s linear both}'
-+'.afcb-stage.go .afcb-wh2{animation:afcbSpinR 9s linear both}'
-+'@keyframes afcbSpinF{0%{transform:rotate(0)}18%{transform:rotate(2100deg)}'
- +'45%{transform:rotate(2900deg)}66%{transform:rotate(3600deg)}100%{transform:rotate(5200deg)}}'
-+'@keyframes afcbSpinR{0%{transform:rotate(0)}18%{transform:rotate(2100deg)}'
- +'45%{transform:rotate(2900deg)}58%{transform:rotate(5200deg)}66%{transform:rotate(8000deg)}'
- +'100%{transform:rotate(9600deg)}}'
-+'.afcb-driver{transform-box:view-box;transform-origin:257px 92px}'
-+'.afcb-stage.go .afcb-driver{animation:afcbJostle .9s ease-in-out 1s 5,afcbGone .4s linear 6.2s forwards}'
-+'@keyframes afcbJostle{0%,100%{transform:translate(0,0) rotate(0)}'
- +'40%{transform:translate(-2px,-2px) rotate(-2deg)}70%{transform:translate(2px,1px) rotate(1.5deg)}}'
-+'@keyframes afcbGone{to{opacity:0}}'
+ +'0%{opacity:0;transform:translateX(118vw) scaleX(1)}'
+ +'4%{opacity:1}'
+ /* wheelie the whole way right to left */
+ +'42%{opacity:1;transform:translateX(var(--tleft)) scaleX(1)}'
+ /* swing around */
+ +'47%{transform:translateX(var(--tleft)) scaleX(.72)}'
+ +'52%{transform:translateX(var(--tleft)) scaleX(-1)}'
+ /* and back left to right, braking into place */
+ +'86%{transform:translateX(calc(var(--tstop) + 4vw)) scaleX(-1)}'
+ +'93%{transform:translateX(calc(var(--tstop) - 1vw)) scaleX(-1)}'
+ +'100%{opacity:1;transform:translateX(var(--tstop)) scaleX(-1)}}'
+/* the body tilts back onto the rear wheel for the wheelie, settles for the return run */
++'.afcb-truck.drive .afcb-tilt{transform-box:view-box;transform-origin:394px 222px;'
+ +'animation:afcbTilt 7.4s cubic-bezier(.3,.05,.25,1) forwards}'
++'@keyframes afcbTilt{0%{transform:rotate(0)}'
+ +'9%{transform:rotate(-19deg)}36%{transform:rotate(-21deg)}44%{transform:rotate(-3deg)}'
+ +'54%{transform:rotate(0)}62%{transform:rotate(-7deg)}'
+ +'88%{transform:rotate(0)}93%{transform:rotate(4deg)}97%{transform:rotate(-2deg)}100%{transform:rotate(0)}}'
++'.afcb-truck.drive .afcb-wh{transform-box:view-box;transform-origin:176px 222px;'
+ +'animation:afcbSpinF 7.4s linear forwards}'
++'.afcb-truck.drive .afcb-wh2{transform-box:view-box;transform-origin:394px 222px;'
+ +'animation:afcbSpinR 7.4s linear forwards}'
++'@keyframes afcbSpinF{0%{transform:rotate(0)}42%{transform:rotate(-2600deg)}'
+ +'52%{transform:rotate(-2600deg)}100%{transform:rotate(-5100deg)}}'
++'@keyframes afcbSpinR{0%{transform:rotate(0)}42%{transform:rotate(-3000deg)}'
+ +'50%{transform:rotate(-4400deg)}100%{transform:rotate(-7200deg)}}'
++'.afcb-truck.drive .afcb-driver{animation:afcbJostle .42s ease-in-out 17}'
++'@keyframes afcbJostle{0%,100%{transform:translateY(0) rotate(0)}'
+ +'50%{transform:translateY(-2.5px) rotate(-1.2deg)}}'
++'.afcb-truck.parked{transform:translateX(var(--tstop)) scaleX(-1);opacity:1}'
++'.afcb-truck.parked .afcb-driver{opacity:0;transition:opacity .3s}'
+/* door swings open, and shuts again behind him */
++'.afcb-door{transform-box:view-box;transform-origin:232px 120px}'
++'.afcb-truck.open .afcb-door{animation:afcbDoor .9s cubic-bezier(.3,.9,.3,1) forwards}'
++'@keyframes afcbDoor{0%{transform:scaleX(1) skewY(0)}'
+ +'100%{transform:scaleX(.28) skewY(-7deg) translateX(-4px)}}'
++'.afcb-truck.shut .afcb-door{animation:afcbDoorShut .7s cubic-bezier(.4,0,.4,1) forwards}'
++'@keyframes afcbDoorShut{0%{transform:scaleX(.28) skewY(-7deg) translateX(-4px)}'
+ +'100%{transform:scaleX(1) skewY(0)}}'
+/* hoisted one-handed, then heaved through the portal */
++'.afcb-truck.lift{animation:afcbLift 1.25s cubic-bezier(.25,.9,.35,1) forwards}'
++'@keyframes afcbLift{0%{transform:translateX(var(--tstop)) scaleX(-1) translateY(0) rotate(0)}'
+ +'55%{transform:translateX(calc(var(--tstop) - 2vw)) scaleX(-1) translateY(-14vh) rotate(6deg)}'
+ +'100%{transform:translateX(calc(var(--hfront) + 3vw)) scaleX(-.46) scaleY(.46) translateY(-46vh) rotate(9deg)}}'
++'.afcb-truck.heave{animation:afcbHeave 1.5s cubic-bezier(.3,.1,.5,1) forwards}'
++'@keyframes afcbHeave{'
+ +'0%{opacity:1;transform:translateX(calc(var(--hfront) + 3vw)) scaleX(-.46) scaleY(.46) translateY(-46vh) rotate(9deg)}'
+ +'18%{transform:translateX(calc(var(--hfront) - 1vw)) scaleX(-.46) scaleY(.46) translateY(-58vh) rotate(-14deg)}'
+ +'70%{opacity:1;transform:translateX(calc(var(--px) + 4vw)) scaleX(-.2) scaleY(.2) translateY(-96vh) rotate(-150deg)}'
+ +'100%{opacity:0;transform:translateX(calc(var(--px) + 6vw)) scaleX(-.02) scaleY(.02) translateY(-104vh) rotate(-260deg)}}'
 
-/* ── dirt, mud, and the puddle he leaves behind ────────────────────────── */
-+'.afcb-grit{position:absolute;bottom:0;border-radius:52% 48% 46% 54%;opacity:0;'
- +'animation:afcbGrit 1.9s cubic-bezier(.1,.7,.3,1) forwards}'
-+'@keyframes afcbGrit{0%{opacity:0;transform:translate(0,0) scale(.5) rotate(0)}'
- +'12%{opacity:.85}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.6) rotate(220deg)}}'
-+'.afcb-puddle{position:absolute;bottom:2px;width:min(300px,44vw);opacity:0}'
-+'.afcb-puddle svg{width:100%;height:auto;display:block}'
-+'.afcb-stage.go .afcb-puddle{animation:afcbPuddle 7.8s ease-out 5.8s both}'
-+'@keyframes afcbPuddle{0%{opacity:0;transform:scale(.3,.2)}'
- +'7%{opacity:.95;transform:scale(1.05,1.05)}13%{transform:scale(1,1)}'
- +'60%{opacity:.9}100%{opacity:0;transform:scale(.86,.45)}}'
+/* ── the portal and the disc he throws to open it ──────────────────────── */
++'.afcb-portal{position:absolute;left:2vw;top:3vh;width:26vw;min-width:190px;max-width:360px;'
+ +'opacity:0;transform:scale(.02) rotate(-30deg)}'
++'.afcb-portal svg{width:100%;height:auto;display:block}'
++'.afcb-portal.open{animation:afcbPortal 1.1s cubic-bezier(.2,.9,.3,1) forwards}'
++'@keyframes afcbPortal{0%{opacity:0;transform:scale(.02) rotate(-30deg)}'
+ +'55%{opacity:1;transform:scale(1.12) rotate(6deg)}100%{opacity:1;transform:scale(1) rotate(0)}}'
++'.afcb-portal.shut{animation:afcbShut 1.1s cubic-bezier(.5,0,.8,.2) forwards}'
++'@keyframes afcbShut{0%{opacity:1;transform:scale(1)}70%{opacity:1;transform:scale(.5) rotate(40deg)}'
+ +'100%{opacity:0;transform:scale(.02) rotate(90deg)}}'
++'.afcb-portal .afcb-spin{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp 9s linear infinite}'
++'.afcb-portal .afcb-spin2{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp2 6s linear infinite}'
++'.afcb-portal .afcb-spin3{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp 4.2s linear infinite}'
++'@keyframes afcbSp{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}'
++'@keyframes afcbSp2{0%{transform:rotate(0)}100%{transform:rotate(-360deg)}}'
++'.afcb-disc{position:absolute;bottom:22vh;left:0;width:52px;opacity:0;transform:translateX(var(--hfront))}'
++'.afcb-disc svg{width:100%;height:auto;display:block}'
++'.afcb-disc.fly{animation:afcbDisc 1.15s cubic-bezier(.25,.5,.4,1) forwards}'
++'@keyframes afcbDisc{0%{opacity:0;transform:translateX(var(--hfront)) translateY(0) scale(.4) rotate(0)}'
+ +'12%{opacity:1}'
+ +'55%{transform:translateX(calc((var(--hfront) + var(--px)) / 2)) translateY(calc(var(--py) - 12vh)) scale(1) rotate(540deg)}'
+ +'100%{opacity:1;transform:translateX(var(--px)) translateY(var(--py)) scale(.7) rotate(1080deg)}}'
 
-/* ── the man himself ───────────────────────────────────────────────────── */
-+'.afcb-hero{position:absolute;right:26px;bottom:8px;width:min(232px,36vw);opacity:0}'
-+'.afcb-hero svg{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 22px rgba(0,0,0,.4))}'
-+'.afcb-hero.climb{animation:afcbClimb 1.5s cubic-bezier(.24,.9,.32,1) both}'
-+'@keyframes afcbClimb{0%{opacity:0;transform:translate(-30vw,-58px) scale(.82)}'
- +'16%{opacity:1}46%{transform:translate(-32vw,-104px) scale(.92)}'
- +'82%{transform:translate(-33vw,10px) scale(1.05,.93)}100%{opacity:1;transform:translate(-33vw,0) scale(1)}}'
-+'.afcb-hero.walk{animation:afcbWalkOver 3.1s cubic-bezier(.42,0,.58,1) both}'
-+'@keyframes afcbWalkOver{0%{opacity:1;transform:translate(-33vw,0)}'
- +'50%{transform:translate(-17vw,-3px)}100%{opacity:1;transform:translate(0,0)}}'
-+'.afcb-hero.tuck{animation:afcbTuck 1s cubic-bezier(.5,0,.9,.4) both}'
-+'@keyframes afcbTuck{0%{opacity:1;transform:translate(0,0) scale(1)}'
- +'30%{transform:translate(0,-16px) scale(1.05,.95)}'
- +'100%{opacity:0;transform:translate(12px,32px) scale(.18)}}'
-+'.afcb-hero.pop{animation:afcbPop 1s cubic-bezier(.2,.9,.3,1) both}'
-+'@keyframes afcbPop{0%{opacity:0;transform:translate(12px,32px) scale(.18)}'
- +'100%{opacity:1;transform:translate(0,0) scale(1)}}'
+/* ── the man on stage ──────────────────────────────────────────────────── */
++'.afcb-hero{position:absolute;bottom:5vh;left:0;width:15vw;min-width:118px;max-width:210px;'
+ +'opacity:0;transform-origin:50% 100%}'
++'.afcb-hero svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 18px rgba(13,17,23,.35))}'
 
-/* walk cycle: legs stride, arms counter-swing, body bounces */
-+'.afcb-legA,.afcb-legB{transform-box:view-box}'
-+'.afcb-legA{transform-origin:197px 350px}.afcb-legB{transform-origin:251px 350px}'
-+'.afcb-armA{transform-box:view-box;transform-origin:162px 244px}'
-+'.afcb-hero.walking .afcb-legA{animation:afcbStepA .52s ease-in-out infinite}'
-+'.afcb-hero.walking .afcb-legB{animation:afcbStepB .52s ease-in-out infinite}'
-+'.afcb-hero.walking .afcb-armA{animation:afcbSwingA .52s ease-in-out infinite}'
-+'.afcb-hero.walking .afcb-wave{animation:afcbSwingB .52s ease-in-out infinite}'
-+'.afcb-hero.walking .afcb-bob{animation:afcbStride .26s ease-in-out infinite}'
-+'@keyframes afcbStepA{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-16deg)}}'
-+'@keyframes afcbStepB{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}'
-+'@keyframes afcbSwingA{0%,100%{transform:rotate(-15deg)}50%{transform:rotate(15deg)}}'
-+'@keyframes afcbSwingB{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}'
+/* steps down out of the cab instead of popping out of it */
++'.afcb-hero.stepout{animation:afcbStep 1.7s cubic-bezier(.34,.6,.3,1) forwards}'
++'@keyframes afcbStep{0%{opacity:0;transform:translate(calc(var(--hdoor) + 1vw),-19vh) scale(.52)}'
+ +'12%{opacity:1}'
+ +'38%{opacity:1;transform:translate(calc(var(--hdoor) + .4vw),-12vh) scale(.66)}'
+ +'68%{transform:translate(var(--hdoor),-4.5vh) scale(.85)}'
+ +'88%{transform:translate(var(--hdoor),.8vh) scale(1.02)}'
+ +'100%{opacity:1;transform:translate(var(--hdoor),0) scale(1)}}'
++'.afcb-hero.stepout .afcb-legA{animation:afcbStepLegA 1.7s cubic-bezier(.34,.6,.3,1) forwards}'
++'.afcb-hero.stepout .afcb-shinA{animation:afcbStepShinA 1.7s cubic-bezier(.34,.6,.3,1) forwards}'
++'.afcb-hero.stepout .afcb-legB{animation:afcbStepLegB 1.7s cubic-bezier(.34,.6,.3,1) forwards}'
++'.afcb-hero.stepout .afcb-wave{animation:afcbStepGrab 1.7s ease-out forwards}'
++'@keyframes afcbStepLegA{0%{transform:rotate(26deg)}55%{transform:rotate(-16deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbStepShinA{0%{transform:rotate(-44deg)}55%{transform:rotate(-8deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbStepLegB{0%{transform:rotate(-22deg)}60%{transform:rotate(14deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbStepGrab{0%{transform:rotate(-36deg)}60%{transform:rotate(-18deg)}100%{transform:rotate(0)}}'
+
+/* the flip he pulls off the running board when he is feeling it */
++'.afcb-hero.flip{animation:afcbFlip 1.15s cubic-bezier(.3,.5,.3,1) forwards}'
++'@keyframes afcbFlip{0%{opacity:1;transform:translate(var(--hdoor),0) rotate(0) scale(1)}'
+ +'30%{transform:translate(calc(var(--hdoor) - 2vw),-16vh) rotate(-140deg) scale(.94)}'
+ +'62%{transform:translate(calc(var(--hdoor) - 4vw),-19vh) rotate(-290deg) scale(.94)}'
+ +'88%{transform:translate(calc(var(--hdoor) - 6vw),1vh) rotate(-360deg) scale(1.04)}'
+ +'100%{opacity:1;transform:translate(calc(var(--hdoor) - 6vw),0) rotate(-360deg) scale(1)}}'
++'.afcb-hero.flip .afcb-legA,.afcb-hero.flip .afcb-legB{animation:afcbTuckLeg 1.15s ease-in-out forwards}'
++'.afcb-hero.flip .afcb-shinA,.afcb-hero.flip .afcb-shinB{animation:afcbTuckShin 1.15s ease-in-out forwards}'
++'@keyframes afcbTuckLeg{0%,100%{transform:rotate(0)}45%{transform:rotate(30deg)}}'
++'@keyframes afcbTuckShin{0%,100%{transform:rotate(0)}45%{transform:rotate(-72deg)}}'
+
+/* a real wave, from the shoulder and the elbow */
++'.afcb-hero.hello{transform:translate(var(--hdoor),0);opacity:1;transition:transform .9s ease}'
++'.afcb-hero.hello.moved{transform:translate(var(--hfront),0)}'
++'.afcb-hero.postflip{transform:translate(calc(var(--hdoor) - 6vw),0);opacity:1;transition:transform 1s ease}'
++'.afcb-hero.postflip.moved{transform:translate(var(--hfront),0)}'
++'.afcb-hero.waving .afcb-wave{animation:afcbWaveArm .62s ease-in-out 5}'
++'.afcb-hero.waving .afcb-foreB{animation:afcbWaveFore .62s ease-in-out 5}'
++'@keyframes afcbWaveArm{0%,100%{transform:rotate(-42deg)}50%{transform:rotate(-58deg)}}'
++'@keyframes afcbWaveFore{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-22deg)}}'
+
+/* the walk: hips, knees, shoulders, elbows, a torso that leans into it */
++'.afcb-hero.walking .afcb-legA{animation:afcbLegA .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-legB{animation:afcbLegB .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-shinA{animation:afcbShinA .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-shinB{animation:afcbShinB .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-armA{animation:afcbSwingA .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-foreA{animation:afcbForeSwingA .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-wave{animation:afcbSwingB .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-foreB{animation:afcbForeSwingB .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-torso{animation:afcbLean .66s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-bob{animation:afcbStride .33s ease-in-out infinite}'
++'.afcb-hero.walking .afcb-neck{animation:afcbNeckJog .33s ease-in-out infinite}'
++'@keyframes afcbLegA{0%,100%{transform:rotate(24deg)}50%{transform:rotate(-22deg)}}'
++'@keyframes afcbLegB{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(24deg)}}'
++'@keyframes afcbShinA{0%{transform:rotate(-4deg)}30%{transform:rotate(-38deg)}'
+ +'60%{transform:rotate(-6deg)}100%{transform:rotate(-4deg)}}'
++'@keyframes afcbShinB{0%{transform:rotate(-6deg)}30%{transform:rotate(-4deg)}'
+ +'60%{transform:rotate(-38deg)}100%{transform:rotate(-6deg)}}'
++'@keyframes afcbSwingA{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(22deg)}}'
++'@keyframes afcbSwingB{0%,100%{transform:rotate(18deg)}50%{transform:rotate(-20deg)}}'
++'@keyframes afcbForeSwingA{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-14deg)}}'
++'@keyframes afcbForeSwingB{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}'
++'@keyframes afcbLean{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}'
 +'@keyframes afcbStride{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}'
-+'.afcb-hero.hello .afcb-wave{animation:afcbBigWave .62s ease-in-out 5}'
-+'@keyframes afcbBigWave{0%,100%{transform:rotate(-26deg)}50%{transform:rotate(24deg)}}'
-+'.afcb-hero.windup .afcb-wave{animation:afcbThrowArm 1.1s cubic-bezier(.3,.9,.35,1) both}'
-+'@keyframes afcbThrowArm{0%{transform:rotate(0)}34%{transform:rotate(40deg)}'
- +'58%{transform:rotate(-66deg)}100%{transform:rotate(-12deg)}}'
-+'.afcb-hero.crouch .afcb-bob{animation:afcbCrouch .85s cubic-bezier(.35,0,.4,1) both}'
-+'@keyframes afcbCrouch{0%{transform:translateY(0) scale(1,1)}'
- +'62%{transform:translateY(18px) scale(1.08,.84)}100%{transform:translateY(12px) scale(1.05,.89)}}'
-+'.afcb-hero.leap{animation:afcbLeap 2.6s cubic-bezier(.3,.05,.5,1) both}'
-+'@keyframes afcbLeap{0%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}'
- +'10%{transform:translate(-4vw,-12vh) scale(1.03,.97) rotate(-4deg)}'
- +'42%{transform:translate(-32vw,-38vh) scale(.8) rotate(-10deg)}'
- +'74%{transform:translate(-58vw,-48vh) scale(.46) rotate(-16deg)}'
- +'92%{opacity:1;transform:translate(-70vw,-51vh) scale(.18) rotate(-24deg)}'
- +'100%{opacity:0;transform:translate(-72vw,-51vh) scale(.05) rotate(-30deg)}}'
++'@keyframes afcbNeckJog{0%,100%{transform:rotate(-2deg) skewX(1deg)}50%{transform:rotate(2.4deg) skewX(-1.4deg)}}'
 
-/* ── the portal: thrown as a disc, opened where it lands ───────────────── */
-+'.afcb-disc{position:absolute;right:48px;bottom:236px;width:74px;opacity:0}'
-+'.afcb-disc svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(166,206,57,.55))}'
-+'.afcb-disc.fly{animation:afcbThrow 1.15s cubic-bezier(.25,.5,.4,1) both}'
-+'@keyframes afcbThrow{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}'
- +'12%{opacity:1}55%{transform:translate(-42vw,-30vh) scale(.95) rotate(430deg)}'
- +'100%{opacity:1;transform:translate(-76vw,-43vh) scale(1.15) rotate(920deg)}}'
-+'.afcb-portal{position:absolute;left:6vw;top:9vh;width:min(320px,52vw);opacity:0;transform:scale(0)}'
-+'.afcb-portal svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 46px rgba(166,206,57,.4))}'
-+'.afcb-portal.open{animation:afcbHoleIn 1.6s cubic-bezier(.18,.9,.3,1) both}'
-+'@keyframes afcbHoleIn{0%{opacity:0;transform:scale(.04) rotate(-40deg)}'
- +'44%{opacity:1;transform:scale(1.12) rotate(10deg)}'
- +'72%{transform:scale(.96) rotate(-3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}'
-+'.afcb-portal.shut{animation:afcbHoleOut 1.2s cubic-bezier(.6,0,.9,.4) both}'
-+'@keyframes afcbHoleOut{0%{opacity:1;transform:scale(1)}'
- +'34%{transform:scale(1.09) rotate(18deg)}100%{opacity:0;transform:scale(0) rotate(90deg)}}'
-+'.afcb-spin{transform-box:fill-box;transform-origin:center;animation:afcbSpin 11s linear infinite}'
-+'.afcb-spin2{transform-box:fill-box;transform-origin:center;animation:afcbSpin 7s linear infinite reverse}'
-+'.afcb-spin3{transform-box:fill-box;transform-origin:center;animation:afcbSpin 16s linear infinite}'
-+'@keyframes afcbSpin{to{transform:rotate(360deg)}}'
+/* walking over to the truck, and later off to the corner */
++'.afcb-hero.toTruck{animation:afcbToTruck 1.5s linear forwards}'
++'@keyframes afcbToTruck{0%{opacity:1;transform:translate(calc(var(--hdoor) - 6vw),0)}'
+ +'100%{opacity:1;transform:translate(var(--hfront),0)}}'
++'.afcb-hero.walkout{animation:afcbWalkOut 2.5s linear forwards}'
++'@keyframes afcbWalkOut{0%{opacity:1;transform:translate(var(--hfront),0) scale(1)}'
+ +'100%{opacity:1;transform:translate(var(--hcorner),0) scale(.82)}}'
 
-/* ── skip control, always available ────────────────────────────────────── */
-+'.afcb-skip{position:absolute;left:16px;bottom:16px;pointer-events:auto;background:rgba(13,17,23,.84);'
- +'color:#F4F4F1;border:1px solid rgba(166,206,57,.55);border-radius:999px;padding:9px 16px;font-size:13px;'
- +'font-weight:600;cursor:pointer;font-family:Inter,system-ui,sans-serif;letter-spacing:.02em}'
-+'.afcb-skip:hover{background:#0D1117;border-color:#A6CE39}'
+/* the throw: wind up, whip the arm over, follow through */
++'.afcb-hero.throwing{transform:translate(var(--hfront),0)}'
++'.afcb-hero.throwing .afcb-wave{animation:afcbThrowArm 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
++'.afcb-hero.throwing .afcb-foreB{animation:afcbThrowFore 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
++'.afcb-hero.throwing .afcb-torso{animation:afcbThrowLean 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
++'@keyframes afcbThrowArm{0%{transform:rotate(0)}34%{transform:rotate(64deg)}'
+ +'58%{transform:rotate(-92deg)}100%{transform:rotate(-16deg)}}'
++'@keyframes afcbThrowFore{0%{transform:rotate(0)}34%{transform:rotate(48deg)}'
+ +'58%{transform:rotate(-40deg)}100%{transform:rotate(-8deg)}}'
++'@keyframes afcbThrowLean{0%{transform:rotate(0)}34%{transform:rotate(7deg)}'
+ +'58%{transform:rotate(-9deg)}100%{transform:rotate(0)}}'
 
-/* ── phones: the truck is wider, so the whole blocking shifts ──────────── */
-+'@media(max-width:640px){'
- +'.afcb-truck{width:96vw;bottom:2px}'
- +'.afcb-hero{right:12px;width:46vw}'
- +'.afcb-portal{left:5vw;top:10vh;width:62vw}'
- +'.afcb-puddle{width:62vw}'
- +'.afcb-disc{right:34px;bottom:180px;width:58px}'
- +'.afcb-fw b{width:180px;height:180px;margin:-90px}'
- +'.afcb-stage.go .afcb-truck{animation:afcbDriveM 9s linear both}'
- +'@keyframes afcbDriveM{'
-  +'0%{transform:translateX(120vw);animation-timing-function:cubic-bezier(.12,.72,.28,1)}'
-  +'18%{transform:translateX(-22vw);animation-timing-function:cubic-bezier(.5,0,.6,1)}'
-  +'24%{transform:translateX(-18vw);animation-timing-function:cubic-bezier(.35,0,.3,1)}'
-  +'38%{transform:translateX(32vw);animation-timing-function:cubic-bezier(.4,0,.5,1)}'
-  +'45%{transform:translateX(28vw);animation-timing-function:linear}'
-  +'58%{transform:translateX(28vw);animation-timing-function:cubic-bezier(.25,.9,.3,1)}'
-  +'66%{transform:translateX(-14vw);animation-timing-function:linear}'
-  +'78%{transform:translateX(-16vw);animation-timing-function:cubic-bezier(.5,0,.85,.6)}'
-  +'100%{transform:translateX(-140vw)}}'
- +'.afcb-hero.climb{animation:afcbClimbM 1.5s cubic-bezier(.24,.9,.32,1) both}'
- +'@keyframes afcbClimbM{0%{opacity:0;transform:translate(-22vw,-46px) scale(.82)}'
-  +'16%{opacity:1}46%{transform:translate(-24vw,-86px) scale(.92)}'
-  +'82%{transform:translate(-25vw,8px) scale(1.05,.93)}100%{opacity:1;transform:translate(-25vw,0) scale(1)}}'
- +'.afcb-hero.walk{animation:afcbWalkM 2.6s cubic-bezier(.42,0,.58,1) both}'
- +'@keyframes afcbWalkM{0%{opacity:1;transform:translate(-25vw,0)}'
-  +'50%{transform:translate(-13vw,-3px)}100%{opacity:1;transform:translate(0,0)}}'
- +'.afcb-disc.fly{animation:afcbThrowM 1.15s cubic-bezier(.25,.5,.4,1) both}'
- +'@keyframes afcbThrowM{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}'
-  +'12%{opacity:1}55%{transform:translate(-28vw,-38vh) scale(.95) rotate(430deg)}'
-  +'100%{opacity:1;transform:translate(-48vw,-56vh) scale(1.15) rotate(920deg)}}'
- +'.afcb-hero.leap{animation:afcbLeapM 2.6s cubic-bezier(.3,.05,.5,1) both}'
- +'@keyframes afcbLeapM{0%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}'
-  +'10%{transform:translate(-3vw,-13vh) scale(1.03,.97) rotate(-4deg)}'
-  +'42%{transform:translate(-18vw,-40vh) scale(.8) rotate(-10deg)}'
-  +'74%{transform:translate(-31vw,-51vh) scale(.46) rotate(-16deg)}'
-  +'92%{opacity:1;transform:translate(-37vw,-55vh) scale(.18) rotate(-24deg)}'
-  +'100%{opacity:0;transform:translate(-38vw,-55vh) scale(.05) rotate(-30deg)}}'
-+'}'
+/* hoisting the truck: one arm straight up, knees loaded, then the heave */
++'.afcb-hero.hoist{transform:translate(var(--hfront),0)}'
++'.afcb-hero.hoist .afcb-wave{animation:afcbHoistArm 1.25s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.hoist .afcb-foreB{animation:afcbHoistFore 1.25s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.hoist .afcb-legA,.afcb-hero.hoist .afcb-legB{animation:afcbLoad 1.25s ease-out forwards}'
++'.afcb-hero.hoist .afcb-bob{animation:afcbPush 1.25s ease-out forwards}'
++'@keyframes afcbHoistArm{0%{transform:rotate(0)}45%{transform:rotate(-64deg)}100%{transform:rotate(-104deg)}}'
++'@keyframes afcbHoistFore{0%{transform:rotate(0)}45%{transform:rotate(-22deg)}100%{transform:rotate(-42deg)}}'
++'@keyframes afcbLoad{0%{transform:rotate(0)}40%{transform:rotate(9deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbPush{0%{transform:translateY(0)}40%{transform:translateY(9px)}100%{transform:translateY(-4px)}}'
++'.afcb-hero.heaving{transform:translate(var(--hfront),0)}'
++'.afcb-hero.heaving .afcb-wave{animation:afcbHeaveArm 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
++'.afcb-hero.heaving .afcb-foreB{animation:afcbHeaveFore 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
++'.afcb-hero.heaving .afcb-torso{animation:afcbHeaveLean 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
++'@keyframes afcbHeaveArm{0%{transform:rotate(-104deg)}30%{transform:rotate(-126deg)}'
+ +'55%{transform:rotate(-40deg)}100%{transform:rotate(-14deg)}}'
++'@keyframes afcbHeaveFore{0%{transform:rotate(-42deg)}30%{transform:rotate(-58deg)}'
+ +'55%{transform:rotate(6deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbHeaveLean{0%{transform:rotate(0)}30%{transform:rotate(-8deg)}'
+ +'55%{transform:rotate(9deg)}100%{transform:rotate(0)}}'
+
+/* tucking into the corner to become the launcher */
++'.afcb-hero.tuck{animation:afcbTuck 1s cubic-bezier(.4,0,.5,1) forwards}'
++'@keyframes afcbTuck{0%{opacity:1;transform:translate(var(--hcorner),0) scale(.82)}'
+ +'100%{opacity:0;transform:translate(calc(var(--hcorner) + 4vw),2vh) scale(.42)}}'
+
+/* ── exit ──────────────────────────────────────────────────────────────── */
++'.afcb-hero.pop{animation:afcbPop .8s cubic-bezier(.3,1.3,.4,1) forwards}'
++'@keyframes afcbPop{0%{opacity:0;transform:translate(var(--hcorner),3vh) scale(.42)}'
+ +'100%{opacity:1;transform:translate(var(--hfront),0) scale(1)}}'
++'.afcb-hero.crouch{animation:afcbCrouch .85s ease-out forwards}'
++'@keyframes afcbCrouch{0%{opacity:1;transform:translate(var(--hfront),0) scale(1)}'
+ +'100%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9) }}'
++'.afcb-hero.crouch .afcb-legA,.afcb-hero.crouch .afcb-legB{animation:afcbLoad .85s ease-out forwards}'
++'.afcb-hero.leap{animation:afcbLeap 2.6s cubic-bezier(.3,.05,.4,1) forwards}'
++'@keyframes afcbLeap{0%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9) rotate(0)}'
+ +'35%{transform:translate(calc((var(--hfront) + var(--px)) / 2),calc(var(--py) - 8vh)) scale(.72) rotate(-70deg)}'
+ +'80%{opacity:1;transform:translate(calc(var(--px) + 3vw),calc(var(--py) + 2vh)) scale(.3) rotate(-240deg)}'
+ +'100%{opacity:0;transform:translate(calc(var(--px) + 4vw),calc(var(--py) + 3vh)) scale(.08) rotate(-320deg)}}'
++'.afcb-hero.leap .afcb-legA,.afcb-hero.leap .afcb-legB{animation:afcbTuckLeg 2.6s ease-in-out forwards}'
++'.afcb-hero.leap .afcb-shinA,.afcb-hero.leap .afcb-shinB{animation:afcbTuckShin 2.6s ease-in-out forwards}'
+
+/* ── skip control ──────────────────────────────────────────────────────── */
++'.afcb-skip{position:absolute;right:18px;top:16px;pointer-events:auto;cursor:pointer;'
+ +'background:rgba(13,17,23,.72);color:#F4F4F1;border:1px solid rgba(244,244,241,.3);border-radius:999px;'
+ +'padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;letter-spacing:.02em}'
++'.afcb-skip:hover{background:#0D1117}'
++'@media(max-width:640px){.afcb-truck{width:92vw;min-width:0}.afcb-hero{width:27vw;min-width:104px}'
+ +'.afcb-portal{width:44vw}.afcb-puddle{width:44vw}}'
 +'@media(prefers-reduced-motion:reduce){.afcb-stage{display:none!important}}';
 
 /* Returns null when the browser asked for no motion — callers just proceed. */
@@ -1847,23 +2153,28 @@ function Cine(){
 
   var stage = el('div', 'afcb-stage');
   stage.innerHTML =
-    '<div class="afcb-sky"></div>'
-  + '<div class="afcb-bolts">' + BOLTS + '</div>'
+    '<div class="afcb-weather"><div class="afcb-rain"></div></div>'
+  + '<div class="afcb-bolts"></div>'
+  + '<div class="afcb-sky"></div>'
   + '<div class="afcb-puddle">' + MUD + '</div>'
   + '<div class="afcb-truck">' + TRUCK + '</div>'
   + '<div class="afcb-portal">' + PORTAL + '</div>'
   + '<div class="afcb-disc">' + DISC + '</div>'
-  + '<div class="afcb-hero">' + FULL + '</div>'
+  + '<div class="afcb-hero">' + man() + '</div>'
   + '<button class="afcb-skip" type="button">Skip intro</button>';
   D.body.appendChild(stage);
 
-  var sky    = stage.querySelector('.afcb-sky'),
-      hero   = stage.querySelector('.afcb-hero'),
-      portal = stage.querySelector('.afcb-portal'),
-      disc   = stage.querySelector('.afcb-disc'),
-      puddle = stage.querySelector('.afcb-puddle'),
-      skip   = stage.querySelector('.afcb-skip'),
-      timers = [], ending = null;
+  var sky     = stage.querySelector('.afcb-sky'),
+      weather = stage.querySelector('.afcb-weather'),
+      rain    = stage.querySelector('.afcb-rain'),
+      bolts   = stage.querySelector('.afcb-bolts'),
+      hero    = stage.querySelector('.afcb-hero'),
+      truck   = stage.querySelector('.afcb-truck'),
+      portal  = stage.querySelector('.afcb-portal'),
+      disc    = stage.querySelector('.afcb-disc'),
+      puddle  = stage.querySelector('.afcb-puddle'),
+      skip    = stage.querySelector('.afcb-skip'),
+      timers  = [], ending = null;
 
   function mob(){ return (W.innerWidth || 1024) <= 640; }
   function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
@@ -1871,6 +2182,44 @@ function Cine(){
   function drop(node, ms){ at(ms, function(){ if (node.parentNode) node.parentNode.removeChild(node); }); }
 
   var HUE = ['#C9F04B','#F7E8A0','#A6CE39','#FFFFFF','#E8A020','#BFD4E8'];
+
+  /* lightning: lay down fresh bolts, measure each path so the draw is even */
+  function strike(count){
+    bolts.innerHTML = boltSVG(1200, 700, count);
+    var paths = bolts.querySelectorAll('path'), i, len;
+    for (i = 0; i < paths.length; i++){
+      try { len = Math.ceil(paths[i].getTotalLength()); } catch(e){ len = 1600; }
+      paths[i].style.setProperty('--l', len);
+      paths[i].style.animationDelay = paths[i].parentNode.style.animationDelay;
+    }
+  }
+
+  /* clouds drifting the top of the stage */
+  function clouds(n){
+    for (var i = 0; i < n; i++){
+      var c = el('div', 'afcb-cloud');
+      c.innerHTML = CLOUD;
+      c.style.width = Math.round(rnd(180, 340)) + 'px';
+      c.style.top = Math.round(rnd(-2, 22)) + 'vh';
+      c.style.opacity = rnd(.5, .9);
+      c.style.setProperty('--cd', rnd(16, 30).toFixed(1) + 's');
+      c.style.animationDelay = (-rnd(0, 10)).toFixed(1) + 's';
+      weather.appendChild(c);
+    }
+  }
+
+  /* slanted rain across the top third */
+  function raindrops(n){
+    for (var i = 0; i < n; i++){
+      var r = el('i');
+      r.style.left = rnd(-6, 104).toFixed(1) + 'vw';
+      r.style.setProperty('--len', Math.round(rnd(14, 34)) + 'px');
+      r.style.setProperty('--dur', rnd(.7, 1.5).toFixed(2) + 's');
+      r.style.animationDelay = (-rnd(0, 1.5)).toFixed(2) + 's';
+      r.style.opacity = rnd(.35, .8);
+      rain.appendChild(r);
+    }
+  }
 
   /* one firework: shell climbs, blooms, sparks arc out and fall */
   function firework(xvw, yvh){
@@ -1882,14 +2231,14 @@ function Cine(){
     drop(sh, 950);
 
     at(850, function(){
-      var fw = el('div', 'afcb-fw'), i, n = 20, ang, dist, col = pick(HUE);
+      var fw = el('div', 'afcb-fw'), i, n = 22, ang, dist, col = pick(HUE);
       fw.style.left = xvw + 'vw';
       fw.style.top  = (100 - yvh) + 'vh';
       fw.appendChild(el('b'));
       for (i=0;i<n;i++){
         var s = el('i');
         ang  = (Math.PI * 2 / n) * i + rnd(-0.12, 0.12);
-        dist = rnd(70, 170);
+        dist = rnd(70, 180);
         s.style.background = (i % 5 === 0) ? '#fff' : col;
         s.style.boxShadow = '0 0 9px ' + col;
         s.style.setProperty('--tx', Math.round(Math.cos(ang) * dist) + 'px');
@@ -1906,7 +2255,7 @@ function Cine(){
   function grit(xvw, count, spread, muddy){
     for (var i=0;i<count;i++){
       (function(){
-        var g = el('div', 'afcb-grit'), sz = rnd(muddy ? 9 : 6, muddy ? 26 : 18);
+        var g = el('div', 'afcb-grit'), sz = rnd(muddy ? 9 : 6, muddy ? 28 : 18);
         g.style.left   = (xvw + rnd(-3, 3)) + 'vw';
         g.style.width  = sz + 'px';
         g.style.height = (sz * rnd(.6, 1)) + 'px';
@@ -1914,7 +2263,7 @@ function Cine(){
           ? pick(['#4A3323','#5E4128','#6B4A2C','#3A2717'])
           : pick(['#D9C7A8','#C9B392','#E6D9C0']);
         g.style.setProperty('--tx', Math.round(rnd(spread * 0.25, spread)) + 'px');
-        g.style.setProperty('--ty', Math.round(rnd(-160, -40)) + 'px');
+        g.style.setProperty('--ty', Math.round(rnd(-170, -40)) + 'px');
         g.style.animationDelay = rnd(0, .35) + 's';
         sky.appendChild(g);
         drop(g, 2700);
@@ -1922,13 +2271,29 @@ function Cine(){
     }
   }
 
+  /* a rolling cloud of dust hanging off the tires */
+  function dust(xvw, drift){
+    var d = el('div', 'afcb-dust');
+    d.style.left = xvw + 'vw';
+    d.style.setProperty('--tx', Math.round(drift) + 'px');
+    d.style.opacity = rnd(.6, 1);
+    sky.appendChild(d);
+    drop(d, 2800);
+  }
+
   function reset(){
     stage.className = 'afcb-stage';
     hero.className = 'afcb-hero';
     hero.style.transform = ''; hero.style.opacity = '';
+    truck.className = 'afcb-truck';
+    truck.style.transform = ''; truck.style.opacity = '';
     portal.className = 'afcb-portal';
     disc.className = 'afcb-disc'; disc.style.opacity = '';
-    sky.innerHTML = '';
+    puddle.className = 'afcb-puddle';
+    sky.innerHTML = ''; bolts.innerHTML = '';
+    rain.innerHTML = ''; 
+    var cl = weather.querySelectorAll('.afcb-cloud');
+    for (var i=0;i<cl.length;i++) weather.removeChild(cl[i]);
   }
   function finish(done){ clearAll(); reset(); if (done) done(); }
 
@@ -1939,50 +2304,87 @@ function Cine(){
   return {
     stage: stage,
 
-    /* ~11.4s of arrival */
+    /* ~16s of arrival — long on purpose, and skippable at any moment */
     arrive: function(done){
+      ending = function(){ finish(done); };
+      var m = mob(), flips = Math.random() < .45;
+      stage.classList.add('on');
+      if (m) stage.classList.add('m');
+      clouds(m ? 3 : 5);
+      raindrops(m ? 26 : 58);
+      strike(m ? 5 : 8);
+      void stage.offsetWidth;
+      stage.classList.add('go');
+      puddle.style.left = (m ? 4 : 8) + 'vw';
+
+      /* fireworks across the entire width, spaced so nothing pulses */
+      var shots = [[14,52],[76,58],[40,68],[88,44],[26,62],[62,50],[8,46],[52,72],[70,64],[34,48]];
+      shots.forEach(function(p, i){ at(300 + i * 560, function(){ firework(p[0], p[1]); }); });
+
+      /* the drive: wheelie right to left, swing, run back and brake */
+      at(500, function(){ truck.classList.add('drive'); });
+      at(1500, function(){ dust(m ? 70 : 74, -180); });
+      at(2300, function(){ dust(m ? 44 : 48, -220); grit(m ? 46 : 50, 10, 200, false); });
+      at(3100, function(){ dust(m ? 20 : 22, -180); });
+      /* the swing-around chews up the ground and leaves the puddle */
+      at(3550, function(){ grit(m ? 10 : 12, 20, 300, true); dust(m ? 12 : 14, 140); });
+      at(3750, function(){ puddle.classList.add('wet'); });
+      at(4400, function(){ dust(m ? 24 : 26, 200); });
+      at(5200, function(){ dust(m ? 40 : 44, 220); grit(m ? 42 : 46, 10, 220, false); });
+      /* the brake */
+      at(7000, function(){ dust(m ? 58 : 62, 150); grit(m ? 56 : 60, 16, 260, false); });
+      at(7300, function(){ dust(m ? 62 : 66, 90); });
+
+      /* out of the cab */
+      at(7900, function(){ truck.className = 'afcb-truck parked open'; });
+      at(8500, function(){ hero.style.opacity = '1'; hero.className = 'afcb-hero stepout'; });
+      if (flips){
+        at(10200, function(){ hero.className = 'afcb-hero flip'; });
+        at(11350, function(){ hero.className = 'afcb-hero postflip waving'; });
+        at(11460, function(){ hero.classList.add('moved'); });
+      } else {
+        at(10200, function(){ hero.className = 'afcb-hero hello waving'; });
+        at(10260, function(){ hero.classList.add('moved'); });
+      }
+      at(10400, function(){ truck.className = 'afcb-truck parked shut'; });
+
+      /* throw the portal to the top of the far side */
+      at(12000, function(){ hero.className = 'afcb-hero throwing'; });
+      at(12420, function(){ disc.classList.add('fly'); });
+      at(13500, function(){ disc.style.opacity = '0'; portal.classList.add('open'); });
+
+      /* hoist the truck one-handed and heave it through */
+      at(14100, function(){ hero.className = 'afcb-hero hoist';
+                            truck.className = 'afcb-truck lift'; });
+      at(15350, function(){ hero.className = 'afcb-hero heaving';
+                            truck.className = 'afcb-truck heave'; });
+      at(16500, function(){ portal.className = 'afcb-portal shut'; stage.classList.add('clear'); });
+
+      /* and off to the corner */
+      at(17100, function(){ hero.className = 'afcb-hero walkout walking'; });
+      at(m ? 19100 : 19400, function(){ hero.className = 'afcb-hero walkout'; });
+      at(m ? 19300 : 19600, function(){ hero.className = 'afcb-hero tuck'; });
+      at(m ? 20200 : 20500, function(){ ending = null; finish(done); });
+      return m ? 19300 : 19600;
+    },
+
+    /* ~8s of exit, deliberately slow */
+    exit: function(done){
       ending = function(){ finish(done); };
       var m = mob();
       stage.classList.add('on');
-      void stage.offsetWidth;
-      stage.classList.add('go');
-      puddle.style.left = (m ? 20 : 47) + 'vw';
-
-      /* fireworks across the entire width, staggered so nothing flashes */
-      var shots = [[14,52],[76,58],[40,68],[88,44],[26,62],[62,50],[8,46],[52,72],[70,64],[34,48]];
-      shots.forEach(function(p, i){ at(260 + i * 520, function(){ firework(p[0], p[1]); }); });
-
-      at(1500, function(){ grit(m ? 14 : 22, 12, 180, false); });   /* brake skid */
-      at(5700, function(){ grit(m ? 48 : 57, 18, 280, true);        /* peel out   */
-                           grit(m ? 44 : 53, 10, 220, false); });
-      at(6200, function(){ grit(m ? 44 : 53, 8, 150, true); });
-
-      at(6250, function(){ hero.style.opacity = '1'; hero.classList.add('climb'); });
-      at(7700, function(){ hero.className = 'afcb-hero hello';
-                           hero.style.transform = 'translate(' + (m ? -25 : -33) + 'vw,0)'; });
-      at(9150, function(){ hero.style.transform = '';
-                           hero.className = 'afcb-hero walk walking'; });
-      at(m ? 11300 : 11800, function(){ hero.classList.remove('walking'); });
-      at(m ? 11450 : 11950, function(){ hero.className = 'afcb-hero tuck'; });
-      at(m ? 12400 : 12900, function(){ ending = null; finish(done); });
-      return m ? 11450 : 11950;
-    },
-
-    /* ~7.8s of exit, deliberately slow */
-    exit: function(done){
-      ending = function(){ finish(done); };
-      stage.classList.add('on');
+      if (m) stage.classList.add('m');
       void stage.offsetWidth;
       hero.style.opacity = '1';
       hero.classList.add('pop');
 
-      at(1050, function(){ hero.className = 'afcb-hero windup'; });
-      at(1550, function(){ disc.classList.add('fly'); });
+      at(1050, function(){ hero.className = 'afcb-hero throwing'; });
+      at(1500, function(){ disc.classList.add('fly'); });
       at(2650, function(){ disc.style.opacity = '0'; portal.classList.add('open'); });
       at(4150, function(){ hero.className = 'afcb-hero crouch'; });
-      at(5000, function(){ hero.className = 'afcb-hero leap'; });
-      at(6800, function(){ portal.className = 'afcb-portal shut'; });
-      at(7800, function(){ ending = null; finish(done); });
+      at(5050, function(){ hero.className = 'afcb-hero leap'; });
+      at(7000, function(){ portal.className = 'afcb-portal shut'; });
+      at(8000, function(){ ending = null; finish(done); });
     },
 
     kill: function(){ if (ending){ var f = ending; ending = null; f(); } }
@@ -1996,11 +2398,10 @@ var CSS = ''
 
 /* the launcher is the whole man, not a face in a circle */
 +'.afcb-btn{position:relative;display:block;width:104px;padding:0;border:0;background:transparent;cursor:pointer}'
-+'.afcb-btn u{position:absolute;left:50%;bottom:-4px;width:86px;height:86px;margin-left:-43px;border-radius:50%;'
- +'background:#A6CE39;border:3px solid #fff;box-shadow:0 12px 30px rgba(13,17,23,.38);text-decoration:none}'
++'.afcb-btn:after{content:"";position:absolute;left:50%;bottom:2px;width:78px;height:14px;margin-left:-39px;'
+ +'border-radius:50%;background:rgba(13,17,23,.16);filter:blur(4px)}'
 +'.afcb-btn svg{position:relative;width:100%;height:auto;display:block;'
  +'filter:drop-shadow(0 10px 16px rgba(13,17,23,.35))}'
-+'.afcb-btn:hover u{background:#C9F04B}'
 +'.afcb-dot{position:absolute;top:6px;right:2px;width:22px;height:22px;border-radius:50%;background:#B4763C;'
  +'border:2px solid #fff;color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;line-height:1}'
 +'.afcb.open .afcb-btn{opacity:0;pointer-events:none;transform:translateY(14px) scale(.9);'
@@ -2060,7 +2461,7 @@ var CSS = ''
 +'.afcb-cr{font-size:10.5px;color:#8A939E;text-align:center;padding:7px;background:#fff;border-top:1px solid #EAEAE4;flex:0 0 auto}'
 +'.afcb-cr a{color:#8A939E;text-decoration:none}'
 +'@media(max-width:480px){.afcb{right:12px;bottom:12px}.afcb-btn{width:82px}'
- +'.afcb-btn u{width:70px;height:70px;margin-left:-35px}'
+ +'.afcb-btn:after{width:62px;margin-left:-31px}'
  +'.afcb-p{height:min(580px,calc(100vh - 96px));width:calc(100vw - 24px)}'
  +'.afcb-hello svg{width:140px}'
  +'.afcb-tip{display:none!important}}'
@@ -2072,10 +2473,15 @@ var CSS = ''
  +'.afcb-pr{animation:afcbB 3.3s ease-in-out infinite}'
  +'.afcb-bob{animation:afcbC 3.6s ease-in-out infinite}'
  +'.afcb-shadow{animation:afcbSh 3.6s ease-in-out infinite}'
- +'.afcb-wave{animation:afcbD 4.1s ease-in-out infinite;transform-box:view-box;transform-origin:282px 236px}'
+ +'.afcb-wave{animation:afcbD 4.1s ease-in-out infinite}'
  +'.afcb-armA{animation:afcbG 5.3s ease-in-out infinite}'
- +'.afcb-neck{animation:afcbE 11s ease-in-out infinite;transform-box:view-box;transform-origin:220px 206px}'
- +'.afcb-hat{animation:afcbH 17s ease-in-out infinite;transform-box:view-box;transform-origin:220px 48px}'
+ +'.afcb-neck{animation:afcbE 15s ease-in-out infinite}'
+ +'.afcb-head{animation:afcbHd 15s ease-in-out infinite}'
+ +'.afcb-foreB{animation:afcbFb 4.1s ease-in-out infinite}'
+ +'.afcb-foreA{animation:afcbFa 5.3s ease-in-out infinite}'
+ +'.afcb-legA{animation:afcbWt 9s ease-in-out infinite}'
+ +'.afcb-legB{animation:afcbWt2 9s ease-in-out infinite}'
+ +'.afcb-hat{animation:afcbH 17s ease-in-out infinite}'
  +'.afcb-t s{animation:afcbF 1.3s ease-in-out infinite}'
  +'.afcb-t s:nth-child(2){animation-delay:.18s}.afcb-t s:nth-child(3){animation-delay:.36s}'
  +'.afcb-btn:hover .afcb-bob{animation:afcbC 1.1s ease-in-out infinite}}'
@@ -2085,9 +2491,19 @@ var CSS = ''
 +'@keyframes afcbSh{0%,100%{transform:scale(1)}50%{transform:scale(.93)}}'
 +'@keyframes afcbD{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}'
 +'@keyframes afcbG{0%,100%{transform:rotate(4deg)}50%{transform:rotate(-6deg)}}'
-+'@keyframes afcbE{0%{transform:rotate(0) skewX(0)}4%{transform:rotate(5deg) skewX(-3deg)}'
- +'8%{transform:rotate(-4deg) skewX(3deg)}12%{transform:rotate(2.5deg) skewX(-1.5deg)}'
- +'16%{transform:rotate(-1.2deg)}20%,100%{transform:rotate(0)}}'
++'@keyframes afcbE{0%{transform:rotate(0) skewX(0)}3%{transform:rotate(9deg) skewX(-6deg)}'
+ +'6%{transform:rotate(-7.5deg) skewX(5deg)}9%{transform:rotate(5deg) skewX(-3deg)}'
+ +'12%{transform:rotate(-3deg) skewX(2deg)}15%{transform:rotate(1.4deg)}'
+ +'18%,52%{transform:rotate(0)}55%{transform:rotate(-5deg) skewX(3deg)}'
+ +'58%{transform:rotate(3.4deg) skewX(-2deg)}61%{transform:rotate(-1.6deg)}'
+ +'64%,100%{transform:rotate(0)}}'
++'@keyframes afcbHd{0%,52%{transform:rotate(0)}3%{transform:rotate(-4deg)}'
+ +'7%{transform:rotate(3deg)}11%{transform:rotate(-1.4deg)}16%{transform:rotate(0)}'
+ +'55%{transform:rotate(2.4deg)}59%{transform:rotate(-1.4deg)}64%,100%{transform:rotate(0)}}'
++'@keyframes afcbFb{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(7deg)}}'
++'@keyframes afcbFa{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-5deg)}}'
++'@keyframes afcbWt{0%,100%{transform:rotate(0)}50%{transform:rotate(1.6deg)}}'
++'@keyframes afcbWt2{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.6deg)}}'
 +'@keyframes afcbH{0%,88%,100%{transform:rotate(0)}92%{transform:rotate(-7deg) translateY(-4px)}'
  +'96%{transform:rotate(3deg) translateY(1px)}}'
 +'@keyframes afcbF{0%,60%,100%{opacity:.3}30%{opacity:1}}';
@@ -2101,7 +2517,7 @@ function build(){
     '<div class="afcb-tip" role="button" tabindex="0"><b>' + esc(CFG.name) + ' here</b>'
       + 'Got a marketing question? I answer at 11pm too.</div>'
   + '<div class="afcb-p" role="dialog" aria-label="Chat with ' + esc(CFG.name) + '">'
-  +   '<div class="afcb-h"><span class="av">' + FULL + '</span>'
+  +   '<div class="afcb-h"><span class="av">' + man() + '</span>'
   +     '<span><b>' + esc(CFG.name) + '</b><i><u></u>' + esc(CFG.title) + '</i></span>'
   +     '<button class="afcb-x" type="button" aria-label="Close chat">&times;</button></div>'
   +   '<div class="afcb-m" role="log" aria-live="polite"></div>'
@@ -2118,7 +2534,7 @@ function build(){
   +   '<div class="afcb-cr">Rule-based assistant · <a href="https://eyetoad.com/" rel="noopener">Eye To Ad Media</a></div>'
   + '</div>'
   + '<button class="afcb-btn" type="button" aria-label="Open chat with ' + esc(CFG.name) + '">'
-  +   '<u></u>' + FULL + '<span class="afcb-dot">1</span></button>';
+  +   man() + '<span class="afcb-dot">1</span></button>';
   D.body.appendChild(w);
 
   var panel = w.querySelector('.afcb-p'),
@@ -2223,7 +2639,7 @@ function build(){
     if (dot) dot.style.display = 'none';
     if (!opened){
       opened = true;
-      var hello = el('div', 'afcb-hello', FULL);
+      var hello = el('div', 'afcb-hello', man());
       msgs.appendChild(hello);
       say('Howdy. I am ' + CFG.name + ' — a tape measure in a cowboy hat with a pencil behind one ear, which is an odd career, but the numbers work out.\n\nI answer contractor marketing questions, run your break-even cost per lead, and never once take a lunch break. What are you working on?',
         function(){ chips(['Run my numbers','What do you cost?','My phone is not ringing','Tell me a joke']); });
@@ -2326,7 +2742,8 @@ if (!HAS_DOM){
   if (typeof module !== 'undefined' && module.exports){
     module.exports = { KB:KB, S:S, norm:norm, match:match, nums:nums, respond:respond,
                        fill:fill, A2:A2, L2:L2, byId:byId, CFG:CFG, QUOTES:QUOTES, JOKES:JOKES,
-                       FULL:FULL, TRUCK:TRUCK, PORTAL:PORTAL, DISC:DISC, MUD:MUD, BOLTS:BOLTS,
+                       FULL:FULL, man:man, TRUCK:TRUCK, PORTAL:PORTAL, DISC:DISC, MUD:MUD,
+                       CLOUD:CLOUD, boltSVG:boltSVG, boltPath:boltPath,
                        CSS:CSS, CINE_CSS:CINE_CSS };
   }
   return;
