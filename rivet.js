@@ -1,5 +1,5 @@
 /* ==========================================================================
-   rivet.js — AFC site assistant "Tex". One file, every page. v4.
+   rivit.js — AFC site assistant "Rivit". One file, every page. v10.
    Rule-based. He only says what is written here, so he cannot invent a
    price, a promise or a statistic. Rename him on CFG.name.
    Motion: nothing strobes. Every effect draws on slowly and fades once,
@@ -10,7 +10,7 @@
 if (typeof window !== 'undefined'){ if (window.__afcBot) return; window.__afcBot = 1; }
 
 var CFG = {
-  name    : 'Tex',
+  name    : 'Rivit',
   title   : 'Advertising for Contractors',
   tel     : '18004818638',
   telView : '1-800-481-8638',
@@ -35,6 +35,11 @@ var reduce = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').ma
 
 /* ── shuffled bag: no repeat until the whole set has been used ───────────── */
 function Bag(list){ this.src = list; this.pool = []; }
+Bag.prototype.add = function(items){
+  for (var i=0;i<items.length;i++) this.src.push(items[i]);
+  this.pool = [];
+  return this;
+};
 Bag.prototype.next = function(){
   if (!this.pool.length){ this.pool = this.src.slice();
     for (var i=this.pool.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1));
@@ -47,6 +52,13 @@ Bag.prototype.next = function(){
    and "not so good man" all land on the right intent.
    ========================================================================== */
 var SLANG = {
+  gc:'general contractor', sub:'subcontractor', subs:'subcontractors',
+  cpl:'cost per lead', cac:'customer acquisition cost', roas:'return on ad spend',
+  gbp:'google business profile', gmb:'google business profile', lsa:'local services ads',
+  ppc:'google ads', nap:'name address phone', cta:'call to action', crm:'crm',
+  aio:'ai search', geo:'ai search', aeo:'ai search', sge:'ai search',
+  bidz:'bids', estimating:'estimates', reno:'remodeling', renos:'remodeling',
+  hoa:'homeowners association', diy:'do it myself',
   u:'you', ur:'your', r:'are', n:'and', y:'why', k:'ok', kk:'ok', m:'am',
   im:'i am', ive:'i have', ill:'i will', id:'i would', cant:'can not',
   dont:'do not', doesnt:'does not', didnt:'did not', wont:'will not',
@@ -304,6 +316,8 @@ var QUOTES = new Bag([
 
 /* PG, original, safe to say to a stranger on a jobsite. */
 var JOKES = new Bag([
+  'They call me Rivit because I am a jack of all trades. Master of one, though — and you are reading it.',
+  'Rivit of all trades, master of none is the short version. The full quote ends with "but oftentimes better than master of one." Somebody clipped it to sell you specialization.',
  'Why did the contractor bring a ladder to the bid meeting? He heard the margins were high.',
  'I told my tape measure a secret. It stretched the truth by a quarter inch.',
  'Why do electricians make great friends? They always know how to stay grounded.',
@@ -402,6 +416,214 @@ var STAT = {
   prices   : 'In a February 2026 survey of 500 residential remodelers, 77 percent were optimistic about the year and 72 percent were raising their rates. Nearly everyone is repricing. The ones losing sleep are the ones raising price without raising proof.',
   lsagrow  : 'Local Services Ads adoption went from about 28 percent of contractors in 2021 to roughly 70 percent by late 2025, and about 27.8 percent of consumers click the LSA block versus 11 percent for standard paid search. The free real estate is gone, but the click share is real.'
 };
+
+/* ─────────────────────────── MORE JOKES ─────────────────────────────────
+   Two hundred more, shuffled into the same bag as the originals so the
+   same one does not come back around for a very long time.
+   ───────────────────────────────────────────────────────────────────── */
+var JOKES2 = [
+"Why did the marketer bring a ladder? To improve the company reach.",
+"Why did the contractor become a comedian? He already had great delivery.",
+"Why was the website always calm? It had plenty of inner links.",
+"Why did the carpenter carry a pencil everywhere? He liked to draw conclusions.",
+"Why did the marketer cross the road? To reach a new audience.",
+"Why was the construction worker great at parties? He always raised the roof.",
+"Why did the SEO specialist visit the bakery? He wanted better organic rolls.",
+"Why did the painter get promoted? His work was outstanding in its field.",
+"Why was the advertisement exhausted? It had been running all week.",
+"Why did the plumber start a podcast? He had a steady stream of ideas.",
+"Why was the contractor good at math? He knew how to measure success.",
+"Why did the billboard go to school? It wanted greater exposure.",
+"Why did the roofer bring sunglasses? The future looked shingle-bright.",
+"Why was the marketing campaign so polite? It always asked for permission to convert.",
+"Why did the electrician become a marketer? He knew how to generate buzz.",
+"Why was the hammer confident? It always nailed the assignment.",
+"Why did the website hire a personal trainer? It needed stronger core pages.",
+"Why was the carpenter such a good listener? He always took notes on the board.",
+"Why did the marketer bring a fishing pole? He was looking for better leads.",
+"Why was the construction plan so popular? Everyone could build on it.",
+"Why did the email campaign go to therapy? It had too many attachment issues.",
+"Why did the painter love Monday mornings? Every week was a fresh coat.",
+"Why did the contractor start a band? He already had the right tools.",
+"Why was the landing page so successful? It knew how to make an entrance.",
+"Why did the plumber stay positive? He knew every problem would eventually drain away.",
+"Why did the social media manager bring a megaphone? The post needed more reach.",
+"Why was the drill invited to every project? It always got straight to the point.",
+"Why did the marketer become a gardener? He was great at growing brands.",
+"Why did the roofer avoid gossip? He preferred to stay above it all.",
+"Why was the paintbrush so relaxed? It knew how to go with the flow.",
+"Why did the contractor bring coffee to the jobsite? He needed help building momentum.",
+"Why did the search engine break up with the website? There was no connection.",
+"Why was the electrician always invited to brainstorms? He had bright ideas.",
+"Why did the ad campaign carry an umbrella? It was expecting a flood of leads.",
+"Why was the measuring tape so trustworthy? It always told the whole length.",
+"Why did the website visit the eye doctor? It needed better visibility.",
+"Why was the plumber a great detective? He always found the source of the leak.",
+"Why did the marketer open a bakery? He knew how to generate dough.",
+"Why did the contractor refuse to argue? He preferred constructive criticism.",
+"Why was the keyword feeling important? Everyone was searching for it.",
+"Why did the carpenter become a teacher? He was good at explaining the framework.",
+"Why did the business hire an SEO expert? It wanted to move up in the world.",
+"Why was the construction crew so musical? They worked in perfect hammer-ny.",
+"Why did the painter bring two ladders? He wanted to take his business to the next level.",
+"Why did the marketing funnel feel crowded? Too many prospects were pouring in.",
+"Why was the cement mixer such a good friend? It always helped smooth things over.",
+"Why did the website get a makeover? Its look was losing visitors.",
+"Why did the roofer win employee of the month? His performance was through the roof.",
+"Why did the marketer study maps? He wanted to understand the customer journey.",
+"Why was the contractor never surprised? He always had a concrete plan.",
+"Why did the logo go to the gym? It wanted a stronger brand identity.",
+"Why was the carpenter great at relationships? He knew how to build trust.",
+"Why did the advertisement take a vacation? It needed time to recharge its campaign.",
+"Why did the plumber bring a notebook? He wanted to keep track of current events.",
+"Why did the contractor become an author? He had a great story under construction.",
+"Why was the call-to-action so popular? It always knew what to say next.",
+"Why did the painter open a restaurant? He specialized in tasteful finishes.",
+"Why did the marketer buy binoculars? To keep an eye on the competition.",
+"Why was the toolbox so organized? Everything had its place.",
+"Why did the webpage arrive early? It wanted a fast loading time.",
+"Why did the electrician tell jokes at work? To lighten the mood.",
+"Why was the contractor good at chess? He planned several builds ahead.",
+"Why did the marketing team love elevators? They were always discussing conversion lifts.",
+"Why did the carpenter become an influencer? He had a strong following of studs.",
+"Why was the roof so confident? It had everything covered.",
+"Why did the email marketer knock first? He did not want to be marked as spam.",
+"Why did the painter become a motivational speaker? He knew everyone deserved a fresh start.",
+"Why was the wrench always helpful? It could turn any situation around.",
+"Why did the marketer carry a compass? To keep the campaign on target.",
+"Why was the construction site optimistic? Progress was being made every day.",
+"Why did the website get embarrassed? Someone saw its cookies.",
+"Why did the contractor start exercising? He wanted to improve his foundation.",
+"Why was the ad so convincing? It made a strong case.",
+"Why did the plumber become a singer? He had excellent pipes.",
+"Why did the carpenter love puzzles? He enjoyed putting the pieces together.",
+"Why did the marketing report wear glasses? It wanted to focus on the numbers.",
+"Why was the brick so dependable? It was solid through and through.",
+"Why did the painter bring a camera? He wanted to capture the perfect finish.",
+"Why did the contractor open a bakery? He was already good with turnovers.",
+"Why did the social post sit by the window? It wanted more exposure.",
+"Why was the hammer such a good manager? It knew when to drive the point home.",
+"Why did the marketer visit the gym? To work on customer retention.",
+"Why did the roofer enjoy winter? Business always picked up after a good freeze.",
+"Why was the landing page lonely? Nobody clicked with it.",
+"Why did the carpenter bring glue to the meeting? He wanted the team to stick together.",
+"Why did the contractor become a chef? He knew the recipe for a successful build.",
+"Why did the keyword feel lost? It had no search intent.",
+"Why was the paint can so optimistic? It always saw a brighter future.",
+"Why did the plumber get promoted? He knew how to handle pressure.",
+"Why did the marketer carry extra batteries? The campaign needed more energy.",
+"Why was the construction estimate nervous? It was afraid of being taken out of context.",
+"Why did the website make friends easily? It had an inviting homepage.",
+"Why did the electrician enjoy networking? He loved making connections.",
+"Why was the carpenter calm under pressure? He knew the drill.",
+"Why did the marketer order a large pizza? He wanted a bigger piece of the market.",
+"Why was the concrete worker so patient? He knew good things take time to set.",
+"Why did the ad stop telling long stories? It wanted to get straight to the point.",
+"Why was the painter great at decorating? He always knew how to set the tone.",
+"Why did the contractor bring a calculator? He wanted the job to add up.",
+"Why was the website so popular? It had great character.",
+"Why did the marketer sit near the fireplace? He wanted warmer leads.",
+"Why did the carpenter win the debate? He made a solid point.",
+"Why was the plumber good at networking? He knew how everything connected.",
+"Why did the business redesign its logo? It was time to make its mark.",
+"Why did the roofer become a photographer? He loved taking shots from the top.",
+"Why was the drill so focused? It had one point to make.",
+"Why did the SEO specialist bring snacks? Rankings can be a long climb.",
+"Why was the contractor a great neighbor? He was always willing to lend a hand tool.",
+"Why did the paint roller get the big job? It knew how to cover a lot of ground.",
+"Why did the marketer talk to the calendar? He was planning his next campaign.",
+"Why was the ladder proud? It helped everyone move up.",
+"Why did the website stop whispering? It needed a stronger voice.",
+"Why did the carpenter become a referee? He knew when something was out of line.",
+"Why did the ad campaign visit a tailor? It needed a better fit for its audience.",
+"Why was the plumber never bored? Something interesting was always flowing his way.",
+"Why did the contractor bring a level to the meeting? He wanted a balanced discussion.",
+"Why did the marketer visit the farm? He was searching for organic growth.",
+"Why did the roof apply for a management position? It was already on top of everything.",
+"Why was the blueprint such a good leader? It gave everyone direction.",
+"Why did the email have excellent manners? It always included a proper subject.",
+"Why did the painter take up acting? He was great at changing scenes.",
+"Why was the construction worker a great storyteller? He knew how to build suspense.",
+"Why did the website bring luggage? It was preparing for more traffic.",
+"Why did the marketer become a meteorologist? He was always forecasting trends.",
+"Why was the screwdriver so persuasive? It could put a new twist on anything.",
+"Why did the contractor hire a musician? The project needed better timing.",
+"Why did the landing page join a dating app? It wanted more meaningful conversions.",
+"Why was the electrician such a positive person? He always looked on the bright side.",
+"Why did the marketer become a tour guide? He understood every step of the customer journey.",
+"Why did the carpenter bring a ruler to lunch? He wanted a well-measured meal.",
+"Why was the construction team never lost? They followed the plans.",
+"Why did the logo sit in the front row? It wanted to be recognized.",
+"Why did the roofer become a philosopher? He spent a lot of time thinking at a higher level.",
+"Why was the paintbrush a good dancer? It had smooth strokes.",
+"Why did the marketer carry a magnet? To attract more customers.",
+"Why did the contractor tell everyone to relax? The project was coming together.",
+"Why was the website good at introductions? It had a strong opening page.",
+"Why did the plumber become a teacher? He knew how to explain complicated pipelines.",
+"Why did the social media post go camping? It wanted to become more engaging.",
+"Why was the saw always prepared? It had plenty of cutting-edge ideas.",
+"Why did the marketer bring a flashlight? To shine a light on the brand.",
+"Why was the construction worker good at baseball? He knew how to handle a pitch.",
+"Why did the call-to-action start exercising? It wanted to become stronger.",
+"Why was the contractor office so peaceful? Everything was under construction, including the stress.",
+"Why did the website get invited to dinner? It had an appealing menu.",
+"Why did the painter tell colorful stories? He had a vivid imagination.",
+"Why did the marketer become a fisherman? He knew the right bait for every audience.",
+"Why was the nail such a hard worker? It never stopped until the job was finished.",
+"Why did the contractor carry a map? Every great project needs direction.",
+"Why was the SEO report excited? The results were looking up.",
+"Why did the electrician bring an idea to lunch? It was a light snack.",
+"Why did the marketer avoid the revolving door? He was focused on customer retention.",
+"Why was the cement truck invited to the meeting? It brought a solid contribution.",
+"Why did the carpenter open a coffee shop? He knew how to make a good blend of grounds and beans.",
+"Why did the website apologize? It had given someone a bad link.",
+"Why was the roofer good at solving problems? He could see the big picture from above.",
+"Why did the ad campaign wear running shoes? It wanted to improve its performance.",
+"Why did the contractor become a motivational coach? He loved helping people build confidence.",
+"Why was the paint sprayer so efficient? It never brushed off a big job.",
+"Why did the marketer take an art class? To create a better impression.",
+"Why was the wrench invited to negotiate? It was good at making adjustments.",
+"Why did the website visit a mechanic? Its engine needed optimization.",
+"Why did the contractor carry an eraser? Even solid plans sometimes need changes.",
+"Why was the marketing team good at gardening? They knew how to nurture leads.",
+"Why did the plumber stay late? He was working overtime to stop a leak in productivity.",
+"Why was the carpenter presentation successful? He framed the idea perfectly.",
+"Why did the business put its logo on everything? It wanted to leave a lasting impression.",
+"Why did the construction crew bring cake? They had reached another milestone.",
+"Why was the keyword invited to every meeting? It was highly relevant.",
+"Why did the painter become an optimist? He always believed things could be brighter.",
+"Why did the marketer carry a net? To capture more leads.",
+"Why was the contractor good at public speaking? He had a strong delivery and a solid foundation.",
+"Why did the roof refuse a vacation? It did not want to leave the house uncovered.",
+"Why did the website drink coffee? It needed faster response times.",
+"Why did the electrician become a photographer? He understood lighting.",
+"Why was the marketing plan so dependable? It had a strong strategy behind it.",
+"Why did the carpenter bring a level on vacation? He liked everything balanced.",
+"Why did the contractor start a podcast? He had plenty of projects to talk about.",
+"Why was the advertisement always confident? It knew its value proposition.",
+"Why did the paintbrush get employee of the month? It never left a job unfinished.",
+"Why did the marketer bring seeds to work? He wanted to plant new ideas.",
+"Why was the toolbox a great team? Everyone brought a different skill.",
+"Why did the website stop wearing camouflage? It wanted customers to find it.",
+"Why did the plumber avoid making quick decisions? He preferred to let ideas sink in.",
+"Why was the contractor good at comedy? He had excellent timing and great delivery.",
+"Why did the SEO specialist climb a mountain? He wanted the top position.",
+"Why did the carpenter become a photographer? He had an eye for framing.",
+"Why was the marketing funnel never thirsty? It always had prospects pouring through it.",
+"Why did the construction worker carry a broom? He wanted to make a clean finish.",
+"Why did the ad bring a name tag? It wanted better brand recognition.",
+"Why was the measuring tape invited to settle arguments? It provided accurate perspective.",
+"Why did the marketer build a bridge? To connect the brand with its customers.",
+"Why was the painter never stuck for an answer? He always had another coat ready.",
+"Why did the contractor enjoy sunrise? Every day offered a chance to build something new.",
+"Why did the website join a choir? It wanted a more consistent brand voice.",
+"Why was the drill good at interviews? It asked penetrating questions.",
+"Why did the marketer become a contractor? He wanted to turn leads into concrete results.",
+"Why did the construction crew love teamwork? Many hands make solid work.",
+"Why did the landing page smile? Its conversion rate had finally clicked.",
+"Why did the contractor and marketer become friends? One built the business, and the other helped people find it."
+];
+JOKES.add(JOKES2);
 
 /* ==========================================================================
    KNOWLEDGE BASE
@@ -843,8 +1065,8 @@ KB.push(
  qr:['Run my numbers','Website scorecard','Plan builder']},
 
 {id:'freebot', w:2.3, k:'chatbot,chat bot,bot for my site,can i get a bot,build a chatbot,chatbot generator,free chatbot,chat widget,bot like you,how do i get one,live chat,ai assistant for my website',
- r:['You can have one. We built a free chatbot generator for contractors — pick your trade, edit the questions and answers, copy one block of code, paste it before the closing body tag of your site. Done in about two minutes.\n\nFree forever. No signup, no credit card, no email, no account, no monthly fee. It is a gift from Eye To Ad Media and there are no strings on it.'],
- qr:['Build my free chatbot','Why is it free?','Have someone call me']},
+ r:['Yes — and it is free, which I realize sounds like a setup. It is not. Build one here: https://advertisingforcontractors.com/free-contractor-chatbot/\n\nYou customize it for your own company — your trades, your service area, your pricing language — and it goes on your site and works the hours you cannot. Somebody lands on your page at 11pm with a dead water heater, and instead of a contact form nobody reads until Tuesday, they get answers and you get the lead in your inbox.\n\nThat one thing can move the needle on its own. You already paid for the traffic. This is just refusing to waste it.'],
+ qr:['Build my free chatbot','Speed to lead','Free audit']},
 
 {id:'whyfree', w:2.2, k:'why is it free,what is the catch,catch,too good to be true,really free,no catch,why would you give that away,free forever',
  r:['No catch. The code runs in your own page, in your visitor browser. Nothing phones home to us, so there is nothing for us to meter and nothing for us to bill.\n\nWhy give it away: contractors who end up hiring us almost always start by trusting something we gave them first. That is the entire strategy. If you never call us, the bot still works forever.'],
@@ -965,64 +1187,228 @@ KB.push(
 /* ─────────────────────────── 2026 RESEARCH ADDITIONS ───────────────────── */
 KB.push(
 {id:'textback', w:2.3, k:'text back,missed call text,texting,sms,text messages,should i text leads,text or email,text follow up,missed calls,nobody answers the phone,phone rings and nobody,answering service,a2p,10dlc',
- r:['Texting is the single cheapest fix in this entire industry and most contractors still have not turned it on.\\n\\nThe numbers everybody quotes trace back to Gartner: business texts open around 98% against roughly 20% for email, and reply around 45% against about 6%. Harvard Business Review found the average business takes about 42 hours to answer a web lead and 23% never answer at all. So the bar is on the floor.\\n\\nMissed-call text-back is the play. Caller hangs up, they get a text in under a minute, and industry reporting in 2026 puts recovery at roughly 15–20% of missed callers, higher when a human picks the thread up fast. One caution: A2P 10DLC registration is mandatory now — carriers quietly kill unregistered business texting. Get that paperwork done before you build the sequence.'],
+ r:['Texting is the single cheapest fix in this entire industry and most contractors still have not turned it on.\n\nThe numbers everybody quotes trace back to Gartner: business texts open around 98% against roughly 20% for email, and reply around 45% against about 6%. Harvard Business Review found the average business takes about 42 hours to answer a web lead and 23% never answer at all. So the bar is on the floor.\n\nMissed-call text-back is the play. Caller hangs up, they get a text in under a minute, and industry reporting in 2026 puts recovery at roughly 15–20% of missed callers, higher when a human picks the thread up fast. One caution: A2P 10DLC registration is mandatory now — carriers quietly kill unregistered business texting. Get that paperwork done before you build the sequence.'],
  qr:['Speed to lead','Follow-up system','Free audit']},
 
 {id:'automation', w:2.2, k:'crm,automation,automate,ai answering,ai receptionist,voice agent,answering bot,software,servicetitan,jobber,housecall pro,gohighlevel,after hours,who answers at night',
- r:['Automation is worth it for exactly one reason: it never gets tired at 9pm on a Friday, which is when a surprising share of emergency work comes in.\\n\\nWhere it earns its keep — instant reply to every web lead, missed-call text-back, appointment reminders, and review requests fired the day the job closes. Hatch analyzed 132,000 HVAC campaigns and found multi-touch follow-up sequences responded at 89.86% against 8.56% for a single touch. That gap is not a software feature, it is just persistence made automatic.\\n\\nWhere it does not: the actual sales conversation. A homeowner deciding on a $14,000 job wants a person. Automate the speed, keep the human.'],
+ r:['Automation is worth it for exactly one reason: it never gets tired at 9pm on a Friday, which is when a surprising share of emergency work comes in.\n\nWhere it earns its keep — instant reply to every web lead, missed-call text-back, appointment reminders, and review requests fired the day the job closes. Hatch analyzed 132,000 HVAC campaigns and found multi-touch follow-up sequences responded at 89.86% against 8.56% for a single touch. That gap is not a software feature, it is just persistence made automatic.\n\nWhere it does not: the actual sales conversation. A homeowner deciding on a $14,000 job wants a person. Automate the speed, keep the human.'],
  qr:['Missed call text back','Follow-up system','Have someone call me']},
 
 {id:'retarget', w:2.1, k:'retargeting,remarketing,follow people around,ads follow,pixel,facebook pixel,people leave my site,abandoned form,they visited and left',
- r:['Somebody hits your estimate form, gets called away by a kid or a dog, and never comes back. Retargeting is how you show back up in front of that person for pennies instead of paying full freight to find them again.\\n\\nKeep it simple and keep it decent: cap the frequency so you are not haunting anybody, rotate the creative every few weeks because ad fatigue is real, and point the ad at the specific thing they looked at rather than your homepage.\\n\\nIt is a closing channel, not a discovery channel. It only works if something is filling the top of the funnel first.'],
+ r:['Somebody hits your estimate form, gets called away by a kid or a dog, and never comes back. Retargeting is how you show back up in front of that person for pennies instead of paying full freight to find them again.\n\nKeep it simple and keep it decent: cap the frequency so you are not haunting anybody, rotate the creative every few weeks because ad fatigue is real, and point the ad at the specific thing they looked at rather than your homepage.\n\nIt is a closing channel, not a discovery channel. It only works if something is filling the top of the funnel first.'],
  qr:['Google Ads','Website that converts','Free audit']},
 
 {id:'proposals', w:2.2, k:'estimates,proposal,quote template,written estimate,bid,good better best,options pricing,digital proposal,estimate software,how should i present price',
- r:['How you hand over the number moves close rate about as much as the number itself.\\n\\nTwo things the 2026 dealer reporting keeps showing. One, digital proposals close in the low-to-mid 40s where handwritten estimates land closer to 20, with a meaningful bump in average ticket. Two, giving three options instead of one price lets the homeowner choose between versions of yes instead of deciding yes or no.\\n\\nThe sequence matters too: lead with the monthly payment, not the total. Once somebody has built a mental model around $187 a month, the total stops being a cliff. Bring it up after they have already flinched at the total and it reads like a consolation prize.'],
+ r:['How you hand over the number moves close rate about as much as the number itself.\n\nTwo things the 2026 dealer reporting keeps showing. One, digital proposals close in the low-to-mid 40s where handwritten estimates land closer to 20, with a meaningful bump in average ticket. Two, giving three options instead of one price lets the homeowner choose between versions of yes instead of deciding yes or no.\n\nThe sequence matters too: lead with the monthly payment, not the total. Once somebody has built a mental model around $187 a month, the total stops being a cliff. Bring it up after they have already flinched at the total and it reads like a consolation prize.'],
  qr:['Financing','Close rate','Run my numbers']},
 
 {id:'photos', w:2.1, k:'photos,pictures,job photos,before and after,video,youtube,tiktok,instagram,reels,should i post pictures,drone,proof of work',
- r:['Job photos are the most underused asset on a contractor phone. You are carrying around proof that you did the work well and never posting it.\\n\\nWhat to do with them: before-and-afters on the service page they belong to, a handful on the Google Business Profile every month, and a short vertical video when a job is visually satisfying. Homeowners are not judging your cinematography. They are checking whether you are real and whether your work looks like theirs.\\n\\nOne practical rule: shoot the same three angles on every job. Consistency beats artistry, and it means anybody on the crew can do it.'],
+ r:['Job photos are the most underused asset on a contractor phone. You are carrying around proof that you did the work well and never posting it.\n\nWhat to do with them: before-and-afters on the service page they belong to, a handful on the Google Business Profile every month, and a short vertical video when a job is visually satisfying. Homeowners are not judging your cinematography. They are checking whether you are real and whether your work looks like theirs.\n\nOne practical rule: shoot the same three angles on every job. Consistency beats artistry, and it means anybody on the crew can do it.'],
  qr:['Google Business Profile','Content','Reviews']},
 
 {id:'gbp', w:2.3, k:'google business profile,gbp,google listing,my google page,maps listing,google my business,gmb,map pack,business profile,posts on google',
- r:['Your Google Business Profile is usually the first thing a homeowner sees, and a stale one quietly costs you the click before your website ever gets a chance.\\n\\nWhat actually moves it in 2026: recent reviews, fresh photos, service updates, correct categories and service areas, and matching name, address and phone everywhere else on the internet. Freshness and activity carry more weight than they used to, which is good news — it is work anybody can do without a budget.\\n\\nThe habit that wins is weekly, not heroic. Ten minutes a week beats one panicked overhaul every spring.'],
+ r:['Your Google Business Profile is usually the first thing a homeowner sees, and a stale one quietly costs you the click before your website ever gets a chance.\n\nWhat actually moves it in 2026: recent reviews, fresh photos, service updates, correct categories and service areas, and matching name, address and phone everywhere else on the internet. Freshness and activity carry more weight than they used to, which is good news — it is work anybody can do without a budget.\n\nThe habit that wins is weekly, not heroic. Ten minutes a week beats one panicked overhaul every spring.'],
  qr:['Local SEO','Reviews','Free audit']},
 
 {id:'database', w:2.1, k:'past customers,old customers,customer list,database,reactivate,email list,repeat business,people i already worked for,old leads,dead leads',
- r:['Your customer list is the highest-return marketing asset you own and it costs nothing to use. Those people already know you, already paid you, and already let you in the house.\\n\\nThree touches worth running: a seasonal reminder tied to the work you did, a maintenance or tune-up offer, and a plain referral ask about two weeks after the job when they are still happy about it.\\n\\nAnd a genuinely dead pile is not dead. Estimates that went quiet six or eighteen months ago are the cheapest list you will ever work. Half of them just got busy.'],
+ r:['Your customer list is the highest-return marketing asset you own and it costs nothing to use. Those people already know you, already paid you, and already let you in the house.\n\nThree touches worth running: a seasonal reminder tied to the work you did, a maintenance or tune-up offer, and a plain referral ask about two weeks after the job when they are still happy about it.\n\nAnd a genuinely dead pile is not dead. Estimates that went quiet six or eighteen months ago are the cheapest list you will ever work. Half of them just got busy.'],
  qr:['Follow-up system','Referrals','Repeat customers']},
 
 {id:'referral', w:2.1, k:'referrals,referral program,word of mouth,friends and family,neighbor,should i pay for referrals,referral fee',
- r:['Word of mouth is not a marketing plan, but a referral program is.\\n\\nThe difference is asking on purpose. Pick the moment — the day the job passes final inspection, not three months later — and make the ask specific. "Do you know anybody else on this street dealing with the same thing" gets a real answer. "Send people my way" gets a nod and nothing else.\\n\\nReferral leads convert higher and cost less than anything you can buy, which is exactly why they should not be left to luck.'],
+ r:['Word of mouth is not a marketing plan, but a referral program is.\n\nThe difference is asking on purpose. Pick the moment — the day the job passes final inspection, not three months later — and make the ask specific. "Do you know anybody else on this street dealing with the same thing" gets a real answer. "Send people my way" gets a nod and nothing else.\n\nReferral leads convert higher and cost less than anything you can buy, which is exactly why they should not be left to luck.'],
  qr:['Past customers','Reviews','Free audit']},
 
 {id:'storm', w:2.2, k:'storm response,storm season,hail,after a storm,storm chasers,catastrophe,tornado,hurricane,wind damage,storm leads,storm marketing',
- r:['Storm work is the widest swing in the trades. One hail event can outrun a whole planned season, and a quiet year can gut a roofing company that built its model on weather.\\n\\nThe contractors who handle it well are positioned before the sky opens: pages already ranking for the neighborhoods, ad campaigns built and paused, and a landing page ready to switch on the same afternoon. The out-of-state crews with the magnetic door signs show up within 48 hours. If your marketing starts when theirs does, you are already behind.\\n\\nThe other half is not letting storm revenue hide the fact that retail replacement demand needs its own year-round engine.'],
+ r:['Storm work is the widest swing in the trades. One hail event can outrun a whole planned season, and a quiet year can gut a roofing company that built its model on weather.\n\nThe contractors who handle it well are positioned before the sky opens: pages already ranking for the neighborhoods, ad campaigns built and paused, and a landing page ready to switch on the same afternoon. The out-of-state crews with the magnetic door signs show up within 48 hours. If your marketing starts when theirs does, you are already behind.\n\nThe other half is not letting storm revenue hide the fact that retail replacement demand needs its own year-round engine.'],
  qr:['Roofing','Seasonality','Free audit']},
 
 {id:'offseason', w:2.2, k:'should i pause ads,cut marketing,turn off ads,go dark,stop advertising,off season,shoulder season,winter,slow months,pause campaigns,save money on marketing',
- r:['I know the instinct. Phone is quiet, so the marketing line looks like the easiest thing to cut. It is usually the most expensive cut you can make.\\n\\nTwo reasons. Paused campaigns lose their optimization history, so you restart in the learning phase right when demand and competition peak — and 2026 tracking showed most home service categories facing higher click costs during those spikes, with emergency keywords passing $30 a click in competitive metros. Second, SEO does not restart on demand; the work you skip in February is the ranking you do not have in May.\\n\\nBetter move: shift the money instead of killing it. Slow months are for the shoulder-season push — tune-ups, maintenance plans, early-bird scheduling, and reworking your past customer list.'],
+ r:['I know the instinct. Phone is quiet, so the marketing line looks like the easiest thing to cut. It is usually the most expensive cut you can make.\n\nTwo reasons. Paused campaigns lose their optimization history, so you restart in the learning phase right when demand and competition peak — and 2026 tracking showed most home service categories facing higher click costs during those spikes, with emergency keywords passing $30 a click in competitive metros. Second, SEO does not restart on demand; the work you skip in February is the ranking you do not have in May.\n\nBetter move: shift the money instead of killing it. Slow months are for the shoulder-season push — tune-ups, maintenance plans, early-bird scheduling, and reworking your past customer list.'],
  qr:['Seasonality','Budget','Past customers']},
 
 {id:'motivate', w:2.1, k:'motivate me,pep talk,inspire me,encourage me,say something motivational,need motivation,give me a boost,hype me up,words of wisdom',
- r:['{QUOTE}\\n\\nAnd here is the practical version: almost nobody who is good at this trade fails because of the trade. They fail because the phone got quiet and nobody built the thing that keeps it from getting quiet.\\n\\nThat part is fixable, and it is the only part I am here for. What do you want to work on?'],
+ r:['{QUOTE}\n\nAnd here is the practical version: almost nobody who is good at this trade fails because of the trade. They fail because the phone got quiet and nobody built the thing that keeps it from getting quiet.\n\nThat part is fixable, and it is the only part I am here for. What do you want to work on?'],
  qr:['Where do I start?','Free audit','Tell me a joke']},
 
 {id:'celebrate', w:2.1, k:'we just closed,got the job,landed a big one,we won the bid,best month ever,record month,signed the contract,booked solid,crushing it right now',
- r:['That is great news, and you should take ten full minutes to enjoy it before your brain starts looking for the next problem. Congratulations.\\n\\nOne thing while you are riding high: this is the best possible moment to ask that customer for a review and a referral. Nobody is ever more willing than right after you made them happy.\\n\\nWhat closed it, out of curiosity — price, timing, or did you just outwork the other guy?'],
+ r:['That is great news, and you should take ten full minutes to enjoy it before your brain starts looking for the next problem. Congratulations.\n\nOne thing while you are riding high: this is the best possible moment to ask that customer for a review and a referral. Nobody is ever more willing than right after you made them happy.\n\nWhat closed it, out of curiosity — price, timing, or did you just outwork the other guy?'],
  qr:['Reviews','Referrals','Close rate']},
 
 {id:'bored', w:2, k:'im bored,bored,nothing to do,kill some time,entertain me,say something interesting',
- r:['Slow day or dodging paperwork? Either one is fine by me.\\n\\n{JOKE}\\n\\nIf you want to make the boredom productive, I can run your numbers and tell you what you can actually afford to pay for a lead. Takes about a minute and it is weirdly satisfying.'],
+ r:['Slow day or dodging paperwork? Either one is fine by me.\n\n{JOKE}\n\nIf you want to make the boredom productive, I can run your numbers and tell you what you can actually afford to pay for a lead. Takes about a minute and it is weirdly satisfying.'],
  qr:['Run my numbers','Tell me a joke','Free audit']},
 
 {id:'compliment', w:2, k:'you are funny,youre funny,you are smart,good bot,nice bot,you are cool,i like you,you are helpful,best bot,you are awesome,love this bot',
- r:['Appreciate that. I am a tape measure in a cowboy hat, so the bar was low and I cleared it.\\n\\nSeriously though — ask me something hard. I would rather be useful than charming.'],
+ r:['Appreciate that. I am a tape measure in a cowboy hat, so the bar was low and I cleared it.\n\nSeriously though — ask me something hard. I would rather be useful than charming.'],
  qr:['Run my numbers','What do you do?','Tell me a joke']},
 
 {id:'advice', w:2.1, k:'what would you do,if you were me,your honest opinion,what do you think i should do,whats your advice,tell me straight,be honest with me',
- r:['Straight answer, without knowing your numbers: I would fix the leaks before I bought more traffic. Answering every call, texting back the missed ones, and following up estimates for three weeks costs almost nothing and it is where most contractors are bleeding.\\n\\nThen I would own one channel properly instead of dabbling in four. Usually that is local search plus Local Services Ads, because that is where somebody who needs you today is already looking.\\n\\nGive me your trade and your average job size and I will get a lot more specific than that.'],
+ r:['Straight answer, without knowing your numbers: I would fix the leaks before I bought more traffic. Answering every call, texting back the missed ones, and following up estimates for three weeks costs almost nothing and it is where most contractors are bleeding.\n\nThen I would own one channel properly instead of dabbling in four. Usually that is local search plus Local Services Ads, because that is where somebody who needs you today is already looking.\n\nGive me your trade and your average job size and I will get a lot more specific than that.'],
  qr:['Run my numbers','Where do I start?','Speed to lead']});
+
+/* ─────────────────────────── SELLING, NOT JUST MARKETING ───────────────── */
+KB.push(
+{id:'salestraining', w:2.4, k:'sales training,teach me to sell,how do i sell,better at sales,selling,sales help,my sales suck,closing techniques,sales process,sales tips,sales advice,improve my sales,train my guys,sales team',
+ r:['Now we are talking. Marketing gets the appointment. Selling is what happens in the kitchen, and most contractors lose more money there than anywhere else in the business.\n\nThe short version of what works in the trades:\n\n1. Condition the price before you present it, so the number is never a surprise.\n2. Ask questions that make the cost of doing nothing obvious. That is SPIN — situation, problem, implication, need-payoff.\n3. Use trial closes on the way through, not one big ask at the end.\n4. Give three options instead of one price, and lead with the monthly payment.\n5. Follow up like you mean it. Most jobs are lost to silence, not to a competitor.\n\nWhich of those is costing you the most right now?'],
+ qr:['Trial closes','Price conditioning','SPIN selling','Close rate']},
+
+{id:'trialclose', w:2.4, k:'trial close,tie down,tie downs,assumptive close,closing questions,how do i close,ask for the sale,closing the deal,close the sale,soft close,alternative close',
+ r:['A trial close is a temperature check, not an ask. You are finding out where you stand before you get to the number.\n\nSounds like: "If we could get this on the schedule before the weather turns, would that solve the problem for you?" Or: "Assuming the price works, is there anything else that would keep you from moving forward?" That second one is the most valuable question in home improvement sales — it surfaces the real objection while you still have time to handle it.\n\nTie-downs are the small agreements along the way. "That makes sense, right?" "You would rather fix it once than three times, correct?" Each yes makes the last yes smaller.\n\nOne rule: never use either one as a trick. Homeowners can smell it, and in the trades your reputation travels down the street faster than your marketing does.'],
+ qr:['Price conditioning','SPIN selling','Sales training']},
+
+{id:'pricecondition', w:2.3, k:'price conditioning,sticker shock,present the price,how to present price,how do i present price,presenting price,present price,they gasp at the price,price objection,too expensive,price shopping,prepare them for price,drop the price',
+ r:['Price conditioning is just refusing to let the number be a surprise.\n\nEarly in the visit: "Most projects like this land somewhere between X and Y depending on what we find behind the wall. Is that the range you were expecting?" Now you know before you have spent two hours measuring, and they have had time to get used to the number.\n\nThen present in this order: the monthly payment first, the total second, the three options third. A homeowner comparing $187 a month to their power bill makes a very different decision than one staring at $13,000 against a savings account.\n\nAnd when somebody says too expensive, they almost never mean it literally. They mean they do not yet see why yours costs more. That is a value problem, not a price problem — and dropping your price to fix it just teaches them they were right to push.'],
+ qr:['Financing','Trial closes','Proposals']},
+
+{id:'spin', w:2.4, k:'spin selling,spin questions,situation problem implication,need payoff,discovery questions,qualifying questions,what questions should i ask,consultative selling',
+ r:['SPIN is four kinds of questions in order, and it works in the trades because it makes the homeowner say the painful part out loud instead of you.\n\n**Situation** — how old is the system, how long has it been doing that.\n**Problem** — what does it cost you when it goes out.\n**Implication** — what happens if it fails in February with company in the house.\n**Need-payoff** — if we fixed it permanently before winter, what would that be worth to you?\n\nThat last one is the whole game. When they describe the value, you never have to argue for it.\n\nSame thing works on your own business, by the way. What would an extra five projects a week do for your bottom line? Answer that honestly and your marketing budget question answers itself.'],
+ qr:['Run my numbers','Trial closes','Sales training']},
+
+{id:'capacity', w:2.2, k:'more projects,extra jobs,five more jobs,what would more jobs do,handle more work,capacity,can i handle more,how many more,double my jobs,scale up work',
+ r:['Good question to sit with. Take your average job, multiply by five, multiply by four weeks. That is the monthly number you are currently leaving on the table — and for most contractors it is a bigger figure than they expect to see.\n\nThen the honest follow-up: could your crew actually absorb it? If the answer is no, the first project is capacity, not marketing, and I will tell you that rather than sell you leads you cannot service.\n\nIf the answer is yes, give me your average ticket and I will show you exactly what you can afford to pay to get one.'],
+ qr:['Run my numbers','Free audit','Scale up']},
+
+{id:'capital', w:2.3, k:'undercapitalized,under capitalized,cash flow,running out of money,no cash,cash crunch,capitalization,why businesses fail,going out of business,profitability,profit margin,not making money,working capital',
+ r:['This is the quiet killer, and it deserves a straight answer: undercapitalization ends more contracting businesses than bad workmanship ever has. Good crews with full schedules go under because the money runs out before the receivables come in.\n\nMarketing is part of that equation, not separate from it. Consistent lead flow smooths the calendar, and a smooth calendar is what lets you price for margin instead of pricing to survive the month.\n\nThree things that move it fastest: sell on value instead of low bids, collect deposits and progress payments like a professional, and never let the pipeline go dark during a busy stretch — that gap shows up as a dead month eight weeks later.\n\nIf you want a tool built around exactly this, eyetoad.com has a business growth resource for owners: https://eyetoad.com/grow-my-business/'],
+ qr:['Budget','Free audit','Sales training']},
+
+{id:'growtool', w:2.7, k:'grow my business,help me grow,business growth,grow bigger,build my business,business advice,business owner help,entrepreneur',
+ r:['That is the whole point of this, so let me point you at real things rather than a pep talk.\n\nStart free: the marketing audit here tells you where you actually stand against your competitors. And this one is built for owners thinking about the business as a business, not just the phone: https://eyetoad.com/grow-my-business/\n\nThen there is the free chatbot. You can build one for your own site, customize it to your company, and have it working leads at 11pm while you sleep: https://advertisingforcontractors.com/free-contractor-chatbot/\n\nNone of that costs anything. Which one do you want first?'],
+ qr:['Free audit','Build my free chatbot','Sales training']});
+
+/* ─────────────────────────── 2026 BENCHMARKS, ROUND TWO ────────────────── */
+KB.push(
+{id:'convrate', w:2.4, k:'conversion rate,website conversion,what should my site convert,how many visitors turn into leads,visitors but no calls,traffic but no leads,nobody calls,form fills,my site does not convert',
+ r:['This is the leak worth measuring before you spend another dollar on traffic.\n\n2026 benchmarks put the median contractor website at roughly 2 to 4 percent of visitors turning into a tracked call or form fill. The well-built ones run 8 to 12 percent on the same traffic. That gap is not design taste, it is conversion architecture.\n\nBy trade it splits about like this: plumbing and pest control 12 to 16 percent because the intent is an emergency, HVAC repair 10 to 15 on emergency pages but 3 to 6 on system replacement, electrical 6 to 10, roofing 4 to 8, remodeling 3 to 7.\n\nSo find your trade, then find your number. If you are below it, the fix is usually the same three things: mobile speed, a phone number that is impossible to miss, and one obvious next step per page.'],
+ qr:['Website that converts','Speed to lead','Free audit']},
+
+{id:'funnel', w:2.2, k:'funnel,where am i losing,leaks,where do leads drop off,booking rate,show rate,my numbers do not add up,track the whole process',
+ r:['Every home service business runs the same six stages whether they map it or not. Industry medians for 2026 look roughly like this per 100 site visitors:\n\nVisit → 4 to 8 call or fill out a form → about 4 qualified → 1 to 3 booked → 1 to 2 jobs completed → half a review.\n\nTop operators run the same funnel and get about 12 calls, 7 booked, 6 completed and 3 reviews from the same 100 visitors. Same traffic. Six times the reviewed customers.\n\nThe stage most contractors have never measured is the booking call. Average office staff books around 42 percent of the calls they take; the top quartile books 65 to 85. Nobody is buying more ads to fix that, and it is usually the cheapest 20 points available.'],
+ qr:['Conversion rate','Speed to lead','Run my numbers']},
+
+{id:'mobilespeed', w:2.2, k:'slow website,site is slow,page speed,load time,mobile speed,core web vitals,my site takes forever,website loading',
+ r:['Speed is a revenue number, not an IT number. The 2026 research lines up around roughly 7 percent of conversions lost for every extra second of mobile load time, which means a five second page is giving away something like a third of its leads against a one second page on identical traffic.\n\nAnd about three out of four of your visitors are on a phone, usually mid-problem. Breaker tripped, basement wet, no heat. They are not going to wait.\n\nUnder two seconds on mobile is the bar now. If you want, I can have someone actually measure yours instead of guessing.'],
+ qr:['Website that converts','Free audit','Have someone call me']},
+
+{id:'aicite', w:2.4, k:'ai search,chatgpt,perplexity,gemini,ai overview,geo,generative engine optimization,aeo,answer engine,get cited by ai,will ai replace google,ai recommendations',
+ r:['Short version: the position you earned on Google is no longer the first thing a homeowner sees, and getting named inside the AI answer is now its own job.\n\nWhat the systems are actually reading: your site content and how cleanly it is structured, your Google Business Profile, your reviews and the patterns inside them, and third-party mentions of your company in your actual service area. UC Davis put it well in their guidance — strong traditional SEO still predicts AI visibility, but the foundation alone is no longer enough.\n\nThe encouraging part is how open the field still is. ServiceTitan 2026 reporting found only about a quarter of residential contractors using AI in any meaningful way. Being early here is the same advantage the mobile-first contractors got in 2017.'],
+ qr:['Local SEO','Google Business Profile','Free audit']},
+
+{id:'localproof', w:2.2, k:'local content,service area pages,city pages,prove we work here,local authority,neighborhood pages,do city pages work,duplicate pages',
+ r:['Claiming a city is not the same as proving you work there, and the systems deciding who gets recommended can now tell the difference.\n\nA page titled "Roofing in [city]" with the town name swapped in nine times is the old playbook, and it is worth very little now. A page that shows the actual job — the neighborhood, the house style, what the inspection found, what it cost to fix, photos from the truck — is nearly impossible for a competitor to copy, because they were not there.\n\nThe good news for you is that this plays directly to the thing you already have and agencies do not: real work in real places.'],
+ qr:['Content','AI search','Job photos']},
+
+{id:'calltracking', w:2.2, k:'call tracking,callrail,tracking numbers,attribution,which ads work,where are my leads coming from,cant tell what works,measure marketing',
+ r:['If every channel funnels into one office number, you cannot tell whether your ad spend produced anything — and most contractors guessing at this are guessing wrong.\n\nUnique tracking numbers per channel fix it in a week. Then the real metric becomes cost per booked job instead of cost per lead, which regularly flips the answer: a source with pricier leads that actually close is cheaper than cheap leads that never book.\n\nOne detail people miss — only about a third of calls from digital marketing are genuine new leads. The rest are suppliers, existing customers and wrong numbers. If you are not separating those, your cost per lead looks better than it is.'],
+ qr:['Tracking','Run my numbers','Free audit']});
+
+/* ─────────────────────────── HIRING AN AGENCY, HONESTLY ────────────────── */
+KB.push(
+{id:'ownership', w:2.5, k:'who owns the website,do i own my website,own my accounts,own the domain,account ownership,who owns the ads account,if i leave do i keep,take it with me,hold my website hostage,proprietary platform,do i own my data',
+ r:['You own all of it. Full stop.\n\nThe correct default in this industry, and ours: the domain, the website files in editable form, the Google Ads account under your billing, the Local Services Ads profile, the Google Business Profile, the call tracking numbers, the CRM data, and every piece of copy and creative produced for you. We are a user on your accounts, not the owner.\n\nIf you leave, you walk out with everything and nothing breaks. Any agency that hosts your site on a platform you cannot export, or registers your domain in their own name, has built a hostage situation and is counting on you not asking. Ask them in writing.'],
+ qr:['Red flags','Contracts','Have someone call me']},
+
+{id:'redflags', w:2.4, k:'red flags,how do i pick an agency,questions to ask an agency,been burned,last agency,previous agency,got ripped off,scammed,agency lied,how do i know they are legit,vet an agency,choosing an agency',
+ r:['Sorry you had that experience — it is depressingly common. A 2025 survey of business owners using SEO services found about two thirds had already been through more than one provider.\n\nThe questions that actually separate the good from the bad:\n\n1. Who owns the accounts, the domain and the site files if I leave?\n2. Do you work with my competitors in my service area? Get it in writing.\n3. Show me a real client report from last month, live on screen.\n4. What exactly happens in month one?\n5. What are the exit terms if performance does not hit the benchmark?\n\nEvasive answers on any of those are the tell. It is not about catching anybody out — it is that a confident shop answers all five in about two minutes.'],
+ qr:['Who owns my website?','Exclusivity','Reporting']},
+
+{id:'exclusivity', w:2.3, k:'do you work with my competitors,other contractors in my area,exclusive to my market,territory,competitor client,same city,another roofer in my town,exclusivity',
+ r:['Fair question and one you should ask everybody. Two contractors in the same trade and the same service area means somebody is getting the second-best effort, and it will not be the one who signed first.\n\nAsk for it in writing, defined by trade and geography rather than a vague promise. And ask what happens if they later sign one — a real answer exists for that, and "we would never" is not it.\n\nIf you tell me your trade and market, I can have someone check what we already have in your area before you spend any time on this.'],
+ qr:['Red flags','Have someone call me','Free audit']},
+
+{id:'reports', w:2.3, k:'reporting,what reports,how often do i hear from you,monthly report,do you send reports,what metrics,kpi,do i get updates,who do i talk to,account manager',
+ r:['Reporting should connect to the business, not to the platform. Impressions and rankings are inputs. The numbers that belong on the front page of your report are cost per booked job, lead to booked rate, and revenue attributed by source.\n\nCadence that works for contractors: a short summary regularly, a deeper look monthly, and a named human you can actually call — not a dashboard link and silence.\n\nThe test for any agency, including us: ask them to walk you through a real client report live, on screen. The ones hiding behind vanity metrics do not take that invitation.'],
+ qr:['Tracking','Results','Have someone call me']},
+
+{id:'switching', w:2.3, k:'switch agencies,leave my agency,fire my agency,change providers,move my website,transfer my site,migrate,without losing rankings,start over somewhere else',
+ r:['You can move without losing what you have built, as long as you do it in the right order.\n\nBefore you give notice: confirm the domain registrar login is yours, get admin on the Google Ads, Analytics, Search Console, LSA and Business Profile accounts, export the site files or at least the content, and pull the call tracking history. Do that first. Leverage disappears the moment you tell them you are leaving.\n\nRankings mostly survive a clean move. What kills them is a rebuild that drops pages, changes every URL without redirects, or goes dark for two weeks. That part is avoidable and it is the first thing we check.'],
+ qr:['Who owns my website?','Free audit','Have someone call me']},
+
+{id:'inhouse', w:2.2, k:'in house,hire someone,hire a marketing person,my daughter does social media,should i hire,employee vs agency,build a team',
+ r:['Honest comparison, not a pitch.\n\nIn-house wins when you have enough volume to keep a person busy and enough process to manage them. One good marketing hire runs $60k and up with taxes, and they are one person with one skill set — usually strong at either content or ads, rarely both, almost never technical SEO too.\n\nAn agency wins when you want several skill sets part-time and you do not want to manage the work. It loses when the agency treats you like account number forty.\n\nThe worst version is the middle: a family member doing it in spare time with no accountability. That is not cheap, it is just invisible.\n\nWhere are you on volume right now?'],
+ qr:['What do you cost?','Free audit','Run my numbers']},
+
+{id:'whatyoudont', w:2.6, k:'what dont you do,logos,logo,branding,brand identity,what do you not do,things you refuse,do you do social media,do you do tv,billboards,radio,do you do print,do you do video production,do you do branding,logo design,do you build apps',
+ r:['Worth being clear about the limits, because most places will just say yes to everything.\n\nWhat we do: websites built to convert, local and AI search visibility, Google Ads and Local Services Ads managed to cost per booked job, reviews, tracking, and the follow-up systems around all of it.\n\nWhat we do not: we are not a billboard or radio buyer, we do not run big social media content calendars for the sake of posting, we do not do brand identity or logo work, and we do not build mobile apps. We also will not sell you an SEO retainer if your real problem is that nobody answers the phone.\n\nIf what you need is on the second list, say so and I will point you somewhere useful instead of pretending.'],
+ qr:['What do you do?','Free audit','Have someone call me']});
+
+/* ─────────────────────────── FROM THE TRAINING GUIDE ───────────────────── */
+KB.push(
+{id:'crickets', w:2.4, k:'crickets,its crickets,phone is dead,my phone is dead,site is dead,my site is dead,dead phone,nothing is coming in,no calls at all,zero leads,silence,nobody is calling,no one calls',
+ r:['Crickets is the worst sound in this business. Before anybody sells you anything, it is worth knowing which kind of quiet it is.\n\nThere are only three: nobody is finding you, people are finding you and leaving without calling, or calls are coming in and not getting answered or returned. Those have completely different fixes, and two of them cost almost nothing.\n\nWhich does it feel like — is the website getting traffic at all?'],
+ qr:['Conversion rate','Speed to lead','Free audit']},
+
+{id:'feastfamine', w:2.3, k:'feast or famine,up and down,inconsistent,some months great some terrible,rollercoaster,unpredictable,never know what next month,steady work',
+ r:['Feast or famine is almost never a demand problem. It is a pipeline problem — marketing gets switched on when the schedule empties, and by the time it works you are slammed again, so it gets switched off.\n\nThe fix is boring and it works: keep a steady baseline running year round, and use your past customer list and shoulder-season offers to fill the dips instead of scrambling.\n\nHow far out are you booked right now? That tells me whether this is a lead problem or a smoothing problem.'],
+ qr:['Seasonality','Past customers','Free audit']},
+
+{id:'tirekickers', w:2.7, k:'tire kickers,tirekickers,lowballers,price shoppers,just want a free estimate,wasting my time,people looking for free advice,shoppers,bargain hunters,cheapest bid',
+ r:['Tire kickers are usually a targeting and qualifying problem, not a character flaw in your market.\n\nThings that thin them out fast: say your minimum project size somewhere visible, ask one budget-range question on the form, use keywords that match the work you want instead of broad service terms, and add negative keywords for repair when you sell replacement.\n\nAlso worth saying plainly — somebody who shops three bids is not automatically a bad lead. They are just doing what you would do with $14,000.'],
+ qr:['Bad leads','Close rate','Free audit']},
+
+{id:'guarantee', w:2.5, k:'can you guarantee,guarantee results,guarantee number one,guarantee leads,guarantee rankings,promise results,do you guarantee,money back',
+ r:['No, and anybody who does is either lying or about to define their way out of it in the fine print.\n\nNobody controls Google rankings. Lead volume depends on demand, season, competition, budget and pricing — most of which nobody controls either.\n\nWhat can be committed to is the actual work: what gets built, what gets tracked, what gets reported, and month to month terms so you can leave if it is not producing. That is a guarantee with teeth, because it costs us something.'],
+ qr:['Contracts','What do you cost?','Red flags']},
+
+{id:'rankingdrop', w:2.4, k:'rankings dropped,lost rankings,traffic dropped,google slapped me,dropped off google,fell off page one,used to rank,my traffic tanked,lost visibility,algorithm update',
+ r:['Before blaming an update — which is where everyone starts and is usually wrong — the first question is how wide the drop is. One keyword, one page, the map listing, or the whole site?\n\nThings that cause this far more often than an algorithm: a redesign that changed URLs without redirects, a page that got deindexed, a Business Profile edit, lost links, a security issue, tracking or location differences in how you are checking, or simply a competitor who got better.\n\nWhen did you first notice it, and did anything change on the site around then?'],
+ qr:['Local SEO','Free audit','Have someone call me']},
+
+{id:'gbpsuspended', w:2.4, k:'profile suspended,google suspended,gbp suspended,listing suspended,my listing disappeared,business profile gone,reinstate,suspension',
+ r:['That one hurts, because the map listing is often the biggest single source of calls.\n\nDo not start making edits at random — that can make reinstatement harder. Find the stated reason in the suspension email first, then check the usual triggers: a business name with keywords stuffed into it, an address that does not meet the guidelines, service-area setup, category changes, or a recent burst of edits.\n\nDid Google send a reason, or did it just vanish?'],
+ qr:['Google Business Profile','Local SEO','Have someone call me']},
+
+{id:'brandbidding', w:2.2, k:'competitor bidding on my name,bidding on my brand,ads on my company name,competitor ads my name,trademark,they show up when people search my name',
+ r:['Annoying, and usually legal. Competitors can often bid on brand-related searches, within platform and trademark rules.\n\nThree practical moves: run your own branded campaign so you hold the top spot cheaply, check whether their ad copy actually uses your trademarked name in the text since that is a separate complaint, and make sure your own listing and profile are strong enough that the click still comes to you.\n\nBranded traffic is the cheapest traffic you will ever buy. Worth protecting.'],
+ qr:['Google Ads','Free audit','Have someone call me']},
+
+{id:'boostpost', w:2.2, k:'boost a post,boost my post,boosted posts,should i boost,promote post,facebook boost',
+ r:['Boosting is the easy button and it mostly buys you exposure, not projects. It optimizes for engagement rather than for someone calling you.\n\nA properly built campaign gives you control over the audience, the objective, the placement, the tracking and the follow-up. Same money, very different outcome.\n\nThat said — if the goal is genuinely awareness in one small town, a boost is not a crime. Just do not expect it to fill the schedule.'],
+ qr:['Facebook','Retargeting','Free audit']},
+
+{id:'socialneed', w:2.2, k:'do i need tiktok,tiktok,instagram,do i need social media,should i post daily,social media necessary,youtube shorts,reels for contractors',
+ r:['Not necessarily, and I would rather tell you that than sell you a posting package.\n\nSocial works well for visual trades — remodels, painting, landscaping, anything with a dramatic before and after. It works poorly as a substitute for being findable when somebody has a problem right now.\n\nOrder of operations: website that converts, Business Profile, reviews, tracking. If those are solid and you have content coming off jobs anyway, then yes, post it.'],
+ qr:['Job photos','Content','Free audit']},
+
+{id:'payperlead', w:2.3, k:'pay per lead,only pay per lead,pay for results,performance based,pay per call,commission only,pay when i get a job',
+ r:['It feels safer, and sometimes it is. Worth knowing the trade-offs before you sign.\n\nAsk three questions of anyone offering it: is the lead exclusive or sold to several contractors, who owns the site and the phone number generating it, and what happens to that asset if you stop paying. Often the answer is that you were renting the whole time.\n\nThe version that actually builds something is where the rankings, the site and the numbers are yours. Then a slow month still leaves you with an asset.'],
+ qr:['Buy or own leads','Who owns my website?','Free audit']},
+
+{id:'referralonly', w:2.7, k:'i get all my work from referrals,word of mouth only,referrals are enough,dont need marketing,never advertised,all word of mouth',
+ r:['That is a genuinely strong position — referred customers arrive pre-trusted and rarely price shop.\n\nThe risk is not today, it is the quarter where two big referral sources retire, move, or go quiet at the same time. That happens to somebody every year and it always feels sudden.\n\nMarketing does not have to replace referrals. It just has to be warm enough that you are not starting from zero when you need it.'],
+ qr:['Referrals','Free audit','Seasonality']},
+
+{id:'rebuild', w:3, k:'nephew built,my nephew,buddy built my site,someone built my site,do i need a new website,should i rebuild,new site,redo my website,is my site too old,rebuild or fix,my nephew built my website,my son built my site,built it myself',
+ r:['Possibly, but not automatically — and whoever built it does not deserve to be trashed for getting you started.\n\nA rebuild is worth it when the structure is the problem: no service pages, not mobile usable, slow to the point of losing people, or built on something that cannot be edited or exported.\n\nOften the bigger gains are cheaper than that: the message above the fold, page speed, real photos, one clear next step, and tracking so you can see what is happening at all.\n\nWhat specifically is not working — is it traffic, or is it people arriving and leaving?'],
+ qr:['Conversion rate','Website that converts','Free audit']},
+
+{id:'impressions', w:2.2, k:'impressions,what are impressions,i got 500 impressions,likes,my ad got likes,engagement,views,does that mean visitors',
+ r:['Worth untangling, because these get mixed up constantly.\n\nImpressions mean your ad or listing was displayed. Clicks mean somebody came to the page. Conversions mean somebody called, filled out a form, or booked. Only the last one has ever paid a crew.\n\nLikes are the same story. Encouraging, not revenue. If a report leads with impressions and engagement, ask for calls and booked jobs instead and watch what happens.'],
+ qr:['Tracking','Reporting','Free audit']},
+
+{id:'citystuffing', w:2.2, k:'add cities to footer,list of cities,city list,put 50 cities,keyword stuffing,stuff keywords,rank in every city,more keywords better',
+ r:['A footer full of city names does almost nothing, and it has not worked for a long time.\n\nSame with stuffing keywords into a page. Google is looking for a credible reason to show you in a given area — real work there, real content about it, reviews from those customers, and a service area that makes sense.\n\nMore words does not equal better either. A clear 900-word service page will beat 3,000 words of repetition every time.'],
+ qr:['Local proof','Content','Local SEO']},
+
+{id:'safety', w:2.6, k:'smell gas,gas leak,fire,smoke,sparking,live wire,shocked,carbon monoxide,flooding,water and electricity,structural,house is shifting,collapse,emergency',
+ r:['If that is happening right now, stop reading and deal with it: get people out, do not touch switches or anything that could spark, and call the utility or emergency services from somewhere safe.\n\nI am a marketing assistant, so I am not the right help for that — and this is one of the few places where I would rather be useless than confident.\n\nOnce everybody is safe, I am here.'],
+ qr:['What do you do?','Free audit']},
+
+{id:'howtowork', w:2.4, k:'how do i wire,how do i install,how to fix my,can i do it myself,diy repair,what size breaker,how do i vent,code requirement,permit required,is it up to code',
+ r:['I am going to be upfront: I help contractors with marketing, not with the work itself. Giving you a confident answer about panels, gas lines, load calculations or code would be irresponsible and possibly dangerous.\n\nRequirements also vary by jurisdiction, so even a correct general answer can be wrong where you are standing.\n\nIf you are the contractor and you are asking about marketing that work, though, that I can help with all day.'],
+ qr:['What do you do?','Free audit','Have someone call me']},
+
+{id:'aiall', w:2.3, k:'can ai do my marketing,will ai replace,ai run everything,automate everything,do i still need a person,is ai enough',
+ r:['AI is genuinely good at research, drafts, follow-up, reporting and testing. It is not good at knowing that your best month is February because of frozen pipes, or that the north side of town does not convert for you.\n\nSo: it removes a lot of grunt work and it can absolutely help a small shop punch above its weight. It still needs accurate business information, strategy and somebody checking the output.\n\nFully automatic is not the same as effective. Ask me how I know.'],
+ qr:['AI search','Free chatbot','Free audit']},
+
+{id:'lookatsite', w:2.3, k:'look at my website,can you review my site,check my site,here is my website,review my page,what do you think of my site,audit my site',
+ r:['I would like to, but I want to be honest about what I can see from a chat window: nothing. I cannot load your site, your rankings or your ad account from here, and I am not going to pretend otherwise and invent findings.\n\nWhat I can do is get a real set of eyes on it. The free audit covers rankings, competitors, site issues and where the leads are leaking, and you keep the findings either way.\n\nWant me to set that up? Just the site address and a name and number.'],
+ qr:['Free audit','Have someone call me','Conversion rate']},
+
+{id:'confused', w:2.8, k:'i dont understand,dont understand,understand any of this,this is confusing,over my head,i am not techy,not good with computers,explain it simple,dumb it down,i dont know anything about marketing',
+ r:['No problem at all, and you do not need to become a marketing technician. That is the whole reason I am here.\n\nPlain English version: people who need your service are searching right now, they call one of the first few companies they trust, and everything else is details about how to be one of those companies.\n\nTell me what you do and what kind of work you want more of. We will take it one piece at a time and I will skip the jargon.'],
+ qr:['Where do I start?','Run my numbers','Free audit']});
 
 /* ─────────────────────────── FALLBACK & CATCH-ALL ──────────────────────── */
 var MISS = new Bag([
@@ -1040,9 +1426,13 @@ var NUDGE = new Bag([
 
 /* soft closes, used once interest is obvious. Never more than one per turn. */
 var CLOSE = new Bag([
- 'If you want this looked at properly, I can have someone call you — four questions and I am out of your way.',
- 'Want the free audit on your market? No obligation, you keep the findings either way.',
- 'I can set up a callback whenever suits you, including after hours. Just say when.'
+  'Quick one while you are here: what would an extra five projects a week do for your bottom line? That number is usually the whole argument.',
+  'Fair question to sit with — if the phone rang twice as often next month, could the crew absorb it? If yes, the rest of this is just math.',
+  'If we could fix the quiet part of your calendar before the season turns, would that solve the real problem, or is something else in the way?',
+  'Assuming the money made sense, is there anything else that would keep you from moving on this? I would rather know now than guess.',
+  'You would rather fix it once than keep patching it every spring, right? Same logic homeowners use on you.',
+  'Want me to run your actual numbers? Three questions, and you keep the answer either way.',
+  'Everything here is free, audit included. The only thing it costs you is finding out where you really stand.'
 ]);
 
 /* ─────────────────────────── SESSION STATE ─────────────────────────────── */
@@ -1063,8 +1453,33 @@ function money(n){
 }
 
 /* ─────────────────────────── MATCHER ───────────────────────────────────── */
+/* Scoring runs in two passes. The first looks for whole phrases, which is
+   what you want when somebody types a clean question. The second picks
+   individual keywords out of a messy sentence — misspelled, half-typed, or
+   wrapped in slang — so one recognizable word is still enough to get the
+   context instead of a blank "I did not catch that". */
+var STOPW = (' the and for you your yours are was were our ours with that this these those have has had how what'
+ + ' when where why who whom can could would should will shall get got getting need needs want wants about into'
+ + ' from they them their there here just like more most some any all not but its it is am do does did on in at'
+ + ' to of a an i me my we us be been being as or if so up out one two really very much many lot lots way ok okay'
+ + ' yeah yes no know think thing things stuff please thanks thank hey hi hello ').split(' ');
+
+function isStop(w){ for (var i=0;i<STOPW.length;i++){ if (STOPW[i] === w) return true; } return false; }
+
+/* crude stemmer — enough to tie roofing/roofs/roofer together */
+function stem(w){
+  if (w.length > 6 && /ers$/.test(w))  return w.slice(0, -3);
+  if (w.length > 5 && /ing$/.test(w))  return w.slice(0, -3);
+  if (w.length > 5 && /er$/.test(w))   return w.slice(0, -2);
+  if (w.length > 4 && /ed$/.test(w))   return w.slice(0, -2);
+  if (w.length > 3 && /s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1);
+  return w;
+}
+
 function score(text, intent){
-  var phrases = intent.k.split(','), s = 0, i, p, words, exact = text.trim();
+  var phrases = intent.k.split(','), s = 0, i, j, p, words, exact = text.trim();
+
+  /* pass one: the whole phrase is in there */
   for (i=0;i<phrases.length;i++){
     p = phrases[i].trim(); if (!p) continue;
     words = p.split(' ').length;
@@ -1073,14 +1488,26 @@ function score(text, intent){
       if (exact === p) s += 7;
     }
   }
-  if (s === 0){                      /* typo pass, single words only */
-    var toks = text.trim().split(' '), j;
-    for (i=0;i<phrases.length;i++){
-      p = phrases[i].trim();
-      if (!p || p.indexOf(' ') >= 0 || p.length < 5) continue;
-      for (j=0;j<toks.length;j++){ if (near(toks[j], p)){ s += 1.6; break; } }
+
+  /* pass two: individual keywords, typo-tolerant, stem-matched */
+  var toks = exact.split(' '), seen = {}, hits = 0, kw, t, st;
+  for (i=0;i<phrases.length && hits < 4;i++){
+    p = phrases[i].trim(); if (!p) continue;
+    var kws = p.split(' ');
+    for (j=0;j<kws.length;j++){
+      kw = kws[j];
+      if (kw.length < 4 || isStop(kw) || seen[kw]) continue;
+      st = stem(kw);
+      for (t=0;t<toks.length;t++){
+        if (toks[t].length < 3) continue;
+        if (toks[t] === kw || stem(toks[t]) === st || near(toks[t], kw)){
+          seen[kw] = 1; hits++; break;
+        }
+      }
     }
   }
+  if (hits) s += (s > 0 ? hits * 0.6 : 1 + (hits - 1) * 0.9);
+
   return s * (intent.w || 1);
 }
 
@@ -1267,6 +1694,16 @@ var LINKS = {
 };
 
 var ALIAS = {
+  'local proof'           : 'localproof',
+  'free chatbot'          : 'freebot',
+  'bad leads'             : 'badleads',
+  'who owns my website?'  : 'ownership',
+  'red flags'             : 'redflags',
+  'exclusivity'           : 'exclusivity',
+  'reporting'             : 'reports',
+  'contracts'             : 'contract',
+  'conversion rate'       : 'convrate',
+  'job photos'            : 'photos',
   'follow-up system'      : 'followup',
   'follow up system'      : 'followup',
   'missed call text back' : 'textback',
@@ -1545,12 +1982,12 @@ var FULL = '<svg class="afcb-man" viewBox="60 -30 320 520" aria-hidden="true" fo
 +'<circle cx="167" cy="341" r="3" fill="#8F6510" opacity=".8"/>'
 +'<circle cx="273" cy="341" r="3" fill="#8F6510" opacity=".8"/>'
 +'<g transform="translate(220,292)">'
- +'<rect x="-52" y="-26" width="104" height="50" rx="9" fill="#12161C" stroke="#A6CE39" stroke-width="2.5"/>'
- +'<path d="M-36 10 L-25 -15 L-14 10" stroke="#F4F4F1" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
- +'<rect x="-33" y="-4" width="19" height="9" rx="4.5" fill="#0D1117" stroke="#F4F4F1" stroke-width="1.6"/>'
- +'<circle cx="-25.5" cy=".5" r="2.6" fill="#A6CE39"/>'
- +'<text x="14" y="10" font-family="Barlow Condensed,Impact,sans-serif" font-size="32" font-weight="800" fill="#F4F4F1" text-anchor="middle">F</text>'
- +'<text x="38" y="10" font-family="Barlow Condensed,Impact,sans-serif" font-size="32" font-weight="800" fill="#F4F4F1" text-anchor="middle">C</text></g>'
+ +'<rect x="-54" y="-27" width="108" height="53" rx="10" fill="#0D1117" stroke="#A6CE39" stroke-width="3"/>'
+ +'<path d="M-40 13 L-27 -17 L-14 13" stroke="#C9F04B" stroke-width="6.5" fill="none"'
+ +' stroke-linecap="round" stroke-linejoin="round"/>'
+ +'<path d="M-33.5 1 h13" stroke="#C9F04B" stroke-width="5" stroke-linecap="round"/>'
+ +'<text x="20" y="13" font-family="Barlow Condensed,Impact,Haettenschweiler,sans-serif" font-size="34"'
+ +' font-weight="800" letter-spacing="1.5" fill="#F4F4F1" text-anchor="middle">FC</text></g>'
 
 /* tool belt: hammer loop, tape clip, pouch */
 +'<rect x="134" y="312" width="172" height="34" rx="7" fill="#875A36" stroke="#3E2A18" stroke-width="3"/>'
@@ -1574,19 +2011,6 @@ var FULL = '<svg class="afcb-man" viewBox="60 -30 320 520" aria-hidden="true" fo
   +'<rect x="99" y="338" width="22" height="10" rx="5" fill="#A6CE39" stroke="#37460F" stroke-width="2"/>'
   +'<circle cx="110" cy="360" r="16" fill="url(#afcGlove__U__)" stroke="#14181F" stroke-width="3"/>'
   +'<path d="M101 356 q9 -5 18 0" stroke="#7A4E25" stroke-width="2.2" fill="none" stroke-linecap="round"/>'
- +'</g>'
-+'</g>'
-
-/* ── ARM B: the waving, throwing, truck-hoisting arm ───────────────────── */
-+'<g class="afcb-wave">'
- +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#14181F" stroke-width="20" fill="none" stroke-linecap="round"/>'
- +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
- +'<g class="afcb-foreB">'
-  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
-  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#F4F4F1" stroke-width="12" fill="none" stroke-linecap="round"/>'
-  +'<rect x="328" y="158" width="22" height="10" rx="5" fill="#A6CE39" stroke="#37460F" stroke-width="2"/>'
-  +'<circle cx="340" cy="142" r="17" fill="url(#afcGlove__U__)" stroke="#14181F" stroke-width="3"/>'
-  +'<path d="M331 138 q9 -5 18 0" stroke="#7A4E25" stroke-width="2.2" fill="none" stroke-linecap="round"/>'
  +'</g>'
 +'</g>'
 
@@ -1638,7 +2062,22 @@ var FULL = '<svg class="afcb-man" viewBox="60 -30 320 520" aria-hidden="true" fo
    +'<path d="M265 29 l9 -6 l-1 10 z" fill="#A6CE39"/>'
   +'</g>'
  +'</g>'
-+'</g></g></svg>';
++'</g>'
+
+/* ── ARM B: the waving, throwing, truck-hoisting arm ───────────────────── */
++'<g class="afcb-wave">'
+ +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#14181F" stroke-width="20" fill="none" stroke-linecap="round"/>'
+ +'<path d="M278 238 C 302 232 320 216 328 198" stroke="#F4F4F1" stroke-width="13" fill="none" stroke-linecap="round"/>'
+ +'<g class="afcb-foreB">'
+  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#14181F" stroke-width="19" fill="none" stroke-linecap="round"/>'
+  +'<path d="M328 198 C 334 184 338 172 339 162" stroke="#F4F4F1" stroke-width="12" fill="none" stroke-linecap="round"/>'
+  +'<rect x="328" y="158" width="22" height="10" rx="5" fill="#A6CE39" stroke="#37460F" stroke-width="2"/>'
+  +'<circle cx="340" cy="142" r="17" fill="url(#afcGlove__U__)" stroke="#14181F" stroke-width="3"/>'
+  +'<path d="M331 138 q9 -5 18 0" stroke="#7A4E25" stroke-width="2.2" fill="none" stroke-linecap="round"/>'
+ +'</g>'
++'</g>'
+
++'</g></svg>';
 
 /* one unique copy per call — kills the duplicate-id collision for good */
 var _mid = 0;
@@ -1652,50 +2091,80 @@ function man(extra){
    THE TRUCK — with a door that actually opens, and a driver inside it.
    ========================================================================== */
 var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
-+'<defs><linearGradient id="afcTrk" x1="0" y1="0" x2="0" y2="1">'
++'<defs><clipPath id="afcCab"><path d="M234 70 L270 70 Q282 70 286 80 L293 110 L234 110 Z"/></clipPath>'
++'<linearGradient id="afcTrk" x1="0" y1="0" x2="0" y2="1">'
 +'<stop offset="0%" stop-color="#C9F04B"/><stop offset="52%" stop-color="#A6CE39"/>'
 +'<stop offset="100%" stop-color="#6E8A22"/></linearGradient>'
 +'<linearGradient id="afcChr2" x1="0" y1="0" x2="0" y2="1">'
-+'<stop offset="0%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#69737F"/></linearGradient></defs>'
++'<stop offset="0%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#69737F"/></linearGradient>'
++'<linearGradient id="afcBeam" x1="1" y1="0" x2="0" y2="0">'
++'<stop offset="0%" stop-color="rgba(255,247,196,.75)"/>'
++'<stop offset="55%" stop-color="rgba(255,247,196,.22)"/>'
++'<stop offset="100%" stop-color="rgba(255,247,196,0)"/></linearGradient></defs>'
++'<g transform="translate(560,0) scale(-1,1)">'
 +'<g class="afcb-tilt">'
+/* exhaust stacks, behind the cab */
 +'<rect x="286" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
 +'<rect x="312" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
++'<rect x="284" y="34" width="19" height="9" rx="3" fill="#9AA4B0"/>'
++'<rect x="310" y="34" width="19" height="9" rx="3" fill="#9AA4B0"/>'
+/* light bar over the windshield */
 +'<rect x="150" y="46" width="150" height="17" rx="6" fill="#14181F"/>'
 +'<g fill="#C9F04B" opacity=".9"><rect x="158" y="50" width="24" height="9" rx="3"/>'
 +'<rect x="188" y="50" width="24" height="9" rx="3"/><rect x="218" y="50" width="24" height="9" rx="3"/>'
 +'<rect x="248" y="50" width="24" height="9" rx="3"/></g>'
+/* body */
 +'<path d="M118 178 L118 130 Q118 116 134 112 L164 68 Q170 60 184 60 L268 60 Q282 60 286 70'
 +' L300 112 L392 112 Q412 112 416 130 L424 178 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="5" stroke-linejoin="round"/>'
+/* bed side and tailgate, so the back end reads as a back end */
 +'<rect x="300" y="104" width="122" height="12" rx="5" fill="#37460F"/>'
++'<path d="M404 116 L404 176" stroke="#5E7A12" stroke-width="4"/>'
++'<path d="M310 128 h84 M310 142 h84" stroke="#6E8A22" stroke-width="3" opacity=".7"/>'
++'<rect x="416" y="128" width="12" height="22" rx="3" fill="#C8392F" stroke="#7A1F18" stroke-width="2"/>'
++'<rect x="424" y="152" width="14" height="44" rx="4" fill="#20262E"/>'
+/* windshield */
 +'<path d="M170 108 L192 72 L226 72 L226 108 Z" fill="#BFD4E8" opacity=".92"/>'
-/* the cab interior the open door reveals */
++'<path d="M176 104 L194 78 L204 78 L184 104 Z" fill="#fff" opacity=".45"/>'
+/* cab interior the open door reveals */
 +'<rect x="230" y="68" width="66" height="104" rx="6" fill="#1A2029"/>'
-+'<g class="afcb-driver">'
++'<g class="afcb-driver" clip-path="url(#afcCab)">'
  +'<rect x="240" y="80" width="34" height="24" rx="7" fill="#F0BE22" stroke="#1C222B" stroke-width="2"/>'
  +'<circle cx="249" cy="92" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
  +'<circle cx="265" cy="92" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
  +'<circle cx="250" cy="92" r="2.6" fill="#12161C"/><circle cx="266" cy="92" r="2.6" fill="#12161C"/>'
  +'<ellipse cx="257" cy="78" rx="30" ry="7" fill="#8B5E3C"/>'
  +'<path d="M244 78 C242 60 250 55 257 55 C264 55 272 60 270 78 Z" fill="#A3714A" stroke="#5C3B21" stroke-width="2"/>'
- +'<path class="afcb-elbow" d="M238 104 C 226 110 218 118 216 128" stroke="#F4F4F1" stroke-width="11" fill="none" stroke-linecap="round"/>'
 +'</g>'
-/* DOOR — hinged at the front edge so it can swing open and shut */
+/* the door, hinged at the front edge */
 +'<g class="afcb-door">'
  +'<path d="M232 70 L268 70 Q282 70 286 80 L294 112 L294 170 L232 170 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
  +'<path d="M238 74 L268 74 Q276 74 279 82 L288 108 L238 108 Z" fill="#BFD4E8" opacity=".92"/>'
- +'<rect x="236" y="116" width="54" height="48" rx="7" fill="#12161C" opacity=".9"/>'
- +'<path d="M246 156 L256 128 L266 156" stroke="#F4F4F1" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
- +'<rect x="248" y="139" width="17" height="8" rx="4" fill="#0D1117" stroke="#F4F4F1" stroke-width="1.4"/>'
- +'<circle cx="256.5" cy="143" r="2.2" fill="#A6CE39"/>'
- +'<text x="279" y="156" font-family="Barlow Condensed,Impact,sans-serif" font-size="28" font-weight="800" fill="#F4F4F1" text-anchor="middle">FC</text>'
  +'<rect x="272" y="112" width="18" height="6" rx="3" fill="url(#afcChr2)"/>'
+ /* the badge rides in its own group so it can be flipped back the right way
+    round whenever the truck itself is mirrored */
+ +'<g class="afcb-badge" transform="translate(526,0) scale(-1,1)">'
+  +'<rect x="234" y="118" width="58" height="44" rx="8" fill="#0D1117" stroke="#C9F04B" stroke-width="2"/>'
+  +'<path d="M240 152 L247.5 130 L255 152" stroke="#C9F04B" stroke-width="4" fill="none"'
+  +' stroke-linecap="round" stroke-linejoin="round"/>'
+  +'<path d="M243.5 145 h8" stroke="#C9F04B" stroke-width="3" stroke-linecap="round"/>'
+  +'<text x="272" y="151" font-family="Barlow Condensed,Impact,Haettenschweiler,sans-serif" font-size="27"'
+  +' font-weight="800" letter-spacing="1" fill="#F4F4F1" text-anchor="middle">FC</text>'
+ +'</g>'
 +'</g>'
-+'<rect x="104" y="132" width="22" height="30" rx="5" fill="#F7E8A0"/>'
-+'<rect x="92" y="158" width="46" height="18" rx="6" fill="url(#afcChr2)"/>'
-+'<circle cx="112" cy="167" r="9" fill="#37460F"/>'
+/* FRONT END — grille, two lit lamps and a beam, so the nose is never in doubt */
++'<path d="M118 118 L118 178 L98 178 L90 150 Q88 126 108 120 Z" fill="#8FB92F" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
++'<path d="M120 124 h16 M120 136 h16 M120 148 h16 M120 160 h16" stroke="#37460F" stroke-width="3" stroke-linecap="round"/>'
++'<rect x="94" y="126" width="26" height="24" rx="5" fill="#FFF6C8" stroke="#C9A227" stroke-width="2"/>'
++'<rect x="98" y="130" width="10" height="9" rx="3" fill="#fff"/>'
++'<rect x="98" y="156" width="20" height="12" rx="4" fill="#F7E8A0" opacity=".9"/>'
++'<path d="M92 128 L14 104 L14 178 L92 154 Z" fill="url(#afcBeam)"/>'
++'<rect x="84" y="170" width="60" height="16" rx="6" fill="url(#afcChr2)" stroke="#39434F" stroke-width="2"/>'
++'<circle cx="112" cy="178" r="8" fill="#37460F"/>'
+/* frame and suspension */
 +'<rect x="140" y="176" width="290" height="14" rx="6" fill="#20262E"/>'
 +'<rect x="168" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
 +'<rect x="386" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
+/* wheels */
 +'<g class="afcb-wh"><g transform="translate(176,222)">'
 +'<circle r="58" fill="#161A20"/><circle r="58" fill="none" stroke="#2C333D" stroke-width="9" stroke-dasharray="11 9"/>'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
@@ -1706,39 +2175,38 @@ var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
 +'<path d="M0 -31 L0 -14 M0 31 L0 14 M-31 0 L-14 0 M31 0 L14 0" stroke="#14181F" stroke-width="6"/>'
 +'</g></g>'
-+'<rect x="424" y="150" width="14" height="46" rx="4" fill="#20262E"/>'
-+'</g></svg>';
++'</g></g></svg>';
 
 /* ==========================================================================
    THE PORTAL — layered rings, a real event horizon, a rim that breathes.
    ========================================================================== */
 var PORTAL = '<svg viewBox="0 0 320 320" aria-hidden="true" focusable="false">'
 +'<defs>'
-+'<radialGradient id="afcHole" cx="50%" cy="50%" r="50%">'
-+'<stop offset="0%" stop-color="#000"/><stop offset="46%" stop-color="#05070A"/>'
-+'<stop offset="74%" stop-color="#16220A"/><stop offset="92%" stop-color="#6F9226"/>'
-+'<stop offset="100%" stop-color="#C9F04B"/></radialGradient>'
-+'<radialGradient id="afcGlow" cx="50%" cy="50%" r="50%">'
-+'<stop offset="60%" stop-color="rgba(166,206,57,0)"/>'
-+'<stop offset="88%" stop-color="rgba(166,206,57,.28)"/>'
-+'<stop offset="100%" stop-color="rgba(166,206,57,0)"/></radialGradient></defs>'
-+'<circle cx="160" cy="160" r="156" fill="url(#afcGlow)"/>'
++'<radialGradient id="afcVoid" cx="50%" cy="48%" r="52%">'
++'<stop offset="0%" stop-color="#000000"/><stop offset="38%" stop-color="#000000"/>'
++'<stop offset="58%" stop-color="#04060A"/><stop offset="72%" stop-color="rgba(7,11,9,.92)"/>'
++'<stop offset="84%" stop-color="rgba(10,16,10,.6)"/><stop offset="93%" stop-color="rgba(14,22,12,.26)"/>'
++'<stop offset="100%" stop-color="rgba(14,22,12,0)"/></radialGradient>'
++'<radialGradient id="afcHaze" cx="50%" cy="50%" r="50%">'
++'<stop offset="56%" stop-color="rgba(120,160,50,0)"/>'
++'<stop offset="82%" stop-color="rgba(120,160,50,.16)"/>'
++'<stop offset="100%" stop-color="rgba(120,160,50,0)"/></radialGradient>'
++'<filter id="afcSoft" x="-35%" y="-35%" width="170%" height="170%">'
++'<feGaussianBlur stdDeviation="14"/></filter></defs>'
+/* outer haze so it sits in the page instead of being pasted on it */
++'<circle cx="160" cy="160" r="158" fill="url(#afcHaze)"/>'
+/* the void itself — black in the middle, feathered away at the edge */
++'<ellipse cx="160" cy="158" rx="150" ry="156" fill="url(#afcVoid)"/>'
+/* slow shading inside the mouth: two soft crescents that drift around */
 +'<g class="afcb-spin">'
- +'<ellipse cx="160" cy="160" rx="140" ry="146" fill="none" stroke="#A6CE39" stroke-width="2.5" opacity=".4" stroke-dasharray="30 22"/>'
- +'<ellipse cx="160" cy="160" rx="124" ry="132" fill="none" stroke="#C9F04B" stroke-width="5" opacity=".7" stroke-dasharray="54 34"/>'
+ +'<path d="M160 44 A 116 130 0 0 1 160 272" fill="none" stroke="#7FA52C" stroke-width="20"'
+ +' opacity=".26" filter="url(#afcSoft)"/>'
+ +'<path d="M160 76 A 84 96 0 0 0 160 240" fill="none" stroke="#243A12" stroke-width="26"'
+ +' opacity=".5" filter="url(#afcSoft)"/>'
 +'</g>'
-+'<g class="afcb-spin2">'
- +'<ellipse cx="160" cy="160" rx="108" ry="118" fill="none" stroke="#B4763C" stroke-width="4" opacity=".55" stroke-dasharray="20 26"/>'
- +'<ellipse cx="160" cy="160" rx="96" ry="106" fill="none" stroke="#8FB92F" stroke-width="2" opacity=".45" stroke-dasharray="8 14"/>'
-+'</g>'
-+'<ellipse cx="160" cy="160" rx="92" ry="104" fill="url(#afcHole)"/>'
-+'<g class="afcb-spin3">'
- +'<path d="M160 66 C 214 86 232 150 206 206 C 188 244 132 256 96 232"'
- +' fill="none" stroke="#C9F04B" stroke-width="3" opacity=".35" stroke-linecap="round"/>'
- +'<path d="M160 96 C 196 112 208 156 190 194 C 178 220 140 228 116 212"'
- +' fill="none" stroke="#A6CE39" stroke-width="2" opacity=".3" stroke-linecap="round"/>'
-+'</g>'
-+'<ellipse cx="160" cy="160" rx="54" ry="66" fill="#000" opacity=".92"/></svg>';
+/* a faint lip of light where the tear meets the page */
++'<ellipse cx="160" cy="158" rx="146" ry="152" fill="none" stroke="rgba(166,206,57,.22)"'
++' stroke-width="3" filter="url(#afcSoft)"/></svg>';
 
 /* the seed he throws */
 var DISC = '<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">'
@@ -1747,14 +2215,41 @@ var DISC = '<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">'
 +'<circle cx="60" cy="60" r="12" fill="#05070A"/></svg>';
 
 /* the puddle he leaves behind, and it soaks in on its own */
-var MUD = '<svg viewBox="0 0 320 96" aria-hidden="true" focusable="false">'
-+'<path d="M16 64 C 44 34 96 30 134 46 C 168 60 206 32 248 46 C 292 60 306 76 280 84'
-+' C 224 96 62 96 24 84 C 8 79 8 72 16 64 Z" fill="#4A3323" opacity=".9"/>'
-+'<ellipse cx="160" cy="70" rx="104" ry="13" fill="#2E1F12" opacity=".55"/>'
-+'<ellipse class="afcb-rip1" cx="128" cy="66" rx="26" ry="7" fill="none" stroke="#8B6A44" stroke-width="2.5" opacity=".5"/>'
-+'<ellipse class="afcb-rip2" cx="212" cy="70" rx="18" ry="5" fill="none" stroke="#8B6A44" stroke-width="2" opacity=".4"/>'
-+'<ellipse cx="118" cy="60" rx="28" ry="6" fill="#6B4A2C" opacity=".45"/>'
-+'<ellipse cx="226" cy="64" rx="18" ry="5" fill="#6B4A2C" opacity=".35"/></svg>';
+function mud(){
+  var r = function(a, b){ return Math.round(rnd(a, b)); },
+      flip = Math.random() < .5 ? 1 : -1,
+      p1 = r(14, 34), p2 = r(54, 74), p3 = r(128, 152), p4 = r(238, 268),
+      d1 = r(58, 72), d2 = r(38, 52), d3 = r(40, 54), d4 = r(36, 52),
+      lift = r(84, 94);
+  return '<svg viewBox="0 0 320 110" aria-hidden="true" focusable="false">'
+  + '<defs><radialGradient id="afcMud' + (++_mid) + '" cx="50%" cy="42%" r="62%">'
+  + '<stop offset="0%" stop-color="#2A1B0E"/><stop offset="58%" stop-color="#3B2816"/>'
+  + '<stop offset="100%" stop-color="#5A3E24"/></radialGradient></defs>'
+  + '<g transform="translate(' + (flip < 0 ? 320 : 0) + ',0) scale(' + flip + ',1)">'
+  + '<ellipse cx="160" cy="74" rx="' + r(132, 150) + '" ry="' + r(26, 33) + '" fill="#4A3323" opacity=".32"/>'
+  + '<path d="M' + p1 + ' ' + d1 + ' C ' + p2 + ' ' + r(28, 40) + ' ' + (p2 + 48) + ' ' + r(26, 36)
+  +   ' ' + p3 + ' ' + d2 + ' C ' + (p3 + 36) + ' ' + r(54, 66) + ' ' + (p4 - 42) + ' ' + r(26, 38)
+  +   ' ' + p4 + ' ' + d3 + ' C ' + r(288, 306) + ' ' + r(56, 66) + ' ' + r(300, 312) + ' ' + r(74, 82)
+  +   ' ' + r(272, 288) + ' ' + lift
+  +   ' C ' + r(210, 232) + ' ' + r(96, 104) + ' ' + r(54, 70) + ' ' + r(96, 104) + ' ' + r(20, 32) + ' ' + lift
+  +   ' C ' + r(6, 14) + ' ' + r(76, 84) + ' ' + r(6, 14) + ' ' + r(68, 76) + ' ' + p1 + ' ' + d1 + ' Z"'
+  +   ' fill="url(#afcMud' + _mid + ')" stroke="#6B4A2C" stroke-width="3" stroke-opacity=".55"/>'
+  + '<ellipse cx="' + r(108, 142) + '" cy="' + r(54, 62) + '" rx="' + r(34, 50) + '" ry="' + r(7, 11)
+  +   '" fill="#C9B392" opacity=".18"/>'
+  + '<ellipse cx="' + r(196, 228) + '" cy="' + r(62, 72) + '" rx="' + r(18, 30) + '" ry="' + r(5, 8)
+  +   '" fill="#C9B392" opacity=".13"/>'
+  + '<path d="M' + r(62, 78) + ' ' + r(78, 86) + ' q' + r(34, 46) + ' ' + r(6, 10) + ' ' + r(84, 102)
+  +   ' ' + r(2, 6) + '" stroke="#8B6A44" stroke-width="2" fill="none" opacity=".3"/>'
+  + '<ellipse cx="' + r(24, 44) + '" cy="' + r(92, 100) + '" rx="' + r(8, 14) + '" ry="' + r(3, 5) + '" fill="#3B2816" opacity=".65"/>'
+  + '<ellipse cx="' + r(276, 300) + '" cy="' + r(90, 99) + '" rx="' + r(6, 12) + '" ry="' + r(3, 5) + '" fill="#3B2816" opacity=".55"/>'
+  + '<ellipse cx="' + r(176, 214) + '" cy="' + r(94, 102) + '" rx="' + r(5, 10) + '" ry="' + r(2, 4) + '" fill="#3B2816" opacity=".5"/>'
+  + '<ellipse cx="' + r(84, 116) + '" cy="' + r(94, 102) + '" rx="' + r(4, 9) + '" ry="' + r(2, 4) + '" fill="#3B2816" opacity=".45"/>'
+  + '<ellipse class="afcb-rip1" cx="' + r(118, 146) + '" cy="' + r(60, 68) + '" rx="' + r(22, 30)
+  +   '" ry="7" fill="none" stroke="#9C7C55" stroke-width="2.5" opacity=".55"/>'
+  + '<ellipse class="afcb-rip2" cx="' + r(198, 226) + '" cy="' + r(66, 74) + '" rx="' + r(14, 22)
+  +   '" ry="5" fill="none" stroke="#9C7C55" stroke-width="2" opacity=".45"/>'
+  + '</g></svg>';
+}
 
 /* storm clouds that drift across the top while he arrives */
 var CLOUD = '<svg viewBox="0 0 300 120" aria-hidden="true" focusable="false">'
@@ -1768,16 +2263,17 @@ var CLOUD = '<svg viewBox="0 0 300 120" aria-hidden="true" focusable="false">'
 /* ==========================================================================
    THE CINEMATIC
 
-   Arrival: storm clouds roll in, rain slants across the top, real forked
+   Arrival: storm clouds roll in, rain slants across the top, forked
    lightning cracks down the sky, fireworks open across the whole width.
-   The truck comes in from the right on the back wheel — a wheelie held all
-   the way right to left — swings around, drives back left to right and
-   brakes in a wall of dust. The door swings open, Tex steps down like a
-   person (sometimes with a flip off the running board), throws the portal
-   to the top of the far side, then hoists the truck one-handed and heaves
-   it through. Portal shuts. He walks to the corner and becomes the button.
+   The truck runs the bottom of the screen forward — left, right, left,
+   right — breaking loose into fishtail spin-outs and blasting through mud
+   puddles on the way. It brakes in a wall of dust, the door swings open,
+   Rivit steps down like a person (sometimes with a flip off the running
+   board), introduces himself, throws the portal to the top of the far
+   side, then grabs the truck, reaches back and hurls it through.
 
-   Exit: he throws a second portal across the page, crouches and leaps in.
+   Exit: he waves goodbye, throws a second portal, and flips slowly up
+   into it.
 
    Accessibility: nothing strobes. Every bolt, spark and shell draws on,
    holds, and fades exactly once; strikes are spaced far enough apart that
@@ -1785,11 +2281,7 @@ var CLOUD = '<svg viewBox="0 0 300 120" aria-hidden="true" focusable="false">'
    prefers-reduced-motion and a skip control is on screen the entire time.
    ========================================================================== */
 
-/* ── real lightning, generated fresh every run ────────────────────────────
-   A bolt is a jagged main channel that wanders as it falls, thick at the
-   top and tapering toward the ground, with branches that fork off it and
-   sub-branches off those. Three stacked strokes per path give it a bloom:
-   a wide soft halo, the channel itself, and a hot white core.            */
+/* ── real lightning, generated fresh every run ─────────────────────────── */
 function boltPath(x, y, len, spread, segs){
   var d = 'M' + Math.round(x) + ' ' + Math.round(y), pts = [[x, y]], i, step = len / segs;
   for (i = 0; i < segs; i++){
@@ -1822,7 +2314,7 @@ function boltSVG(w, h, count){
       i, j, parts, delay;
   for (i = 0; i < count; i++){
     parts = boltGroup(rnd(w * .06, w * .94), h * rnd(.55, .95), w * .035);
-    delay = (.25 + i * .78).toFixed(2);
+    delay = (.25 + i * .9).toFixed(2);
     s += '<g class="afcb-bolt" style="animation-delay:' + delay + 's">';
     for (j = 0; j < parts.length; j++){
       s += '<path class="hl" d="' + parts[j].d + '" stroke-width="' + (parts[j].w * 3.4) + '"/>'
@@ -1836,9 +2328,11 @@ function boltSVG(w, h, count){
 
 var CINE_CSS = ''
 +'.afcb-stage{position:fixed;inset:0;z-index:2147481900;pointer-events:none;overflow:hidden;display:none;'
- +'--hdoor:50vw;--hfront:41vw;--hcorner:90vw;--tstop:38vw;--tleft:2vw;--px:12vw;--py:-64vh}'
+ +'--hdoor:51vw;--hfront:40vw;--hcorner:90vw;--tstop:34vw;--ton:-52vw;--toff:116vw;'
+ +'--px:12vw;--py:-64vh;--tpx:-8vw;--tpy:-52vh;--hpx:8vw;--hpy:-54vh;--sayx:40vw;--saysh:-46%}'
 +'.afcb-stage.on{display:block}'
-+'.afcb-stage.m{--hdoor:42vw;--hfront:26vw;--hcorner:74vw;--tstop:8vw;--tleft:-8vw;--px:14vw;--py:-58vh}'
++'.afcb-stage.m{--hdoor:39vw;--hfront:24vw;--hcorner:74vw;--tstop:4vw;--ton:-96vw;--toff:104vw;'
+ +'--px:14vw;--py:-58vh;--tpx:-10vw;--tpy:-46vh;--hpx:22vw;--hpy:-70vh;--sayx:50vw;--saysh:-50%}'
 
 /* ── the rig: every joint gets a real pivot ────────────────────────────── */
 +'.afcb-man g{transform-box:view-box}'
@@ -1880,88 +2374,101 @@ var CINE_CSS = ''
 +'.afcb-bolts .ch{stroke:#DFF59B;filter:drop-shadow(0 0 12px rgba(201,240,75,.55))}'
 +'.afcb-bolts .co{stroke:#FFFFFF;opacity:.95}'
 +'.afcb-bolt{opacity:0}'
-+'.afcb-stage.go .afcb-bolt{animation:afcbStrike 2.9s cubic-bezier(.16,.8,.3,1) both}'
-+'@keyframes afcbStrike{0%{opacity:0;stroke-dashoffset:var(--l)}'
- +'9%{opacity:.85}22%{opacity:1;stroke-dashoffset:0}'
- +'46%{opacity:.72;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:0}}'
++'.afcb-stage.go .afcb-bolt{animation:afcbStrike 3.1s cubic-bezier(.16,.8,.3,1) both}'
++'@keyframes afcbStrike{0%{opacity:0}9%{opacity:.85}22%{opacity:1}'
+ +'46%{opacity:.72}100%{opacity:0}}'
 +'.afcb-bolts path{stroke-dasharray:var(--l);stroke-dashoffset:var(--l)}'
-+'.afcb-stage.go .afcb-bolts path{animation:afcbDraw 2.9s cubic-bezier(.16,.8,.3,1) both;animation-delay:inherit}'
++'.afcb-stage.go .afcb-bolts path{animation:afcbDraw 3.1s cubic-bezier(.16,.8,.3,1) both}'
 +'@keyframes afcbDraw{0%{stroke-dashoffset:var(--l)}22%,100%{stroke-dashoffset:0}}'
 
-/* ── fireworks: shell rises, blooms, sparks arc out and fall ───────────── */
+/* ── fireworks: shell climbs on a trail, blooms, sparks arc and droop ──── */
 +'.afcb-sky{position:absolute;inset:0;overflow:hidden}'
-+'.afcb-shell{position:absolute;width:6px;height:6px;border-radius:50%;background:#F7E8A0;opacity:0;'
- +'box-shadow:0 0 12px rgba(247,232,160,.85);animation:afcbShell .85s cubic-bezier(.2,.6,.4,1) forwards}'
-+'@keyframes afcbShell{0%{opacity:0;transform:translateY(0) scale(.6)}'
- +'14%{opacity:.9}100%{opacity:.25;transform:translateY(var(--rise)) scale(1)}}'
++'.afcb-shell{position:absolute;width:7px;height:7px;border-radius:50%;background:#F7E8A0;opacity:0;'
+ +'box-shadow:0 0 14px rgba(247,232,160,.9),0 14px 18px rgba(247,232,160,.25);'
+ +'animation:afcbShell .9s cubic-bezier(.2,.6,.4,1) forwards}'
++'@keyframes afcbShell{0%{opacity:0;transform:translateY(0) scale(.5)}'
+ +'14%{opacity:.95}100%{opacity:.2;transform:translateY(var(--rise)) scale(1)}}'
 +'.afcb-fw{position:absolute;width:0;height:0}'
-+'.afcb-fw b{position:absolute;left:0;top:0;width:230px;height:230px;margin:-115px;border-radius:50%;opacity:0;'
- +'background:radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(201,240,75,.22) 42%,rgba(201,240,75,0) 70%);'
- +'animation:afcbBloom 1.5s ease-out forwards}'
-+'@keyframes afcbBloom{0%{opacity:0;transform:scale(.2)}18%{opacity:.9}100%{opacity:0;transform:scale(1.5)}}'
++'.afcb-fw b{position:absolute;left:0;top:0;width:260px;height:260px;margin:-130px;border-radius:50%;opacity:0;'
+ +'background:radial-gradient(circle,rgba(255,255,255,.55) 0%,rgba(201,240,75,.24) 40%,rgba(201,240,75,0) 70%);'
+ +'animation:afcbBloom 1.6s ease-out forwards}'
++'@keyframes afcbBloom{0%{opacity:0;transform:scale(.15)}16%{opacity:.95}100%{opacity:0;transform:scale(1.6)}}'
++'.afcb-fw u{position:absolute;left:0;top:0;width:40px;height:40px;margin:-20px;border-radius:50%;'
+ +'border:2px solid rgba(255,255,255,.55);opacity:0;animation:afcbRing 1.1s ease-out forwards}'
++'@keyframes afcbRing{0%{opacity:0;transform:scale(.2)}20%{opacity:.7}100%{opacity:0;transform:scale(6)}}'
 +'.afcb-fw i{position:absolute;left:0;top:0;width:5px;height:5px;border-radius:50%;opacity:0;'
- +'animation:afcbSpark 1.9s cubic-bezier(.15,.7,.4,1) forwards}'
-+'@keyframes afcbSpark{0%{opacity:0;transform:translate(0,0) scale(1)}'
- +'12%{opacity:1}70%{opacity:.8}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.35)}}'
+ +'animation:afcbSpark var(--sd) cubic-bezier(.12,.7,.35,1) forwards}'
++'@keyframes afcbSpark{0%{opacity:0;transform:translate(0,0) scale(1.2)}'
+ +'10%{opacity:1}62%{opacity:.9}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.3)}}'
 
-/* ── dust and mud thrown off the tires ─────────────────────────────────── */
+/* ── dust, mud and splashes ────────────────────────────────────────────── */
 +'.afcb-grit{position:absolute;bottom:5vh;border-radius:42%;opacity:0;'
- +'animation:afcbGrit 2.2s cubic-bezier(.2,.6,.4,1) forwards}'
-+'@keyframes afcbGrit{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.5)}'
- +'14%{opacity:.85}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(200deg) scale(1.25)}}'
-+'.afcb-dust{position:absolute;bottom:4vh;width:220px;height:120px;border-radius:50%;opacity:0;'
- +'background:radial-gradient(circle,rgba(217,199,168,.72) 0%,rgba(217,199,168,.3) 48%,rgba(217,199,168,0) 72%);'
- +'animation:afcbDust 2.6s ease-out forwards}'
-+'@keyframes afcbDust{0%{opacity:0;transform:translate(0,20px) scale(.35)}'
- +'18%{opacity:.9}100%{opacity:0;transform:translate(var(--tx),-40px) scale(2)}}'
+ +'animation:afcbGrit 2.3s cubic-bezier(.2,.6,.4,1) forwards}'
++'@keyframes afcbGrit{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}'
+ +'12%{opacity:.9}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(280deg) scale(1.3)}}'
++'.afcb-dust{position:absolute;bottom:4vh;width:240px;height:130px;border-radius:50%;opacity:0;'
+ +'background:radial-gradient(circle,rgba(217,199,168,.75) 0%,rgba(217,199,168,.32) 46%,rgba(217,199,168,0) 72%);'
+ +'animation:afcbDust 2.8s ease-out forwards}'
++'@keyframes afcbDust{0%{opacity:0;transform:translate(0,22px) scale(.3)}'
+ +'16%{opacity:.95}100%{opacity:0;transform:translate(var(--tx),-46px) scale(2.2)}}'
++'.afcb-splash{position:absolute;bottom:5vh;width:14px;height:9px;border-radius:50% 50% 42% 42%;opacity:0;'
+ +'animation:afcbSplash 1.5s cubic-bezier(.15,.65,.4,1) forwards}'
++'@keyframes afcbSplash{0%{opacity:0;transform:translate(0,0) scale(.5) rotate(0)}'
+ +'10%{opacity:1}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.1) rotate(var(--rot))}}'
 
-/* ── the puddle: it ripples, then soaks away on its own ────────────────── */
+/* ── the puddles: they ripple, then soak away on their own ─────────────── */
 +'.afcb-puddle{position:absolute;bottom:3vh;width:22vw;min-width:180px;max-width:330px;opacity:0}'
 +'.afcb-puddle svg{width:100%;height:auto;display:block}'
-+'.afcb-puddle.wet{animation:afcbPuddle 11s ease-out forwards}'
-+'@keyframes afcbPuddle{0%{opacity:0;transform:scale(.2)}7%{opacity:.95;transform:scale(1.06)}'
- +'12%{transform:scale(1)}70%{opacity:.8}100%{opacity:0;transform:scale(.86)}}'
-+'.afcb-puddle.wet .afcb-rip1{animation:afcbRip 2.6s ease-out 2}'
-+'.afcb-puddle.wet .afcb-rip2{animation:afcbRip 2.6s ease-out .7s 2}'
-+'@keyframes afcbRip{0%{opacity:.6;transform:scale(.4)}100%{opacity:0;transform:scale(1.6)}}'
++'.afcb-puddle.wet{animation:afcbPuddle 14s ease-out forwards}'
++'@keyframes afcbPuddle{0%{opacity:0;transform:scale(.3)}6%{opacity:.95;transform:scale(1.05)}'
+ +'11%{transform:scale(1)}72%{opacity:.85}100%{opacity:0;transform:scale(.88)}}'
++'.afcb-puddle .afcb-rip1{animation:afcbRip 2.4s ease-out infinite}'
++'.afcb-puddle .afcb-rip2{animation:afcbRip 2.4s ease-out .9s infinite}'
++'@keyframes afcbRip{0%{opacity:.6;transform:scale(.4)}100%{opacity:0;transform:scale(1.7)}}'
 
-/* ── the truck ─────────────────────────────────────────────────────────── */
+/* ── the truck: forward the whole way, breaking loose into fishtails ───── */
 +'.afcb-truck{position:absolute;bottom:5vh;left:0;width:46vw;min-width:330px;max-width:660px;opacity:0;'
- +'transform:translateX(120vw)}'
+ +'transform:translateX(120vw);transform-origin:50% 78%}'
 +'.afcb-truck svg{width:100%;height:auto;display:block;'
  +'filter:drop-shadow(0 16px 22px rgba(13,17,23,.4))}'
-+'.afcb-truck.drive{animation:afcbDrive 7.4s cubic-bezier(.3,.05,.25,1) forwards}'
++'.afcb-truck.drive{animation:afcbDrive 5.8s cubic-bezier(.2,.55,.3,1) forwards}'
 +'@keyframes afcbDrive{'
- +'0%{opacity:0;transform:translateX(118vw) scaleX(1)}'
- +'4%{opacity:1}'
- /* wheelie the whole way right to left */
- +'42%{opacity:1;transform:translateX(var(--tleft)) scaleX(1)}'
- /* swing around */
- +'47%{transform:translateX(var(--tleft)) scaleX(.72)}'
- +'52%{transform:translateX(var(--tleft)) scaleX(-1)}'
- /* and back left to right, braking into place */
- +'86%{transform:translateX(calc(var(--tstop) + 4vw)) scaleX(-1)}'
- +'93%{transform:translateX(calc(var(--tstop) - 1vw)) scaleX(-1)}'
- +'100%{opacity:1;transform:translateX(var(--tstop)) scaleX(-1)}}'
-/* the body tilts back onto the rear wheel for the wheelie, settles for the return run */
-+'.afcb-truck.drive .afcb-tilt{transform-box:view-box;transform-origin:394px 222px;'
- +'animation:afcbTilt 7.4s cubic-bezier(.3,.05,.25,1) forwards}'
+ +'0%{opacity:0;transform:translateX(var(--ton)) rotate(0)}'
+ +'4%{opacity:1;transform:translateX(calc(var(--ton) + 10vw)) rotate(0)}'
+ /* in, and hard on the brakes */
+ +'20%{transform:translateX(calc(var(--tstop) + 6vw)) rotate(0)}'
+ +'26%{transform:translateX(var(--tstop)) rotate(-3deg)}'
+ /* three spin-outs: the back end breaks loose and swings */
+ +'34%{transform:translateX(calc(var(--tstop) - 4vw)) rotate(8deg)}'
+ +'43%{transform:translateX(calc(var(--tstop) + 4vw)) rotate(-8deg)}'
+ +'52%{transform:translateX(calc(var(--tstop) - 3vw)) rotate(7deg)}'
+ +'61%{transform:translateX(calc(var(--tstop) + 3vw)) rotate(-7deg)}'
+ +'70%{transform:translateX(calc(var(--tstop) - 2vw)) rotate(5deg)}'
+ +'79%{transform:translateX(calc(var(--tstop) + 1vw)) rotate(-4deg)}'
+ /* and settle on the springs */
+ +'88%{transform:translateX(var(--tstop)) rotate(2deg)}'
+ +'95%{transform:translateX(var(--tstop)) rotate(-1deg)}'
+ +'100%{opacity:1;transform:translateX(var(--tstop)) rotate(0)}}'
++'.afcb-truck.drive .afcb-tilt{transform-box:view-box;transform-origin:394px 230px;'
+ +'animation:afcbTilt 5.8s ease-in-out forwards}'
 +'@keyframes afcbTilt{0%{transform:rotate(0)}'
- +'9%{transform:rotate(-19deg)}36%{transform:rotate(-21deg)}44%{transform:rotate(-3deg)}'
- +'54%{transform:rotate(0)}62%{transform:rotate(-7deg)}'
- +'88%{transform:rotate(0)}93%{transform:rotate(4deg)}97%{transform:rotate(-2deg)}100%{transform:rotate(0)}}'
+ +'7%{transform:rotate(9deg)}18%{transform:rotate(4deg)}'
+ +'26%{transform:rotate(-7deg)}32%{transform:rotate(3deg)}'
+ +'43%{transform:rotate(6deg)}52%{transform:rotate(-4deg)}'
+ +'61%{transform:rotate(5deg)}70%{transform:rotate(-3deg)}'
+ +'82%{transform:rotate(4deg)}92%{transform:rotate(-2deg)}100%{transform:rotate(0)}}'
 +'.afcb-truck.drive .afcb-wh{transform-box:view-box;transform-origin:176px 222px;'
- +'animation:afcbSpinF 7.4s linear forwards}'
+ +'animation:afcbSpinF 5.8s linear forwards}'
 +'.afcb-truck.drive .afcb-wh2{transform-box:view-box;transform-origin:394px 222px;'
- +'animation:afcbSpinR 7.4s linear forwards}'
-+'@keyframes afcbSpinF{0%{transform:rotate(0)}42%{transform:rotate(-2600deg)}'
- +'52%{transform:rotate(-2600deg)}100%{transform:rotate(-5100deg)}}'
-+'@keyframes afcbSpinR{0%{transform:rotate(0)}42%{transform:rotate(-3000deg)}'
- +'50%{transform:rotate(-4400deg)}100%{transform:rotate(-7200deg)}}'
-+'.afcb-truck.drive .afcb-driver{animation:afcbJostle .42s ease-in-out 17}'
+ +'animation:afcbSpinR 5.8s linear forwards}'
++'@keyframes afcbSpinF{0%{transform:rotate(0)}20%{transform:rotate(-1300deg)}'
+ +'100%{transform:rotate(-3000deg)}}'
++'@keyframes afcbSpinR{0%{transform:rotate(0)}20%{transform:rotate(-1500deg)}'
+ +'34%{transform:rotate(-3200deg)}100%{transform:rotate(-9000deg)}}'
++'.afcb-truck.drive .afcb-driver{animation:afcbJostle .4s ease-in-out 20}'
 +'@keyframes afcbJostle{0%,100%{transform:translateY(0) rotate(0)}'
  +'50%{transform:translateY(-2.5px) rotate(-1.2deg)}}'
-+'.afcb-truck.parked{transform:translateX(var(--tstop)) scaleX(-1);opacity:1}'
++'.afcb-truck.parked{transform:translateX(var(--tstop));opacity:1}'
 +'.afcb-truck.parked .afcb-driver{opacity:0;transition:opacity .3s}'
 /* door swings open, and shuts again behind him */
 +'.afcb-door{transform-box:view-box;transform-origin:232px 120px}'
@@ -1971,17 +2478,24 @@ var CINE_CSS = ''
 +'.afcb-truck.shut .afcb-door{animation:afcbDoorShut .7s cubic-bezier(.4,0,.4,1) forwards}'
 +'@keyframes afcbDoorShut{0%{transform:scaleX(.28) skewY(-7deg) translateX(-4px)}'
  +'100%{transform:scaleX(1) skewY(0)}}'
-/* hoisted one-handed, then heaved through the portal */
-+'.afcb-truck.lift{animation:afcbLift 1.25s cubic-bezier(.25,.9,.35,1) forwards}'
-+'@keyframes afcbLift{0%{transform:translateX(var(--tstop)) scaleX(-1) translateY(0) rotate(0)}'
- +'55%{transform:translateX(calc(var(--tstop) - 2vw)) scaleX(-1) translateY(-14vh) rotate(6deg)}'
- +'100%{transform:translateX(calc(var(--hfront) + 3vw)) scaleX(-.46) scaleY(.46) translateY(-46vh) rotate(9deg)}}'
-+'.afcb-truck.heave{animation:afcbHeave 1.5s cubic-bezier(.3,.1,.5,1) forwards}'
-+'@keyframes afcbHeave{'
- +'0%{opacity:1;transform:translateX(calc(var(--hfront) + 3vw)) scaleX(-.46) scaleY(.46) translateY(-46vh) rotate(9deg)}'
- +'18%{transform:translateX(calc(var(--hfront) - 1vw)) scaleX(-.46) scaleY(.46) translateY(-58vh) rotate(-14deg)}'
- +'70%{opacity:1;transform:translateX(calc(var(--px) + 4vw)) scaleX(-.2) scaleY(.2) translateY(-96vh) rotate(-150deg)}'
- +'100%{opacity:0;transform:translateX(calc(var(--px) + 6vw)) scaleX(-.02) scaleY(.02) translateY(-104vh) rotate(-260deg)}}'
+/* he grabs it, reaches back, and hurls it forward and up */
++'.afcb-truck.grab{animation:afcbGrab 1.5s cubic-bezier(.25,.9,.35,1) forwards}'
++'@keyframes afcbGrab{0%{transform:translateX(var(--tstop)) translateY(0) rotate(0) scale(1)}'
+ +'40%{transform:translateX(calc(var(--tstop) - 2vw)) translateY(-6vh) rotate(-3deg) scale(.9)}'
+ +'100%{transform:translateX(calc(var(--hfront) - 4vw)) translateY(-26vh) rotate(-14deg) scale(.5)}}'
++'.afcb-truck.hurl{animation:afcbHurl 2.6s cubic-bezier(.32,.04,.5,1) forwards}'
++'@keyframes afcbHurl{'
+ +'0%{opacity:1;transform:translateX(calc(var(--hfront) - 4vw)) translateY(-26vh) rotate(-14deg) scale(.5)}'
+ /* he takes it back behind his shoulder first */
+ +'20%{transform:translateX(calc(var(--hfront) + 7vw)) translateY(-20vh) rotate(26deg) scale(.5)}'
+ /* then it comes forward and up, across the screen */
+ +'38%{transform:translateX(calc(var(--hfront) - 6vw)) translateY(-38vh) rotate(-40deg) scale(.46)}'
+ +'58%{transform:translateX(calc((var(--hfront) + var(--tpx)) / 2)) translateY(calc(var(--tpy) + 4vh))'
+ +' rotate(-130deg) scale(.38)}'
+ +'80%{transform:translateX(calc(var(--tpx) + 6vw)) translateY(var(--tpy)) rotate(-250deg) scale(.28)}'
+ /* and only shrinks once it is actually in the hole */
+ +'92%{opacity:1;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-330deg) scale(.12)}'
+ +'100%{opacity:0;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-380deg) scale(.02)}}'
 
 /* ── the portal and the disc he throws to open it ──────────────────────── */
 +'.afcb-portal{position:absolute;left:2vw;top:3vh;width:26vw;min-width:190px;max-width:360px;'
@@ -1993,18 +2507,52 @@ var CINE_CSS = ''
 +'.afcb-portal.shut{animation:afcbShut 1.1s cubic-bezier(.5,0,.8,.2) forwards}'
 +'@keyframes afcbShut{0%{opacity:1;transform:scale(1)}70%{opacity:1;transform:scale(.5) rotate(40deg)}'
  +'100%{opacity:0;transform:scale(.02) rotate(90deg)}}'
-+'.afcb-portal .afcb-spin{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp 9s linear infinite}'
-+'.afcb-portal .afcb-spin2{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp2 6s linear infinite}'
-+'.afcb-portal .afcb-spin3{transform-box:view-box;transform-origin:160px 160px;animation:afcbSp 4.2s linear infinite}'
++'.afcb-portal .afcb-spin{transform-box:view-box;transform-origin:160px 158px;animation:afcbSp 17s linear infinite}'
 +'@keyframes afcbSp{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}'
-+'@keyframes afcbSp2{0%{transform:rotate(0)}100%{transform:rotate(-360deg)}}'
 +'.afcb-disc{position:absolute;bottom:22vh;left:0;width:52px;opacity:0;transform:translateX(var(--hfront))}'
 +'.afcb-disc svg{width:100%;height:auto;display:block}'
 +'.afcb-disc.fly{animation:afcbDisc 1.15s cubic-bezier(.25,.5,.4,1) forwards}'
++'.afcb-disc.gone{animation:none!important;opacity:0!important}'
 +'@keyframes afcbDisc{0%{opacity:0;transform:translateX(var(--hfront)) translateY(0) scale(.4) rotate(0)}'
  +'12%{opacity:1}'
  +'55%{transform:translateX(calc((var(--hfront) + var(--px)) / 2)) translateY(calc(var(--py) - 12vh)) scale(1) rotate(540deg)}'
  +'100%{opacity:1;transform:translateX(var(--px)) translateY(var(--py)) scale(.7) rotate(1080deg)}}'
+
+/* ── the speech bubble ─────────────────────────────────────────────────── */
++'.afcb-say{position:absolute;bottom:43vh;left:0;width:340px;max-width:76vw;opacity:0;'
+ +'transform:translateX(var(--sayx)) translate(var(--saysh),10px) scale(.7);transform-origin:50% 110%;'
+ +'pointer-events:none}'
++'.afcb-say b{display:block;background:#fff;color:#12161C;border:4px solid #0D1117;border-radius:26px;'
+ +'padding:22px 26px 24px;font:400 16px/1.62 Inter,system-ui,-apple-system,sans-serif;'
+ +'box-shadow:0 18px 34px rgba(13,17,23,.3);position:relative;z-index:2;text-align:left}'
+/* the teardrop tail, drawn as an outlined triangle under the box */
++'.afcb-say s{position:absolute;left:50%;bottom:-29px;margin-left:-21px;width:42px;height:38px;z-index:3;'
+ +'display:block;filter:drop-shadow(0 8px 10px rgba(13,17,23,.18))}'
++'.afcb-say s svg{display:block;width:100%;height:100%}'
++'.afcb-say em{font-style:normal;font-weight:800;color:#5E7A12}'
++'.afcb-say .x{position:absolute;top:-13px;right:-13px;z-index:4;width:30px;height:30px;border-radius:50%;'
+ +'background:#fff;border:3px solid #0D1117;color:#0D1117;font:700 15px/1 Inter,system-ui,sans-serif;'
+ +'display:grid;place-items:center;cursor:pointer;pointer-events:auto;padding:0;'
+ +'box-shadow:0 5px 12px rgba(13,17,23,.26)}'
++'.afcb-say .x:hover{background:#C9F04B}'
++'.afcb-say .acts{display:block;margin-top:15px;padding-top:14px;border-top:2px solid #ECECE6}'
++'.afcb-say .acts button{display:block;width:100%;margin-top:8px;padding:12px 14px;border-radius:10px;'
+ +'font:800 14.5px Inter,system-ui,-apple-system,sans-serif;cursor:pointer;pointer-events:auto;'
+ +'text-align:center;line-height:1.25}'
++'.afcb-say .acts .go{background:#A6CE39;color:#0D1117;border:3px solid #0D1117}'
++'.afcb-say .acts .go:hover{background:#C9F04B}'
++'.afcb-say .acts .req{background:#fff;color:#12161C;border:3px solid #0D1117}'
++'.afcb-say .acts .req:hover{background:#F4F4F1}'
++'.afcb-say i{font-style:normal;font-weight:800;color:#B4763C}'
++'.afcb-say u{text-decoration:none;font-weight:700;color:#12161C}'
++'.afcb-say .big{display:block;font-size:19px;font-weight:800;margin-bottom:7px;letter-spacing:-.01em}'
++'.afcb-say .sm{display:block;margin-top:9px;font-size:14.5px;color:#3D4750}'
++'.afcb-say.in{animation:afcbSayIn .7s cubic-bezier(.3,1.4,.45,1) forwards}'
++'@keyframes afcbSayIn{0%{opacity:0;transform:translateX(var(--sayx)) translate(var(--saysh),16px) scale(.6)}'
+ +'100%{opacity:1;transform:translateX(var(--sayx)) translate(var(--saysh),0) scale(1)}}'
++'.afcb-say.out{animation:afcbSayOut .55s ease-in forwards}'
++'@keyframes afcbSayOut{0%{opacity:1;transform:translateX(var(--sayx)) translate(var(--saysh),0) scale(1)}'
+ +'100%{opacity:0;transform:translateX(var(--sayx)) translate(var(--saysh),-10px) scale(.9)}}'
 
 /* ── the man on stage ──────────────────────────────────────────────────── */
 +'.afcb-hero{position:absolute;bottom:5vh;left:0;width:15vw;min-width:118px;max-width:210px;'
@@ -2029,24 +2577,53 @@ var CINE_CSS = ''
 +'@keyframes afcbStepGrab{0%{transform:rotate(-36deg)}60%{transform:rotate(-18deg)}100%{transform:rotate(0)}}'
 
 /* the flip he pulls off the running board when he is feeling it */
-+'.afcb-hero.flip{animation:afcbFlip 1.15s cubic-bezier(.3,.5,.3,1) forwards}'
-+'@keyframes afcbFlip{0%{opacity:1;transform:translate(var(--hdoor),0) rotate(0) scale(1)}'
- +'30%{transform:translate(calc(var(--hdoor) - 2vw),-16vh) rotate(-140deg) scale(.94)}'
- +'62%{transform:translate(calc(var(--hdoor) - 4vw),-19vh) rotate(-290deg) scale(.94)}'
- +'88%{transform:translate(calc(var(--hdoor) - 6vw),1vh) rotate(-360deg) scale(1.04)}'
- +'100%{opacity:1;transform:translate(calc(var(--hdoor) - 6vw),0) rotate(-360deg) scale(1)}}'
-+'.afcb-hero.flip .afcb-legA,.afcb-hero.flip .afcb-legB{animation:afcbTuckLeg 1.15s ease-in-out forwards}'
-+'.afcb-hero.flip .afcb-shinA,.afcb-hero.flip .afcb-shinB{animation:afcbTuckShin 1.15s ease-in-out forwards}'
-+'@keyframes afcbTuckLeg{0%,100%{transform:rotate(0)}45%{transform:rotate(30deg)}}'
-+'@keyframes afcbTuckShin{0%,100%{transform:rotate(0)}45%{transform:rotate(-72deg)}}'
++'.afcb-hero.flip{animation:afcbFlip 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'@keyframes afcbFlip{0%{opacity:1;transform:translate(var(--hdoor),0) rotate(0) scale(1,1)}'
+ +'9%{transform:translate(calc(var(--hdoor) - .4vw),1.4vh) rotate(5deg) scale(1.08,.87)}'
+ +'20%{transform:translate(calc(var(--hdoor) - 1.6vw),-13vh) rotate(-72deg) scale(.9,1.14)}'
+ +'36%{transform:translate(calc(var(--hdoor) - 3vw),-20vh) rotate(-186deg) scale(.95,.95)}'
+ +'54%{transform:translate(calc(var(--hdoor) - 4.4vw),-19vh) rotate(-292deg) scale(.94,.96)}'
+ +'72%{transform:translate(calc(var(--hdoor) - 5.6vw),-9vh) rotate(-364deg) scale(1.02,.98)}'
+ +'86%{transform:translate(calc(var(--hdoor) - 6vw),1.8vh) rotate(-360deg) scale(1.12,.84)}'
+ +'94%{transform:translate(calc(var(--hdoor) - 6vw),0) rotate(-360deg) scale(.96,1.05)}'
+ +'100%{opacity:1;transform:translate(calc(var(--hdoor) - 6vw),0) rotate(-360deg) scale(1,1)}}'
++'.afcb-hero.flip .afcb-legA,.afcb-hero.flip .afcb-legB{animation:afcbTuckLeg 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-shinA,.afcb-hero.flip .afcb-shinB{animation:afcbTuckShin 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-armA{animation:afcbFlipArmA 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-wave{animation:afcbFlipArmB 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-foreA{animation:afcbFlipForeA 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-foreB{animation:afcbFlipForeB 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-torso{animation:afcbCurl 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'.afcb-hero.flip .afcb-neck{animation:afcbFlipNeck 1.5s cubic-bezier(.32,.12,.3,1) forwards}'
++'@keyframes afcbTuckLeg{0%{transform:rotate(0)}9%{transform:rotate(22deg)}'
+ +'22%{transform:rotate(-16deg)}40%{transform:rotate(46deg)}58%{transform:rotate(44deg)}'
+ +'76%{transform:rotate(-12deg)}88%{transform:rotate(24deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbTuckShin{0%{transform:rotate(0)}9%{transform:rotate(-30deg)}'
+ +'22%{transform:rotate(-10deg)}40%{transform:rotate(-96deg)}58%{transform:rotate(-92deg)}'
+ +'76%{transform:rotate(-18deg)}88%{transform:rotate(-40deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbFlipArmA{0%{transform:rotate(0)}9%{transform:rotate(-34deg)}'
+ +'22%{transform:rotate(38deg)}40%{transform:rotate(62deg)}58%{transform:rotate(58deg)}'
+ +'76%{transform:rotate(10deg)}88%{transform:rotate(-22deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbFlipArmB{0%{transform:rotate(0)}9%{transform:rotate(30deg)}'
+ +'22%{transform:rotate(-44deg)}40%{transform:rotate(-66deg)}58%{transform:rotate(-62deg)}'
+ +'76%{transform:rotate(-14deg)}88%{transform:rotate(26deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbFlipForeA{0%{transform:rotate(0)}30%{transform:rotate(54deg)}'
+ +'62%{transform:rotate(48deg)}88%{transform:rotate(-8deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbFlipForeB{0%{transform:rotate(0)}30%{transform:rotate(-52deg)}'
+ +'62%{transform:rotate(-46deg)}88%{transform:rotate(10deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbCurl{0%{transform:rotate(0)}20%{transform:rotate(-9deg)}'
+ +'48%{transform:rotate(6deg)}86%{transform:rotate(-5deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbFlipNeck{0%{transform:rotate(0)}20%{transform:rotate(11deg) skewX(-5deg)}'
+ +'50%{transform:rotate(-8deg) skewX(4deg)}78%{transform:rotate(6deg) skewX(-3deg)}'
+ +'90%{transform:rotate(-4deg)}100%{transform:rotate(0)}}'
 
 /* a real wave, from the shoulder and the elbow */
 +'.afcb-hero.hello{transform:translate(var(--hdoor),0);opacity:1;transition:transform .9s ease}'
 +'.afcb-hero.hello.moved{transform:translate(var(--hfront),0)}'
 +'.afcb-hero.postflip{transform:translate(calc(var(--hdoor) - 6vw),0);opacity:1;transition:transform 1s ease}'
 +'.afcb-hero.postflip.moved{transform:translate(var(--hfront),0)}'
-+'.afcb-hero.waving .afcb-wave{animation:afcbWaveArm .62s ease-in-out 5}'
-+'.afcb-hero.waving .afcb-foreB{animation:afcbWaveFore .62s ease-in-out 5}'
++'.afcb-hero.waving .afcb-wave{animation:afcbWaveArm .62s ease-in-out 6}'
++'.afcb-hero.waving .afcb-foreB{animation:afcbWaveFore .62s ease-in-out 6}'
 +'@keyframes afcbWaveArm{0%,100%{transform:rotate(-42deg)}50%{transform:rotate(-58deg)}}'
 +'@keyframes afcbWaveFore{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-22deg)}}'
 
@@ -2076,16 +2653,13 @@ var CINE_CSS = ''
 +'@keyframes afcbStride{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}'
 +'@keyframes afcbNeckJog{0%,100%{transform:rotate(-2deg) skewX(1deg)}50%{transform:rotate(2.4deg) skewX(-1.4deg)}}'
 
-/* walking over to the truck, and later off to the corner */
-+'.afcb-hero.toTruck{animation:afcbToTruck 1.5s linear forwards}'
-+'@keyframes afcbToTruck{0%{opacity:1;transform:translate(calc(var(--hdoor) - 6vw),0)}'
- +'100%{opacity:1;transform:translate(var(--hfront),0)}}'
+/* walking off to the corner */
 +'.afcb-hero.walkout{animation:afcbWalkOut 2.5s linear forwards}'
 +'@keyframes afcbWalkOut{0%{opacity:1;transform:translate(var(--hfront),0) scale(1)}'
  +'100%{opacity:1;transform:translate(var(--hcorner),0) scale(.82)}}'
 
 /* the throw: wind up, whip the arm over, follow through */
-+'.afcb-hero.throwing{transform:translate(var(--hfront),0)}'
++'.afcb-hero.throwing{transform:translate(var(--hfront),0);opacity:1}'
 +'.afcb-hero.throwing .afcb-wave{animation:afcbThrowArm 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
 +'.afcb-hero.throwing .afcb-foreB{animation:afcbThrowFore 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
 +'.afcb-hero.throwing .afcb-torso{animation:afcbThrowLean 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
@@ -2096,47 +2670,77 @@ var CINE_CSS = ''
 +'@keyframes afcbThrowLean{0%{transform:rotate(0)}34%{transform:rotate(7deg)}'
  +'58%{transform:rotate(-9deg)}100%{transform:rotate(0)}}'
 
-/* hoisting the truck: one arm straight up, knees loaded, then the heave */
-+'.afcb-hero.hoist{transform:translate(var(--hfront),0)}'
-+'.afcb-hero.hoist .afcb-wave{animation:afcbHoistArm 1.25s cubic-bezier(.3,.8,.3,1) forwards}'
-+'.afcb-hero.hoist .afcb-foreB{animation:afcbHoistFore 1.25s cubic-bezier(.3,.8,.3,1) forwards}'
-+'.afcb-hero.hoist .afcb-legA,.afcb-hero.hoist .afcb-legB{animation:afcbLoad 1.25s ease-out forwards}'
-+'.afcb-hero.hoist .afcb-bob{animation:afcbPush 1.25s ease-out forwards}'
-+'@keyframes afcbHoistArm{0%{transform:rotate(0)}45%{transform:rotate(-64deg)}100%{transform:rotate(-104deg)}}'
-+'@keyframes afcbHoistFore{0%{transform:rotate(0)}45%{transform:rotate(-22deg)}100%{transform:rotate(-42deg)}}'
+/* grabbing the truck: arm out, knees loaded, then it comes up with him */
++'.afcb-hero.grabbing{transform:translate(var(--hfront),0);opacity:1}'
++'.afcb-hero.grabbing .afcb-wave{animation:afcbGrabArm 1.3s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.grabbing .afcb-foreB{animation:afcbGrabFore 1.3s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.grabbing .afcb-legA,.afcb-hero.grabbing .afcb-legB{animation:afcbLoad 1.3s ease-out forwards}'
++'.afcb-hero.grabbing .afcb-torso{animation:afcbGrabLean 1.3s ease-out forwards}'
++'.afcb-hero.grabbing .afcb-bob{animation:afcbPush 1.3s ease-out forwards}'
++'@keyframes afcbGrabArm{0%{transform:rotate(0)}30%{transform:rotate(38deg)}'
+ +'60%{transform:rotate(6deg)}100%{transform:rotate(-58deg)}}'
++'@keyframes afcbGrabFore{0%{transform:rotate(0)}30%{transform:rotate(22deg)}100%{transform:rotate(-26deg)}}'
++'@keyframes afcbGrabLean{0%{transform:rotate(0)}35%{transform:rotate(6deg)}100%{transform:rotate(-3deg)}}'
 +'@keyframes afcbLoad{0%{transform:rotate(0)}40%{transform:rotate(9deg)}100%{transform:rotate(0)}}'
-+'@keyframes afcbPush{0%{transform:translateY(0)}40%{transform:translateY(9px)}100%{transform:translateY(-4px)}}'
-+'.afcb-hero.heaving{transform:translate(var(--hfront),0)}'
-+'.afcb-hero.heaving .afcb-wave{animation:afcbHeaveArm 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
-+'.afcb-hero.heaving .afcb-foreB{animation:afcbHeaveFore 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
-+'.afcb-hero.heaving .afcb-torso{animation:afcbHeaveLean 1.4s cubic-bezier(.2,.1,.3,1) forwards}'
-+'@keyframes afcbHeaveArm{0%{transform:rotate(-104deg)}30%{transform:rotate(-126deg)}'
- +'55%{transform:rotate(-40deg)}100%{transform:rotate(-14deg)}}'
-+'@keyframes afcbHeaveFore{0%{transform:rotate(-42deg)}30%{transform:rotate(-58deg)}'
- +'55%{transform:rotate(6deg)}100%{transform:rotate(0)}}'
-+'@keyframes afcbHeaveLean{0%{transform:rotate(0)}30%{transform:rotate(-8deg)}'
- +'55%{transform:rotate(9deg)}100%{transform:rotate(0)}}'
++'@keyframes afcbPush{0%{transform:translateY(0)}40%{transform:translateY(10px)}100%{transform:translateY(-4px)}}'
+
+/* the hurl: reach way back, then everything forward and up at once */
++'.afcb-hero.hurling{transform:translate(var(--hfront),0);opacity:1}'
++'.afcb-hero.hurling .afcb-wave{animation:afcbHurlArm 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-foreB{animation:afcbHurlFore 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-torso{animation:afcbHurlLean 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-armA{animation:afcbHurlCounter 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-legA{animation:afcbHurlStep 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-bob{animation:afcbHurlRise 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'@keyframes afcbHurlArm{0%{transform:rotate(-58deg)}26%{transform:rotate(52deg)}'
+ +'46%{transform:rotate(-96deg)}62%{transform:rotate(-128deg)}100%{transform:rotate(-104deg)}}'
++'@keyframes afcbHurlFore{0%{transform:rotate(-26deg)}26%{transform:rotate(40deg)}'
+ +'46%{transform:rotate(-44deg)}100%{transform:rotate(-30deg)}}'
++'@keyframes afcbHurlLean{0%{transform:rotate(-3deg)}26%{transform:rotate(11deg)}'
+ +'46%{transform:rotate(-12deg)}100%{transform:rotate(-5deg)}}'
++'@keyframes afcbHurlCounter{0%{transform:rotate(0)}26%{transform:rotate(-26deg)}'
+ +'46%{transform:rotate(30deg)}100%{transform:rotate(8deg)}}'
++'@keyframes afcbHurlStep{0%{transform:rotate(0)}26%{transform:rotate(-14deg)}'
+ +'46%{transform:rotate(18deg)}100%{transform:rotate(4deg)}}'
++'@keyframes afcbHurlRise{0%{transform:translateY(0)}26%{transform:translateY(8px)}'
+ +'50%{transform:translateY(-14px)}100%{transform:translateY(0)}}'
 
 /* tucking into the corner to become the launcher */
 +'.afcb-hero.tuck{animation:afcbTuck 1s cubic-bezier(.4,0,.5,1) forwards}'
 +'@keyframes afcbTuck{0%{opacity:1;transform:translate(var(--hcorner),0) scale(.82)}'
  +'100%{opacity:0;transform:translate(calc(var(--hcorner) + 4vw),2vh) scale(.42)}}'
 
-/* ── exit ──────────────────────────────────────────────────────────────── */
-+'.afcb-hero.pop{animation:afcbPop .8s cubic-bezier(.3,1.3,.4,1) forwards}'
+/* ── exit: wave goodbye, open the portal, flip slowly up into it ───────── */
++'.afcb-hero.pop{animation:afcbPop .85s cubic-bezier(.3,1.3,.4,1) forwards}'
 +'@keyframes afcbPop{0%{opacity:0;transform:translate(var(--hcorner),3vh) scale(.42)}'
  +'100%{opacity:1;transform:translate(var(--hfront),0) scale(1)}}'
++'.afcb-hero.byebye{transform:translate(var(--hfront),0);opacity:1}'
++'.afcb-hero.byebye .afcb-wave{animation:afcbBye .7s ease-in-out 4}'
++'.afcb-hero.byebye .afcb-foreB{animation:afcbByeFore .7s ease-in-out 4}'
++'@keyframes afcbBye{0%,100%{transform:rotate(-64deg)}50%{transform:rotate(-84deg)}}'
++'@keyframes afcbByeFore{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-26deg)}}'
 +'.afcb-hero.crouch{animation:afcbCrouch .85s ease-out forwards}'
 +'@keyframes afcbCrouch{0%{opacity:1;transform:translate(var(--hfront),0) scale(1)}'
- +'100%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9) }}'
+ +'100%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9)}}'
 +'.afcb-hero.crouch .afcb-legA,.afcb-hero.crouch .afcb-legB{animation:afcbLoad .85s ease-out forwards}'
-+'.afcb-hero.leap{animation:afcbLeap 2.6s cubic-bezier(.3,.05,.4,1) forwards}'
-+'@keyframes afcbLeap{0%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9) rotate(0)}'
- +'35%{transform:translate(calc((var(--hfront) + var(--px)) / 2),calc(var(--py) - 8vh)) scale(.72) rotate(-70deg)}'
- +'80%{opacity:1;transform:translate(calc(var(--px) + 3vw),calc(var(--py) + 2vh)) scale(.3) rotate(-240deg)}'
- +'100%{opacity:0;transform:translate(calc(var(--px) + 4vw),calc(var(--py) + 3vh)) scale(.08) rotate(-320deg)}}'
-+'.afcb-hero.leap .afcb-legA,.afcb-hero.leap .afcb-legB{animation:afcbTuckLeg 2.6s ease-in-out forwards}'
-+'.afcb-hero.leap .afcb-shinA,.afcb-hero.leap .afcb-shinB{animation:afcbTuckShin 2.6s ease-in-out forwards}'
++'.afcb-hero.leap{animation:afcbLeap 4.6s cubic-bezier(.28,.04,.36,1) forwards}'
++'@keyframes afcbLeap{0%{opacity:1;transform:translate(var(--hfront),2vh) scale(.9,.94) rotate(0)}'
+ +'8%{transform:translate(var(--hfront),4vh) scale(1.06,.84) rotate(4deg)}'
+ +'20%{transform:translate(calc(var(--hfront) - 5vw),-18vh) scale(.92,1.1) rotate(-90deg)}'
+ +'34%{transform:translate(calc(var(--hfront) - 12vw),-34vh) scale(.86,.86) rotate(-230deg)}'
+ +'48%{transform:translate(calc((var(--hfront) + var(--hpx)) / 2),calc(var(--hpy) - 6vh)) scale(.78,.78) rotate(-390deg)}'
+ +'64%{transform:translate(calc(var(--hpx) + 10vw),calc(var(--hpy) - 4vh)) scale(.66,.66) rotate(-560deg)}'
+ /* lined up with the mouth, and now he goes in */
+ +'78%{transform:translate(var(--hpx),var(--hpy)) scale(.5,.5) rotate(-690deg)}'
+ +'90%{opacity:1;transform:translate(var(--hpx),var(--hpy)) scale(.22,.22) rotate(-780deg)}'
+ +'100%{opacity:0;transform:translate(var(--hpx),var(--hpy)) scale(.04,.04) rotate(-840deg)}}'
++'.afcb-hero.leap .afcb-legA,.afcb-hero.leap .afcb-legB{animation:afcbTuckLeg 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-shinA,.afcb-hero.leap .afcb-shinB{animation:afcbTuckShin 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-armA{animation:afcbFlipArmA 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-wave{animation:afcbFlipArmB 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-foreA{animation:afcbFlipForeA 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-foreB{animation:afcbFlipForeB 1.53s ease-in-out 3}'
++'.afcb-hero.leap .afcb-neck{animation:afcbFlipNeck 1.53s ease-in-out 3}'
 
 /* ── skip control ──────────────────────────────────────────────────────── */
 +'.afcb-skip{position:absolute;right:18px;top:16px;pointer-events:auto;cursor:pointer;'
@@ -2144,8 +2748,25 @@ var CINE_CSS = ''
  +'padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;letter-spacing:.02em}'
 +'.afcb-skip:hover{background:#0D1117}'
 +'@media(max-width:640px){.afcb-truck{width:92vw;min-width:0}.afcb-hero{width:27vw;min-width:104px}'
- +'.afcb-portal{width:44vw}.afcb-puddle{width:44vw}}'
+ +'.afcb-portal{width:44vw}.afcb-puddle{width:44vw}'
+ +'.afcb-say{width:82vw;bottom:47vh}.afcb-say b{padding:18px 20px 20px;font-size:15px;line-height:1.58}'
+ +'.afcb-say .big{font-size:17px}}'
 +'@media(prefers-reduced-motion:reduce){.afcb-stage{display:none!important}}';
+
+/* what he says when he steps out — emphasis, not a wall of gray text */
+var HELLO_HTML =
+  '<b><span class="big">Howdy — I am <em>Rivit</em>.</span>'
++ 'Rivit of all trades. <u>Marketing is mine.</u> I help contractors '
++ '<i>get found, get called, and get booked</i> — and I will tell you straight '
++ 'when something is not worth your money.'
++ '<span class="sm">Tell me what is slow. I will tell you how to fix it.</span>'
++ '<span class="acts">'
++ '<button class="go" type="button">Click here to get my help</button>'
++ '<button class="req" type="button">Have a person reach out</button>'
++ '</span></b>'
++ '<button class="x" type="button" aria-label="Close message">&times;</button>'
++ '<s><svg viewBox="0 -6 42 40" aria-hidden="true"><path d="M5 -4 C 7 14 15 24 21 34'
++ ' C 23 22 31 10 37 -4" fill="#fff" stroke="#0D1117" stroke-width="4" stroke-linejoin="round"/></svg></s>';
 
 /* Returns null when the browser asked for no motion — callers just proceed. */
 function Cine(){
@@ -2156,11 +2777,13 @@ function Cine(){
     '<div class="afcb-weather"><div class="afcb-rain"></div></div>'
   + '<div class="afcb-bolts"></div>'
   + '<div class="afcb-sky"></div>'
-  + '<div class="afcb-puddle">' + MUD + '</div>'
+  + '<div class="afcb-puddle p1">' + mud() + '</div>'
+  + '<div class="afcb-puddle p2">' + mud() + '</div>'
   + '<div class="afcb-truck">' + TRUCK + '</div>'
   + '<div class="afcb-portal">' + PORTAL + '</div>'
   + '<div class="afcb-disc">' + DISC + '</div>'
   + '<div class="afcb-hero">' + man() + '</div>'
+  + '<div class="afcb-say">' + HELLO_HTML + '</div>'
   + '<button class="afcb-skip" type="button">Skip intro</button>';
   D.body.appendChild(stage);
 
@@ -2172,7 +2795,9 @@ function Cine(){
       truck   = stage.querySelector('.afcb-truck'),
       portal  = stage.querySelector('.afcb-portal'),
       disc    = stage.querySelector('.afcb-disc'),
-      puddle  = stage.querySelector('.afcb-puddle'),
+      say     = stage.querySelector('.afcb-say'),
+      pud1    = stage.querySelector('.afcb-puddle.p1'),
+      pud2    = stage.querySelector('.afcb-puddle.p2'),
       skip    = stage.querySelector('.afcb-skip'),
       timers  = [], ending = null;
 
@@ -2194,7 +2819,6 @@ function Cine(){
     }
   }
 
-  /* clouds drifting the top of the stage */
   function clouds(n){
     for (var i = 0; i < n; i++){
       var c = el('div', 'afcb-cloud');
@@ -2208,7 +2832,6 @@ function Cine(){
     }
   }
 
-  /* slanted rain across the top third */
   function raindrops(n){
     for (var i = 0; i < n; i++){
       var r = el('i');
@@ -2221,33 +2844,37 @@ function Cine(){
     }
   }
 
-  /* one firework: shell climbs, blooms, sparks arc out and fall */
+  /* one firework: shell climbs on a trail, blooms, sparks arc out and droop */
   function firework(xvw, yvh){
     var sh = el('div', 'afcb-shell');
     sh.style.left = xvw + 'vw';
     sh.style.bottom = '4px';
     sh.style.setProperty('--rise', '-' + (100 - yvh) + 'vh');
     sky.appendChild(sh);
-    drop(sh, 950);
+    drop(sh, 980);
 
-    at(850, function(){
-      var fw = el('div', 'afcb-fw'), i, n = 22, ang, dist, col = pick(HUE);
+    at(880, function(){
+      var fw = el('div', 'afcb-fw'), i, n = 30, ang, dist,
+          col = pick(HUE), col2 = pick(HUE);
       fw.style.left = xvw + 'vw';
       fw.style.top  = (100 - yvh) + 'vh';
       fw.appendChild(el('b'));
+      fw.appendChild(el('u'));
       for (i=0;i<n;i++){
-        var s = el('i');
-        ang  = (Math.PI * 2 / n) * i + rnd(-0.12, 0.12);
-        dist = rnd(70, 180);
-        s.style.background = (i % 5 === 0) ? '#fff' : col;
-        s.style.boxShadow = '0 0 9px ' + col;
+        var s = el('i'), far = (i % 3 === 0);
+        ang  = (Math.PI * 2 / n) * i + rnd(-0.1, 0.1);
+        dist = far ? rnd(150, 250) : rnd(70, 150);
+        s.style.background = (i % 6 === 0) ? '#fff' : (i % 2 ? col : col2);
+        s.style.boxShadow = '0 0 10px ' + (i % 2 ? col : col2);
+        s.style.width = s.style.height = (far ? 6 : 4) + 'px';
         s.style.setProperty('--tx', Math.round(Math.cos(ang) * dist) + 'px');
-        s.style.setProperty('--ty', Math.round(Math.sin(ang) * dist + rnd(26, 70)) + 'px');
-        s.style.animationDelay = rnd(0, 0.09) + 's';
+        s.style.setProperty('--ty', Math.round(Math.sin(ang) * dist + rnd(40, 110)) + 'px');
+        s.style.setProperty('--sd', rnd(1.6, 2.4).toFixed(2) + 's');
+        s.style.animationDelay = rnd(0, 0.12) + 's';
         fw.appendChild(s);
       }
       sky.appendChild(fw);
-      drop(fw, 2800);
+      drop(fw, 3200);
     });
   }
 
@@ -2255,18 +2882,18 @@ function Cine(){
   function grit(xvw, count, spread, muddy){
     for (var i=0;i<count;i++){
       (function(){
-        var g = el('div', 'afcb-grit'), sz = rnd(muddy ? 9 : 6, muddy ? 28 : 18);
-        g.style.left   = (xvw + rnd(-3, 3)) + 'vw';
+        var g = el('div', 'afcb-grit'), sz = rnd(muddy ? 9 : 6, muddy ? 30 : 18);
+        g.style.left   = (xvw + rnd(-4, 4)) + 'vw';
         g.style.width  = sz + 'px';
-        g.style.height = (sz * rnd(.6, 1)) + 'px';
+        g.style.height = (sz * rnd(.55, 1)) + 'px';
         g.style.background = muddy
-          ? pick(['#4A3323','#5E4128','#6B4A2C','#3A2717'])
+          ? pick(['#3B2816','#4A3323','#5E4128','#2A1B0E'])
           : pick(['#D9C7A8','#C9B392','#E6D9C0']);
-        g.style.setProperty('--tx', Math.round(rnd(spread * 0.25, spread)) + 'px');
-        g.style.setProperty('--ty', Math.round(rnd(-170, -40)) + 'px');
+        g.style.setProperty('--tx', Math.round(rnd(spread * 0.2, spread) * pick([1,1,1,-1])) + 'px');
+        g.style.setProperty('--ty', Math.round(rnd(-190, -50)) + 'px');
         g.style.animationDelay = rnd(0, .35) + 's';
         sky.appendChild(g);
-        drop(g, 2700);
+        drop(g, 2800);
       })();
     }
   }
@@ -2278,7 +2905,57 @@ function Cine(){
     d.style.setProperty('--tx', Math.round(drift) + 'px');
     d.style.opacity = rnd(.6, 1);
     sky.appendChild(d);
-    drop(d, 2800);
+    drop(d, 3000);
+  }
+
+  /* a puff off the stacks — it hangs where he has been, not where he is going */
+  function puff(xvw, drift){
+    var g = el('div', 'afcb-grit'), sz = rnd(18, 40);
+    g.style.left = xvw + 'vw';
+    g.style.bottom = '17vh';
+    g.style.width = sz + 'px';
+    g.style.height = sz * rnd(.7, 1) + 'px';
+    g.style.background = pick(['rgba(60,66,74,.5)','rgba(84,92,102,.42)','rgba(44,50,58,.45)']);
+    g.style.setProperty('--tx', Math.round(drift) + 'px');
+    g.style.setProperty('--ty', Math.round(rnd(-120, -50)) + 'px');
+    sky.appendChild(g);
+    drop(g, 2600);
+  }
+
+  /* streaks off the truck as it leaves his hand */
+  function streaks(xvw, yvh, n){
+    for (var i=0;i<n;i++){
+      var k = el('div', 'afcb-grit');
+      k.style.left = (xvw + rnd(-3, 3)) + 'vw';
+      k.style.bottom = (yvh + rnd(-6, 6)) + 'vh';
+      k.style.width = rnd(30, 70) + 'px';
+      k.style.height = '3px';
+      k.style.borderRadius = '3px';
+      k.style.background = 'rgba(201,240,75,.6)';
+      k.style.setProperty('--tx', Math.round(rnd(60, 190)) + 'px');
+      k.style.setProperty('--ty', Math.round(rnd(30, 90)) + 'px');
+      sky.appendChild(k);
+      drop(k, 1400);
+    }
+  }
+
+  /* wheels hitting standing water: a fan of brown droplets */
+  function splash(xvw, count){
+    for (var i=0;i<count;i++){
+      (function(){
+        var s = el('div', 'afcb-splash'), sz = rnd(8, 22);
+        s.style.left = (xvw + rnd(-4, 4)) + 'vw';
+        s.style.width  = sz + 'px';
+        s.style.height = (sz * rnd(.45, .8)) + 'px';
+        s.style.background = pick(['#3B2816','#4A3323','#5A3E24','#2A1B0E']);
+        s.style.setProperty('--tx', Math.round(rnd(-150, 190)) + 'px');
+        s.style.setProperty('--ty', Math.round(rnd(-150, -40)) + 'px');
+        s.style.setProperty('--rot', Math.round(rnd(-220, 220)) + 'deg');
+        s.style.animationDelay = rnd(0, .18) + 's';
+        sky.appendChild(s);
+        drop(s, 1900);
+      })();
+    }
   }
 
   function reset(){
@@ -2288,26 +2965,38 @@ function Cine(){
     truck.className = 'afcb-truck';
     truck.style.transform = ''; truck.style.opacity = '';
     portal.className = 'afcb-portal';
-    disc.className = 'afcb-disc'; disc.style.opacity = '';
-    puddle.className = 'afcb-puddle';
-    sky.innerHTML = ''; bolts.innerHTML = '';
-    rain.innerHTML = ''; 
-    var cl = weather.querySelectorAll('.afcb-cloud');
-    for (var i=0;i<cl.length;i++) weather.removeChild(cl[i]);
+    portal.style.left = ''; portal.style.top = '';
+    disc.className = 'afcb-disc';
+    say.className = 'afcb-say';
+    pud1.className = 'afcb-puddle p1'; pud2.className = 'afcb-puddle p2';
+    sky.innerHTML = ''; bolts.innerHTML = ''; rain.innerHTML = '';
+    var cl = weather.querySelectorAll('.afcb-cloud'), i;
+    for (i=0;i<cl.length;i++) weather.removeChild(cl[i]);
   }
   function finish(done){ clearAll(); reset(); if (done) done(); }
+
+  function hideSay(){ if (say.className.indexOf('out') < 0) say.className = 'afcb-say out'; }
+  var sayX   = say.querySelector('.x'),
+      sayGo  = say.querySelector('.acts .go'),
+      sayReq = say.querySelector('.acts .req');
+  if (sayX)   sayX.addEventListener('click', hideSay);
+  if (sayGo)  sayGo.addEventListener('click', function(){
+    hideSay(); if (typeof C.onHelp === 'function') C.onHelp(); });
+  if (sayReq) sayReq.addEventListener('click', function(){
+    hideSay(); if (typeof C.onForm === 'function') C.onForm(); });
 
   skip.addEventListener('click', function(){
     if (ending){ var f = ending; ending = null; f(); }
   });
 
-  return {
+  var C = {
     stage: stage,
+    onHelp: null, onForm: null,
 
-    /* ~16s of arrival — long on purpose, and skippable at any moment */
+    /* the arrival — long on purpose, skippable at any moment */
     arrive: function(done){
       ending = function(){ finish(done); };
-      var m = mob(), flips = Math.random() < .45;
+      var m = mob(), flips = Math.random() < .5;
       stage.classList.add('on');
       if (m) stage.classList.add('m');
       clouds(m ? 3 : 5);
@@ -2315,60 +3004,77 @@ function Cine(){
       strike(m ? 5 : 8);
       void stage.offsetWidth;
       stage.classList.add('go');
-      puddle.style.left = (m ? 4 : 8) + 'vw';
+
+      /* two puddles on the route, each one a different shape */
+      var w1 = m ? 4 : 10, w2 = m ? 50 : 62;
+      pud1.style.left = w1 + 'vw';
+      pud2.style.left = w2 + 'vw';
+      pud1.style.width = (m ? rnd(34, 46) : rnd(16, 24)).toFixed(1) + 'vw';
+      pud2.style.width = (m ? rnd(30, 42) : rnd(13, 21)).toFixed(1) + 'vw';
+      at(200,  function(){ pud1.classList.add('wet'); });
+      at(1800, function(){ pud2.classList.add('wet'); });
 
       /* fireworks across the entire width, spaced so nothing pulses */
-      var shots = [[14,52],[76,58],[40,68],[88,44],[26,62],[62,50],[8,46],[52,72],[70,64],[34,48]];
-      shots.forEach(function(p, i){ at(300 + i * 560, function(){ firework(p[0], p[1]); }); });
+      var shots = [[14,52],[76,58],[40,68],[88,44],[26,62],[62,50],[8,46],[52,72],[70,64],[34,48],
+                   [46,58],[20,70],[82,52],[58,66]];
+      shots.forEach(function(p, i){ at(300 + i * 540, function(){ firework(p[0], p[1]); }); });
 
-      /* the drive: wheelie right to left, swing, run back and brake */
-      at(500, function(){ truck.classList.add('drive'); });
-      at(1500, function(){ dust(m ? 70 : 74, -180); });
-      at(2300, function(){ dust(m ? 44 : 48, -220); grit(m ? 46 : 50, 10, 200, false); });
-      at(3100, function(){ dust(m ? 20 : 22, -180); });
-      /* the swing-around chews up the ground and leaves the puddle */
-      at(3550, function(){ grit(m ? 10 : 12, 20, 300, true); dust(m ? 12 : 14, 140); });
-      at(3750, function(){ puddle.classList.add('wet'); });
-      at(4400, function(){ dust(m ? 24 : 26, 200); });
-      at(5200, function(){ dust(m ? 40 : 44, 220); grit(m ? 42 : 46, 10, 220, false); });
-      /* the brake */
-      at(7000, function(){ dust(m ? 58 : 62, 150); grit(m ? 56 : 60, 16, 260, false); });
-      at(7300, function(){ dust(m ? 62 : 66, 90); });
+      /* in, spin, park */
+      at(400,  function(){ truck.classList.add('drive'); });
+      at(900,  function(){ puff(m ? 6 : 8, -150); dust(m ? 10 : 12, -160); });
+      at(1500, function(){ dust(m ? 26 : 30, -180); grit(m ? 26 : 30, 10, 220, false); });
+      /* the donuts — mud everywhere */
+      at(2200, function(){ splash(w1 + 2, 22); grit(w1 + 2, 22, 340, true); dust(w1 + 4, 180); });
+      at(2700, function(){ splash(w2 - 2, 20); grit(w2 - 2, 20, 320, true); });
+      at(3200, function(){ splash(w1 + 4, 22); grit(w1 + 4, 22, 350, true); dust(w1 + 2, -190); });
+      at(3700, function(){ splash(w2, 18); grit(w2, 18, 300, true); });
+      at(4200, function(){ splash(w1 + 1, 20); grit(w1 + 1, 20, 330, true); dust(w2 - 4, 160); });
+      /* sliding out of the second one */
+      at(4800, function(){ dust(m ? 30 : 34, -170); grit(m ? 30 : 34, 16, 280, false); });
+      at(5300, function(){ dust(m ? 26 : 30, 120); puff(m ? 10 : 12, -140); });
 
       /* out of the cab */
-      at(7900, function(){ truck.className = 'afcb-truck parked open'; });
-      at(8500, function(){ hero.style.opacity = '1'; hero.className = 'afcb-hero stepout'; });
+      at(6200, function(){ truck.className = 'afcb-truck parked open'; });
+      at(6700, function(){ hero.style.opacity = '1'; hero.className = 'afcb-hero stepout'; });
+
+      var t;                                   /* when he is settled and talking */
       if (flips){
-        at(10200, function(){ hero.className = 'afcb-hero flip'; });
-        at(11350, function(){ hero.className = 'afcb-hero postflip waving'; });
-        at(11460, function(){ hero.classList.add('moved'); });
+        at(8400, function(){ hero.className = 'afcb-hero flip'; });
+        at(9900, function(){ hero.className = 'afcb-hero postflip waving'; });
+        at(10020, function(){ hero.classList.add('moved'); });
+        t = 10600;
       } else {
-        at(10200, function(){ hero.className = 'afcb-hero hello waving'; });
-        at(10260, function(){ hero.classList.add('moved'); });
+        at(8400, function(){ hero.className = 'afcb-hero hello waving'; });
+        at(8460, function(){ hero.classList.add('moved'); });
+        t = 9400;
       }
-      at(10400, function(){ truck.className = 'afcb-truck parked shut'; });
+      at(9100, function(){ truck.className = 'afcb-truck parked shut'; });
 
-      /* throw the portal to the top of the far side */
-      at(12000, function(){ hero.className = 'afcb-hero throwing'; });
-      at(12420, function(){ disc.classList.add('fly'); });
-      at(13500, function(){ disc.style.opacity = '0'; portal.classList.add('open'); });
+      /* the introduction */
+      at(t,        function(){ say.classList.add('in'); });
+      at(t + 8800, function(){ if (say.className.indexOf('out') < 0) say.className = 'afcb-say out'; });
 
-      /* hoist the truck one-handed and heave it through */
-      at(14100, function(){ hero.className = 'afcb-hero hoist';
-                            truck.className = 'afcb-truck lift'; });
-      at(15350, function(){ hero.className = 'afcb-hero heaving';
-                            truck.className = 'afcb-truck heave'; });
-      at(16500, function(){ portal.className = 'afcb-portal shut'; stage.classList.add('clear'); });
+      /* portal first, then the truck goes through it */
+      at(t + 9300, function(){ hero.className = 'afcb-hero throwing'; });
+      at(t + 9720, function(){ disc.classList.add('fly'); });
+      at(t + 10800, function(){ disc.className = 'afcb-disc gone'; portal.classList.add('open'); });
+      at(t + 11400, function(){ hero.className = 'afcb-hero grabbing';
+                               truck.className = 'afcb-truck grab'; });
+      at(t + 12900, function(){ hero.className = 'afcb-hero hurling';
+                               truck.className = 'afcb-truck hurl'; });
+      at(t + 13700, function(){ streaks(m ? 30 : 45, 42, 5); });
+      at(t + 14300, function(){ streaks(m ? 24 : 32, 62, 4); });
+      at(t + 15800, function(){ portal.className = 'afcb-portal shut'; stage.classList.add('clear'); });
 
       /* and off to the corner */
-      at(17100, function(){ hero.className = 'afcb-hero walkout walking'; });
-      at(m ? 19100 : 19400, function(){ hero.className = 'afcb-hero walkout'; });
-      at(m ? 19300 : 19600, function(){ hero.className = 'afcb-hero tuck'; });
-      at(m ? 20200 : 20500, function(){ ending = null; finish(done); });
-      return m ? 19300 : 19600;
+      at(t + 16400, function(){ hero.className = 'afcb-hero walkout walking'; });
+      at(t + (m ? 18400 : 18700), function(){ hero.className = 'afcb-hero walkout'; });
+      at(t + (m ? 18600 : 18900), function(){ hero.className = 'afcb-hero tuck'; });
+      at(t + (m ? 19500 : 19800), function(){ ending = null; finish(done); });
+      return t + (m ? 18600 : 18900);
     },
 
-    /* ~8s of exit, deliberately slow */
+    /* the exit: a wave, a portal, and a slow double flip into it */
     exit: function(done){
       ending = function(){ finish(done); };
       var m = mob();
@@ -2378,17 +3084,19 @@ function Cine(){
       hero.style.opacity = '1';
       hero.classList.add('pop');
 
-      at(1050, function(){ hero.className = 'afcb-hero throwing'; });
-      at(1500, function(){ disc.classList.add('fly'); });
-      at(2650, function(){ disc.style.opacity = '0'; portal.classList.add('open'); });
-      at(4150, function(){ hero.className = 'afcb-hero crouch'; });
-      at(5050, function(){ hero.className = 'afcb-hero leap'; });
-      at(7000, function(){ portal.className = 'afcb-portal shut'; });
-      at(8000, function(){ ending = null; finish(done); });
+      at(900,  function(){ hero.className = 'afcb-hero byebye'; });
+      at(3600, function(){ hero.className = 'afcb-hero throwing'; });
+      at(4050, function(){ disc.classList.add('fly'); });
+      at(5150, function(){ disc.className = 'afcb-disc gone'; portal.classList.add('open'); });
+      at(6300, function(){ hero.className = 'afcb-hero crouch'; });
+      at(7150, function(){ hero.className = 'afcb-hero leap'; });
+      at(11600, function(){ portal.className = 'afcb-portal shut'; });
+      at(12700, function(){ ending = null; finish(done); });
     },
 
     kill: function(){ if (ending){ var f = ending; ending = null; f(); } }
   };
+  return C;
 }
 
 /* ─────────────────────────── STYLES ────────────────────────────────────── */
@@ -2402,16 +3110,26 @@ var CSS = ''
  +'border-radius:50%;background:rgba(13,17,23,.16);filter:blur(4px)}'
 +'.afcb-btn svg{position:relative;width:100%;height:auto;display:block;'
  +'filter:drop-shadow(0 10px 16px rgba(13,17,23,.35))}'
-+'.afcb-dot{position:absolute;top:6px;right:2px;width:22px;height:22px;border-radius:50%;background:#B4763C;'
++'.afcb-dismiss{position:absolute;top:-4px;right:-6px;z-index:3;width:30px;height:30px;border-radius:50%;'
+ +'background:#fff;border:2.5px solid #0D1117;color:#0D1117;font:700 16px/1 Inter,system-ui,sans-serif;'
+ +'display:grid;place-items:center;cursor:pointer;padding:0;'
+ +'box-shadow:0 6px 14px rgba(13,17,23,.28);transition:transform .18s,background .18s}'
++'.afcb-dismiss:hover{background:#C9F04B;transform:scale(1.12)}'
++'.afcb-dismiss:focus-visible{outline:3px solid #A6CE39;outline-offset:2px}'
++'.afcb.open .afcb-dismiss{opacity:0;pointer-events:none;transition:opacity .2s}'
++'.afcb-dot{position:absolute;top:6px;left:2px;width:22px;height:22px;border-radius:50%;background:#B4763C;'
  +'border:2px solid #fff;color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;line-height:1}'
-+'.afcb.open .afcb-btn{opacity:0;pointer-events:none;transform:translateY(14px) scale(.9);'
++'.afcb.open .afcb-btn{opacity:0!important;pointer-events:none!important;visibility:hidden;'
+ +'transform:translateY(14px) scale(.9);'
  +'transition:opacity .25s,transform .25s}'
 
-+'.afcb-tip{position:absolute;bottom:28px;right:112px;max-width:250px;background:#fff;color:#232A33;'
- +'border:1px solid #DDDDD6;border-radius:12px 12px 2px 12px;padding:12px 14px;font-size:14px;line-height:1.5;'
++'.afcb-r a{color:#5E7A12;font-weight:600;word-break:break-word}'
++'.afcb-tip{position:absolute;bottom:112px;right:0;width:max-content;max-width:min(258px,62vw);'
+ +'background:#fff;color:#232A33;'
+ +'border:2px solid #0D1117;border-radius:14px 14px 3px 14px;padding:12px 14px;font-size:14px;line-height:1.45;'
  +'box-shadow:0 14px 40px rgba(13,17,23,.22);cursor:pointer;display:none}'
 +'.afcb-tip.on{display:block}'
-+'.afcb-tip b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#B4763C;margin-bottom:3px}'
++'.afcb-tip b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#B4763C;margin-bottom:2px;white-space:nowrap}'
 
 +'.afcb-p{position:absolute;bottom:0;right:0;width:392px;max-width:calc(100vw - 32px);'
  +'height:min(640px,calc(100vh - 120px));background:#F4F4F1;border-radius:16px;overflow:hidden;'
@@ -2464,7 +3182,7 @@ var CSS = ''
  +'.afcb-btn:after{width:62px;margin-left:-31px}'
  +'.afcb-p{height:min(580px,calc(100vh - 96px));width:calc(100vw - 24px)}'
  +'.afcb-hello svg{width:140px}'
- +'.afcb-tip{display:none!important}}'
+ +'.afcb-tip{bottom:96px;right:0;max-width:min(240px,66vw);font-size:13px;padding:10px 12px}}'
 
 /* idle life: he breathes, the pupils wander, the blade wiggles, the hat
    settles. Slow and continuous — nothing here blinks or flashes. */
@@ -2515,7 +3233,7 @@ function build(){
   var w = el('div', 'afcb');
   w.innerHTML =
     '<div class="afcb-tip" role="button" tabindex="0"><b>' + esc(CFG.name) + ' here</b>'
-      + 'Got a marketing question? I answer at 11pm too.</div>'
+      + 'I am here to help if you need me. Tap any time.</div>'
   + '<div class="afcb-p" role="dialog" aria-label="Chat with ' + esc(CFG.name) + '">'
   +   '<div class="afcb-h"><span class="av">' + man() + '</span>'
   +     '<span><b>' + esc(CFG.name) + '</b><i><u></u>' + esc(CFG.title) + '</i></span>'
@@ -2533,6 +3251,7 @@ function build(){
   +     ' autocomplete="off"><button type="button">Send</button></div>'
   +   '<div class="afcb-cr">Rule-based assistant · <a href="https://eyetoad.com/" rel="noopener">Eye To Ad Media</a></div>'
   + '</div>'
+  + '<button class="afcb-dismiss" type="button" aria-label="Dismiss ' + esc(CFG.name) + '">&times;</button>'
   + '<button class="afcb-btn" type="button" aria-label="Open chat with ' + esc(CFG.name) + '">'
   +   man() + '<span class="afcb-dot">1</span></button>';
   D.body.appendChild(w);
@@ -2544,6 +3263,7 @@ function build(){
       input = w.querySelector('.afcb-in input'),
       send  = w.querySelector('.afcb-in button'),
       btn   = w.querySelector('.afcb-btn'),
+      dismissBtn = w.querySelector('.afcb-dismiss'),
       tip   = w.querySelector('.afcb-tip'),
       dot   = w.querySelector('.afcb-dot'),
       opened = false, busy = false, touched = false, loadedAt = Date.now(),
@@ -2559,7 +3279,15 @@ function build(){
 
   function scroll(){ msgs.scrollTop = msgs.scrollHeight; }
   function bubble(text, who){
-    var d = el('div', 'afcb-r ' + who); d.textContent = text;
+    var d = el('div', 'afcb-r ' + who), str = String(text),
+        re = /https?:\/\/[^\s)]+/g, m, last = 0, a;
+    while ((m = re.exec(str)) !== null){
+      if (m.index > last) d.appendChild(D.createTextNode(str.slice(last, m.index)));
+      a = el('a'); a.href = m[0]; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = m[0].replace(/^https?:\/\//, '').replace(/\/$/, '');
+      d.appendChild(a); last = m.index + m[0].length;
+    }
+    d.appendChild(D.createTextNode(str.slice(last)));
     msgs.appendChild(d); scroll(); return d;
   }
   function say(text, after){
@@ -2586,14 +3314,33 @@ function build(){
   }
 
   /* one sender for both the chat booking flow and the panel form */
+  var sent = 0;
   function lead(d){
+    /* three layers before anything leaves the page: a time trap, an
+       interaction gate, and a per-visit send cap. The form adds a honeypot
+       on top of this, and the endpoint is assembled at call time so it is
+       never sitting in the source as plain text. */
+    if (Date.now() - loadedAt < 4000){
+      say('Give that one more second and try again — just making sure you are a person.');
+      return;
+    }
+    if (!touched){
+      say('Tap or type something first and I will send it through.');
+      return;
+    }
+    if (sent >= 3){
+      say('That is three already from this page, so I am going to stop before it looks like spam on our end. Call ' + CFG.telView + ' and someone will pick up.');
+      return;
+    }
+    sent++;
     var data = {
       Name: d.Name || '', Phone: d.Phone || '', Company: d.Company || '',
       Message: d.Message || '', BestTime: d.Best || 'not stated',
       Trade: S.trade || 'not stated',
       Numbers: S.ticket ? ('job ' + money(S.ticket) + ', margin ' + S.margin + '%, close ' + S.close + '%') : 'not run',
       Source: 'AFC chat — ' + CFG.name, PageURL: W.location.href,
-      _subject: 'AFC chat lead — ' + CFG.name, _template: 'table', _captcha: 'false'
+      _subject: 'AFC chat lead — ' + CFG.name, _template: 'table', _captcha: 'false',
+      _honey: '', Elapsed: Math.round((Date.now() - loadedAt) / 1000) + 's on page'
     };
     var body = [], k;
     for (k in data){ if (Object.prototype.hasOwnProperty.call(data, k))
@@ -2648,23 +3395,38 @@ function build(){
     scroll();
   }
 
-  /* X closes it for good: the portal exit plays, then the launcher quietly
-     returns so he can still be reopened by hand. No nudge after that. */
+  /* Closing the panel just closes the panel. */
   function close(){
     panel.classList.remove('on'); w.classList.remove('open');
-    dismissed = true; flag('afcTexClosed', '1');
+    dismissed = true;
     tip.classList.remove('on');
-    if (!cine || animating) return;
+  }
+
+  /* The X beside him sends him away properly: he opens a portal, flips
+     through it, and is gone for the rest of this page. No reappearing on
+     its own, no nudge. Loading another page brings him back, and they can
+     dismiss him there too. */
+  var banished = false;
+  function banish(){
+    if (banished) return;
+    banished = true;
+    close();
+    w.style.transition = 'opacity .2s, transform .2s';
+    w.style.opacity = '0'; w.style.transform = 'translateY(10px) scale(.9)';
+    w.style.pointerEvents = 'none';
+    setTimeout(function(){ if (w.parentNode) w.parentNode.removeChild(w); }, 220);
+    if (!cine){ return; }
+    if (cine.kill) cine.kill();
     animating = true;
-    btn.style.transition = 'opacity .3s'; btn.style.opacity = '0'; btn.style.pointerEvents = 'none';
     cine.exit(function(){
-      btn.style.transition = 'opacity .7s'; btn.style.opacity = '1'; btn.style.pointerEvents = '';
       animating = false;
+      if (cine.stage && cine.stage.parentNode) cine.stage.parentNode.removeChild(cine.stage);
     });
   }
 
   btn.addEventListener('click', function(){ panel.classList.contains('on') ? close() : open(); });
   w.querySelector('.afcb-x').addEventListener('click', close);
+  dismissBtn.addEventListener('click', function(e){ e.stopPropagation(); banish(); });
   tip.addEventListener('click', open);
   tip.addEventListener('keydown', function(e){
     if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
@@ -2696,24 +3458,49 @@ function build(){
     form.reset();
   });
 
-  /* arrival: lightning, fireworks, truck, wheelie, mud, walk to the corner */
-  if (cine && !(CFG.arriveOnce && flag('afcTexArrived') === '1') && flag('afcTexClosed') !== '1'){
-    flag('afcTexArrived', '1');
+  /* the two buttons in his speech bubble */
+  if (cine){
+    cine.onHelp = function(){ if (cine.kill) cine.kill(); open(); };
+    cine.onForm = function(){
+      if (cine.kill) cine.kill();
+      open();
+      setTimeout(function(){
+        say('Easiest way to get a human on it. Name, your website and a number, and somebody reaches out — no phone tree, no drip sequence.',
+          function(){ api.form(); });
+      }, 320);
+    };
+  }
+
+  /* a small nudge above him once he has landed in the corner */
+  function nudge(ms){
+    setTimeout(function(){
+      if (banished || dismissed || opened || panel.classList.contains('on')) return;
+      tip.classList.add('on');
+      setTimeout(function(){ tip.classList.remove('on'); }, 11000);
+    }, ms);
+  }
+
+  /* arrival: lightning, fireworks, truck, donuts, mud, walk to the corner */
+  if (cine && !(CFG.arriveOnce && flag('afcRivitArrived') === '1') && flag('afcRivitClosed') !== '1'){
+    flag('afcRivitArrived', '1');
     animating = true;
     btn.style.opacity = '0'; btn.style.transform = 'scale(.3)'; btn.style.pointerEvents = 'none';
     cine.arrive(function(){
       btn.style.transition = 'opacity .55s cubic-bezier(.2,1,.3,1),transform .55s cubic-bezier(.2,1,.3,1)';
       btn.style.opacity = '1'; btn.style.transform = 'none'; btn.style.pointerEvents = '';
       animating = false;
+      nudge(1800);
     });
+  } else {
+    nudge(4000);
   }
 
   /* one gentle nudge, once per session, never after he has been closed */
   if (!reduce){
     setTimeout(function(){
-      if (dismissed || opened || flag('afcTexClosed') === '1' || flag('afcTexNudged') === '1') return;
+      if (banished || dismissed || opened || flag('afcRivitNudged') === '1') return;
       if (panel.classList.contains('on')) return;
-      flag('afcTexNudged', '1');
+      flag('afcRivitNudged', '1');
       tip.classList.add('on');
       setTimeout(function(){ tip.classList.remove('on'); }, 12000);
     }, CFG.nudgeAt);
@@ -2726,14 +3513,14 @@ function build(){
       animating = true; panel.classList.remove('on'); w.classList.remove('open');
       btn.style.transition = 'opacity .3s'; btn.style.opacity = '0'; btn.style.pointerEvents = 'none';
       cine.arrive(function(){
-        btn.style.transition = 'opacity .55s'; btn.style.opacity = '1'; btn.style.pointerEvents = '';
+        btn.style.transition = 'opacity .55s'; btn.style.opacity = ''; btn.style.pointerEvents = '';
         animating = false;
       });
     },
-    portal: function(){ close(); },
+    portal: function(){ banish(); },
     reset: function(){
-      try { sessionStorage.removeItem('afcTexArrived'); sessionStorage.removeItem('afcTexClosed');
-            sessionStorage.removeItem('afcTexNudged'); } catch(e){}
+      try { sessionStorage.removeItem('afcRivitArrived'); sessionStorage.removeItem('afcRivitClosed');
+            sessionStorage.removeItem('afcRivitNudged'); } catch(e){}
     }
   };
 }
@@ -2742,7 +3529,7 @@ if (!HAS_DOM){
   if (typeof module !== 'undefined' && module.exports){
     module.exports = { KB:KB, S:S, norm:norm, match:match, nums:nums, respond:respond,
                        fill:fill, A2:A2, L2:L2, byId:byId, CFG:CFG, QUOTES:QUOTES, JOKES:JOKES,
-                       FULL:FULL, man:man, TRUCK:TRUCK, PORTAL:PORTAL, DISC:DISC, MUD:MUD,
+                       FULL:FULL, man:man, TRUCK:TRUCK, PORTAL:PORTAL, DISC:DISC, mud:mud,
                        CLOUD:CLOUD, boltSVG:boltSVG, boltPath:boltPath,
                        CSS:CSS, CINE_CSS:CINE_CSS };
   }
