@@ -816,7 +816,7 @@ KB.push(
 {id:'noidea_source', w:2.4, k:'no idea,not sure,i do not know,honestly no idea,do not track,we do not track,never tracked,cannot tell,hard to say,no clue,who knows',
  spin:'implication',
  r:['That is the most common answer we get, and it is not a knock on you — nobody hands a contractor an attribution system with their license.\n\nBut look at what it costs. ' + STAT.attrib + '\n\nCall tracking fixes it in about a week and it is usually the first thing we set up, before a dollar goes to traffic.'],
- qr:['How does call tracking work?','Free audit','Pricing']},
+ qr:['Call tracking','Free audit','Pricing']},
 
 {id:'busy', w:2.2, k:'we are busy,too busy,booked out,backed up,plenty of work,do not need leads,booked solid,no capacity,fully booked,slammed with work',
  spin:'situation',
@@ -880,7 +880,7 @@ KB.push(
 
 {id:'roi', w:2, k:'is it worth it,return on investment,will it pay off,roi,worth the money,make my money back,payback,break even,how do i know it works,what is my return',
  r:['Depends on one number, and you already have it. Your break-even cost per lead is your profit per job times your close rate. Pay less than that per lead and you make money on the first job, before repeat work or referrals.\n\nGive me your average job value and I will do it with you right now — thirty seconds, and it is the number that makes every other decision obvious.'],
- qr:['Run my numbers','What is a good cost per lead?','Free audit']},
+ qr:['Run my numbers','Good cost per lead','Free audit']},
 
 {id:'budget_pct', w:2.2, k:'how much should i spend,marketing budget,what percent of revenue,how much budget,spend on marketing,what should my budget be,percentage of revenue',
  r:[STAT.budget + '\n\nBut percentages are a sanity check, not a plan. The real ceiling is your break-even cost per lead, because that tells you what you can pay for a customer and still profit on the first job. Want me to run yours?'],
@@ -1694,6 +1694,8 @@ var LINKS = {
 };
 
 var ALIAS = {
+  'call tracking'         : 'calltracking',
+  'good cost per lead'    : 'goodcpl',
   'local proof'           : 'localproof',
   'free chatbot'          : 'freebot',
   'bad leads'             : 'badleads',
@@ -2091,91 +2093,171 @@ function man(extra){
    THE TRUCK — with a door that actually opens, and a driver inside it.
    ========================================================================== */
 var TRUCK = '<svg viewBox="0 0 560 300" aria-hidden="true" focusable="false">'
-+'<defs><clipPath id="afcCab"><path d="M234 70 L270 70 Q282 70 286 80 L293 110 L234 110 Z"/></clipPath>'
++'<defs><clipPath id="afcCab"><rect x="320" y="66" width="74" height="44" rx="4"/></clipPath>'
 +'<linearGradient id="afcTrk" x1="0" y1="0" x2="0" y2="1">'
 +'<stop offset="0%" stop-color="#C9F04B"/><stop offset="52%" stop-color="#A6CE39"/>'
 +'<stop offset="100%" stop-color="#6E8A22"/></linearGradient>'
 +'<linearGradient id="afcChr2" x1="0" y1="0" x2="0" y2="1">'
 +'<stop offset="0%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#69737F"/></linearGradient>'
-+'<linearGradient id="afcBeam" x1="1" y1="0" x2="0" y2="0">'
-+'<stop offset="0%" stop-color="rgba(255,247,196,.75)"/>'
-+'<stop offset="55%" stop-color="rgba(255,247,196,.22)"/>'
++'<linearGradient id="afcBeamL" x1="0" y1="0" x2="1" y2="0">'
++'<stop offset="0%" stop-color="rgba(255,247,196,.8)"/>'
++'<stop offset="60%" stop-color="rgba(255,247,196,.2)"/>'
 +'<stop offset="100%" stop-color="rgba(255,247,196,0)"/></linearGradient></defs>'
-+'<g transform="translate(560,0) scale(-1,1)">'
 +'<g class="afcb-tilt">'
-/* exhaust stacks, behind the cab */
-+'<rect x="286" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
-+'<rect x="312" y="38" width="15" height="86" rx="4" fill="url(#afcChr2)"/>'
-+'<rect x="284" y="34" width="19" height="9" rx="3" fill="#9AA4B0"/>'
-+'<rect x="310" y="34" width="19" height="9" rx="3" fill="#9AA4B0"/>'
-/* light bar over the windshield */
-+'<rect x="150" y="46" width="150" height="17" rx="6" fill="#14181F"/>'
-+'<g fill="#C9F04B" opacity=".9"><rect x="158" y="50" width="24" height="9" rx="3"/>'
-+'<rect x="188" y="50" width="24" height="9" rx="3"/><rect x="218" y="50" width="24" height="9" rx="3"/>'
-+'<rect x="248" y="50" width="24" height="9" rx="3"/></g>'
-/* body */
-+'<path d="M118 178 L118 130 Q118 116 134 112 L164 68 Q170 60 184 60 L268 60 Q282 60 286 70'
-+' L300 112 L392 112 Q412 112 416 130 L424 178 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="5" stroke-linejoin="round"/>'
-/* bed side and tailgate, so the back end reads as a back end */
-+'<rect x="300" y="104" width="122" height="12" rx="5" fill="#37460F"/>'
-+'<path d="M404 116 L404 176" stroke="#5E7A12" stroke-width="4"/>'
-+'<path d="M310 128 h84 M310 142 h84" stroke="#6E8A22" stroke-width="3" opacity=".7"/>'
-+'<rect x="416" y="128" width="12" height="22" rx="3" fill="#C8392F" stroke="#7A1F18" stroke-width="2"/>'
-+'<rect x="424" y="152" width="14" height="44" rx="4" fill="#20262E"/>'
-/* windshield */
-+'<path d="M170 108 L192 72 L226 72 L226 108 Z" fill="#BFD4E8" opacity=".92"/>'
-+'<path d="M176 104 L194 78 L204 78 L184 104 Z" fill="#fff" opacity=".45"/>'
-/* cab interior the open door reveals */
-+'<rect x="230" y="68" width="66" height="104" rx="6" fill="#1A2029"/>'
+
+/* ── REAR (left): tailgate, two red lamps, mud flap ────────────────────── */
++'<rect x="88" y="150" width="12" height="46" rx="3" fill="#20262E"/>'
++'<rect x="96" y="118" width="12" height="26" rx="3" fill="#C8392F" stroke="#7A1F18" stroke-width="2"/>'
++'<rect x="96" y="150" width="12" height="16" rx="3" fill="#E8A020" stroke="#8F6510" stroke-width="2"/>'
+
+/* ── BODY: long bed at the back, cab, then a long hood up front ────────── */
++'<path d="M96 178 L96 106 L300 106 L307 66 Q312 60 324 60 L396 60 Q409 60 415 71'
++' L438 112 L506 112 Q522 114 527 130 L534 178 Z"'
++' fill="url(#afcTrk)" stroke="#37460F" stroke-width="5" stroke-linejoin="round"/>'
+/* bed rail and side creases so the back end reads as a bed */
++'<rect x="94" y="98" width="210" height="12" rx="5" fill="#37460F"/>'
++'<path d="M112 128 h176 M112 146 h176" stroke="#6E8A22" stroke-width="3" opacity=".6"/>'
++'<path d="M300 110 L300 176" stroke="#5E7A12" stroke-width="4"/>'
+
+/* ── exhaust stacks, right behind the cab ──────────────────────────────── */
++'<rect x="286" y="26" width="14" height="82" rx="4" fill="url(#afcChr2)"/>'
++'<rect x="264" y="34" width="14" height="74" rx="4" fill="url(#afcChr2)"/>'
++'<rect x="284" y="22" width="18" height="9" rx="3" fill="#9AA4B0"/>'
++'<rect x="262" y="30" width="18" height="9" rx="3" fill="#9AA4B0"/>'
+
+/* ── light bar over the cab ────────────────────────────────────────────── */
++'<rect x="316" y="44" width="92" height="16" rx="6" fill="#14181F"/>'
++'<g fill="#C9F04B" opacity=".92"><rect x="323" y="48" width="18" height="8" rx="3"/>'
++'<rect x="347" y="48" width="18" height="8" rx="3"/><rect x="371" y="48" width="18" height="8" rx="3"/></g>'
+
+/* ── cab: door window, then the raked windshield up front ──────────────── */
+/* ── the cab interior, revealed when the door opens ────────────────────── */
++'<path d="M312 60 L436 60 L436 176 L312 176 Z" fill="#0F141A"/>'
++'<path d="M398 100 L436 110 L436 132 L396 122 Z" fill="#242B34"/>'          /* dash */
++'<rect x="330" y="150" width="98" height="14" fill="#181D24"/>'             /* floor */
++'<rect x="316" y="164" width="114" height="12" rx="3" fill="#2C333D"/>'     /* sill */
++'<rect x="326" y="86" width="28" height="66" rx="9" fill="#4A3323"/>'       /* seat back */
++'<rect x="330" y="90" width="20" height="58" rx="7" fill="#5E4128"/>'
++'<rect x="328" y="68" width="26" height="20" rx="8" fill="#4A3323"/>'       /* headrest */
++'<rect x="326" y="140" width="64" height="16" rx="6" fill="#4A3323"/>'      /* seat base */
++'<rect x="330" y="143" width="56" height="10" rx="5" fill="#5E4128"/>'
++'<ellipse cx="410" cy="120" rx="7" ry="21" fill="none" stroke="#1C222B" stroke-width="7"/>'
++'<circle cx="410" cy="120" r="4" fill="#39434F"/>'                          /* wheel */
++'<rect x="356" y="96" width="8" height="56" rx="4" fill="#20262E"/>'        /* b-pillar */
++'<rect x="318" y="64" width="78" height="46" rx="5" fill="#1A2029"/>'
+/* running board, so stepping down makes sense */
++'<rect x="300" y="180" width="140" height="11" rx="5" fill="#39434F" stroke="#20262E" stroke-width="2"/>'
 +'<g class="afcb-driver" clip-path="url(#afcCab)">'
- +'<rect x="240" y="80" width="34" height="24" rx="7" fill="#F0BE22" stroke="#1C222B" stroke-width="2"/>'
- +'<circle cx="249" cy="92" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
- +'<circle cx="265" cy="92" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
- +'<circle cx="250" cy="92" r="2.6" fill="#12161C"/><circle cx="266" cy="92" r="2.6" fill="#12161C"/>'
- +'<ellipse cx="257" cy="78" rx="30" ry="7" fill="#8B5E3C"/>'
- +'<path d="M244 78 C242 60 250 55 257 55 C264 55 272 60 270 78 Z" fill="#A3714A" stroke="#5C3B21" stroke-width="2"/>'
+ +'<rect x="336" y="78" width="34" height="24" rx="7" fill="#F0BE22" stroke="#1C222B" stroke-width="2"/>'
+ +'<circle cx="345" cy="90" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
+ +'<circle cx="361" cy="90" r="6" fill="#fff" stroke="#1C222B" stroke-width="1.6"/>'
+ +'<circle cx="346" cy="90" r="2.6" fill="#12161C"/><circle cx="362" cy="90" r="2.6" fill="#12161C"/>'
+ +'<ellipse cx="353" cy="76" rx="30" ry="7" fill="#8B5E3C"/>'
+ +'<path d="M340 76 C338 58 346 53 353 53 C360 53 368 58 366 76 Z" fill="#A3714A" stroke="#5C3B21" stroke-width="2"/>'
 +'</g>'
-/* the door, hinged at the front edge */
+/* the door — it swings open where he climbs out */
 +'<g class="afcb-door">'
- +'<path d="M232 70 L268 70 Q282 70 286 80 L294 112 L294 170 L232 170 Z" fill="url(#afcTrk)" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
- +'<path d="M238 74 L268 74 Q276 74 279 82 L288 108 L238 108 Z" fill="#BFD4E8" opacity=".92"/>'
- +'<rect x="272" y="112" width="18" height="6" rx="3" fill="url(#afcChr2)"/>'
- /* the badge rides in its own group so it can be flipped back the right way
-    round whenever the truck itself is mirrored */
- +'<g class="afcb-badge" transform="translate(526,0) scale(-1,1)">'
-  +'<rect x="234" y="118" width="58" height="44" rx="8" fill="#0D1117" stroke="#C9F04B" stroke-width="2"/>'
-  +'<path d="M240 152 L247.5 130 L255 152" stroke="#C9F04B" stroke-width="4" fill="none"'
+ +'<path d="M314 62 L396 62 Q409 62 415 71 L436 110 L314 110 Z"'
+ +' fill="url(#afcTrk)" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
+ +'<rect x="320" y="66" width="74" height="44" rx="5" fill="#BFD4E8" opacity=".92"/>'
+ +'<path d="M404 66 L430 106 L400 106 L400 66 Z" fill="#BFD4E8" opacity=".92"/>'
+ +'<path d="M326 70 L344 70 L330 102 L326 102 Z" fill="#fff" opacity=".4"/>'
+ +'<rect x="398" y="112" width="18" height="6" rx="3" fill="url(#afcChr2)"/>'
+ +'<rect x="314" y="62" width="7" height="108" fill="#37460F"/>'
+ +'<g class="afcb-badge">'
+  +'<rect x="322" y="116" width="72" height="46" rx="9" fill="#0D1117" stroke="#C9F04B" stroke-width="2.5"/>'
+  +'<path d="M330 152 L339 124 L348 152" stroke="#C9F04B" stroke-width="5" fill="none"'
   +' stroke-linecap="round" stroke-linejoin="round"/>'
-  +'<path d="M243.5 145 h8" stroke="#C9F04B" stroke-width="3" stroke-linecap="round"/>'
-  +'<text x="272" y="151" font-family="Barlow Condensed,Impact,Haettenschweiler,sans-serif" font-size="27"'
+  +'<path d="M334 142 h10" stroke="#C9F04B" stroke-width="4" stroke-linecap="round"/>'
+  +'<text x="370" y="151" font-family="Barlow Condensed,Impact,Haettenschweiler,sans-serif" font-size="30"'
   +' font-weight="800" letter-spacing="1" fill="#F4F4F1" text-anchor="middle">FC</text>'
  +'</g>'
 +'</g>'
-/* FRONT END — grille, two lit lamps and a beam, so the nose is never in doubt */
-+'<path d="M118 118 L118 178 L98 178 L90 150 Q88 126 108 120 Z" fill="#8FB92F" stroke="#37460F" stroke-width="4" stroke-linejoin="round"/>'
-+'<path d="M120 124 h16 M120 136 h16 M120 148 h16 M120 160 h16" stroke="#37460F" stroke-width="3" stroke-linecap="round"/>'
-+'<rect x="94" y="126" width="26" height="24" rx="5" fill="#FFF6C8" stroke="#C9A227" stroke-width="2"/>'
-+'<rect x="98" y="130" width="10" height="9" rx="3" fill="#fff"/>'
-+'<rect x="98" y="156" width="20" height="12" rx="4" fill="#F7E8A0" opacity=".9"/>'
-+'<path d="M92 128 L14 104 L14 178 L92 154 Z" fill="url(#afcBeam)"/>'
-+'<rect x="84" y="170" width="60" height="16" rx="6" fill="url(#afcChr2)" stroke="#39434F" stroke-width="2"/>'
-+'<circle cx="112" cy="178" r="8" fill="#37460F"/>'
-/* frame and suspension */
-+'<rect x="140" y="176" width="290" height="14" rx="6" fill="#20262E"/>'
-+'<rect x="168" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
-+'<rect x="386" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
-/* wheels */
-+'<g class="afcb-wh"><g transform="translate(176,222)">'
+/* windshield pane, raked back over the cab */
++'<path d="M404 66 L430 106 L400 106 L400 66 Z" fill="#BFD4E8" opacity=".92"/>'
+/* the door as it looks swung wide open, hinged at the front and angled out */
++'<g class="afcb-dooropen">'
+ +'<path d="M436 66 L498 82 L498 184 L436 168 Z" fill="url(#afcTrk)" stroke="#37460F"'
+ +' stroke-width="4" stroke-linejoin="round"/>'
+ +'<path d="M444 80 L490 92 L490 120 L444 110 Z" fill="#9FB6CE" opacity=".85"/>'
+ +'<path d="M444 80 L458 84 L448 110 L444 109 Z" fill="#fff" opacity=".35"/>'
+ +'<rect x="447" y="126" width="44" height="34" rx="6" fill="#0D1117" stroke="#C9F04B" stroke-width="2"'
+ +' transform="rotate(6 469 143)"/>'
+ +'<path d="M454 152 L460 132 L466 152" stroke="#C9F04B" stroke-width="3.5" fill="none"'
+ +' stroke-linecap="round" stroke-linejoin="round" transform="rotate(6 460 142)"/>'
+ +'<text x="481" y="150" font-family="Barlow Condensed,Impact,sans-serif" font-size="20" font-weight="800"'
+ +' fill="#F4F4F1" text-anchor="middle" transform="rotate(6 481 144)">FC</text>'
+ +'<rect x="440" y="112" width="14" height="6" rx="3" fill="url(#afcChr2)"/>'
++'</g>'
+
+/* ── FRONT (right): long hood, grille, two round lamps, bumper, beam ───── */
++'<path d="M438 112 L506 112 Q522 114 527 130 L534 178 L500 178 L500 120 Z"'
++' fill="#8FB92F" opacity=".35"/>'
++'<path d="M446 122 h48 M446 134 h48" stroke="#6E8A22" stroke-width="3" opacity=".55"/>'
+/* grille */
++'<rect x="516" y="118" width="18" height="46" rx="5" fill="#20262E" stroke="#14181F" stroke-width="2"/>'
++'<path d="M518 126 h14 M518 136 h14 M518 146 h14 M518 156 h14" stroke="#69737F" stroke-width="3" stroke-linecap="round"/>'
+/* two round headlights, lit */
++'<circle cx="508" cy="126" r="12" fill="#FFF6C8" stroke="#C9A227" stroke-width="3"/>'
++'<circle cx="504" cy="122" r="4" fill="#fff"/>'
++'<circle cx="508" cy="152" r="9" fill="#F7E8A0" stroke="#C9A227" stroke-width="2.5"/>'
+/* the beam they throw, so the front is never in question */
++'<path d="M534 112 L560 96 L560 180 L534 168 Z" fill="url(#afcBeamL)"/>'
+/* chrome bumper and a tow hook */
++'<rect x="498" y="166" width="52" height="16" rx="6" fill="url(#afcChr2)" stroke="#39434F" stroke-width="2"/>'
++'<circle cx="524" cy="174" r="7" fill="#37460F"/>'
+
+/* ── frame, suspension, wheels ─────────────────────────────────────────── */
++'<rect x="120" y="176" width="370" height="14" rx="6" fill="#20262E"/>'
++'<rect x="162" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
++'<rect x="432" y="186" width="16" height="30" rx="5" fill="#39434F"/>'
++'<g class="afcb-wh"><g transform="translate(170,222)">'
 +'<circle r="58" fill="#161A20"/><circle r="58" fill="none" stroke="#2C333D" stroke-width="9" stroke-dasharray="11 9"/>'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
 +'<path d="M0 -31 L0 -14 M0 31 L0 14 M-31 0 L-14 0 M31 0 L14 0" stroke="#14181F" stroke-width="6"/>'
 +'</g></g>'
-+'<g class="afcb-wh2"><g transform="translate(394,222)">'
++'<g class="afcb-wh2"><g transform="translate(440,222)">'
 +'<circle r="58" fill="#161A20"/><circle r="58" fill="none" stroke="#2C333D" stroke-width="9" stroke-dasharray="11 9"/>'
 +'<circle r="31" fill="url(#afcChr2)"/><circle r="12" fill="#14181F"/>'
 +'<path d="M0 -31 L0 -14 M0 31 L0 14 M-31 0 L-14 0 M31 0 L14 0" stroke="#14181F" stroke-width="6"/>'
 +'</g></g>'
-+'</g></g></svg>';
++'</g></svg>';
+
+/* ==========================================================================
+   THE SAUCER — symmetrical on purpose, so there is no front or back to get
+   wrong, and a tractor beam that sets the truck down.
+   ========================================================================== */
+var UFO = '<svg viewBox="0 0 420 200" aria-hidden="true" focusable="false">'
++'<defs>'
++'<linearGradient id="afcHull" x1="0" y1="0" x2="0" y2="1">'
++'<stop offset="0%" stop-color="#EDF1F5"/><stop offset="46%" stop-color="#9AA4B0"/>'
++'<stop offset="100%" stop-color="#4A5563"/></linearGradient>'
++'<radialGradient id="afcDome" cx="38%" cy="28%" r="72%">'
++'<stop offset="0%" stop-color="#EAFBA8"/><stop offset="52%" stop-color="#A6CE39"/>'
++'<stop offset="100%" stop-color="#4F6B14"/></radialGradient>'
++'<radialGradient id="afcUnder" cx="50%" cy="0%" r="80%">'
++'<stop offset="0%" stop-color="rgba(201,240,75,.85)"/>'
++'<stop offset="100%" stop-color="rgba(201,240,75,0)"/></radialGradient></defs>'
++'<path d="M140 84 C140 40 176 16 210 16 C244 16 280 40 280 84 Z" fill="url(#afcDome)"/>'
++'<path d="M166 62 C172 40 194 30 210 30 C196 34 178 46 172 66 Z" fill="#fff" opacity=".35"/>'
++'<ellipse cx="210" cy="96" rx="196" ry="34" fill="url(#afcHull)"/>'
++'<ellipse cx="210" cy="88" rx="196" ry="30" fill="none" stroke="#EDF1F5" stroke-width="3" opacity=".5"/>'
++'<ellipse cx="210" cy="104" rx="150" ry="22" fill="#2C333D" opacity=".55"/>'
++'<g fill="#C9F04B">'
++'<circle cx="72" cy="102" r="8"/><circle cx="141" cy="112" r="8"/>'
++'<circle cx="210" cy="115" r="8"/><circle cx="279" cy="112" r="8"/><circle cx="348" cy="102" r="8"/></g>'
++'<ellipse cx="210" cy="118" rx="52" ry="16" fill="url(#afcUnder)"/>'
++'<ellipse cx="210" cy="116" rx="30" ry="9" fill="#EAFBA8" opacity=".9"/></svg>';
+
+/* the tractor beam: a widening cone of light, steady, never strobing */
+var BEAM = '<svg viewBox="0 0 300 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">'
++'<defs><linearGradient id="afcCone" x1="0" y1="0" x2="0" y2="1">'
++'<stop offset="0%" stop-color="rgba(201,240,75,.5)"/>'
++'<stop offset="55%" stop-color="rgba(201,240,75,.22)"/>'
++'<stop offset="100%" stop-color="rgba(201,240,75,.05)"/></linearGradient></defs>'
++'<path d="M118 0 L182 0 L286 396 L14 396 Z" fill="url(#afcCone)"/>'
++'<path class="afcb-ray1" d="M132 0 L146 0 L96 396 L66 396 Z" fill="rgba(234,251,168,.22)"/>'
++'<path class="afcb-ray2" d="M158 0 L172 0 L236 396 L206 396 Z" fill="rgba(234,251,168,.16)"/></svg>';
 
 /* ==========================================================================
    THE PORTAL — layered rings, a real event horizon, a rim that breathes.
@@ -2329,10 +2411,10 @@ function boltSVG(w, h, count){
 var CINE_CSS = ''
 +'.afcb-stage{position:fixed;inset:0;z-index:2147481900;pointer-events:none;overflow:hidden;display:none;'
  +'--hdoor:51vw;--hfront:40vw;--hcorner:90vw;--tstop:34vw;--ton:-52vw;--toff:116vw;'
- +'--px:12vw;--py:-64vh;--tpx:-8vw;--tpy:-52vh;--hpx:8vw;--hpy:-54vh;--sayx:40vw;--saysh:-46%}'
+ +'--px:12vw;--py:-64vh;--tpx:-8vw;--tpy:-52vh;--hpx:8vw;--hpy:-54vh;--ufox:38vw;--beamx:42vw;--sayx:40vw;--saysh:-46%}'
 +'.afcb-stage.on{display:block}'
 +'.afcb-stage.m{--hdoor:39vw;--hfront:24vw;--hcorner:74vw;--tstop:4vw;--ton:-96vw;--toff:104vw;'
- +'--px:14vw;--py:-58vh;--tpx:-10vw;--tpy:-46vh;--hpx:22vw;--hpy:-70vh;--sayx:50vw;--saysh:-50%}'
+ +'--px:18vw;--py:-71vh;--tpx:-22vw;--tpy:-70vh;--hpx:10vw;--hpy:-72vh;--ufox:24vw;--beamx:30vw;--sayx:50vw;--saysh:-50%}'
 
 /* ── the rig: every joint gets a real pivot ────────────────────────────── */
 +'.afcb-man g{transform-box:view-box}'
@@ -2429,73 +2511,139 @@ var CINE_CSS = ''
 /* ── the truck: forward the whole way, breaking loose into fishtails ───── */
 +'.afcb-truck{position:absolute;bottom:5vh;left:0;width:46vw;min-width:330px;max-width:660px;opacity:0;'
  +'transform:translateX(120vw);transform-origin:50% 78%}'
++'.afcb-truck.land,.afcb-truck.burn,.afcb-truck.grab,.afcb-truck.hurl,'
+ +'.afcb-truck.parked,.afcb-truck.open,.afcb-truck.shut{opacity:1}'
 +'.afcb-truck svg{width:100%;height:auto;display:block;'
  +'filter:drop-shadow(0 16px 22px rgba(13,17,23,.4))}'
-+'.afcb-truck.drive{animation:afcbDrive 5.8s cubic-bezier(.2,.55,.3,1) forwards}'
-+'@keyframes afcbDrive{'
- +'0%{opacity:0;transform:translateX(var(--ton)) rotate(0)}'
- +'4%{opacity:1;transform:translateX(calc(var(--ton) + 10vw)) rotate(0)}'
- /* in, and hard on the brakes */
- +'20%{transform:translateX(calc(var(--tstop) + 6vw)) rotate(0)}'
- +'26%{transform:translateX(var(--tstop)) rotate(-3deg)}'
- /* three spin-outs: the back end breaks loose and swings */
- +'34%{transform:translateX(calc(var(--tstop) - 4vw)) rotate(8deg)}'
- +'43%{transform:translateX(calc(var(--tstop) + 4vw)) rotate(-8deg)}'
- +'52%{transform:translateX(calc(var(--tstop) - 3vw)) rotate(7deg)}'
- +'61%{transform:translateX(calc(var(--tstop) + 3vw)) rotate(-7deg)}'
- +'70%{transform:translateX(calc(var(--tstop) - 2vw)) rotate(5deg)}'
- +'79%{transform:translateX(calc(var(--tstop) + 1vw)) rotate(-4deg)}'
- /* and settle on the springs */
- +'88%{transform:translateX(var(--tstop)) rotate(2deg)}'
- +'95%{transform:translateX(var(--tstop)) rotate(-1deg)}'
+/* ── the saucer: symmetrical, so it has no wrong way round ─────────────── */
++'.afcb-ufo{position:absolute;bottom:52vh;left:0;width:34vw;min-width:260px;max-width:470px;opacity:0;'
+ +'transform:translateX(-46vw)}'
++'.afcb-ufo svg{width:100%;height:auto;display:block;'
+ +'filter:drop-shadow(0 18px 30px rgba(13,17,23,.35)) drop-shadow(0 0 26px rgba(166,206,57,.35))}'
++'.afcb-ufo.fly{animation:afcbUfoIn 2s cubic-bezier(.3,.5,.3,1) forwards}'
++'@keyframes afcbUfoIn{0%{opacity:0;transform:translateX(-46vw) translateY(-14vh) scale(.7)}'
+ +'20%{opacity:1}'
+ +'70%{opacity:1;transform:translateX(calc(var(--ufox) + 3vw)) translateY(2vh) scale(1)}'
+ +'100%{opacity:1;transform:translateX(var(--ufox)) translateY(0) scale(1)}}'
++'.afcb-ufo.hold{opacity:1;animation:afcbHover 3.4s ease-in-out infinite}'
++'@keyframes afcbHover{0%,100%{opacity:1;transform:translateX(var(--ufox)) translateY(0) rotate(-.6deg)}'
+ +'50%{opacity:1;transform:translateX(var(--ufox)) translateY(-1.6vh) rotate(.6deg)}}'
++'.afcb-ufo.away{animation:afcbUfoOut 1.8s cubic-bezier(.5,0,.7,.4) forwards}'
++'@keyframes afcbUfoOut{0%{opacity:1;transform:translateX(var(--ufox)) translateY(0) scale(1)}'
+ +'100%{opacity:0;transform:translateX(calc(var(--ufox) + 16vw)) translateY(-42vh) scale(.45)}}'
+
+/* ── the tractor beam ──────────────────────────────────────────────────── */
++'.afcb-beam{position:absolute;bottom:5vh;left:0;width:26vw;min-width:200px;max-width:360px;height:48vh;'
+ +'opacity:0;transform:translateX(var(--beamx)) scaleY(.02);transform-origin:50% 0}'
++'.afcb-beam svg{width:100%;height:100%;display:block}'
++'.afcb-beam.on{animation:afcbBeamOn .7s cubic-bezier(.2,.8,.3,1) forwards}'
++'@keyframes afcbBeamOn{0%{opacity:0;transform:translateX(var(--beamx)) scaleY(.02)}'
+ +'100%{opacity:1;transform:translateX(var(--beamx)) scaleY(1)}}'
++'.afcb-beam.off{animation:afcbBeamOff .8s cubic-bezier(.5,0,.8,.2) forwards}'
++'@keyframes afcbBeamOff{0%{opacity:1;transform:translateX(var(--beamx)) scaleY(1)}'
+ +'100%{opacity:0;transform:translateX(var(--beamx)) scaleY(.02)}}'
++'.afcb-beam.on .afcb-ray1{animation:afcbRay 2.6s ease-in-out infinite}'
++'.afcb-beam.on .afcb-ray2{animation:afcbRay 3.2s ease-in-out .6s infinite}'
++'@keyframes afcbRay{0%,100%{opacity:.1}50%{opacity:.4}}'
+
+/* ── down the beam: it stays fully visible the whole way ───────────────── */
++'.afcb-truck.land{animation:afcbLand 2.8s cubic-bezier(.4,.02,.5,1) forwards}'
++'@keyframes afcbLand{'
+ +'0%{opacity:0;transform:translateX(var(--tstop)) translateY(-40vh) rotate(-3deg) scale(.74)}'
+ +'10%{opacity:1;transform:translateX(var(--tstop)) translateY(-36vh) rotate(2deg) scale(.77)}'
+ +'40%{opacity:1;transform:translateX(calc(var(--tstop) + 1vw)) translateY(-24vh) rotate(-2.5deg) scale(.86)}'
+ +'68%{opacity:1;transform:translateX(calc(var(--tstop) - 1vw)) translateY(-10vh) rotate(2deg) scale(.95)}'
+ +'84%{opacity:1;transform:translateX(var(--tstop)) translateY(0) rotate(0) scale(1)}'
+ +'90%{opacity:1;transform:translateX(var(--tstop)) translateY(-2.5vh) rotate(-1.5deg) scale(1)}'
+ +'96%{opacity:1;transform:translateX(var(--tstop)) translateY(0) rotate(1deg) scale(1)}'
+ +'100%{opacity:1;transform:translateX(var(--tstop)) translateY(0) rotate(0) scale(1)}}'
++'.afcb-truck.land .afcb-tilt{transform-box:view-box;transform-origin:170px 230px;'
+ +'animation:afcbTilt 2.8s ease-in-out forwards}'
++'@keyframes afcbTilt{0%{transform:rotate(0)}62%{transform:rotate(2deg)}'
+ +'86%{transform:rotate(-6deg)}93%{transform:rotate(4deg)}100%{transform:rotate(0)}}'
++'.afcb-truck.land .afcb-wh,.afcb-truck.land .afcb-wh2{transform-box:view-box;'
+ +'animation:afcbRoll 2.8s ease-out forwards}'
++'.afcb-truck.land .afcb-wh{transform-origin:170px 222px}'
++'.afcb-truck.land .afcb-wh2{transform-origin:440px 222px}'
++'@keyframes afcbRoll{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}'
++'.afcb-truck.land .afcb-driver{animation:afcbJostle .45s ease-in-out 6}'
++'.afcb-truck.burn{animation:afcbBurn 3.4s cubic-bezier(.3,.1,.3,1) forwards}'
++'@keyframes afcbBurn{0%{opacity:1;transform:translateX(var(--tstop)) rotate(0)}'
+ /* stands on it, rear end breaks loose */
+ +'10%{transform:translateX(calc(var(--tstop) - 2vw)) rotate(-3deg)}'
+ +'22%{transform:translateX(calc(var(--tstop) + 3vw)) rotate(2.5deg)}'
+ +'34%{transform:translateX(calc(var(--tstop) - 3vw)) rotate(-3deg)}'
+ +'46%{transform:translateX(calc(var(--tstop) + 4vw)) rotate(2.5deg)}'
+ +'58%{transform:translateX(calc(var(--tstop) - 2vw)) rotate(-2deg)}'
+ +'70%{transform:translateX(calc(var(--tstop) + 2vw)) rotate(2deg)}'
+ +'82%{transform:translateX(calc(var(--tstop) - 1vw)) rotate(-1.5deg)}'
+ +'92%{transform:translateX(var(--tstop)) rotate(1deg)}'
  +'100%{opacity:1;transform:translateX(var(--tstop)) rotate(0)}}'
-+'.afcb-truck.drive .afcb-tilt{transform-box:view-box;transform-origin:394px 230px;'
- +'animation:afcbTilt 5.8s ease-in-out forwards}'
-+'@keyframes afcbTilt{0%{transform:rotate(0)}'
- +'7%{transform:rotate(9deg)}18%{transform:rotate(4deg)}'
- +'26%{transform:rotate(-7deg)}32%{transform:rotate(3deg)}'
- +'43%{transform:rotate(6deg)}52%{transform:rotate(-4deg)}'
- +'61%{transform:rotate(5deg)}70%{transform:rotate(-3deg)}'
- +'82%{transform:rotate(4deg)}92%{transform:rotate(-2deg)}100%{transform:rotate(0)}}'
-+'.afcb-truck.drive .afcb-wh{transform-box:view-box;transform-origin:176px 222px;'
- +'animation:afcbSpinF 5.8s linear forwards}'
-+'.afcb-truck.drive .afcb-wh2{transform-box:view-box;transform-origin:394px 222px;'
- +'animation:afcbSpinR 5.8s linear forwards}'
-+'@keyframes afcbSpinF{0%{transform:rotate(0)}20%{transform:rotate(-1300deg)}'
- +'100%{transform:rotate(-3000deg)}}'
-+'@keyframes afcbSpinR{0%{transform:rotate(0)}20%{transform:rotate(-1500deg)}'
- +'34%{transform:rotate(-3200deg)}100%{transform:rotate(-9000deg)}}'
-+'.afcb-truck.drive .afcb-driver{animation:afcbJostle .4s ease-in-out 20}'
+/* the body pivots on the rear axle — nose up, then back down */
++'.afcb-truck.burn .afcb-tilt{transform-box:view-box;transform-origin:170px 230px;'
+ +'animation:afcbRear 3.4s cubic-bezier(.3,.1,.3,1) forwards}'
++'@keyframes afcbRear{0%{transform:rotate(0)}'
+ +'10%{transform:rotate(-16deg)}26%{transform:rotate(-18deg)}'
+ +'40%{transform:rotate(-10deg)}54%{transform:rotate(-17deg)}'
+ +'70%{transform:rotate(-12deg)}84%{transform:rotate(-15deg)}'
+ +'93%{transform:rotate(-2deg)}97%{transform:rotate(3deg)}100%{transform:rotate(0)}}'
+/* rear tyre lit up, front one barely turning */
++'.afcb-truck.burn .afcb-wh{transform-box:view-box;transform-origin:170px 222px;'
+ +'animation:afcbBurnRear 3.4s linear forwards}'
++'.afcb-truck.burn .afcb-wh2{transform-box:view-box;transform-origin:440px 222px;'
+ +'animation:afcbBurnFront 3.4s ease-out forwards}'
++'@keyframes afcbBurnRear{0%{transform:rotate(0)}100%{transform:rotate(8600deg)}}'
++'@keyframes afcbBurnFront{0%{transform:rotate(0)}100%{transform:rotate(900deg)}}'
++'.afcb-truck.burn .afcb-driver{animation:afcbJostle .3s ease-in-out 11}'
 +'@keyframes afcbJostle{0%,100%{transform:translateY(0) rotate(0)}'
  +'50%{transform:translateY(-2.5px) rotate(-1.2deg)}}'
 +'.afcb-truck.parked{transform:translateX(var(--tstop));opacity:1}'
 +'.afcb-truck.parked .afcb-driver{opacity:0;transition:opacity .3s}'
 /* door swings open, and shuts again behind him */
-+'.afcb-door{transform-box:view-box;transform-origin:232px 120px}'
++'.afcb-door{transform-box:view-box;transform-origin:436px 112px}'
++'.afcb-dooropen{transform-box:view-box;transform-origin:436px 112px;opacity:0;transform:rotate(-26deg) scaleX(.3)}'
 +'.afcb-truck.open .afcb-door{animation:afcbDoor .9s cubic-bezier(.3,.9,.3,1) forwards}'
-+'@keyframes afcbDoor{0%{transform:scaleX(1) skewY(0)}'
- +'100%{transform:scaleX(.28) skewY(-7deg) translateX(-4px)}}'
++'@keyframes afcbDoor{0%{opacity:1;transform:scaleX(1)}'
+ +'45%{opacity:.15;transform:scaleX(.55)}'
+ +'100%{opacity:0;transform:scaleX(.3)}}'
++'.afcb-truck.open .afcb-dooropen{animation:afcbDoorSwing .9s cubic-bezier(.3,.9,.3,1) forwards}'
++'@keyframes afcbDoorSwing{0%{opacity:0;transform:rotate(-26deg) scaleX(.3)}'
+ +'40%{opacity:1;transform:rotate(-6deg) scaleX(.8)}'
+ +'75%{opacity:1;transform:rotate(4deg) scaleX(1.04)}'
+ +'100%{opacity:1;transform:rotate(0) scaleX(1)}}'
 +'.afcb-truck.shut .afcb-door{animation:afcbDoorShut .7s cubic-bezier(.4,0,.4,1) forwards}'
-+'@keyframes afcbDoorShut{0%{transform:scaleX(.28) skewY(-7deg) translateX(-4px)}'
- +'100%{transform:scaleX(1) skewY(0)}}'
++'@keyframes afcbDoorShut{0%{opacity:0;transform:scaleX(.3)}'
+ +'55%{opacity:.2;transform:scaleX(.6)}'
+ +'100%{opacity:1;transform:scaleX(1)}}'
++'.afcb-truck.shut .afcb-dooropen{animation:afcbDoorFold .7s cubic-bezier(.4,0,.5,1) forwards}'
++'@keyframes afcbDoorFold{0%{opacity:1;transform:rotate(0) scaleX(1)}'
+ +'100%{opacity:0;transform:rotate(-26deg) scaleX(.3)}}'
 /* he grabs it, reaches back, and hurls it forward and up */
-+'.afcb-truck.grab{animation:afcbGrab 1.5s cubic-bezier(.25,.9,.35,1) forwards}'
-+'@keyframes afcbGrab{0%{transform:translateX(var(--tstop)) translateY(0) rotate(0) scale(1)}'
- +'40%{transform:translateX(calc(var(--tstop) - 2vw)) translateY(-6vh) rotate(-3deg) scale(.9)}'
- +'100%{transform:translateX(calc(var(--hfront) - 4vw)) translateY(-26vh) rotate(-14deg) scale(.5)}}'
-+'.afcb-truck.hurl{animation:afcbHurl 2.6s cubic-bezier(.32,.04,.5,1) forwards}'
++'.afcb-truck.grab{animation:afcbGrab 2.8s cubic-bezier(.3,.7,.35,1) forwards}'
++'@keyframes afcbGrab{0%{opacity:1;transform:translateX(var(--tstop)) translateY(0) rotate(0) scale(1)}'
+ /* he gets his hands under the frame and it tips toward him */
+ +'14%{transform:translateX(calc(var(--tstop) - 1vw)) translateY(0) rotate(-3deg) scale(.98)}'
+ +'26%{transform:translateX(calc(var(--tstop) - 2vw)) translateY(-1vh) rotate(-5deg) scale(.92)}'
+ /* up to his chest, and a beat to show he has hold of it */
+ +'48%{transform:translateX(calc(var(--hfront) - 13vw)) translateY(-17vh) rotate(-3deg) scale(.62)}'
+ +'58%{transform:translateX(calc(var(--hfront) - 14vw)) translateY(-18vh) rotate(-2deg) scale(.58)}'
+ /* then pressed straight overhead, and held there */
+ +'84%{transform:translateX(calc(var(--hfront) - 15vw)) translateY(-44vh) rotate(0) scale(.42)}'
+ +'100%{opacity:1;transform:translateX(calc(var(--hfront) - 15vw)) translateY(-43vh) rotate(0) scale(.42)}}'
++'.afcb-truck.hurl{animation:afcbHurl 2.8s cubic-bezier(.3,.02,.42,1) forwards}'
 +'@keyframes afcbHurl{'
- +'0%{opacity:1;transform:translateX(calc(var(--hfront) - 4vw)) translateY(-26vh) rotate(-14deg) scale(.5)}'
- /* he takes it back behind his shoulder first */
- +'20%{transform:translateX(calc(var(--hfront) + 7vw)) translateY(-20vh) rotate(26deg) scale(.5)}'
- /* then it comes forward and up, across the screen */
- +'38%{transform:translateX(calc(var(--hfront) - 6vw)) translateY(-38vh) rotate(-40deg) scale(.46)}'
- +'58%{transform:translateX(calc((var(--hfront) + var(--tpx)) / 2)) translateY(calc(var(--tpy) + 4vh))'
- +' rotate(-130deg) scale(.38)}'
- +'80%{transform:translateX(calc(var(--tpx) + 6vw)) translateY(var(--tpy)) rotate(-250deg) scale(.28)}'
- /* and only shrinks once it is actually in the hole */
- +'92%{opacity:1;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-330deg) scale(.12)}'
- +'100%{opacity:0;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-380deg) scale(.02)}}'
+ +'0%{opacity:1;transform:translateX(calc(var(--hfront) - 15vw)) translateY(-43vh) rotate(0) scale(.42)}'
+ /* loads it back behind his head */
+ +'16%{transform:translateX(calc(var(--hfront) - 11vw)) translateY(-37vh) rotate(18deg) scale(.42)}'
+ /* and lets it go, right across the screen */
+ +'34%{transform:translateX(calc(var(--hfront) - 24vw)) translateY(calc(var(--tpy) + 24vh)) rotate(-44deg) scale(.4)}'
+ +'56%{transform:translateX(calc((var(--hfront) + var(--tpx)) / 2)) translateY(calc(var(--tpy) + 8vh))'
+ +' rotate(-140deg) scale(.36)}'
+ /* squared up with the mouth of the hole */
+ +'74%{opacity:1;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-220deg) scale(.32)}'
+ /* and pulled into it */
+ +'88%{opacity:1;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-290deg) scale(.12)}'
+ +'100%{opacity:0;transform:translateX(var(--tpx)) translateY(var(--tpy)) rotate(-350deg) scale(.015)}}'
 
 /* ── the portal and the disc he throws to open it ──────────────────────── */
 +'.afcb-portal{position:absolute;left:2vw;top:3vh;width:26vw;min-width:190px;max-width:360px;'
@@ -2509,7 +2657,7 @@ var CINE_CSS = ''
  +'100%{opacity:0;transform:scale(.02) rotate(90deg)}}'
 +'.afcb-portal .afcb-spin{transform-box:view-box;transform-origin:160px 158px;animation:afcbSp 17s linear infinite}'
 +'@keyframes afcbSp{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}'
-+'.afcb-disc{position:absolute;bottom:22vh;left:0;width:52px;opacity:0;transform:translateX(var(--hfront))}'
++'.afcb-disc{position:absolute;bottom:13vh;left:0;width:52px;opacity:0;transform:translateX(var(--hfront))}'
 +'.afcb-disc svg{width:100%;height:auto;display:block}'
 +'.afcb-disc.fly{animation:afcbDisc 1.15s cubic-bezier(.25,.5,.4,1) forwards}'
 +'.afcb-disc.gone{animation:none!important;opacity:0!important}'
@@ -2530,7 +2678,7 @@ var CINE_CSS = ''
  +'display:block;filter:drop-shadow(0 8px 10px rgba(13,17,23,.18))}'
 +'.afcb-say s svg{display:block;width:100%;height:100%}'
 +'.afcb-say em{font-style:normal;font-weight:800;color:#5E7A12}'
-+'.afcb-say .x{position:absolute;top:-13px;right:-13px;z-index:4;width:30px;height:30px;border-radius:50%;'
++'.afcb-say .x{position:absolute;top:8px;right:8px;z-index:4;width:29px;height:29px;border-radius:50%;'
  +'background:#fff;border:3px solid #0D1117;color:#0D1117;font:700 15px/1 Inter,system-ui,sans-serif;'
  +'display:grid;place-items:center;cursor:pointer;pointer-events:auto;padding:0;'
  +'box-shadow:0 5px 12px rgba(13,17,23,.26)}'
@@ -2545,7 +2693,8 @@ var CINE_CSS = ''
 +'.afcb-say .acts .req:hover{background:#F4F4F1}'
 +'.afcb-say i{font-style:normal;font-weight:800;color:#B4763C}'
 +'.afcb-say u{text-decoration:none;font-weight:700;color:#12161C}'
-+'.afcb-say .big{display:block;font-size:19px;font-weight:800;margin-bottom:7px;letter-spacing:-.01em}'
++'.afcb-say .big{display:block;font-size:19px;font-weight:800;margin-bottom:7px;letter-spacing:-.01em;'
+ +'padding-right:34px}'
 +'.afcb-say .sm{display:block;margin-top:9px;font-size:14.5px;color:#3D4750}'
 +'.afcb-say.in{animation:afcbSayIn .7s cubic-bezier(.3,1.4,.45,1) forwards}'
 +'@keyframes afcbSayIn{0%{opacity:0;transform:translateX(var(--sayx)) translate(var(--saysh),16px) scale(.6)}'
@@ -2663,6 +2812,9 @@ var CINE_CSS = ''
 +'.afcb-hero.throwing .afcb-wave{animation:afcbThrowArm 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
 +'.afcb-hero.throwing .afcb-foreB{animation:afcbThrowFore 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
 +'.afcb-hero.throwing .afcb-torso{animation:afcbThrowLean 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
++'.afcb-hero.throwing .afcb-armA{animation:afcbThrowCounter 1.15s cubic-bezier(.3,.1,.3,1) forwards}'
++'@keyframes afcbThrowCounter{0%{transform:rotate(0)}34%{transform:rotate(-24deg)}'
+ +'58%{transform:rotate(26deg)}100%{transform:rotate(6deg)}}'
 +'@keyframes afcbThrowArm{0%{transform:rotate(0)}34%{transform:rotate(64deg)}'
  +'58%{transform:rotate(-92deg)}100%{transform:rotate(-16deg)}}'
 +'@keyframes afcbThrowFore{0%{transform:rotate(0)}34%{transform:rotate(48deg)}'
@@ -2672,28 +2824,40 @@ var CINE_CSS = ''
 
 /* grabbing the truck: arm out, knees loaded, then it comes up with him */
 +'.afcb-hero.grabbing{transform:translate(var(--hfront),0);opacity:1}'
-+'.afcb-hero.grabbing .afcb-wave{animation:afcbGrabArm 1.3s cubic-bezier(.3,.8,.3,1) forwards}'
-+'.afcb-hero.grabbing .afcb-foreB{animation:afcbGrabFore 1.3s cubic-bezier(.3,.8,.3,1) forwards}'
-+'.afcb-hero.grabbing .afcb-legA,.afcb-hero.grabbing .afcb-legB{animation:afcbLoad 1.3s ease-out forwards}'
-+'.afcb-hero.grabbing .afcb-torso{animation:afcbGrabLean 1.3s ease-out forwards}'
-+'.afcb-hero.grabbing .afcb-bob{animation:afcbPush 1.3s ease-out forwards}'
-+'@keyframes afcbGrabArm{0%{transform:rotate(0)}30%{transform:rotate(38deg)}'
- +'60%{transform:rotate(6deg)}100%{transform:rotate(-58deg)}}'
-+'@keyframes afcbGrabFore{0%{transform:rotate(0)}30%{transform:rotate(22deg)}100%{transform:rotate(-26deg)}}'
++'.afcb-hero.grabbing .afcb-wave{animation:afcbGrabArm 2.8s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.grabbing .afcb-foreB{animation:afcbGrabFore 2.8s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.grabbing .afcb-armA{animation:afcbGrabArmA 2.8s cubic-bezier(.3,.8,.3,1) forwards}'
++'.afcb-hero.grabbing .afcb-foreA{animation:afcbGrabForeA 2.8s cubic-bezier(.3,.8,.3,1) forwards}'
++'@keyframes afcbGrabArmA{0%{transform:rotate(0)}22%{transform:rotate(-40deg)}'
+ +'48%{transform:rotate(20deg)}58%{transform:rotate(26deg)}'
+ +'84%,100%{transform:rotate(62deg)}}'
++'@keyframes afcbGrabForeA{0%{transform:rotate(0)}30%{transform:rotate(-20deg)}100%{transform:rotate(24deg)}}'
++'.afcb-hero.grabbing .afcb-legA,.afcb-hero.grabbing .afcb-legB{animation:afcbLoad 2.8s ease-out forwards}'
++'.afcb-hero.grabbing .afcb-torso{animation:afcbGrabLean 2.8s ease-out forwards}'
++'.afcb-hero.grabbing .afcb-bob{animation:afcbPush 2.8s ease-out forwards}'
++'@keyframes afcbGrabArm{0%{transform:rotate(0)}22%{transform:rotate(44deg)}'
+ +'48%{transform:rotate(-28deg)}58%{transform:rotate(-34deg)}'
+ +'84%,100%{transform:rotate(-118deg)}}'
++'@keyframes afcbGrabFore{0%{transform:rotate(0)}30%{transform:rotate(22deg)}100%{transform:rotate(-44deg)}}'
 +'@keyframes afcbGrabLean{0%{transform:rotate(0)}35%{transform:rotate(6deg)}100%{transform:rotate(-3deg)}}'
 +'@keyframes afcbLoad{0%{transform:rotate(0)}40%{transform:rotate(9deg)}100%{transform:rotate(0)}}'
 +'@keyframes afcbPush{0%{transform:translateY(0)}40%{transform:translateY(10px)}100%{transform:translateY(-4px)}}'
 
 /* the hurl: reach way back, then everything forward and up at once */
 +'.afcb-hero.hurling{transform:translate(var(--hfront),0);opacity:1}'
-+'.afcb-hero.hurling .afcb-wave{animation:afcbHurlArm 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'.afcb-hero.hurling .afcb-foreB{animation:afcbHurlFore 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'.afcb-hero.hurling .afcb-torso{animation:afcbHurlLean 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'.afcb-hero.hurling .afcb-armA{animation:afcbHurlCounter 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'.afcb-hero.hurling .afcb-legA{animation:afcbHurlStep 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'.afcb-hero.hurling .afcb-bob{animation:afcbHurlRise 1.8s cubic-bezier(.25,.08,.35,1) forwards}'
-+'@keyframes afcbHurlArm{0%{transform:rotate(-58deg)}26%{transform:rotate(52deg)}'
- +'46%{transform:rotate(-96deg)}62%{transform:rotate(-128deg)}100%{transform:rotate(-104deg)}}'
++'.afcb-hero.hurling .afcb-wave{animation:afcbHurlArm 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-foreB{animation:afcbHurlFore 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-torso{animation:afcbHurlLean 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-armA{animation:afcbHurlArmA 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-foreA{animation:afcbHurlForeA 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'@keyframes afcbHurlArmA{0%{transform:rotate(62deg)}22%{transform:rotate(96deg)}'
+ +'46%{transform:rotate(-34deg)}100%{transform:rotate(-12deg)}}'
++'@keyframes afcbHurlForeA{0%{transform:rotate(24deg)}22%{transform:rotate(40deg)}'
+ +'46%{transform:rotate(-16deg)}100%{transform:rotate(0)}}'
++'.afcb-hero.hurling .afcb-legA{animation:afcbHurlStep 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'.afcb-hero.hurling .afcb-bob{animation:afcbHurlRise 2.8s cubic-bezier(.25,.08,.35,1) forwards}'
++'@keyframes afcbHurlArm{0%{transform:rotate(-118deg)}22%{transform:rotate(-142deg)}'
+ +'46%{transform:rotate(-40deg)}70%{transform:rotate(-14deg)}100%{transform:rotate(-8deg)}}'
 +'@keyframes afcbHurlFore{0%{transform:rotate(-26deg)}26%{transform:rotate(40deg)}'
  +'46%{transform:rotate(-44deg)}100%{transform:rotate(-30deg)}}'
 +'@keyframes afcbHurlLean{0%{transform:rotate(-3deg)}26%{transform:rotate(11deg)}'
@@ -2749,7 +2913,7 @@ var CINE_CSS = ''
 +'.afcb-skip:hover{background:#0D1117}'
 +'@media(max-width:640px){.afcb-truck{width:92vw;min-width:0}.afcb-hero{width:27vw;min-width:104px}'
  +'.afcb-portal{width:44vw}.afcb-puddle{width:44vw}'
- +'.afcb-say{width:82vw;bottom:47vh}.afcb-say b{padding:18px 20px 20px;font-size:15px;line-height:1.58}'
+ +'.afcb-say{width:82vw;bottom:44vh}.afcb-say b{padding:18px 20px 20px;font-size:15px;line-height:1.58}'
  +'.afcb-say .big{font-size:17px}}'
 +'@media(prefers-reduced-motion:reduce){.afcb-stage{display:none!important}}';
 
@@ -2779,7 +2943,9 @@ function Cine(){
   + '<div class="afcb-sky"></div>'
   + '<div class="afcb-puddle p1">' + mud() + '</div>'
   + '<div class="afcb-puddle p2">' + mud() + '</div>'
+  + '<div class="afcb-beam">' + BEAM + '</div>'
   + '<div class="afcb-truck">' + TRUCK + '</div>'
+  + '<div class="afcb-ufo">' + UFO + '</div>'
   + '<div class="afcb-portal">' + PORTAL + '</div>'
   + '<div class="afcb-disc">' + DISC + '</div>'
   + '<div class="afcb-hero">' + man() + '</div>'
@@ -2793,6 +2959,8 @@ function Cine(){
       bolts   = stage.querySelector('.afcb-bolts'),
       hero    = stage.querySelector('.afcb-hero'),
       truck   = stage.querySelector('.afcb-truck'),
+      ufo     = stage.querySelector('.afcb-ufo'),
+      beam    = stage.querySelector('.afcb-beam'),
       portal  = stage.querySelector('.afcb-portal'),
       disc    = stage.querySelector('.afcb-disc'),
       say     = stage.querySelector('.afcb-say'),
@@ -2802,6 +2970,27 @@ function Cine(){
       timers  = [], ending = null;
 
   function mob(){ return (W.innerWidth || 1024) <= 640; }
+
+  /* Layout boxes ignore transforms, so offsetLeft/offsetTop give each
+     element's untransformed centre. The difference between that and the
+     portal's centre is exactly how far a throw has to travel — in real
+     pixels, on whatever screen this happens to be. */
+  function aim(){
+    try {
+      var px = portal.offsetLeft + portal.offsetWidth / 2,
+          py = portal.offsetTop + portal.offsetHeight / 2,
+          set = [[truck, '--tpx', '--tpy'], [hero, '--hpx', '--hpy'], [disc, '--px', '--py']],
+          i, el, cx, cy;
+      for (i = 0; i < set.length; i++){
+        el = set[i][0];
+        if (!el.offsetWidth) continue;
+        cx = el.offsetLeft + el.offsetWidth / 2;
+        cy = el.offsetTop + el.offsetHeight / 2;
+        stage.style.setProperty(set[i][1], Math.round(px - cx) + 'px');
+        stage.style.setProperty(set[i][2], Math.round(py - cy) + 'px');
+      }
+    } catch(e){}
+  }
   function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
   function clearAll(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers = []; }
   function drop(node, ms){ at(ms, function(){ if (node.parentNode) node.parentNode.removeChild(node); }); }
@@ -2964,11 +3153,14 @@ function Cine(){
     hero.style.transform = ''; hero.style.opacity = '';
     truck.className = 'afcb-truck';
     truck.style.transform = ''; truck.style.opacity = '';
+    ufo.className = 'afcb-ufo'; beam.className = 'afcb-beam';
     portal.className = 'afcb-portal';
     portal.style.left = ''; portal.style.top = '';
     disc.className = 'afcb-disc';
     say.className = 'afcb-say';
     pud1.className = 'afcb-puddle p1'; pud2.className = 'afcb-puddle p2';
+    ['--tpx','--tpy','--hpx','--hpy','--px','--py'].forEach(function(v){
+      stage.style.removeProperty(v); });
     sky.innerHTML = ''; bolts.innerHTML = ''; rain.innerHTML = '';
     var cl = weather.querySelectorAll('.afcb-cloud'), i;
     for (i=0;i<cl.length;i++) weather.removeChild(cl[i]);
@@ -3019,59 +3211,70 @@ function Cine(){
                    [46,58],[20,70],[82,52],[58,66]];
       shots.forEach(function(p, i){ at(300 + i * 540, function(){ firework(p[0], p[1]); }); });
 
-      /* in, spin, park */
-      at(400,  function(){ truck.classList.add('drive'); });
-      at(900,  function(){ puff(m ? 6 : 8, -150); dust(m ? 10 : 12, -160); });
-      at(1500, function(){ dust(m ? 26 : 30, -180); grit(m ? 26 : 30, 10, 220, false); });
-      /* the donuts — mud everywhere */
-      at(2200, function(){ splash(w1 + 2, 22); grit(w1 + 2, 22, 340, true); dust(w1 + 4, 180); });
-      at(2700, function(){ splash(w2 - 2, 20); grit(w2 - 2, 20, 320, true); });
-      at(3200, function(){ splash(w1 + 4, 22); grit(w1 + 4, 22, 350, true); dust(w1 + 2, -190); });
-      at(3700, function(){ splash(w2, 18); grit(w2, 18, 300, true); });
-      at(4200, function(){ splash(w1 + 1, 20); grit(w1 + 1, 20, 330, true); dust(w2 - 4, 160); });
-      /* sliding out of the second one */
-      at(4800, function(){ dust(m ? 30 : 34, -170); grit(m ? 30 : 34, 16, 280, false); });
-      at(5300, function(){ dust(m ? 26 : 30, 120); puff(m ? 10 : 12, -140); });
+      /* the delivery: saucer drifts in, beam opens, truck comes down it */
+      at(300,  function(){ ufo.classList.add('fly'); });
+      at(2300, function(){ ufo.className = 'afcb-ufo hold'; beam.classList.add('on'); });
+      at(2900, function(){ truck.className = 'afcb-truck land'; });
+      at(4300, function(){ dust(m ? 20 : 30, -90); });
+      at(4900, function(){ dust(m ? 34 : 44, 90); });
+      /* touchdown */
+      at(5500, function(){ splash(w1 + 2, 24); grit(w1 + 2, 24, 360, true);
+                           splash(w2 - 2, 22); grit(w2 - 2, 22, 340, true);
+                           dust(m ? 22 : 28, -150); dust(m ? 40 : 48, 150); });
+      at(5700, function(){ beam.className = 'afcb-beam off'; });
+      at(6000, function(){ ufo.className = 'afcb-ufo away'; });
+      /* then he lights the rear tyre up — nose high, rocking, mud off the back */
+      at(5900, function(){ truck.className = 'afcb-truck burn'; });
+      at(6200, function(){ splash(w1 + 3, 22); grit(w1 + 3, 26, 380, true); dust(w1 + 6, -170); });
+      at(6600, function(){ grit(w1 + 2, 24, 360, true); puff(m ? 30 : 36, 130); });
+      at(7000, function(){ splash(w2 - 4, 22); grit(w2 - 4, 24, 370, true); dust(w2 - 6, 150); });
+      at(7400, function(){ grit(w1 + 4, 24, 360, true); dust(w1 + 4, -160); });
+      at(7800, function(){ splash(w1 + 1, 20); grit(w1 + 1, 22, 340, true); });
+      at(8200, function(){ grit(w2 - 3, 20, 320, true); dust(m ? 30 : 36, 140); });
+      at(8600, function(){ grit(m ? 28 : 34, 16, 280, false); puff(m ? 24 : 30, -120); });
+      at(9000, function(){ dust(m ? 26 : 32, 110); });
 
       /* out of the cab */
-      at(6200, function(){ truck.className = 'afcb-truck parked open'; });
-      at(6700, function(){ hero.style.opacity = '1'; hero.className = 'afcb-hero stepout'; });
+      at(9500, function(){ truck.className = 'afcb-truck parked open'; });
+      at(10100, function(){ hero.style.opacity = '1'; hero.className = 'afcb-hero stepout'; });
 
       var t;                                   /* when he is settled and talking */
       if (flips){
-        at(8400, function(){ hero.className = 'afcb-hero flip'; });
-        at(9900, function(){ hero.className = 'afcb-hero postflip waving'; });
-        at(10020, function(){ hero.classList.add('moved'); });
-        t = 10600;
+        at(11800, function(){ hero.className = 'afcb-hero flip'; });
+        at(13300, function(){ hero.className = 'afcb-hero postflip waving'; });
+        at(13420, function(){ hero.classList.add('moved'); });
+        t = 14000;
       } else {
-        at(8400, function(){ hero.className = 'afcb-hero hello waving'; });
-        at(8460, function(){ hero.classList.add('moved'); });
-        t = 9400;
+        at(11800, function(){ hero.className = 'afcb-hero hello waving'; });
+        at(11860, function(){ hero.classList.add('moved'); });
+        t = 12800;
       }
-      at(9100, function(){ truck.className = 'afcb-truck parked shut'; });
+      at(12500, function(){ truck.className = 'afcb-truck parked shut'; });
 
       /* the introduction */
       at(t,        function(){ say.classList.add('in'); });
       at(t + 8800, function(){ if (say.className.indexOf('out') < 0) say.className = 'afcb-say out'; });
 
       /* portal first, then the truck goes through it */
+      at(t + 9200, function(){ aim(); });
       at(t + 9300, function(){ hero.className = 'afcb-hero throwing'; });
-      at(t + 9720, function(){ disc.classList.add('fly'); });
+      at(t + 9980, function(){ disc.classList.add('fly'); });
       at(t + 10800, function(){ disc.className = 'afcb-disc gone'; portal.classList.add('open'); });
       at(t + 11400, function(){ hero.className = 'afcb-hero grabbing';
                                truck.className = 'afcb-truck grab'; });
-      at(t + 12900, function(){ hero.className = 'afcb-hero hurling';
+      at(t + 14200, function(){ aim(); });
+      at(t + 14300, function(){ hero.className = 'afcb-hero hurling';
                                truck.className = 'afcb-truck hurl'; });
-      at(t + 13700, function(){ streaks(m ? 30 : 45, 42, 5); });
-      at(t + 14300, function(){ streaks(m ? 24 : 32, 62, 4); });
-      at(t + 15800, function(){ portal.className = 'afcb-portal shut'; stage.classList.add('clear'); });
+      at(t + 15400, function(){ streaks(m ? 30 : 45, 42, 5); });
+      at(t + 16100, function(){ streaks(m ? 24 : 32, 62, 4); });
+      at(t + 17300, function(){ portal.className = 'afcb-portal shut'; stage.classList.add('clear'); });
 
       /* and off to the corner */
-      at(t + 16400, function(){ hero.className = 'afcb-hero walkout walking'; });
-      at(t + (m ? 18400 : 18700), function(){ hero.className = 'afcb-hero walkout'; });
-      at(t + (m ? 18600 : 18900), function(){ hero.className = 'afcb-hero tuck'; });
-      at(t + (m ? 19500 : 19800), function(){ ending = null; finish(done); });
-      return t + (m ? 18600 : 18900);
+      at(t + 17900, function(){ hero.className = 'afcb-hero walkout walking'; });
+      at(t + (m ? 19900 : 20200), function(){ hero.className = 'afcb-hero walkout'; });
+      at(t + (m ? 21000 : 21300), function(){ hero.className = 'afcb-hero tuck'; });
+      at(t + (m ? 21000 : 21300), function(){ ending = null; finish(done); });
+      return t + (m ? 21000 : 21300);
     },
 
     /* the exit: a wave, a portal, and a slow double flip into it */
@@ -3085,9 +3288,11 @@ function Cine(){
       hero.classList.add('pop');
 
       at(900,  function(){ hero.className = 'afcb-hero byebye'; });
+      at(3500, function(){ aim(); });
       at(3600, function(){ hero.className = 'afcb-hero throwing'; });
       at(4050, function(){ disc.classList.add('fly'); });
       at(5150, function(){ disc.className = 'afcb-disc gone'; portal.classList.add('open'); });
+      at(6200, function(){ aim(); });
       at(6300, function(){ hero.className = 'afcb-hero crouch'; });
       at(7150, function(){ hero.className = 'afcb-hero leap'; });
       at(11600, function(){ portal.className = 'afcb-portal shut'; });
@@ -3124,7 +3329,7 @@ var CSS = ''
  +'transition:opacity .25s,transform .25s}'
 
 +'.afcb-r a{color:#5E7A12;font-weight:600;word-break:break-word}'
-+'.afcb-tip{position:absolute;bottom:112px;right:0;width:max-content;max-width:min(258px,62vw);'
++'.afcb-tip{position:absolute;bottom:186px;right:0;width:max-content;max-width:min(258px,62vw);'
  +'background:#fff;color:#232A33;'
  +'border:2px solid #0D1117;border-radius:14px 14px 3px 14px;padding:12px 14px;font-size:14px;line-height:1.45;'
  +'box-shadow:0 14px 40px rgba(13,17,23,.22);cursor:pointer;display:none}'
@@ -3182,7 +3387,7 @@ var CSS = ''
  +'.afcb-btn:after{width:62px;margin-left:-31px}'
  +'.afcb-p{height:min(580px,calc(100vh - 96px));width:calc(100vw - 24px)}'
  +'.afcb-hello svg{width:140px}'
- +'.afcb-tip{bottom:96px;right:0;max-width:min(240px,66vw);font-size:13px;padding:10px 12px}}'
+ +'.afcb-tip{bottom:150px;right:0;max-width:min(240px,66vw);font-size:13px;padding:10px 12px}}'
 
 /* idle life: he breathes, the pupils wander, the blade wiggles, the hat
    settles. Slow and continuous — nothing here blinks or flashes. */
@@ -3480,7 +3685,8 @@ function build(){
     }, ms);
   }
 
-  /* arrival: lightning, fireworks, truck, donuts, mud, walk to the corner */
+  /* arrival: lightning, fireworks, a saucer that sets the truck down, mud,
+     then he climbs out and walks to the corner */
   if (cine && !(CFG.arriveOnce && flag('afcRivitArrived') === '1') && flag('afcRivitClosed') !== '1'){
     flag('afcRivitArrived', '1');
     animating = true;
