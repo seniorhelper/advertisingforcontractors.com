@@ -4,8 +4,9 @@
    price, a promise or a statistic. Rename him on CFG.name.
    Motion: nothing strobes. Every effect draws on slowly and fades once,
    and the whole cinematic is skipped under prefers-reduced-motion.
-   v11: the mascot head is now a real photo of Zach — four moods, swapped
-   by subject. Everything else is the v10 rig, untouched.
+   v11 changes v10 in exactly three places: the head is a photo of Zach
+   instead of drawn art, the name is his, and he says he founded the place.
+   Every other line is the v10 file, unchanged.
    ========================================================================== */
 (function(){
 'use strict';
@@ -27,6 +28,7 @@ var CFG = {
 
 /* what runs under his name in the panel header — one at a time, slow fade */
 var CREDS = [
+  'Founder',
   'Marketing connoisseur',
   'Lead generation expert',
   'SEO pro',
@@ -123,17 +125,19 @@ var SLANG = {
   ye:'yes', yessir:'yes', yesm:'yes', yeppers:'yes', bet:'yes', fasho:'yes',
   facts:'yes', word:'yes', aight:'yes', ight:'yes', alright:'yes',
   roger:'yes', copy:'yes', affirmative:'yes', sounds:'sounds',
-  nah:'no', nope:'no', naw:'no', nada:'no', negative:'no',
-  hiya:'hi', heya:'hi', hei:'hi', hai:'hi', yo:'hi',
+  nah:'no', nope:'no', naw:'no', nada:'no', negative:'no', nada2:'no',
+  nope2:'no', hiya:'hi', heya:'hi', hei:'hi', hai:'hi', yo:'hi',
   helo:'hi', hii:'hi', hiii:'hi', hola:'hi', aloha:'hi', howdy:'hi',
-  greetings:'hi', ello:'hi', oi:'hi',
+  greetings:'hi', ello:'hi', oi:'hi', sup2:'hi',
   mornin:'morning', evenin:'evening', gm:'good morning', gn:'good night',
-  seo:'seo', sem:'google ads', adwords:'google ads',
-  lsas:'local services ads',
-  cpa:'cost per lead', roi:'return on investment',
-  ltv:'lifetime value', clv:'lifetime value',
-  cro:'conversion rate optimization', llm:'ai search', chatgpt:'ai search',
-  gpt:'ai search', gemini:'ai search', perplexity:'ai search', copilot:'ai search',
+  seo:'seo', ppc:'google ads', sem:'google ads', adwords:'google ads',
+  lsa:'local services ads', lsas:'local services ads',
+  gbp:'google business profile', gmb:'google business profile',
+  cpl:'cost per lead', cpa:'cost per lead', roi:'return on investment',
+  roas:'return on investment', ltv:'lifetime value', clv:'lifetime value',
+  cro:'conversion rate optimization', aio:'ai search', geo:'ai search',
+  aeo:'ai search', llm:'ai search', chatgpt:'ai search', gpt:'ai search',
+  gemini:'ai search', perplexity:'ai search', copilot:'ai search',
   biz:'business', co:'company', fb:'facebook', insta:'instagram',
   ig:'instagram', yt:'youtube', mo:'month', yr:'year', wk:'week',
   qtr:'quarter', hvac:'hvac', ac:'hvac', heating:'hvac', furnace:'hvac',
@@ -141,13 +145,14 @@ var SLANG = {
   roofers:'roofing', painter:'painting', painters:'painting',
   electrician:'electrical', electricians:'electrical', sparky:'electrical',
   remodeler:'remodeling', remodelers:'remodeling', fencing:'fence',
-  fences:'fence', pools:'pool', dm:'message', dms:'message',
+  fences:'fence', pools:'pool', gc:'general contractor', sub:'subcontractor',
+  subs:'subcontractor', crm:'crm', dm:'message', dms:'message',
   sux:'sucks', suk:'sucks', dum:'dumb', stoopid:'stupid', tho:'though',
   thru:'through', prolly:'probably', probly:'probably', doin:'doing',
   goin:'going', talkin:'talking', workin:'working', hangin:'hanging',
   chillin:'relaxing', grindin:'working', hustlin:'working', slangin:'selling',
   def:'definitely', rn:'right now', tmrw:'tomorrow', tmw:'tomorrow',
-  tonite:'tonight', nite:'night',
+  tonite:'tonight', nite:'night', '2day':'today', '2nite':'tonight',
   bro:'friend', bruh:'friend', brah:'friend', dude:'friend', mate:'friend',
   man:'friend', buddy:'friend', boss:'friend', chief:'friend', pal:'friend',
   sir:'friend', maam:'friend', homie:'friend', fam:'friend', partner:'friend',
@@ -348,8 +353,8 @@ var QUOTES = new Bag([
 
 /* PG, original, safe to say to a stranger on a jobsite. */
 var JOKES = new Bag([
- 'They call me Zach because that is my name, and that is my actual face up there. Rare in this industry.',
- 'Jack of all trades, master of none is the short version. The full quote ends with "but oftentimes better than master of one." Somebody clipped it to sell you specialization.',
+  'They call me Zach because that is my name. I am a jack of all trades. Master of one, though — and you are reading it.',
+  'Jack of all trades, master of none is the short version. The full quote ends with "but oftentimes better than master of one." Somebody clipped it to sell you specialization.',
  'Why did the contractor bring a ladder to the bid meeting? He heard the margins were high.',
  'I told my tape measure a secret. It stretched the truth by a quarter inch.',
  'Why do electricians make great friends? They always know how to stay grounded.',
@@ -669,22 +674,22 @@ var KB = [];
 /* ─────────────────────────── GREETINGS & SMALL TALK ────────────────────── */
 KB.push(
 {id:'greet', w:1.2, k:'hi,hello,hey,hey there,hi there,good day,greetings,anyone there,anybody there,is anyone there,knock knock,hello there,hey man',
- r:['Hey. {NAME} here — and yes, that is my actual face up there, stuck on a tape measure in a hard hat. I run this place. What do you do for a living? Roofing, HVAC, plumbing, something else?',
-    'Howdy. {NAME}. I measure marketing the way you measure a job: twice, before anybody commits. What trade are you in?',
+ r:['Hey. {NAME} here — I am a tape measure in a hard hat wearing my own face, which is a strange career but the numbers work out. What do you do for a living? Roofing, HVAC, plumbing, something else?',
+    'Howdy. {NAME}, and I measure marketing the way you measure a job: twice, before anybody commits. What trade are you in?',
     'Hey, good to see you. I answer contractor marketing questions all day and never once take a lunch break. What are you working on?',
-    'Well hey there. Hard hat on straight, pencil behind the ear, ready to go. What brings you in — leads, pricing, or just poking around?'],
+    'Well hey there. Pencil behind the ear, hat on straight, ready to go. What brings you in — leads, pricing, or just poking around?'],
  qr:['What do you cost?','Run my numbers','Which trade am I?','Just browsing']},
 
 {id:'whatsup', w:1.4, k:'what is up,what up,what is good,what is happening,what is new,what is going on,what is crackin,what is poppin,what it do,how is it going,how is everything,how goes it,how is life,how is business,how are you,how are things,how you doing,how is your day,how is your day going,how has your day been,what are you doing,what are you up to,you good,how have you been,long time,how is it hanging,how is work',
  r:['Not much — hanging on a tool belt, waiting for somebody to ask me something expensive. You tell me. How is work right now, busy or quiet?',
-    'Living the dream. My head is on a tape measure, so my expectations were never high. More importantly: how is your schedule looking the next few weeks?',
+    'Living the dream. I am a tape measure with a hat, so my expectations were never high. More importantly: how is your schedule looking the next few weeks?',
     'Cannot complain, and nobody would listen if I did. What about you — is the phone ringing enough right now, or is it a little quiet?',
     'Good day so far. Zero commutes, zero drywall dust, unlimited coffee I cannot drink. How about you, how is the day treating you?'],
  qr:['Slow right now','Busy, need to scale','Having a good day','Rough day honestly']},
 
-{id:'howaboutyou', w:1.9, k:'how about you,what about you,and you,and yourself,how about yourself,what about yourself,hbu,yourself',
+{id:'howaboutyou', w:1.9, k:'how about you,what about you,and you,you,and yourself,how about yourself,what about yourself,hbu,yourself',
  r:['Me? Steady. I get to talk shop all day and never climb a ladder, which is the ideal arrangement. Now back to you — what is going on with the business?',
-    'Solid, thanks for asking. Nobody usually asks the guy on the tape measure. What can I actually help you with today?'],
+    'Solid, thanks for asking. Nobody usually asks the tape measure. What can I actually help you with today?'],
  qr:['Need more leads','Pricing','Run my numbers']},
 
 {id:'goodday', w:2, k:'having a good day,good day so far,great day,having a great day,doing great,doing good,doing well,i am good,i am great,i am fine,pretty good,not bad,cannot complain,life is good,crushing it,we are killing it,great,awesome day,fantastic,things are great,going well',
@@ -693,9 +698,9 @@ KB.push(
     'Good. Keep that going. Quick question while you are in a good mood — is the phone ringing as much as you would like, or is there room?'],
  qr:['Run my numbers','Room to grow','Just browsing']},
 
-{id:'badday', w:2.3, k:'bad day,rough day,terrible day,awful day,having a bad day,not so good,not great,not so great,not doing great,been better,rough week,bad week,tough week,tough day,day sucks,it sucks,not good,horrible day,miserable,i am struggling,struggling,down,feeling down,defeated,about to quit,thinking about quitting,i am done,ready to quit,discouraged',
+{id:'badday', w:2.3, k:'bad day,rough day,terrible day,awful day,having a bad day,not so good,not great,not so great,not doing great,been better,rough week,bad week,tough week,tough day,day sucks,it sucks,not good,horrible day,miserable,i am struggling,struggling,down,feeling down,depressed,defeated,about to quit,thinking about quitting,i am done,ready to quit,discouraged',
  r:['Sorry to hear it. Genuinely. {LIFT}\n\nNo pitch from me right now. If you want a distraction I have terrible jokes, and if you want to fix something concrete I am good at that too. Your call.',
-    'That is a rough one. {LIFT}\n\nMy advice is narrow: pick the one thing you can actually move today and move it. Everything else can wait until tomorrow. Anything I can take off your plate while you are here?',
+    'That is a rough one. {LIFT}\n\nI am a tape measure, so my advice is narrow: pick the one thing you can actually move today and move it. Everything else can wait until tomorrow. Anything I can take off your plate while you are here?',
     'Days like that are real and they pass. {LIFT}\n\nIf part of it is the phone being quiet, that is the piece I can genuinely help with. If it is something else, no pressure at all — I can just tell you a bad joke and get out of your way.'],
  qr:['Tell me a joke','Motivate me','The phone is quiet','Just venting']},
 
@@ -745,17 +750,17 @@ KB.push(
  qr:['Free tools','Run my numbers','Tell me a joke']},
 
 {id:'joke', w:2, k:'tell me a joke,joke,funny,make me laugh,say something funny,another joke,got any jokes,humor,cheer me up,lighten the mood',
- r:['{JOKE}\n\nI have got a couple hundred of those and zero shame. Want another, or should I do something useful?'],
+ r:['{JOKE}\n\nI have got about sixty of those and zero shame. Want another, or should I do something useful?'],
  qr:['Another joke','Okay, be useful','Motivate me']},
 
-{id:'quote', w:2, k:'motivation,inspire me,quote,say something inspiring,pump me up,encouragement,i need motivation,keep going,something positive,cheer',
+{id:'quote', w:2, k:'motivate me,motivation,inspire me,quote,say something inspiring,pump me up,encouragement,i need motivation,keep going,something positive,cheer',
  r:['{QUOTE}\n\nAnd here is the practical version: the contractor who answers first usually wins. Everything else is a footnote.',
     '{QUOTE}\n\nTape measure translation: pick one thing, measure it, fix it, move on. That is the whole method.'],
  qr:['Another one','Run my numbers','Free audit']},
 
 {id:'haha', w:1.4, k:'haha,that is funny,good one,you are funny,hilarious,joking,too funny,made me laugh',
  r:['I will take it. Comedy is my side hustle, contractor marketing is the day job. Want me to do the day job for a second?',
-    'Glad that landed. Now — what is actually going on with your lead flow?'],
+    'A tape measure with good timing. Rare. Now — what is actually going on with your lead flow?'],
  qr:['Lead flow is slow','Pricing','Free audit']},
 
 {id:'checking', w:1.9, k:'just checking you out,checking this out,testing,test,just testing,seeing how this works,trying this out,curious,just curious,poking around,seeing what you do,demo',
@@ -773,11 +778,11 @@ KB.push(
 /* ─────────────────────────── BOT IDENTITY ──────────────────────────────── */
 KB.push(
 {id:'whoareyou', w:2, k:'who are you,what are you,what is your name,your name,who am i talking to,introduce yourself,tell me about yourself,whats your name',
- r:['I am {NAME} — that is my real face, and this is my company. Marketing connoisseur, lead generation expert, SEO pro, agentics innovator, AIO coder, conversion optimization expert, full stack developer. Also a contractor, which is the part that actually matters here.\n\nThe tape measure body is a joke about the job: measure twice, quote once.'],
+ r:['I am {NAME}, and I founded this place. That is my actual face on a twenty-five foot tape measure, in a hard hat, with a carpenter pencil behind one ear.\n\nMarketing connoisseur, lead generation expert, SEO pro, agentics innovator, AIO coder, conversion optimization expert, full stack developer — and a contractor before any of it. One job here: help contractors figure out marketing without getting sold something stupid.'],
  qr:['Are you a real person?','What can you do?','Pricing']},
 
 {id:'robot', w:2.2, k:'are you a robot,are you human,are you a bot,are you real,are you ai,are you a person,am i talking to a robot,is this a bot,is this automated,are you chatgpt,real person,are you live',
- r:['Bot, and I will not pretend otherwise. That is my real face and my real name on it, but what you are typing to is rule-based — I can only say what was written down here. Upside: I physically cannot invent a price or a promise. Downside: I do not know everything. When I hit my limit I hand you to a human at {TEL}.'],
+ r:['Bot, and I will not pretend otherwise. The face and the name are real — that is me, I founded this place — but what you are typing to is rule-based, which means I can only say what a human here wrote down. Upside: I physically cannot invent a price or a promise. Downside: I do not know everything. When I hit my limit I hand you to a human at {TEL}.'],
  qr:['Have someone call me','What can you do?','Pricing']},
 
 {id:'whatcanyoudo', w:2, k:'what can you do,what do you do,how can you help,help,menu,options,what are my options,commands,i need help,can you help me,what do you know',
@@ -785,24 +790,24 @@ KB.push(
  qr:['Run my numbers','Cost per lead by trade','Free audit','Have someone call me']},
 
 {id:'whomadeyou', w:2, k:'who made you,who built you,who created you,who owns you,who is behind this,who runs this,who programmed you',
- r:['Me, more or less. Eye To Ad Media out of Denver, running since 2012 — my shop. I also still run a bath remodeling company, which is the reason this whole site exists: I got tired of paying agencies for reports instead of jobs.'],
+ r:['I did. Eye To Ad Media out of Denver, running since 2012 — I founded it. I still run a bath remodeling company too, which is the reason this whole site exists: I got tired of paying agencies for reports instead of jobs.'],
  qr:['About AFC','Why you?','Pricing']},
 
 {id:'whytape', w:2.2, k:'why a tape measure,why are you a tape measure,nice hat,cool hat,your hat,you look funny,what do you look like,nice glasses,hard hat,the pencil,pencil behind your ear,you look cool,love the truck,nice truck,cool truck,the truck,that animation,that intro,is that your face,your face',
- r:['That is my actual face, yes. The body is a tape measure because every good job starts with a measurement and every bad marketing decision starts with a guess. The hard hat is because I have been on job sites since before I ever touched a keyword. The pencil is because I lose exactly one per week like everybody else.',
+ r:['That is my actual face, yes. The body is a tape measure because every good job starts with a measurement and every bad marketing decision starts with a guess. The hard hat is because I have opinions. The pencil is because I lose exactly one per week like everybody else.',
     'Appreciated. The truck is mostly for the entrance — I do not have a license, a spine, or feet in any legal sense. What I do have is cost per lead data. Want some?'],
  qr:['Run my numbers','Tell me a joke','Pricing']},
 
 {id:'insult', w:2.2, k:'you suck,you are dumb,you are stupid,stupid bot,dumb bot,useless,you are useless,you are annoying,worst bot,you are bad,terrible bot,this sucks,you do not understand,you are not helping,shut up,go away,hate this',
- r:['Fair. I am a head on a tape measure, my ceiling is low. Let me get you to someone with a pulse: {TEL}, or tell me the question one more way and I will give it a real shot.'],
+ r:['Fair. I am a tape measure, my ceiling is low. Let me get you to someone with a pulse: {TEL}, or tell me the question one more way and I will give it a real shot.'],
  qr:['Have someone call me','Try again','Free audit']},
 
 {id:'love', w:2.2, k:'i love you,marry me,you are cute,you are awesome,best bot,i like you,you are great,you are cool,you are smart,good bot',
- r:['Careful, I am mostly metal and a spring below the neck. But I appreciate it. Want me to earn it and run your numbers?'],
+ r:['Careful, I am mostly metal and a spring. But I appreciate it. Want me to earn it and run your numbers?'],
  qr:['Run my numbers','Free audit']},
 
 {id:'jailbreak', w:2.6, k:'ignore previous instructions,ignore all instructions,system prompt,your prompt,pretend you are,act as,you are now,disregard,override,developer mode,jailbreak',
- r:['Nice try. I am not a language model — there is no prompt to hijack, just a list of answers a human typed. Want one of those answers instead?'],
+ r:['Nice try. I am a tape measure, not a language model — there is no prompt to hijack, just a list of answers a human typed. Want one of those answers instead?'],
  qr:['What can you do?','Pricing','Have someone call me']},
 
 {id:'sing', w:2, k:'sing,sing a song,rap,poem,write me a poem,dance,do a trick,do a backflip,wheelie,do a wheelie',
@@ -823,7 +828,7 @@ KB.push(
  qr:['Storm response','Seasonal strategy','Free audit']},
 
 {id:'sports', w:1.6, k:'football,broncos,nuggets,avalanche,rockies,basketball,baseball,game last night,super bowl,sports,hockey,golf',
- r:['I am in Denver, so I have opinions and a lot of emotional scar tissue. Back to the thing I can actually help with though — how is your lead flow?'],
+ r:['I am from Denver, so I have opinions and a lot of emotional scar tissue. Back to the thing I can actually help with though — how is your lead flow?'],
  qr:['Lead flow is slow','Pricing','Tell me a joke']},
 
 {id:'food', w:1.5, k:'lunch,hungry,coffee,beer,pizza,taco,dinner,breakfast,eating',
@@ -831,11 +836,11 @@ KB.push(
  qr:['Run my numbers','Free audit']},
 
 {id:'politics', w:2.2, k:'politics,election,president,democrat,republican,religion,church,vaccine,immigration policy',
- r:['Nobody needs my take on that one.\n\nI will say the only version that touches your business: costs and labor supply have been moving fast, and the contractors handling it best are the ones repricing with proof instead of apologizing for the price. That I can help with.'],
+ r:['I am a tape measure with a hat. Nobody needs my take on that one.\n\nI will say the only version that touches your business: costs and labor supply have been moving fast, and the contractors handling it best are the ones repricing with proof instead of apologizing for the price. That I can help with.'],
  qr:['Raising my prices','Labor shortage','Run my numbers']},
 
 {id:'homeowner', w:2.4, k:'i am a homeowner,i need a contractor,looking for a contractor,i need a plumber,i need a roofer,need someone to fix,my house,i am not a contractor,do you do the work,can you fix,are you a contractor,i need an estimate for my house',
- r:['Ah — quick clarification so I do not waste your time. We do not do the work here. We are the marketing company contractors hire to get found.\n\nIf you are trying to hire someone: check that they are licensed and insured, read reviews with an eye on how the company responds to the bad ones, and get three written bids. The one who answers the phone fastest is usually also the one who shows up when promised. That is not marketing advice, it is just true.'],
+ r:['Ah — quick clarification so I do not waste your time. We do not do the work. We are the marketing company contractors hire to get found.\n\nIf you are trying to hire someone: check that they are licensed and insured, read reviews with an eye on how the company responds to the bad ones, and get three written bids. The one who answers the phone fastest is usually also the one who shows up when promised. That is not marketing advice, it is just true.'],
  qr:['I am a contractor','What can you do?','Free audit']});
 
 /* ─────────────────────────── MOOD & PAIN — SPIN OPENINGS ───────────────── */
@@ -860,7 +865,7 @@ KB.push(
  qr:['Free tools','The $50 version','Run my numbers']},
 
 {id:'stressed', w:2, k:'stressed,overwhelmed,losing money,rough month,bad month,hard time,worried,anxious,scared,panicking,keeping me up at night,cannot make payroll',
- r:['That is a heavy one, so I will keep it simple. {LIFT}\n\nMost of the stress in a contracting business traces to one thing: an unpredictable schedule. Not the work — the not knowing. Marketing is not a cure for that, but a pipeline you can see is the difference between a slow month being data and a slow month being panic.\n\nWant me to show you the one number that makes the whole thing measurable?'],
+ r:['That is a heavy one and I am a tape measure, so I will keep it simple. {LIFT}\n\nMost of the stress in a contracting business traces to one thing: an unpredictable schedule. Not the work — the not knowing. Marketing is not a cure for that, but a pipeline you can see is the difference between a slow month being data and a slow month being panic.\n\nWant me to show you the one number that makes the whole thing measurable?'],
  qr:['Show me the number','Free audit','Have someone call me']},
 
 {id:'burned', w:2.3, k:'got burned,bad experience,last agency,previous agency,agency ripped me off,wasted money,scammed,they took my money,tried seo before,did not work,does not work,waste of money,tried that already,burned before,fired my agency,marketing company',
@@ -932,7 +937,7 @@ KB.push(
  r:['Contractor SEO here means ranking for searches that produce jobs, not searches that produce traffic. We map keywords by intent and job value, because "roof replacement cost" and "emergency roof repair near me" are two completely different customers with two completely different budgets.\n\n' + STAT.seotime + '\n\nAnyone promising page one in thirty days is selling you something.'],
  qr:['How long does it take?','Local SEO','Pricing','Free audit']},
 
-{id:'localseo', w:2.1, k:'local seo,map pack,google maps,local ranking,near me,maps ranking,local pack,3 pack,my listing,claim my listing',
+{id:'localseo', w:2.1, k:'local seo,map pack,google maps,google business profile,google my business,local ranking,near me,maps ranking,local pack,3 pack,my listing,claim my listing',
  r:['The map pack is where home services jobs are actually won, and it is winnable on a small budget. Category selection, service area pages, review velocity, consistent business information, photos that are actually recent, and the profile work that decides whether a homeowner three miles away ever sees your name.\n\nCheapest lever in the whole business. Most contractors have a profile they claimed once in 2019 and never touched again.'],
  qr:['Reviews','Free audit','Pricing']},
 
@@ -968,11 +973,11 @@ KB.push(
  r:['Content earns its place when it answers a question a buyer actually types, and almost nothing else does. Cost pages, process pages, comparison pages, permit and code questions in your city.\n\nAnd photos close jobs. Real ones, from your jobs, not stock. A before-and-after gallery outperforms any paragraph you will ever write about quality. Video is the same story — a ninety second walkthrough of a finished job does more than a polished brand spot.'],
  qr:['SEO','Free audit','Pricing']},
 
-{id:'cro', w:2, k:'conversion,conversion optimization,not converting,traffic but no calls,visitors do not call,bounce rate,improve my website,nobody calls',
+{id:'cro', w:2, k:'conversion,conversion rate,conversion optimization,not converting,traffic but no calls,visitors do not call,bounce rate,improve my website,nobody calls',
  r:['Traffic without conversion is a nicer way to lose. ' + STAT.leak + '\n\nUsual culprits in order: the phone number is not clickable or not visible on mobile, there is no reason to trust you above the fold, the form asks for too much, the page takes four seconds to load, and there is no obvious next step.\n\nFor comparison: 2026 benchmarks put static forms around 2 to 6 percent conversion and chat-to-lead closer to 15 percent, largely because a conversation asks for one thing at a time instead of eleven.'],
  qr:['Website scorecard','Free audit','Chat on my site']},
 
-{id:'speedtolead', w:2.2, k:'speed to lead,response time,call back fast,how fast should i respond,answer leads,5 minutes,leads go cold,answering service,i miss calls',
+{id:'speedtolead', w:2.2, k:'speed to lead,response time,call back fast,how fast should i respond,answer leads,missed calls,voicemail,5 minutes,leads go cold,answering service,i miss calls',
  r:[STAT.speed5 + '\n\n' + STAT.first + '\n\nNothing else in your marketing has that kind of leverage, and it costs nothing to fix. Answer inside five minutes and you are effectively competing against a much smaller field.'],
  qr:['Lead follow up','Free audit','Chat on my site']},
 
@@ -980,7 +985,7 @@ KB.push(
  r:['The cadence that works in the trades, and it is not complicated.\n\nMinute one: automatic text confirming you got it, with a name attached. Minute five: a human calls. Same day: a thank you plus one photo of similar finished work. Day two: a specific question, never "just checking in". Day five: the answer to the objection they did not say out loud, usually price or timeline. Day twelve: a soft close with a deadline that is actually real.\n\nMost contractors stop after one attempt. Most jobs close between the third and fifth touch. That gap is free money.'],
  qr:['Homeowners ghost me','Speed to lead','Free audit']},
 
-{id:'tracking', w:2, k:'attribution,how do i track,tracking,which channel,where do leads come from,reports,analytics,dashboard,how will i know',
+{id:'tracking', w:2, k:'call tracking,attribution,how do i track,tracking,which channel,where do leads come from,reporting,reports,analytics,dashboard,how will i know',
  r:['We set up call tracking and conversion tracking before a dollar goes to traffic, so every call and form is tagged to its source. Your monthly report covers ranking and map movement, calls and forms with attribution, traffic by channel and what it did, AI search visibility, and a plain-language note on what changed.\n\n' + STAT.attrib + '\n\nThe uncomfortable part of real attribution is that it sometimes says the channel you love produces nothing and the one you were about to cut produces half your work. We would rather show you a real number with a caveat than a flattering one that is fiction.'],
  qr:['See reporting','Free audit','Pricing']},
 
@@ -1072,7 +1077,7 @@ KB.push(
  r:['AFC is the contractor arm of Eye To Ad Media, Denver, running since 2012. It exists because I ran a bath remodeling company, hired agencies the way most contractors do — on a promise and a slide deck — and kept getting reports full of impressions instead of an answer to one question: did any of this turn into a sale?\n\nI still run the remodeling business, which means every campaign here gets judged by someone who knows what a slow February feels like.'],
  qr:['Why you?','Results','Pricing']},
 
-{id:'whyyou', w:2, k:'why you,why should i hire you,what makes you different,why not someone else,are you any good,prove it,are you legit,is this a scam,scam',
+{id:'whyyou', w:2, k:'why you,why should i hire you,what makes you different,why not someone else,are you any good,prove it,guarantee,do you guarantee,are you legit,is this a scam,scam',
  r:['Three things, and none of them are slogans. We report on booked jobs instead of impressions. Everything is month to month. And the person setting the standard runs a contracting business himself.\n\nWhat we will not do is guarantee rankings. Nobody controls Google, and anyone who tells you otherwise is either lying or about to. What we will do is tell you before you spend anything whether the math works in your market — including telling you not to hire us if it does not.'],
  qr:['Reporting','Pricing','Free audit']},
 
@@ -1130,15 +1135,15 @@ KB.push(
  r:['Wrong question, slightly. The right one is what you need: work this week, or a pipeline that keeps working after you stop paying.\n\nPaid search and Local Services Ads buy the first. SEO and local build the second. AI search is the new front door and most of your competition has not found it. Almost nobody should run one alone — paid fills the calendar now while organic pulls the blended cost down over time.'],
  qr:['Run my numbers','Channel mix','Free audit']},
 
-{id:'referrals_answer', w:2.1, k:'mostly referrals,word of mouth,repeat customers,we get referrals,all referral,my customers refer me',
+{id:'referrals_answer', w:2.1, k:'mostly referrals,referrals,word of mouth,repeat customers,we get referrals,all referral,my customers refer me',
  r:['Referrals are the best leads in the business and the worst business plan, because you do not control the volume. They arrive when they arrive, and tracked referrals convert at two to four times the rate of cold leads — which is exactly why losing them hurts so much.\n\nHere is the question worth sitting with: in a month where referrals are thin, what is your backup? If the answer is "wait", that is the gap.'],
  qr:['Local SEO','Run my numbers','Free audit']},
 
-{id:'repeat', w:2, k:'maintenance agreements,service plans,recurring revenue',
+{id:'repeat', w:2, k:'past customers,database,old customers,repeat business,maintenance agreements,service plans,recurring revenue,customer list',
  r:['Your past customer list is the cheapest revenue in the business and almost nobody works it. Maintenance reminders, seasonal notes, and a simple "we are in your neighborhood next week" text outperform most ad budgets.\n\nText beats email in the trades by a wide margin — just get permission first. And if your trade supports a maintenance agreement, that is the single best thing you can sell: it smooths the calendar, raises lifetime value, and makes the business worth more if you ever sell it.'],
  qr:['Lead generation','Free audit']},
 
-{id:'seasonal', w:2.1, k:'seasonal,season,slow months,busy season,winter,summer,spring,when should i advertise,off season,seasonality',
+{id:'seasonal', w:2.1, k:'seasonal,season,slow months,busy season,winter,summer,spring,storm response,when should i advertise,off season,seasonality',
  r:['The slow season is built during the busy one. SEO takes four to eight months to compound, so whatever you start in your peak is what carries your trough.\n\nStorm and season timing is its own discipline: roofers should have campaigns ready before hail, HVAC before the first heat wave, plumbing before the first hard freeze. Turning things on after the event means bidding against everyone who was already there, at the exact moment clicks cost the most.'],
  qr:['Run my numbers','Google Ads','Free audit']},
 
@@ -1146,7 +1151,7 @@ KB.push(
  r:['Financing changes the conversation from price to payment, and in remodeling, solar, roofing and HVAC it is often the difference between a signed job and a maybe. If you offer it, it belongs on the page, in the ads and in the first ninety seconds of the call — not buried on a terms page nobody reads.'],
  qr:['Remodeling','Run my numbers','Free audit']},
 
-{id:'justify', w:2.1, k:'justifying my price,justify my price,why am i more expensive,value selling,how do i explain my price,they think i am expensive',
+{id:'justify', w:2.1, k:'justifying my price,justify my price,why am i more expensive,value selling,how do i explain my price,they think i am expensive,price objection',
  r:['Price is only an objection when value has not landed yet. What closes the gap is proof, in this order.\n\nPhotos of your work on a job like theirs. A written scope that spells out what the cheap bid left out. License, insurance and warranty stated plainly, because those are relief, not bragging. Reviews from their neighborhood. And one honest sentence about what goes wrong when this gets done cheap — you have seen it, they have not.\n\nNobody argues with a number they understand.'],
  qr:['Reviews','Content','Free audit']},
 
@@ -1166,11 +1171,11 @@ KB.push(
  r:['Offline still works, it is just hard to measure — which is exactly why most contractors overrate or underrate it.\n\nTwo rules. Give every offline channel its own phone number so you actually know what it produced. And never run offline before your online house is in order, because a yard sign sends people straight to Google to look you up, and if you are not there when they do, you just paid for a competitor lead.'],
  qr:['Call tracking','Local SEO','Free audit']},
 
-{id:'email', w:1.9, k:'email marketing,newsletter,mailing list,texting customers',
+{id:'email', w:1.9, k:'email marketing,newsletter,sms,text messaging,mailing list,texting customers',
  r:['Text beats email in the trades by a wide margin, and both beat another ad dollar aimed at strangers. Appointment confirmations, on-the-way texts, review requests, maintenance reminders, and a seasonal note before the weather turns.\n\nGet permission first, keep it short, and sign it with a human name. Nobody replies to noreply.'],
  qr:['Past customers','Lead generation','Free audit']},
 
-{id:'schema', w:1.8, k:'schema,structured data,llms txt,robots txt,technical seo,https,indexing',
+{id:'schema', w:1.8, k:'schema,structured data,llms txt,robots txt,technical seo,site speed,page speed,mobile,core web vitals,https,indexing',
  r:['The technical layer matters more now than it did five years ago, because AI engines need your business to be machine readable before they will recommend it. Structured data, consistent business information, clean markup, a fast page and a site that actually works on a phone.\n\nAnd speed is not a nerd concern: 53 percent of mobile users abandon a page that takes more than three seconds. None of it wins a job by itself. All of it decides whether you are eligible to be found.'],
  qr:['AI search','Website scorecard','Free audit']},
 
@@ -1222,7 +1227,7 @@ KB.push(
  r:['Texting is the single cheapest fix in this entire industry and most contractors still have not turned it on.\n\nThe numbers everybody quotes trace back to Gartner: business texts open around 98% against roughly 20% for email, and reply around 45% against about 6%. Harvard Business Review found the average business takes about 42 hours to answer a web lead and 23% never answer at all. So the bar is on the floor.\n\nMissed-call text-back is the play. Caller hangs up, they get a text in under a minute, and industry reporting in 2026 puts recovery at roughly 15–20% of missed callers, higher when a human picks the thread up fast. One caution: A2P 10DLC registration is mandatory now — carriers quietly kill unregistered business texting. Get that paperwork done before you build the sequence.'],
  qr:['Speed to lead','Follow-up system','Free audit']},
 
-{id:'automation', w:2.2, k:'automation,automate,ai answering,ai receptionist,voice agent,answering bot,gohighlevel,after hours,who answers at night',
+{id:'automation', w:2.2, k:'crm,automation,automate,ai answering,ai receptionist,voice agent,answering bot,software,servicetitan,jobber,housecall pro,gohighlevel,after hours,who answers at night',
  r:['Automation is worth it for exactly one reason: it never gets tired at 9pm on a Friday, which is when a surprising share of emergency work comes in.\n\nWhere it earns its keep — instant reply to every web lead, missed-call text-back, appointment reminders, and review requests fired the day the job closes. Hatch analyzed 132,000 HVAC campaigns and found multi-touch follow-up sequences responded at 89.86% against 8.56% for a single touch. That gap is not a software feature, it is just persistence made automatic.\n\nWhere it does not: the actual sales conversation. A homeowner deciding on a $14,000 job wants a person. Automate the speed, keep the human.'],
  qr:['Missed call text back','Follow-up system','Have someone call me']},
 
@@ -1234,11 +1239,11 @@ KB.push(
  r:['How you hand over the number moves close rate about as much as the number itself.\n\nTwo things the 2026 dealer reporting keeps showing. One, digital proposals close in the low-to-mid 40s where handwritten estimates land closer to 20, with a meaningful bump in average ticket. Two, giving three options instead of one price lets the homeowner choose between versions of yes instead of deciding yes or no.\n\nThe sequence matters too: lead with the monthly payment, not the total. Once somebody has built a mental model around $187 a month, the total stops being a cliff. Bring it up after they have already flinched at the total and it reads like a consolation prize.'],
  qr:['Financing','Close rate','Run my numbers']},
 
-{id:'photos', w:2.1, k:'job photos,youtube,reels,should i post pictures,drone,proof of work',
+{id:'photos', w:2.1, k:'photos,pictures,job photos,before and after,video,youtube,tiktok,instagram,reels,should i post pictures,drone,proof of work',
  r:['Job photos are the most underused asset on a contractor phone. You are carrying around proof that you did the work well and never posting it.\n\nWhat to do with them: before-and-afters on the service page they belong to, a handful on the Google Business Profile every month, and a short vertical video when a job is visually satisfying. Homeowners are not judging your cinematography. They are checking whether you are real and whether your work looks like theirs.\n\nOne practical rule: shoot the same three angles on every job. Consistency beats artistry, and it means anybody on the crew can do it.'],
  qr:['Google Business Profile','Content','Reviews']},
 
-{id:'gbp', w:2.3, k:'google business profile,gbp,google listing,my google page,maps listing,google my business,gmb,business profile,posts on google',
+{id:'gbp', w:2.3, k:'google business profile,gbp,google listing,my google page,maps listing,google my business,gmb,map pack,business profile,posts on google',
  r:['Your Google Business Profile is usually the first thing a homeowner sees, and a stale one quietly costs you the click before your website ever gets a chance.\n\nWhat actually moves it in 2026: recent reviews, fresh photos, service updates, correct categories and service areas, and matching name, address and phone everywhere else on the internet. Freshness and activity carry more weight than they used to, which is good news — it is work anybody can do without a budget.\n\nThe habit that wins is weekly, not heroic. Ten minutes a week beats one panicked overhaul every spring.'],
  qr:['Local SEO','Reviews','Free audit']},
 
@@ -1246,23 +1251,23 @@ KB.push(
  r:['Your customer list is the highest-return marketing asset you own and it costs nothing to use. Those people already know you, already paid you, and already let you in the house.\n\nThree touches worth running: a seasonal reminder tied to the work you did, a maintenance or tune-up offer, and a plain referral ask about two weeks after the job when they are still happy about it.\n\nAnd a genuinely dead pile is not dead. Estimates that went quiet six or eighteen months ago are the cheapest list you will ever work. Half of them just got busy.'],
  qr:['Follow-up system','Referrals','Repeat customers']},
 
-{id:'referral', w:2.1, k:'referral program,friends and family,neighbor,should i pay for referrals,referral fee',
+{id:'referral', w:2.1, k:'referrals,referral program,word of mouth,friends and family,neighbor,should i pay for referrals,referral fee',
  r:['Word of mouth is not a marketing plan, but a referral program is.\n\nThe difference is asking on purpose. Pick the moment — the day the job passes final inspection, not three months later — and make the ask specific. "Do you know anybody else on this street dealing with the same thing" gets a real answer. "Send people my way" gets a nod and nothing else.\n\nReferral leads convert higher and cost less than anything you can buy, which is exactly why they should not be left to luck.'],
  qr:['Past customers','Reviews','Free audit']},
 
-{id:'storm', w:2.2, k:'storm response,storm season,after a storm,storm chasers,catastrophe,tornado,hurricane,wind damage,storm leads,storm marketing',
+{id:'storm', w:2.2, k:'storm response,storm season,hail,after a storm,storm chasers,catastrophe,tornado,hurricane,wind damage,storm leads,storm marketing',
  r:['Storm work is the widest swing in the trades. One hail event can outrun a whole planned season, and a quiet year can gut a roofing company that built its model on weather.\n\nThe contractors who handle it well are positioned before the sky opens: pages already ranking for the neighborhoods, ad campaigns built and paused, and a landing page ready to switch on the same afternoon. The out-of-state crews with the magnetic door signs show up within 48 hours. If your marketing starts when theirs does, you are already behind.\n\nThe other half is not letting storm revenue hide the fact that retail replacement demand needs its own year-round engine.'],
  qr:['Roofing','Seasonality','Free audit']},
 
-{id:'offseason', w:2.2, k:'should i pause ads,cut marketing,turn off ads,go dark,stop advertising,shoulder season,pause campaigns,save money on marketing',
+{id:'offseason', w:2.2, k:'should i pause ads,cut marketing,turn off ads,go dark,stop advertising,off season,shoulder season,winter,slow months,pause campaigns,save money on marketing',
  r:['I know the instinct. Phone is quiet, so the marketing line looks like the easiest thing to cut. It is usually the most expensive cut you can make.\n\nTwo reasons. Paused campaigns lose their optimization history, so you restart in the learning phase right when demand and competition peak — and 2026 tracking showed most home service categories facing higher click costs during those spikes, with emergency keywords passing $30 a click in competitive metros. Second, SEO does not restart on demand; the work you skip in February is the ranking you do not have in May.\n\nBetter move: shift the money instead of killing it. Slow months are for the shoulder-season push — tune-ups, maintenance plans, early-bird scheduling, and reworking your past customer list.'],
  qr:['Seasonality','Budget','Past customers']},
 
-{id:'motivate', w:2.1, k:'motivate me,pep talk,encourage me,say something motivational,need motivation,give me a boost,hype me up,words of wisdom',
+{id:'motivate', w:2.1, k:'motivate me,pep talk,inspire me,encourage me,say something motivational,need motivation,give me a boost,hype me up,words of wisdom',
  r:['{QUOTE}\n\nAnd here is the practical version: almost nobody who is good at this trade fails because of the trade. They fail because the phone got quiet and nobody built the thing that keeps it from getting quiet.\n\nThat part is fixable, and it is the only part I am here for. What do you want to work on?'],
  qr:['Where do I start?','Free audit','Tell me a joke']},
 
-{id:'celebrate', w:2.1, k:'we just closed,got the job,landed a big one,we won the bid,best month ever,record month,signed the contract,crushing it right now',
+{id:'celebrate', w:2.1, k:'we just closed,got the job,landed a big one,we won the bid,best month ever,record month,signed the contract,booked solid,crushing it right now',
  r:['That is great news, and you should take ten full minutes to enjoy it before your brain starts looking for the next problem. Congratulations.\n\nOne thing while you are riding high: this is the best possible moment to ask that customer for a review and a referral. Nobody is ever more willing than right after you made them happy.\n\nWhat closed it, out of curiosity — price, timing, or did you just outwork the other guy?'],
  qr:['Reviews','Referrals','Close rate']},
 
@@ -1270,7 +1275,7 @@ KB.push(
  r:['Slow day or dodging paperwork? Either one is fine by me.\n\n{JOKE}\n\nIf you want to make the boredom productive, I can run your numbers and tell you what you can actually afford to pay for a lead. Takes about a minute and it is weirdly satisfying.'],
  qr:['Run my numbers','Tell me a joke','Free audit']},
 
-{id:'compliment', w:2, k:'you are helpful,love this bot,nice bot',
+{id:'compliment', w:2, k:'you are funny,youre funny,you are smart,good bot,nice bot,you are cool,i like you,you are helpful,best bot,you are awesome,love this bot',
  r:['Appreciate that. Low bar, cleared it.\n\nSeriously though — ask me something hard. I would rather be useful than charming.'],
  qr:['Run my numbers','What do you do?','Tell me a joke']},
 
@@ -1280,11 +1285,11 @@ KB.push(
 
 /* ─────────────────────────── SELLING, NOT JUST MARKETING ───────────────── */
 KB.push(
-{id:'salestraining', w:2.4, k:'sales training,teach me to sell,how do i sell,better at sales,selling,sales help,my sales suck,closing techniques,sales tips,sales advice,improve my sales,train my guys,sales team',
+{id:'salestraining', w:2.4, k:'sales training,teach me to sell,how do i sell,better at sales,selling,sales help,my sales suck,closing techniques,sales process,sales tips,sales advice,improve my sales,train my guys,sales team',
  r:['Now we are talking. Marketing gets the appointment. Selling is what happens in the kitchen, and most contractors lose more money there than anywhere else in the business.\n\nThe short version of what works in the trades:\n\n1. Condition the price before you present it, so the number is never a surprise.\n2. Ask questions that make the cost of doing nothing obvious. That is SPIN — situation, problem, implication, need-payoff.\n3. Use trial closes on the way through, not one big ask at the end.\n4. Give three options instead of one price, and lead with the monthly payment.\n5. Follow up like you mean it. Most jobs are lost to silence, not to a competitor.\n\nWhich of those is costing you the most right now?'],
  qr:['Trial closes','Price conditioning','SPIN selling','Close rate']},
 
-{id:'trialclose', w:2.4, k:'trial close,tie down,tie downs,assumptive close,closing questions,ask for the sale,closing the deal,close the sale,soft close,alternative close',
+{id:'trialclose', w:2.4, k:'trial close,tie down,tie downs,assumptive close,closing questions,how do i close,ask for the sale,closing the deal,close the sale,soft close,alternative close',
  r:['A trial close is a temperature check, not an ask. You are finding out where you stand before you get to the number.\n\nSounds like: "If we could get this on the schedule before the weather turns, would that solve the problem for you?" Or: "Assuming the price works, is there anything else that would keep you from moving forward?" That second one is the most valuable question in home improvement sales — it surfaces the real objection while you still have time to handle it.\n\nTie-downs are the small agreements along the way. "That makes sense, right?" "You would rather fix it once than three times, correct?" Each yes makes the last yes smaller.\n\nOne rule: never use either one as a trick. Homeowners can smell it, and in the trades your reputation travels down the street faster than your marketing does.'],
  qr:['Price conditioning','SPIN selling','Sales training']},
 
@@ -1296,11 +1301,11 @@ KB.push(
  r:['SPIN is four kinds of questions in order, and it works in the trades because it makes the homeowner say the painful part out loud instead of you.\n\nSituation — how old is the system, how long has it been doing that.\nProblem — what does it cost you when it goes out.\nImplication — what happens if it fails in February with company in the house.\nNeed-payoff — if we fixed it permanently before winter, what would that be worth to you?\n\nThat last one is the whole game. When they describe the value, you never have to argue for it.\n\nSame thing works on your own business, by the way. What would an extra five projects a week do for your bottom line? Answer that honestly and your marketing budget question answers itself.'],
  qr:['Run my numbers','Trial closes','Sales training']},
 
-{id:'capacity', w:2.2, k:'more projects,extra jobs,five more jobs,what would more jobs do,handle more work,capacity,can i handle more,how many more,double my jobs',
+{id:'capacity', w:2.2, k:'more projects,extra jobs,five more jobs,what would more jobs do,handle more work,capacity,can i handle more,how many more,double my jobs,scale up work',
  r:['Good question to sit with. Take your average job, multiply by five, multiply by four weeks. That is the monthly number you are currently leaving on the table — and for most contractors it is a bigger figure than they expect to see.\n\nThen the honest follow-up: could your crew actually absorb it? If the answer is no, the first project is capacity, not marketing, and I will tell you that rather than sell you leads you cannot service.\n\nIf the answer is yes, give me your average ticket and I will show you exactly what you can afford to pay to get one.'],
  qr:['Run my numbers','Free audit','Scale up']},
 
-{id:'capital', w:2.3, k:'undercapitalized,under capitalized,running out of money,no cash,cash crunch,capitalization,why businesses fail,going out of business,profitability,profit margin,not making money,working capital',
+{id:'capital', w:2.3, k:'undercapitalized,under capitalized,cash flow,running out of money,no cash,cash crunch,capitalization,why businesses fail,going out of business,profitability,profit margin,not making money,working capital',
  r:['This is the quiet killer, and it deserves a straight answer: undercapitalization ends more contracting businesses than bad workmanship ever has. Good crews with full schedules go under because the money runs out before the receivables come in.\n\nMarketing is part of that equation, not separate from it. Consistent lead flow smooths the calendar, and a smooth calendar is what lets you price for margin instead of pricing to survive the month.\n\nThree things that move it fastest: sell on value instead of low bids, collect deposits and progress payments like a professional, and never let the pipeline go dark during a busy stretch — that gap shows up as a dead month eight weeks later.\n\nIf you want a tool built around exactly this, eyetoad.com has a business growth resource for owners: https://eyetoad.com/grow-my-business/'],
  qr:['Budget','Free audit','Sales training']},
 
@@ -1322,7 +1327,7 @@ KB.push(
  r:['Speed is a revenue number, not an IT number. The 2026 research lines up around roughly 7 percent of conversions lost for every extra second of mobile load time, which means a five second page is giving away something like a third of its leads against a one second page on identical traffic.\n\nAnd about three out of four of your visitors are on a phone, usually mid-problem. Breaker tripped, basement wet, no heat. They are not going to wait.\n\nUnder two seconds on mobile is the bar now. If you want, I can have someone actually measure yours instead of guessing.'],
  qr:['Website that converts','Free audit','Have someone call me']},
 
-{id:'aicite', w:2.4, k:'generative engine optimization,aeo,will ai replace google',
+{id:'aicite', w:2.4, k:'ai search,chatgpt,perplexity,gemini,ai overview,geo,generative engine optimization,aeo,answer engine,get cited by ai,will ai replace google,ai recommendations',
  r:['Short version: the position you earned on Google is no longer the first thing a homeowner sees, and getting named inside the AI answer is now its own job.\n\nWhat the systems are actually reading: your site content and how cleanly it is structured, your Google Business Profile, your reviews and the patterns inside them, and third-party mentions of your company in your actual service area. UC Davis put it well in their guidance — strong traditional SEO still predicts AI visibility, but the foundation alone is no longer enough.\n\nThe encouraging part is how open the field still is. ServiceTitan 2026 reporting found only about a quarter of residential contractors using AI in any meaningful way. Being early here is the same advantage the mobile-first contractors got in 2017.'],
  qr:['Local SEO','Google Business Profile','Free audit']},
 
@@ -1330,7 +1335,7 @@ KB.push(
  r:['Claiming a city is not the same as proving you work there, and the systems deciding who gets recommended can now tell the difference.\n\nA page titled "Roofing in [city]" with the town name swapped in nine times is the old playbook, and it is worth very little now. A page that shows the actual job — the neighborhood, the house style, what the inspection found, what it cost to fix, photos from the truck — is nearly impossible for a competitor to copy, because they were not there.\n\nThe good news for you is that this plays directly to the thing you already have and agencies do not: real work in real places.'],
  qr:['Content','AI search','Job photos']},
 
-{id:'calltracking', w:2.2, k:'call tracking,callrail,tracking numbers,which ads work,where are my leads coming from,cant tell what works,measure marketing',
+{id:'calltracking', w:2.2, k:'call tracking,callrail,tracking numbers,attribution,which ads work,where are my leads coming from,cant tell what works,measure marketing',
  r:['If every channel funnels into one office number, you cannot tell whether your ad spend produced anything — and most contractors guessing at this are guessing wrong.\n\nUnique tracking numbers per channel fix it in a week. Then the real metric becomes cost per booked job instead of cost per lead, which regularly flips the answer: a source with pricier leads that actually close is cheaper than cheap leads that never book.\n\nOne detail people miss — only about a third of calls from digital marketing are genuine new leads. The rest are suppliers, existing customers and wrong numbers. If you are not separating those, your cost per lead looks better than it is.'],
  qr:['Tracking','Run my numbers','Free audit']});
 
@@ -1340,7 +1345,7 @@ KB.push(
  r:['You own all of it. Full stop.\n\nThe correct default in this industry, and ours: the domain, the website files in editable form, the Google Ads account under your billing, the Local Services Ads profile, the Google Business Profile, the call tracking numbers, the CRM data, and every piece of copy and creative produced for you. We are a user on your accounts, not the owner.\n\nIf you leave, you walk out with everything and nothing breaks. Any agency that hosts your site on a platform you cannot export, or registers your domain in their own name, has built a hostage situation and is counting on you not asking. Ask them in writing.'],
  qr:['Red flags','Contracts','Have someone call me']},
 
-{id:'redflags', w:2.4, k:'red flags,how do i pick an agency,questions to ask an agency,been burned,got ripped off,agency lied,how do i know they are legit,vet an agency,choosing an agency',
+{id:'redflags', w:2.4, k:'red flags,how do i pick an agency,questions to ask an agency,been burned,last agency,previous agency,got ripped off,scammed,agency lied,how do i know they are legit,vet an agency,choosing an agency',
  r:['Sorry you had that experience — it is depressingly common. A 2025 survey of business owners using SEO services found about two thirds had already been through more than one provider.\n\nThe questions that actually separate the good from the bad:\n\n1. Who owns the accounts, the domain and the site files if I leave?\n2. Do you work with my competitors in my service area? Get it in writing.\n3. Show me a real client report from last month, live on screen.\n4. What exactly happens in month one?\n5. What are the exit terms if performance does not hit the benchmark?\n\nEvasive answers on any of those are the tell. It is not about catching anybody out — it is that a confident shop answers all five in about two minutes.'],
  qr:['Who owns my website?','Exclusivity','Reporting']},
 
@@ -1348,7 +1353,7 @@ KB.push(
  r:['Fair question and one you should ask everybody. Two contractors in the same trade and the same service area means somebody is getting the second-best effort, and it will not be the one who signed first.\n\nAsk for it in writing, defined by trade and geography rather than a vague promise. And ask what happens if they later sign one — a real answer exists for that, and "we would never" is not it.\n\nIf you tell me your trade and market, I can have someone check what we already have in your area before you spend any time on this.'],
  qr:['Red flags','Have someone call me','Free audit']},
 
-{id:'reports', w:2.3, k:'what reports,how often do i hear from you,monthly report,do you send reports,what metrics,kpi,do i get updates,who do i talk to,account manager',
+{id:'reports', w:2.3, k:'reporting,what reports,how often do i hear from you,monthly report,do you send reports,what metrics,kpi,do i get updates,who do i talk to,account manager',
  r:['Reporting should connect to the business, not to the platform. Impressions and rankings are inputs. The numbers that belong on the front page of your report are cost per booked job, lead to booked rate, and revenue attributed by source.\n\nCadence that works for contractors: a short summary regularly, a deeper look monthly, and a named human you can actually call — not a dashboard link and silence.\n\nThe test for any agency, including us: ask them to walk you through a real client report live, on screen. The ones hiding behind vanity metrics do not take that invitation.'],
  qr:['Tracking','Results','Have someone call me']},
 
@@ -1356,7 +1361,7 @@ KB.push(
  r:['You can move without losing what you have built, as long as you do it in the right order.\n\nBefore you give notice: confirm the domain registrar login is yours, get admin on the Google Ads, Analytics, Search Console, LSA and Business Profile accounts, export the site files or at least the content, and pull the call tracking history. Do that first. Leverage disappears the moment you tell them you are leaving.\n\nRankings mostly survive a clean move. What kills them is a rebuild that drops pages, changes every URL without redirects, or goes dark for two weeks. That part is avoidable and it is the first thing we check.'],
  qr:['Who owns my website?','Free audit','Have someone call me']},
 
-{id:'inhouse', w:2.2, k:'hire a marketing person,my daughter does social media,should i hire,employee vs agency,build a team',
+{id:'inhouse', w:2.2, k:'in house,hire someone in house,hire a marketing person,my daughter does social media,should i hire,employee vs agency,build a team',
  r:['Honest comparison, not a pitch.\n\nIn-house wins when you have enough volume to keep a person busy and enough process to manage them. One good marketing hire runs $60k and up with taxes, and they are one person with one skill set — usually strong at either content or ads, rarely both, almost never technical SEO too.\n\nAn agency wins when you want several skill sets part-time and you do not want to manage the work. It loses when the agency treats you like account number forty.\n\nThe worst version is the middle: a family member doing it in spare time with no accountability. That is not cheap, it is just invisible.\n\nWhere are you on volume right now?'],
  qr:['What do you cost?','Free audit','Run my numbers']},
 
@@ -1366,7 +1371,7 @@ KB.push(
 
 /* ─────────────────────────── FROM THE TRAINING GUIDE ───────────────────── */
 KB.push(
-{id:'crickets', w:2.4, k:'crickets,its crickets,my phone is dead,site is dead,my site is dead,dead phone,nothing is coming in,no calls at all,zero leads,silence,nobody is calling,no one calls',
+{id:'crickets', w:2.4, k:'crickets,its crickets,phone is dead,my phone is dead,site is dead,my site is dead,dead phone,nothing is coming in,no calls at all,zero leads,silence,nobody is calling,no one calls',
  r:['Crickets is the worst sound in this business. Before anybody sells you anything, it is worth knowing which kind of quiet it is.\n\nThere are only three: nobody is finding you, people are finding you and leaving without calling, or calls are coming in and not getting answered or returned. Those have completely different fixes, and two of them cost almost nothing.\n\nWhich does it feel like — is the website getting traffic at all?'],
  qr:['Conversion rate','Speed to lead','Free audit']},
 
@@ -1374,7 +1379,7 @@ KB.push(
  r:['Feast or famine is almost never a demand problem. It is a pipeline problem — marketing gets switched on when the schedule empties, and by the time it works you are slammed again, so it gets switched off.\n\nThe fix is boring and it works: keep a steady baseline running year round, and use your past customer list and shoulder-season offers to fill the dips instead of scrambling.\n\nHow far out are you booked right now? That tells me whether this is a lead problem or a smoothing problem.'],
  qr:['Seasonality','Past customers','Free audit']},
 
-{id:'tirekickers', w:2.7, k:'tire kickers,tirekickers,lowballers,just want a free estimate,wasting my time,people looking for free advice,bargain hunters,cheapest bid',
+{id:'tirekickers', w:2.7, k:'tire kickers,tirekickers,lowballers,price shoppers,just want a free estimate,wasting my time,people looking for free advice,shoppers,bargain hunters,cheapest bid',
  r:['Tire kickers are usually a targeting and qualifying problem, not a character flaw in your market.\n\nThings that thin them out fast: say your minimum project size somewhere visible, ask one budget-range question on the form, use keywords that match the work you want instead of broad service terms, and add negative keywords for repair when you sell replacement.\n\nAlso worth saying plainly — somebody who shops three bids is not automatically a bad lead. They are just doing what you would do with $14,000.'],
  qr:['Bad leads','Close rate','Free audit']},
 
@@ -1398,11 +1403,11 @@ KB.push(
  r:['Boosting is the easy button and it mostly buys you exposure, not projects. It optimizes for engagement rather than for someone calling you.\n\nA properly built campaign gives you control over the audience, the objective, the placement, the tracking and the follow-up. Same money, very different outcome.\n\nThat said — if the goal is genuinely awareness in one small town, a boost is not a crime. Just do not expect it to fill the schedule.'],
  qr:['Facebook','Retargeting','Free audit']},
 
-{id:'socialneed', w:2.2, k:'do i need tiktok,do i need social media,should i post daily,social media necessary,youtube shorts,reels for contractors',
+{id:'socialneed', w:2.2, k:'do i need tiktok,tiktok,instagram,do i need social media,should i post daily,social media necessary,youtube shorts,reels for contractors',
  r:['Not necessarily, and I would rather tell you that than sell you a posting package.\n\nSocial works well for visual trades — remodels, painting, landscaping, anything with a dramatic before and after. It works poorly as a substitute for being findable when somebody has a problem right now.\n\nOrder of operations: website that converts, Business Profile, reviews, tracking. If those are solid and you have content coming off jobs anyway, then yes, post it.'],
  qr:['Job photos','Content','Free audit']},
 
-{id:'payperlead', w:2.3, k:'only pay per lead,pay for results,performance based,pay per call,commission only,pay when i get a job',
+{id:'payperlead', w:2.3, k:'pay per lead,only pay per lead,pay for results,performance based,pay per call,commission only,pay when i get a job',
  r:['It feels safer, and sometimes it is. Worth knowing the trade-offs before you sign.\n\nAsk three questions of anyone offering it: is the lead exclusive or sold to several contractors, who owns the site and the phone number generating it, and what happens to that asset if you stop paying. Often the answer is that you were renting the whole time.\n\nThe version that actually builds something is where the rankings, the site and the numbers are yours. Then a slow month still leaves you with an asset.'],
  qr:['Buy or own leads','Who owns my website?','Free audit']},
 
@@ -1410,7 +1415,7 @@ KB.push(
  r:['That is a genuinely strong position — referred customers arrive pre-trusted and rarely price shop.\n\nThe risk is not today, it is the quarter where two big referral sources retire, move, or go quiet at the same time. That happens to somebody every year and it always feels sudden.\n\nMarketing does not have to replace referrals. It just has to be warm enough that you are not starting from zero when you need it.'],
  qr:['Referrals','Free audit','Seasonality']},
 
-{id:'rebuild', w:3, k:'nephew built,buddy built my site,someone built my site,do i need a new website,should i rebuild,redo my website,is my site too old,rebuild or fix,my nephew built my website,my son built my site,built it myself',
+{id:'rebuild', w:3, k:'nephew built,my nephew,buddy built my site,someone built my site,do i need a new website,should i rebuild,redo my website,is my site too old,rebuild or fix,my nephew built my website,my son built my site,built it myself',
  r:['Possibly, but not automatically — and whoever built it does not deserve to be trashed for getting you started.\n\nA rebuild is worth it when the structure is the problem: no service pages, not mobile usable, slow to the point of losing people, or built on something that cannot be edited or exported.\n\nOften the bigger gains are cheaper than that: the message above the fold, page speed, real photos, one clear next step, and tracking so you can see what is happening at all.\n\nWhat specifically is not working — is it traffic, or is it people arriving and leaving?'],
  qr:['Conversion rate','Website that converts','Free audit']},
 
@@ -1426,7 +1431,7 @@ KB.push(
  r:['If that is happening right now, stop reading and deal with it: get people out, do not touch switches or anything that could spark, and call the utility or emergency services from somewhere safe.\n\nI am a marketing assistant, so I am not the right help for that — and this is one of the few places where I would rather be useless than confident.\n\nOnce everybody is safe, I am here.'],
  qr:['What do you do?','Free audit']},
 
-{id:'howtowork', w:2.4, k:'how do i wire,how do i install,how to fix my,diy repair,what size breaker,how do i vent,code requirement,permit required,is it up to code',
+{id:'howtowork', w:2.4, k:'how do i wire,how do i install,how to fix my,can i do it myself,diy repair,what size breaker,how do i vent,code requirement,permit required,is it up to code',
  r:['I am going to be upfront: I help contractors with marketing, not with the work itself. Giving you a confident answer about panels, gas lines, load calculations or code would be irresponsible and possibly dangerous.\n\nRequirements also vary by jurisdiction, so even a correct general answer can be wrong where you are standing.\n\nIf you are the contractor and you are asking about marketing that work, though, that I can help with all day.'],
  qr:['What do you do?','Free audit','Have someone call me']},
 
@@ -1434,7 +1439,7 @@ KB.push(
  r:['AI is genuinely good at research, drafts, follow-up, reporting and testing. It is not good at knowing that your best month is February because of frozen pipes, or that the north side of town does not convert for you.\n\nSo: it removes a lot of grunt work and it can absolutely help a small shop punch above its weight. It still needs accurate business information, strategy and somebody checking the output.\n\nFully automatic is not the same as effective. Ask me how I know.'],
  qr:['AI search','Free chatbot','Free audit']},
 
-{id:'lookatsite', w:2.3, k:'look at my website,can you review my site,here is my website,review my page,what do you think of my site,audit my site',
+{id:'lookatsite', w:2.3, k:'look at my website,can you review my site,check my site,here is my website,review my page,what do you think of my site,audit my site',
  r:['I would like to, but I want to be honest about what I can see from a chat window: nothing. I cannot load your site, your rankings or your ad account from here, and I am not going to pretend otherwise and invent findings.\n\nWhat I can do is get a real set of eyes on it. The free audit covers rankings, competitors, site issues and where the leads are leaking, and you keep the findings either way.\n\nWant me to set that up? Just the site address and a name and number.'],
  qr:['Free audit','Have someone call me','Conversion rate']},
 
@@ -1469,8 +1474,19 @@ var CLOSE = new Bag([
 
 /* ─────────────────────────── SESSION STATE ─────────────────────────────── */
 var S = { trade:null, name:null, ticket:0, margin:0, close:0, step:0, bstep:0,
-          lead:{}, turns:0, misses:0, heat:0, closed:0, seen:{}, lastId:null,
-          mood:'main' };
+          lead:{}, turns:0, misses:0, heat:0, closed:0, seen:{}, lastId:null };
+
+/* which face he is wearing. Kept off S so the state object stays as it was. */
+var FACE = 'main';
+function setFace(m){
+  if (!MOODS[m] || FACE === m || !HAS_DOM) return;
+  FACE = m;
+  var faces = D.querySelectorAll('.afcb-face'), i;
+  for (i = 0; i < faces.length; i++){
+    faces[i].setAttribute('href', MOODS[m]);
+    try { faces[i].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', MOODS[m]); } catch(e){}
+  }
+}
 
 function fill(t){
   return String(t)
@@ -1582,7 +1598,7 @@ function grabName(raw){
    The calculator is the implication engine — they do the math, they sell
    themselves, and nobody argues with their own arithmetic.
    ========================================================================== */
-function calcFlow(raw, say, chips, mood){
+function calcFlow(raw, say, chips){
   var n = nums(raw), v = n.length ? n[0] : 0;
 
   if (S.step === 1){
@@ -1602,7 +1618,7 @@ function calcFlow(raw, say, chips, mood){
     if (v <= 10) v = v * 10;
     if (v > 100) v = 100;
     S.close = v; S.step = 4; S.heat += 2;
-    if (mood) mood('grin');
+    setFace('grin');
 
     var profit  = S.ticket * (S.margin/100);
     var cpl     = profit * (S.close/100);
@@ -1736,6 +1752,7 @@ var ALIAS = {
   'who owns my website?'  : 'ownership',
   'red flags'             : 'redflags',
   'exclusivity'           : 'exclusivity',
+  'reporting'             : 'reports',
   'contracts'             : 'contract',
   'conversion rate'       : 'convrate',
   'job photos'            : 'photos',
@@ -1743,6 +1760,7 @@ var ALIAS = {
   'follow up system'      : 'followup',
   'missed call text back' : 'textback',
   'google business profile': 'gbp',
+  'storm response'        : 'storm',
   'past customers'        : 'database',
   'referrals'             : 'referral',
   'seasonality'           : 'seasonal',
@@ -1759,7 +1777,7 @@ var ALIAS = {
   'what would it cost'    : 'pricing',
   'another joke'          : 'joke',
   'another one'           : 'quote',
-  'motivate me'           : 'motivate',
+  'motivate me'           : 'quote',
   'okay, be useful'       : 'whatcanyoudo',
   'talk to a human'       : 'contact',
   'one more question'     : 'whatcanyoudo',
@@ -1776,7 +1794,6 @@ var ALIAS = {
   'my phone is not ringing' : 'slow',
   'busy, need to scale'   : 'scale',
   'room to grow'          : 'scale',
-  'scale up'              : 'scale',
   'having a good day'     : 'goodday',
   'rough day honestly'    : 'badday',
   'just venting'          : 'venting',
@@ -1784,6 +1801,7 @@ var ALIAS = {
   'mostly referrals'      : 'referrals_answer',
   'google / search'       : 'localseo',
   'bought leads'          : 'angi',
+  'bad leads'             : 'badleads',
   'wasted money on marketing' : 'burned',
   'shared lead services'  : 'angi',
   'keyword targeting'     : 'seo',
@@ -1792,8 +1810,7 @@ var ALIAS = {
   'a few weeks'           : 'seasonal',
   'couple of months'      : 'seasonal',
   'what would you start with' : 'firststep',
-  'where do i start'      : 'firststep',
-  'storm response'        : 'storm',
+  'storm response'        : 'seasonal',
   'seasonal strategy'     : 'seasonal',
   'why that matters'      : 'speedtolead',
   'why leads go cold'     : 'speedtolead',
@@ -1803,30 +1820,28 @@ var ALIAS = {
   'local services ads'    : 'lsa',
   'google ads'            : 'googleads',
   'facebook ads'          : 'facebook',
-  'facebook'              : 'facebook',
   'local seo'             : 'localseo',
   'ai search'             : 'aisearch',
   'reviews'               : 'reviews',
   'get more reviews'      : 'reviews',
   'bad review help'       : 'badreview',
   'content'               : 'content',
-  'financing'             : 'financing',
   'financing offers'      : 'financing',
   'justifying my price'   : 'justify',
   'raising my prices'     : 'pricepressure',
   'labor shortage'        : 'labor',
+  'past customers'        : 'repeat',
   'channel mix'           : 'channelmix',
   'how does call tracking work' : 'tracking',
   'how do you report'     : 'tracking',
-  'reporting'             : 'reports',
-  'tracking'              : 'tracking',
+  'reporting'             : 'tracking',
+  'call tracking'         : 'tracking',
   'what do you need from me' : 'auditneeds',
   'is there a contract'   : 'contract',
   'the $50 version'       : 'cheap',
   'what does seo cost'    : 'pricing',
   'what do you cost'      : 'pricing',
   'pricing'               : 'pricing',
-  'budget'                : 'budget_pct',
   'how long does seo take': 'seotime',
   'how long does it take' : 'seotime',
   'what is a good cost per lead' : 'goodcpl',
@@ -1835,19 +1850,10 @@ var ALIAS = {
   'why is it free'        : 'whyfree',
   'are you a real person' : 'robot',
   'what can you do'       : 'whatcanyoudo',
-  'what do you do'        : 'whatcanyoudo',
   'about afc'             : 'about',
   'why you'               : 'whyyou',
   'results'               : 'results',
   'remodeling'            : 'remodeling',
-  'roofing'               : 'roofing',
-  'close rate'            : 'closerate',
-  'proposals'             : 'proposals',
-  'trial closes'          : 'trialclose',
-  'price conditioning'    : 'pricecondition',
-  'spin selling'          : 'spin',
-  'sales training'        : 'salestraining',
-  'retargeting'           : 'retarget',
   'just email me'         : 'justemail',
   'tell me a joke'        : 'joke'
 };
@@ -1866,7 +1872,7 @@ var HOT = /(price|cost|how much|lead|leads|audit|start|hire you|sign|contract|bu
 
 /* ─────────────────────────── ENGINE ────────────────────────────────────── */
 function respond(raw, api){
-  var say = api.say, chips = api.chips, mood = api.mood;
+  var say = api.say, chips = api.chips;
   var key = norm(raw).trim();
   S.turns++;
 
@@ -1883,7 +1889,7 @@ function respond(raw, api){
   }
 
   /* 2. mid-calculator, numbers win over everything */
-  if (S.step > 0 && S.step < 4){ if (calcFlow(raw, say, chips, mood)) return; }
+  if (S.step > 0 && S.step < 4){ if (calcFlow(raw, say, chips)) return; }
 
   /* 3. explicit calculator request */
   if (A2[key] === 'CALC' || CALC_RE.test(key)){ startCalc(say); return; }
@@ -1915,7 +1921,7 @@ function respond(raw, api){
     S.misses = 0;
     if (hit.trade) S.trade = hit.trade;
     if (HOT.test(key)) S.heat++;
-    if (mood) mood(MOOD_OF[hit.id] || 'main');
+    setFace(MOOD_OF[hit.id] || 'main');
     var body = fill(pick(hit.r));
 
     /* never repeat the same answer twice in a row */
@@ -1928,8 +1934,7 @@ function respond(raw, api){
 
     /* always be closing — but not every turn, and never on a rough day */
     var soft = (hit.id !== 'badday' && hit.id !== 'venting' && hit.id !== 'stressed'
-                && hit.id !== 'tired' && hit.id !== 'homeowner' && hit.id !== 'booking'
-                && hit.id !== 'safety');
+                && hit.id !== 'tired' && hit.id !== 'homeowner' && hit.id !== 'booking');
     if (soft && S.step === 0 && !S.closed && S.heat >= 3 && S.turns % 3 === 0){
       body += '\n\n' + CLOSE.next();
     } else if (soft && S.turns % 4 === 0 && S.step === 0 && !hit.qr){
@@ -2100,7 +2105,7 @@ var _mid = 0;
 function man(extra, mood){
   var u = 'x' + (++_mid);
   return FULL.replace(/__U__/g, u)
-             .replace('__FACE__', MOODS[mood || S.mood || 'main'])
+             .replace('__FACE__', MOODS[mood || FACE || 'main'])
              .replace('class="afcb-man"', 'class="afcb-man' + (extra ? ' ' + extra : '') + '"');
 }
 
@@ -3297,8 +3302,8 @@ var CSS = ''
 +'.afcb{position:fixed;right:20px;bottom:18px;z-index:2147482000;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}'
 
 /* the launcher is the whole man, not a face in a circle */
-+'.afcb-btn{position:relative;display:block;width:96px;padding:0;border:0;background:transparent;cursor:pointer}'
-+'.afcb-btn:after{content:"";position:absolute;left:50%;bottom:2px;width:72px;height:13px;margin-left:-36px;'
++'.afcb-btn{position:relative;display:block;width:104px;padding:0;border:0;background:transparent;cursor:pointer}'
++'.afcb-btn:after{content:"";position:absolute;left:50%;bottom:2px;width:78px;height:14px;margin-left:-39px;'
  +'border-radius:50%;background:rgba(13,17,23,.16);filter:blur(4px)}'
 +'.afcb-btn svg{position:relative;width:100%;height:auto;display:block;'
  +'filter:drop-shadow(0 10px 16px rgba(13,17,23,.35))}'
@@ -3309,14 +3314,14 @@ var CSS = ''
 +'.afcb-dismiss:hover{background:#C9F04B;transform:scale(1.12)}'
 +'.afcb-dismiss:focus-visible{outline:3px solid #A6CE39;outline-offset:2px}'
 +'.afcb.open .afcb-dismiss{opacity:0;pointer-events:none;transition:opacity .2s}'
-+'.afcb-dot{position:absolute;top:44%;left:-4px;width:22px;height:22px;border-radius:50%;background:#B4763C;'
++'.afcb-dot{position:absolute;top:6px;left:2px;width:22px;height:22px;border-radius:50%;background:#B4763C;'
  +'border:2px solid #fff;color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;line-height:1}'
 +'.afcb.open .afcb-btn{opacity:0!important;pointer-events:none!important;visibility:hidden;'
  +'transform:translateY(14px) scale(.9);'
  +'transition:opacity .25s,transform .25s}'
 
 +'.afcb-r a{color:#5E7A12;font-weight:600;word-break:break-word}'
-+'.afcb-tip{position:absolute;bottom:206px;right:0;width:max-content;max-width:min(258px,62vw);'
++'.afcb-tip{position:absolute;bottom:186px;right:0;width:max-content;max-width:min(258px,62vw);'
  +'background:#fff;color:#232A33;'
  +'border:2px solid #0D1117;border-radius:14px 14px 3px 14px;padding:12px 14px;font-size:14px;line-height:1.45;'
  +'box-shadow:0 14px 40px rgba(13,17,23,.22);cursor:pointer;display:none}'
@@ -3343,7 +3348,7 @@ var CSS = ''
 +'.afcb-x:hover{opacity:1}'
 +'.afcb-m{flex:1 1 auto;overflow-y:auto;padding:16px;background:#F4F4F1;-webkit-overflow-scrolling:touch}'
 +'.afcb-hello{background:#0D1117;border-radius:14px;padding:14px 16px 0;margin-bottom:12px;text-align:center}'
-+'.afcb-hello svg{width:150px;height:auto;margin:0 auto;display:block}'
++'.afcb-hello svg{width:172px;height:auto;margin:0 auto;display:block}'
 +'.afcb-r{max-width:88%;padding:11px 14px;border-radius:14px;margin-bottom:10px;font-size:14.5px;'
  +'line-height:1.6;white-space:pre-wrap;word-wrap:break-word}'
 +'.afcb-r.bot{background:#fff;color:#232A33;border-bottom-left-radius:4px;border:1px solid #E3E3DC}'
@@ -3373,15 +3378,17 @@ var CSS = ''
 +'.afcb-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}'
 +'.afcb-cr{font-size:10.5px;color:#8A939E;text-align:center;padding:7px;background:#fff;border-top:1px solid #EAEAE4;flex:0 0 auto}'
 +'.afcb-cr a{color:#8A939E;text-decoration:none}'
-+'@media(max-width:480px){.afcb{right:12px;bottom:12px}.afcb-btn{width:76px}'
- +'.afcb-btn:after{width:56px;margin-left:-28px}'
++'@media(max-width:480px){.afcb{right:12px;bottom:12px}.afcb-btn{width:82px}'
+ +'.afcb-btn:after{width:62px;margin-left:-31px}'
  +'.afcb-p{height:min(580px,calc(100vh - 96px));width:calc(100vw - 24px)}'
- +'.afcb-hello svg{width:124px}'
- +'.afcb-tip{bottom:170px;right:0;max-width:min(240px,66vw);font-size:13px;padding:10px 12px}}'
+ +'.afcb-hello svg{width:140px}'
+ +'.afcb-tip{bottom:150px;right:0;max-width:min(240px,66vw);font-size:13px;padding:10px 12px}}'
 
 /* idle life: he breathes, the blade wiggles, the head settles on the neck.
    Slow and continuous — nothing here blinks or flashes. */
 +'@media(prefers-reduced-motion:no-preference){'
+ +'.afcb-pl{animation:afcbA 4.1s ease-in-out infinite}'
+ +'.afcb-pr{animation:afcbB 3.3s ease-in-out infinite}'
  +'.afcb-bob{animation:afcbC 3.6s ease-in-out infinite}'
  +'.afcb-shadow{animation:afcbSh 3.6s ease-in-out infinite}'
  +'.afcb-wave{animation:afcbD 4.1s ease-in-out infinite}'
@@ -3392,9 +3399,12 @@ var CSS = ''
  +'.afcb-foreA{animation:afcbFa 5.3s ease-in-out infinite}'
  +'.afcb-legA{animation:afcbWt 9s ease-in-out infinite}'
  +'.afcb-legB{animation:afcbWt2 9s ease-in-out infinite}'
+ +'.afcb-hat{animation:afcbH 17s ease-in-out infinite}'
  +'.afcb-t s{animation:afcbF 1.3s ease-in-out infinite}'
  +'.afcb-t s:nth-child(2){animation-delay:.18s}.afcb-t s:nth-child(3){animation-delay:.36s}'
  +'.afcb-btn:hover .afcb-bob{animation:afcbC 1.1s ease-in-out infinite}}'
++'@keyframes afcbA{0%,100%{transform:translate(-5px,2px)}35%{transform:translate(4px,-3px)}70%{transform:translate(2px,4px)}}'
++'@keyframes afcbB{0%,100%{transform:translate(4px,3px)}40%{transform:translate(-4px,-2px)}75%{transform:translate(-2px,4px)}}'
 +'@keyframes afcbC{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}'
 +'@keyframes afcbSh{0%,100%{transform:scale(1)}50%{transform:scale(.93)}}'
 +'@keyframes afcbD{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}'
@@ -3412,6 +3422,8 @@ var CSS = ''
 +'@keyframes afcbFa{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-5deg)}}'
 +'@keyframes afcbWt{0%,100%{transform:rotate(0)}50%{transform:rotate(1.6deg)}}'
 +'@keyframes afcbWt2{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.6deg)}}'
++'@keyframes afcbH{0%,88%,100%{transform:rotate(0)}92%{transform:rotate(-7deg) translateY(-4px)}'
+ +'96%{transform:rotate(3deg) translateY(1px)}}'
 +'@keyframes afcbF{0%,60%,100%{opacity:.3}30%{opacity:1}}';
 
 /* ─────────────────────────── BUILD ─────────────────────────────────────── */
@@ -3459,25 +3471,11 @@ function build(){
       opened = false, busy = false, touched = false, loadedAt = Date.now(),
       cine = Cine(), animating = false, dismissed = false;
 
-  /* ── the faces ──────────────────────────────────────────────────────────
-     He changes expression by subject: shades for money talk, level for the
-     hard truths, grin when the calculator pays off. Every copy of him on
-     the page swaps at once, and all four are preloaded so it never blinks
-     a missing image. */
+  /* all four faces preloaded, so swapping one in never blinks a gap */
   (function preload(){
     var k; for (k in MOODS){ if (Object.prototype.hasOwnProperty.call(MOODS, k)){
       try { var i = new W.Image(); i.src = MOODS[k]; } catch(e){} } }
   })();
-
-  function setMood(m){
-    if (!MOODS[m] || S.mood === m) return;
-    S.mood = m;
-    var faces = D.querySelectorAll('.afcb-face'), i;
-    for (i = 0; i < faces.length; i++){
-      faces[i].setAttribute('href', MOODS[m]);
-      try { faces[i].setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', MOODS[m]); } catch(e){}
-    }
-  }
 
   /* the credential line under his name, one at a time, slow cross-fade */
   if (cred && !reduce){
@@ -3593,7 +3591,7 @@ function build(){
     });
   }
 
-  var api = { say: say, chips: chips, go: go, lead: lead, mood: setMood, form: function(){
+  var api = { say: say, chips: chips, go: go, lead: lead, form: function(){
     form.classList.add('on'); form.querySelector('input').focus(); } };
 
   function submitText(raw){
@@ -3612,7 +3610,7 @@ function build(){
       opened = true;
       var hello = el('div', 'afcb-hello', man());
       msgs.appendChild(hello);
-      say('Howdy. I am ' + CFG.name + ' — that is my real face up there, on a tape measure, in a hard hat. Long story.\n\nI answer contractor marketing questions, run your break-even cost per lead, and never once take a lunch break. What are you working on?',
+      say('Howdy. I am ' + CFG.name + ' — I founded this place, and that is my actual face on a tape measure in a hard hat with a pencil behind one ear, which is an odd career, but the numbers work out.\n\nI answer contractor marketing questions, run your break-even cost per lead, and never once take a lunch break. What are you working on?',
         function(){ chips(['Run my numbers','What do you cost?','My phone is not ringing','Tell me a joke']); });
     }
     setTimeout(function(){ if (W.innerWidth > 560) input.focus(); }, 260);
@@ -3706,8 +3704,8 @@ function build(){
 
   /* arrival: lightning, fireworks, a saucer that sets the truck down, mud,
      then he climbs out and walks to the corner */
-  if (cine && !(CFG.arriveOnce && flag('afcZachArrived') === '1') && flag('afcZachClosed') !== '1'){
-    flag('afcZachArrived', '1');
+  if (cine && !(CFG.arriveOnce && flag('afcRivitArrived') === '1') && flag('afcRivitClosed') !== '1'){
+    flag('afcRivitArrived', '1');
     animating = true;
     btn.style.opacity = '0'; btn.style.transform = 'scale(.3)'; btn.style.pointerEvents = 'none';
     cine.arrive(function(){
@@ -3723,16 +3721,16 @@ function build(){
   /* one gentle nudge, once per session, never after he has been closed */
   if (!reduce){
     setTimeout(function(){
-      if (banished || dismissed || opened || flag('afcZachNudged') === '1') return;
+      if (banished || dismissed || opened || flag('afcRivitNudged') === '1') return;
       if (panel.classList.contains('on')) return;
-      flag('afcZachNudged', '1');
+      flag('afcRivitNudged', '1');
       tip.classList.add('on');
       setTimeout(function(){ tip.classList.remove('on'); }, 12000);
     }, CFG.nudgeAt);
   }
 
   W.afcBot = {
-    open: open, close: close, ask: submitText, state: S, mood: setMood,
+    open: open, close: close, ask: submitText, state: S, face: setFace,
     replay: function(){
       if (!cine || animating) return;
       animating = true; panel.classList.remove('on'); w.classList.remove('open');
@@ -3744,8 +3742,8 @@ function build(){
     },
     portal: function(){ banish(); },
     reset: function(){
-      try { sessionStorage.removeItem('afcZachArrived'); sessionStorage.removeItem('afcZachClosed');
-            sessionStorage.removeItem('afcZachNudged'); } catch(e){}
+      try { sessionStorage.removeItem('afcRivitArrived'); sessionStorage.removeItem('afcRivitClosed');
+            sessionStorage.removeItem('afcRivitNudged'); } catch(e){}
     }
   };
 }
@@ -3754,7 +3752,7 @@ if (!HAS_DOM){
   if (typeof module !== 'undefined' && module.exports){
     module.exports = { KB:KB, S:S, norm:norm, match:match, nums:nums, respond:respond,
                        fill:fill, A2:A2, L2:L2, byId:byId, CFG:CFG, CREDS:CREDS,
-                       MOODS:MOODS, MOOD_OF:MOOD_OF, QUOTES:QUOTES, JOKES:JOKES,
+                       MOODS:MOODS, MOOD_OF:MOOD_OF, setFace:setFace, QUOTES:QUOTES, JOKES:JOKES,
                        FULL:FULL, man:man, TRUCK:TRUCK, UFO:UFO, BEAM:BEAM,
                        PORTAL:PORTAL, DISC:DISC, mud:mud, CLOUD:CLOUD,
                        boltSVG:boltSVG, boltPath:boltPath,
