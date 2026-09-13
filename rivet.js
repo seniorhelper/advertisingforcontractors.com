@@ -674,7 +674,7 @@ var KB = [];
 /* ─────────────────────────── GREETINGS & SMALL TALK ────────────────────── */
 KB.push(
 {id:'greet', w:1.2, k:'hi,hello,hey,hey there,hi there,good day,greetings,anyone there,anybody there,is anyone there,knock knock,hello there,hey man',
- r:['Hey. {NAME} here — I am a tape measure in a hard hat wearing my own face, which is a strange career but the numbers work out. What do you do for a living? Roofing, HVAC, plumbing, something else?',
+ r:['Hey. {NAME} here — I am a tape measure in a hard hat, which is a strange career but the numbers work out. What do you do for a living? Roofing, HVAC, plumbing, something else?',
     'Howdy. {NAME}, and I measure marketing the way you measure a job: twice, before anybody commits. What trade are you in?',
     'Hey, good to see you. I answer contractor marketing questions all day and never once take a lunch break. What are you working on?',
     'Well hey there. Pencil behind the ear, hat on straight, ready to go. What brings you in — leads, pricing, or just poking around?'],
@@ -750,7 +750,7 @@ KB.push(
  qr:['Free tools','Run my numbers','Tell me a joke']},
 
 {id:'joke', w:2, k:'tell me a joke,joke,funny,make me laugh,say something funny,another joke,got any jokes,humor,cheer me up,lighten the mood',
- r:['{JOKE}\n\nI have got about sixty of those and zero shame. Want another, or should I do something useful?'],
+ r:['{JOKE}\n\n{TAG}'],
  qr:['Another joke','Okay, be useful','Motivate me']},
 
 {id:'quote', w:2, k:'motivate me,motivation,inspire me,quote,say something inspiring,pump me up,encouragement,i need motivation,keep going,something positive,cheer',
@@ -778,11 +778,11 @@ KB.push(
 /* ─────────────────────────── BOT IDENTITY ──────────────────────────────── */
 KB.push(
 {id:'whoareyou', w:2, k:'who are you,what are you,what is your name,your name,who am i talking to,introduce yourself,tell me about yourself,whats your name',
- r:['I am {NAME}, and I founded this place. That is my actual face on a twenty-five foot tape measure, in a hard hat, with a carpenter pencil behind one ear.\n\nMarketing connoisseur, lead generation expert, SEO pro, agentics innovator, AIO coder, conversion optimization expert, full stack developer — and a contractor before any of it. One job here: help contractors figure out marketing without getting sold something stupid.'],
+ r:['I am {NAME}. I founded this place. Twenty-five foot tape measure, hard hat, carpenter pencil behind one ear.\n\nMarketing connoisseur, lead generation expert, SEO pro, agentics innovator, AIO coder, conversion optimization expert, full stack developer — and a contractor before any of it. One job here: help contractors figure out marketing without getting sold something stupid.'],
  qr:['Are you a real person?','What can you do?','Pricing']},
 
 {id:'robot', w:2.2, k:'are you a robot,are you human,are you a bot,are you real,are you ai,are you a person,am i talking to a robot,is this a bot,is this automated,are you chatgpt,real person,are you live',
- r:['Bot, and I will not pretend otherwise. The face and the name are real — that is me, I founded this place — but what you are typing to is rule-based, which means I can only say what a human here wrote down. Upside: I physically cannot invent a price or a promise. Downside: I do not know everything. When I hit my limit I hand you to a human at {TEL}.'],
+ r:['Bot, and I will not pretend otherwise. I founded this place, so the name is real — but what you are typing to is rule-based, which means I can only say what a human here wrote down. Upside: I physically cannot invent a price or a promise. Downside: I do not know everything. When I hit my limit I hand you to a human at {TEL}.'],
  qr:['Have someone call me','What can you do?','Pricing']},
 
 {id:'whatcanyoudo', w:2, k:'what can you do,what do you do,how can you help,help,menu,options,what are my options,commands,i need help,can you help me,what do you know',
@@ -793,8 +793,8 @@ KB.push(
  r:['I did. Eye To Ad Media out of Denver, running since 2012 — I founded it. I still run a bath remodeling company too, which is the reason this whole site exists: I got tired of paying agencies for reports instead of jobs.'],
  qr:['About AFC','Why you?','Pricing']},
 
-{id:'whytape', w:2.2, k:'why a tape measure,why are you a tape measure,nice hat,cool hat,your hat,you look funny,what do you look like,nice glasses,hard hat,the pencil,pencil behind your ear,you look cool,love the truck,nice truck,cool truck,the truck,that animation,that intro,is that your face,your face',
- r:['That is my actual face, yes. The body is a tape measure because every good job starts with a measurement and every bad marketing decision starts with a guess. The hard hat is because I have opinions. The pencil is because I lose exactly one per week like everybody else.',
+{id:'whytape', w:2.2, k:'why a tape measure,why are you a tape measure,nice hat,cool hat,your hat,you look funny,what do you look like,nice glasses,hard hat,the pencil,pencil behind your ear,you look cool,love the truck,nice truck,cool truck,the truck,that animation,that intro,is that your face,is that you,your face',
+ r:['Yep, that is me. The body is a tape measure because every good job starts with a measurement and every bad marketing decision starts with a guess. The hard hat is because I have opinions. The pencil is because I lose exactly one per week like everybody else.',
     'Appreciated. The truck is mostly for the entrance — I do not have a license, a spine, or feet in any legal sense. What I do have is cost per lead data. Want some?'],
  qr:['Run my numbers','Tell me a joke','Pricing']},
 
@@ -1383,9 +1383,9 @@ KB.push(
  r:['Tire kickers are usually a targeting and qualifying problem, not a character flaw in your market.\n\nThings that thin them out fast: say your minimum project size somewhere visible, ask one budget-range question on the form, use keywords that match the work you want instead of broad service terms, and add negative keywords for repair when you sell replacement.\n\nAlso worth saying plainly — somebody who shops three bids is not automatically a bad lead. They are just doing what you would do with $14,000.'],
  qr:['Bad leads','Close rate','Free audit']},
 
-{id:'guarantee', w:2.5, k:'can you guarantee,guarantee results,guarantee number one,guarantee leads,guarantee rankings,promise results,do you guarantee,money back',
- r:['No, and anybody who does is either lying or about to define their way out of it in the fine print.\n\nNobody controls Google rankings. Lead volume depends on demand, season, competition, budget and pricing — most of which nobody controls either.\n\nWhat can be committed to is the actual work: what gets built, what gets tracked, what gets reported, and month to month terms so you can leave if it is not producing. That is a guarantee with teeth, because it costs us something.'],
- qr:['Contracts','What do you cost?','Red flags']},
+{id:'guarantee', w:2.5, k:'can you guarantee,guarantee results,guarantee number one,guarantee leads,guarantee rankings,promise results,do you guarantee,money back,can you promise,what do you promise',
+ r:['No. And I want to be specific about why, because it is not me hedging.\n\nGoogle publishes this in its own guidance on hiring an SEO: "No one can guarantee a #1 ranking on Google." It goes on to tell business owners to be wary of anyone who claims otherwise. An algorithm can change in a day. A market can change in a moment. Anybody promising you a position is either ignoring that or counting on you not to check.\n\nHere is what I will promise, and I mean every word of it. We put your business first. We work on it like it is our own company, because the man who owns this one still runs a contracting business and knows exactly what a dead February feels like. You get the technology and the marketing skill we have got, all of it, pointed at your phone ringing. We tell you the truth about what is working and what is not. And it is month to month, so the day we stop earning it you walk.\n\nThat is a smaller promise than the other guys make. It is the one that is actually ours to keep.'],
+ qr:['Reporting','Red flags','What do you cost?','Have someone call me']},
 
 {id:'rankingdrop', w:2.4, k:'rankings dropped,lost rankings,traffic dropped,google slapped me,dropped off google,fell off page one,used to rank,my traffic tanked,lost visibility,algorithm update',
  r:['Before blaming an update — which is where everyone starts and is usually wrong — the first question is how wide the drop is. One keyword, one page, the map listing, or the whole site?\n\nThings that cause this far more often than an algorithm: a redesign that changed URLs without redirects, a page that got deindexed, a Business Profile edit, lost links, a security issue, tracking or location differences in how you are checking, or simply a competitor who got better.\n\nWhen did you first notice it, and did anything change on the site around then?'],
@@ -1454,6 +1454,42 @@ var MISS = new Bag([
  'I do not have an answer for that one. What I am good at: cost per lead math, what channels actually cost in 2026, which trades work how, why estimates go cold, and getting a human to call you. Any of those?'
 ]);
 
+/* what he says after a joke. The first one is the keeper, so the bag hands
+   it out first and only then starts shuffling the rest in behind it. */
+var TAGS = new Bag([
+ 'I have got about sixty of those and zero shame. Want another, or should I do something useful?',
+ 'Two hundred and sixty of those in the tool belt and not one ounce of shame. Another, or back to work?',
+ 'I do not get tired and I do not get embarrassed. Dangerous combination. Want another?',
+ 'That one is union-approved. Another, or should I earn my keep?',
+ 'Nobody has ever laughed at that. I keep telling it anyway. Want one more?',
+ 'I have got a bucket of those and no supervisor. Another, or something useful?',
+ 'Free of charge, like everything else here. Want another?',
+ 'Measured twice, told once. Another one, or should we talk about your phone not ringing?',
+ 'I workshop these on the jobsite. Nobody claps. Another?',
+ 'That is the good material. It goes downhill from here. Want to find out, or get to work?',
+ 'I could do this all day, and technically I will. Another, or shall I be useful?',
+ 'Somewhere a comedian just felt a chill. Another, or back to business?'
+]);
+var TAGFIRST = true;
+
+/* Shouted from the corner while he does jumping jacks. Cheesy on purpose —
+   the point is to be noticed, and a man exercising on a tape measure is
+   hard to scroll past. */
+var PITCH = new Bag([
+ 'Exercise is good for the body. Effective marketing is good for the company.',
+ 'Twenty more of these and I still will not be as tired as your phone is quiet.',
+ 'I do not sweat and I do not sleep. Ask me what that is worth at 11pm.',
+ 'Cardio for me, cash flow for you. Only one of us is getting in shape.',
+ 'Still here. Still free. Still better at math than your last agency.',
+ 'Warming up. You should see what I do to a break-even calculation.',
+ 'A body in motion stays in motion. So does a pipeline. Want me to build you one?',
+ 'This is the most exercise anybody on this page is getting today. Tap me.',
+ 'Reps build muscle. Reviews build the map pack. I can help with one of those.',
+ 'Three sets of these and one honest answer about your marketing. Your pick.',
+ 'I am burning zero calories and you are losing zero dollars talking to me.',
+ 'Look at me. I am doing calisthenics on a tape measure. Least you could do is say hi.'
+]);
+
 var NUDGE = new Bag([
  'While you are here — what is your average job worth? I can show you your break-even cost per lead in about thirty seconds.',
  'Quick one: if the phone brought you three more jobs a week, what would that do to your year? That is the number worth building around.',
@@ -1494,7 +1530,11 @@ function fill(t){
     .replace(/\{TEL\}/g, CFG.telView)
     .replace(/\{JOKE\}/g, function(){ return JOKES.next(); })
     .replace(/\{QUOTE\}/g, function(){ return QUOTES.next(); })
-    .replace(/\{LIFT\}/g, function(){ return LIFT.next(); });
+    .replace(/\{LIFT\}/g, function(){ return LIFT.next(); })
+    .replace(/\{TAG\}/g, function(){
+      if (TAGFIRST){ TAGFIRST = false; return TAGS.src[0]; }
+      return TAGS.next();
+    });
 }
 
 function money(n){
@@ -2080,7 +2120,7 @@ var FULL = '<svg class="afcb-man" viewBox="60 -175 320 665" aria-hidden="true" f
 /* ── HEAD: the real thing. Hat, hair, ears and pencil are in the photo. ── */
  +'<g class="afcb-head">'
   +'<ellipse cx="220" cy="150" rx="92" ry="14" fill="#000" opacity=".18"/>'
-  +'<image class="afcb-face" href="__FACE__" x="70" y="-161" width="300" height="323"'
+  +'<image class="afcb-face" href="__FACE__" x="88" y="-161" width="300" height="323"'
   +' preserveAspectRatio="xMidYMax meet"/>'
  +'</g>'
 +'</g>'
@@ -2912,8 +2952,8 @@ var CINE_CSS = ''
 /* what he says when he steps out — emphasis, not a wall of gray text */
 var HELLO_HTML =
   '<b><span class="big">Howdy — I am <em>Zach</em>.</span>'
-+ 'That is my real face. Marketing connoisseur, lead gen, SEO, AIO, conversion, '
-+ 'full stack — and a contractor before any of it. I help contractors '
++ 'I founded this place. Marketing, lead gen, SEO, AIO, conversion, full stack — '
++ 'and a contractor before any of it. I help contractors '
 + '<i>get found, get called, and get booked</i>, and I will tell you straight '
 + 'when something is not worth your money.'
 + '<span class="sm">Tell me what is slow. I will tell you how to fix it.</span>'
@@ -3299,6 +3339,8 @@ function Cine(){
 /* ─────────────────────────── STYLES ────────────────────────────────────── */
 var CSS = ''
 +'.afcb,.afcb *{box-sizing:border-box;margin:0;padding:0}'
++'.afcb{max-width:100vw}'
++'.afcb-stage,.afcb{contain:layout paint}'
 +'.afcb{position:fixed;right:20px;bottom:18px;z-index:2147482000;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}'
 
 /* the launcher is the whole man, not a face in a circle */
@@ -3375,7 +3417,9 @@ var CSS = ''
 +'.afcb-f button{width:100%;background:#A6CE39;color:#0D1117;border:0;border-radius:8px;padding:12px;'
  +'font-family:"Barlow Condensed",Impact,sans-serif;font-size:18px;font-weight:700;letter-spacing:.04em;'
  +'text-transform:uppercase;cursor:pointer}'
-+'.afcb-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}'
++'.afcb-hp{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;'
+ +'margin:-1px!important;border:0!important;overflow:hidden!important;white-space:nowrap!important;'
+ +'clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;opacity:0!important}'
 +'.afcb-cr{font-size:10.5px;color:#8A939E;text-align:center;padding:7px;background:#fff;border-top:1px solid #EAEAE4;flex:0 0 auto}'
 +'.afcb-cr a{color:#8A939E;text-decoration:none}'
 +'@media(max-width:480px){.afcb{right:12px;bottom:12px}.afcb-btn{width:82px}'
@@ -3424,7 +3468,48 @@ var CSS = ''
 +'@keyframes afcbWt2{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.6deg)}}'
 +'@keyframes afcbH{0%,88%,100%{transform:rotate(0)}92%{transform:rotate(-7deg) translateY(-4px)}'
  +'96%{transform:rotate(3deg) translateY(1px)}}'
-+'@keyframes afcbF{0%,60%,100%{opacity:.3}30%{opacity:1}}';
++'@keyframes afcbF{0%,60%,100%{opacity:.3}30%{opacity:1}}'
+
+/* ── the attention getter ───────────────────────────────────────────────
+   He does jumping jacks. Arms go overhead, legs straddle out, the whole
+   body hops, the head lags a beat behind like a bobblehead should.
+   Six reps, then he stands still again. Motion only — nothing flashes,
+   nothing changes colour, and the whole thing is skipped under
+   prefers-reduced-motion along with every other animation here. */
++'@media(prefers-reduced-motion:no-preference){'
+ +'.afcb.jacks .afcb-btn .afcb-bob{animation:afcbJhop .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-legA{animation:afcbJlegA .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-legB{animation:afcbJlegB .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-armA{animation:afcbJarmA .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-wave{animation:afcbJarmB .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-foreA{animation:afcbJforeA .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-foreB{animation:afcbJforeB .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-shinA{animation:afcbJshin .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-shinB{animation:afcbJshin .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-neck{animation:afcbJneck .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-head{animation:afcbJhead .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-torso{animation:afcbJtorso .46s ease-in-out 6}'
+ +'.afcb.jacks .afcb-btn .afcb-shadow{animation:afcbJshadow .46s ease-in-out 6}}'
+/* up on the beat, down on the off-beat */
++'@keyframes afcbJhop{0%,100%{transform:translateY(0)}'
+ +'30%{transform:translateY(-16px)}55%{transform:translateY(-18px)}'
+ +'82%{transform:translateY(3px)}}'
++'@keyframes afcbJlegA{0%,100%{transform:rotate(0)}40%,60%{transform:rotate(23deg)}}'
++'@keyframes afcbJlegB{0%,100%{transform:rotate(0)}40%,60%{transform:rotate(-23deg)}}'
++'@keyframes afcbJshin{0%,100%{transform:rotate(0)}45%{transform:rotate(-9deg)}}'
++'@keyframes afcbJarmA{0%,100%{transform:rotate(6deg)}40%,60%{transform:rotate(122deg)}}'
++'@keyframes afcbJarmB{0%,100%{transform:rotate(-6deg)}40%,60%{transform:rotate(-122deg)}}'
++'@keyframes afcbJforeA{0%,100%{transform:rotate(0)}45%{transform:rotate(16deg)}}'
++'@keyframes afcbJforeB{0%,100%{transform:rotate(0)}45%{transform:rotate(-16deg)}}'
+/* the head is heavy and arrives late, which is the whole joke of a bobblehead */
++'@keyframes afcbJneck{0%,100%{transform:rotate(0) skewX(0)}'
+ +'35%{transform:rotate(-4deg) skewX(3deg)}70%{transform:rotate(3deg) skewX(-2deg)}}'
++'@keyframes afcbJhead{0%,100%{transform:rotate(0) translateY(0)}'
+ +'38%{transform:rotate(5deg) translateY(4px)}72%{transform:rotate(-4deg) translateY(-2px)}}'
++'@keyframes afcbJtorso{0%,100%{transform:scale(1,1)}'
+ +'12%{transform:scale(1.05,.94)}45%{transform:scale(.97,1.03)}88%{transform:scale(1.04,.95)}}'
++'@keyframes afcbJshadow{0%,100%{transform:scale(1);opacity:.26}'
+ +'50%{transform:scale(.72);opacity:.14}}';
 
 /* ─────────────────────────── BUILD ─────────────────────────────────────── */
 function build(){
@@ -3610,7 +3695,7 @@ function build(){
       opened = true;
       var hello = el('div', 'afcb-hello', man());
       msgs.appendChild(hello);
-      say('Howdy. I am ' + CFG.name + ' — I founded this place, and that is my actual face on a tape measure in a hard hat with a pencil behind one ear, which is an odd career, but the numbers work out.\n\nI answer contractor marketing questions, run your break-even cost per lead, and never once take a lunch break. What are you working on?',
+      say('Howdy. I am ' + CFG.name + ' — I founded this place. I am also a tape measure in a hard hat with a pencil behind one ear, which is an odd career, but the numbers work out.\n\nI answer contractor marketing questions, run your break-even cost per lead, and never once take a lunch break. What are you working on?',
         function(){ chips(['Run my numbers','What do you cost?','My phone is not ringing','Tell me a joke']); });
     }
     setTimeout(function(){ if (W.innerWidth > 560) input.focus(); }, 260);
@@ -3691,6 +3776,49 @@ function build(){
           function(){ api.form(); });
       }, 320);
     };
+  }
+
+  /* ── the attention getter ─────────────────────────────────────────────
+     He waits until somebody has actually read some of the page, then waits
+     for them to stop scrolling, then does one set of jumping jacks with a
+     line above his head. Twice a session at most, never while the panel is
+     open, never after he has been dismissed, and never at all if the
+     browser asked for reduced motion. */
+  var jackCount = 0, jackTimer = null, scrolled = false, jacking = false;
+
+  function jacks(){
+    if (reduce || jacking || banished || dismissed || opened) return;
+    if (panel.classList.contains('on') || animating) return;
+    if (jackCount >= 2) return;
+    jackCount++;
+    jacking = true;
+    tip.innerHTML = '<b>' + esc(CFG.name) + '</b>' + esc(PITCH.next());
+    tip.classList.add('on');
+    w.classList.add('jacks');
+    setTimeout(function(){ w.classList.remove('jacks'); jacking = false; }, 2900);
+    setTimeout(function(){ tip.classList.remove('on'); }, 8000);
+  }
+
+  function armJacks(ms){
+    if (jackTimer) clearTimeout(jackTimer);
+    jackTimer = setTimeout(jacks, ms);
+  }
+
+  if (!reduce){
+    W.addEventListener('scroll', function(){
+      touched = true;
+      if (banished || dismissed || opened || jackCount >= 2) return;
+      var y = W.pageYOffset || (D.documentElement && D.documentElement.scrollTop) || 0;
+      if (y < 400) return;
+      scrolled = true;
+      /* every scroll pushes it back — he only interrupts once they stop */
+      armJacks(jackCount === 0 ? 2600 : 4000);
+    }, {passive:true});
+
+    /* and if they never scroll at all, he still gets one go */
+    setTimeout(function(){ if (!scrolled) jacks(); }, 52000);
+    /* second set, a good while later, only if he is still being ignored */
+    setTimeout(function(){ if (jackCount === 1) jacks(); }, 128000);
   }
 
   /* a small nudge above him once he has landed in the corner */
