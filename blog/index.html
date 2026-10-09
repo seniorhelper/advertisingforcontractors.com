@@ -235,7 +235,7 @@
       "@type": "ItemList",
       "@id": "https://advertisingforcontractors.com/blog/#list",
       "name": "Contractor marketing posts",
-      "numberOfItems": 5,
+      "numberOfItems": 6,
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "itemListElement": [
         {
@@ -332,6 +332,25 @@
               "@id": "https://advertisingforcontractors.com/#organization"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://advertisingforcontractors.com/blog/respond-to-negative-reviews-contractors/",
+          "item": {
+            "@type": "BlogPosting",
+            "@id": "https://advertisingforcontractors.com/blog/respond-to-negative-reviews-contractors/#post",
+            "headline": "How Should a Contractor Respond to a Bad Google Review?",
+            "url": "https://advertisingforcontractors.com/blog/respond-to-negative-reviews-contractors/",
+            "description": "A calm, repeatable way to answer a negative Google review, what never to write, when a review can be flagged, and how to prevent most bad reviews.",
+            "inLanguage": "en-US",
+            "author": {
+              "@id": "https://advertisingforcontractors.com/#organization"
+            },
+            "publisher": {
+              "@id": "https://advertisingforcontractors.com/#organization"
+            }
+          }
         }
       ]
     },
@@ -399,7 +418,7 @@
           "name": "Will you write about my trade specifically?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Possibly, though the trade pages on this site already cover roofing, plumbing, HVAC, electrical, solar, general contracting, painting, remodeling, pool building and fencing in more depth than a blog post would. The blog exists for questions that cut across trades, like what a lead costs or whether a platform is worth buying from. If there is a question specific to your trade that is not answered anywhere on the site, email info@eyetoad.com and it is genuinely useful to know."
+            "text": "Possibly, though the trade pages on this site already cover roofing, plumbing, HVAC, electrical, solar, general contracting, painting, remodeling, pool building and fencing in more depth than a blog post would. The blog exists for questions that cut across trades, like what a lead costs or whether a platform is worth buying from. If there is a question specific to your trade that is not answered anywhere on the site, send it through the contact page and it is genuinely useful to know."
           }
         },
         {
@@ -1169,7 +1188,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
     <div>Advertising for contractors &middot; Built by a contractor &middot; Since 2012</div>
     <div class="util-r">
       <a href="tel:18004818638">1-800-481-8638</a>
-      <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>
+      <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a>
     </div>
   </div>
 </div>
@@ -1487,6 +1506,27 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
         </div>
       </a>
 
+      <a class="post" href="/blog/respond-to-negative-reviews-contractors/">
+        <div class="post-n">06</div>
+        <div>
+          <div class="post-tags">
+            <span class="ptag pt-2">How-to</span>
+            <span class="ptag pt-1">Reviews</span>
+          </div>
+          <h3>How should a contractor respond to a bad Google review?</h3>
+          <p>Calmly, briefly and in public, because the reply is really for the next homeowner reading it.
+            A repeatable shape for the reply, what never to write, which reviews can be flagged under
+            Google&rsquo;s policies, why offering a discount for a changed review is off the table, and the
+            job-site habits that prevent most bad reviews in the first place.</p>
+          <div class="post-foot">
+            <span>Reading time <b>5 min</b></span>
+            <span>Includes <b>a reply you can adapt</b></span>
+            <span class="post-go">Read it &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+
     </div>
   </div>
 </section>
@@ -1717,7 +1757,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
 
       <details>
         <summary>Will you write about my trade specifically?</summary>
-        <div class="faq-a">Possibly, though the trade pages on this site already cover roofing, plumbing, HVAC, electrical, solar, general contracting, painting, remodeling, pool building and fencing in more depth than a blog post would. The blog exists for questions that cut across trades, like what a lead costs or whether a platform is worth buying from. If there is a question specific to your trade that is not answered anywhere on the site, email info@eyetoad.com and it is genuinely useful to know.</div>
+        <div class="faq-a">Possibly, though the trade pages on this site already cover roofing, plumbing, HVAC, electrical, solar, general contracting, painting, remodeling, pool building and fencing in more depth than a blog post would. The blog exists for questions that cut across trades, like what a lead costs or whether a platform is worth buying from. If there is a question specific to your trade that is not answered anywhere on the site, send it through the <a href="/contact/">contact page</a> and it is genuinely useful to know.</div>
       </details>
 
       <details>
@@ -1763,7 +1803,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
           tired of paying for reports instead of results.</p>
         <div class="ft-contact">
           <a href="tel:18004818638">1-800-481-8638</a><br>
-          <a href="mailto:info@eyetoad.com">info@eyetoad.com</a><br>
+          <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a><br>
           Denver, Colorado &middot; Serving the US &amp; beyond
         </div>
       </div>
@@ -2062,8 +2102,8 @@ form.addEventListener('submit', function(e){
   /* Honeypot: a bot fills every field it finds. A human never sees this one. */
   if (form.elements['_honey'].value !== ''){ return; }
 
-  /* Timing check: real people take longer than three seconds to fill this in. */
-  if (Date.now() - loadedAt < 3000){
+  /* Timing check: real people take longer than a few seconds to fill this in. */
+  if (Date.now() - loadedAt < 3500){
     show('msg-warn', 'That was quick. Give it a moment and try again — we want to be sure you are a person.');
     return;
   }
@@ -2103,7 +2143,7 @@ form.addEventListener('submit', function(e){
     } else if (state === 'unconfirmed'){
       show('msg-warn', 'Sent — with one honest caveat. Your details went through but no delivery receipt came back, so we cannot confirm it landed. If you have not heard from us within one business day, please call 1-800-481-8638 rather than waiting on us.');
     } else {
-      show('msg-bad', 'That did not send, and we would rather tell you than let it disappear. Please call 1-800-481-8638 or email info@eyetoad.com directly.');
+      show('msg-bad', 'That did not send, and we would rather tell you than let it disappear. Please call 1-800-481-8638.');
     }
   }
 
@@ -2131,5 +2171,6 @@ form.addEventListener('submit', function(e){
 
 <!-- RIVET — shared chatbot, one file, every page -->
 <script src="/rivet.js" defer></script>
+<script>document.querySelectorAll("a.eml").forEach(function(a){var e=atob(a.dataset.a)+String.fromCharCode(64)+atob(a.dataset.b);a.href="mailto:"+e;if(a.hasAttribute("data-show"))a.textContent=e;});</script>
 </body>
 </html>

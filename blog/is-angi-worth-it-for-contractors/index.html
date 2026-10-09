@@ -1044,7 +1044,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
     <div>Advertising for contractors &middot; Built by a contractor &middot; Since 2012</div>
     <div class="util-r">
       <a href="tel:18004818638">1-800-481-8638</a>
-      <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>
+      <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a>
     </div>
   </div>
 </div>
@@ -1347,7 +1347,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
           <a href="https://eyetoad.com/" rel="noopener">Eye To Ad Media</a>, running search and
           advertising for trade contractors since 2012. Our founder has run a bath remodeling company
           the whole time, which is why every number here is judged against booked jobs rather than
-          rankings. Questions or a correction? <a href="mailto:info@eyetoad.com">info@eyetoad.com</a>.</p>
+          rankings. Questions or a correction? <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a>.</p>
       </div>
     </div>
   </div>
@@ -1392,7 +1392,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
           tired of paying for reports instead of results.</p>
         <div class="ft-contact">
           <a href="tel:18004818638">1-800-481-8638</a><br>
-          <a href="mailto:info@eyetoad.com">info@eyetoad.com</a><br>
+          <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a><br>
           Denver, Colorado &middot; Serving the US &amp; beyond
         </div>
       </div>
@@ -1691,8 +1691,8 @@ form.addEventListener('submit', function(e){
   /* Honeypot: a bot fills every field it finds. A human never sees this one. */
   if (form.elements['_honey'].value !== ''){ return; }
 
-  /* Timing check: real people take longer than three seconds to fill this in. */
-  if (Date.now() - loadedAt < 3000){
+  /* Timing check: real people take longer than a few seconds to fill this in. */
+  if (Date.now() - loadedAt < 3500){
     show('msg-warn', 'That was quick. Give it a moment and try again — we want to be sure you are a person.');
     return;
   }
@@ -1732,7 +1732,7 @@ form.addEventListener('submit', function(e){
     } else if (state === 'unconfirmed'){
       show('msg-warn', 'Sent — with one honest caveat. Your details went through but no delivery receipt came back, so we cannot confirm it landed. If you have not heard from us within one business day, please call 1-800-481-8638 rather than waiting on us.');
     } else {
-      show('msg-bad', 'That did not send, and we would rather tell you than let it disappear. Please call 1-800-481-8638 or email info@eyetoad.com directly.');
+      show('msg-bad', 'That did not send, and we would rather tell you than let it disappear. Please call 1-800-481-8638.');
     }
   }
 
@@ -1760,5 +1760,6 @@ form.addEventListener('submit', function(e){
 
 <!-- RIVET — shared chatbot, one file, every page -->
 <script src="/rivet.js" defer></script>
+<script>document.querySelectorAll("a.eml").forEach(function(a){var e=atob(a.dataset.a)+String.fromCharCode(64)+atob(a.dataset.b);a.href="mailto:"+e;if(a.hasAttribute("data-show"))a.textContent=e;});</script>
 </body>
 </html>

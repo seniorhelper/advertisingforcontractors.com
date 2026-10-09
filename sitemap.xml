@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://advertisingforcontractors.com/blog/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -200,7 +200,13 @@
   </url>
   <url>
     <loc>https://advertisingforcontractors.com/blog/contractor-not-showing-google-maps/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advertisingforcontractors.com/blog/respond-to-negative-reviews-contractors/</loc>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

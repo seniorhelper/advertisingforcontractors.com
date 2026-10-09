@@ -72,6 +72,7 @@ shown rather than a single flattering number. Calculators are client-side and st
 - [Local Services Ads vs Google Ads](https://advertisingforcontractors.com/blog/local-services-ads-vs-google-ads/): Cost, eligibility, control, and when to run both.
 - [Getting Recommended by ChatGPT](https://advertisingforcontractors.com/blog/get-recommended-by-chatgpt-contractors/): Why rankings do not transfer, and six things to do about it.
 - [Not Showing on Google Maps?](https://advertisingforcontractors.com/blog/contractor-not-showing-google-maps/): Nine causes ordered by likelihood, starting with proximity.
+- [Responding to a Bad Google Review](https://advertisingforcontractors.com/blog/respond-to-negative-reviews-contractors/): What to write, what never to write, and when to flag a review instead.
 ## Utility
 
 - [Accessibility](https://advertisingforcontractors.com/accessibility/): Our accessibility commitments and how to report a problem.
