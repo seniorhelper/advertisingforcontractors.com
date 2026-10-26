@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Advertising for Contractors | Lead Generation That Makes the Phone Ring — AFC</title>
-<meta name="description" content="Advertising for contractors built by a contractor. SEO, Google Ads, Local Services Ads and AI search for roofers, plumbers, HVAC, electrical, solar and more. Campaigns from $50/mo. Call 1-800-481-8638.">
+<title>Advertising for Contractors: Marketing That Books Jobs | AFC</title>
+<meta name="description" content="Advertising for contractors, built by a contractor: SEO, Google Ads, Local Services Ads and AI search, plus a $497 Local Launch Kit that builds leads you own.">
 <link rel="canonical" href="https://advertisingforcontractors.com/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Advertising For Contractors — powered by Eye To Ad Media">
@@ -29,12 +29,12 @@
 <meta property="og:site_name" content="Advertising For Contractors">
 <meta property="og:title" content="Advertising for Contractors | Lead Generation That Makes the Phone Ring">
 <meta property="og:description" content="Marketing for the trades, built by someone who runs a contracting business. Campaigns from $50/mo to full scale. No long-term contracts.">
-<meta property="og:image" content="https://advertisingforcontractors.com/images/contractor-marketing-more-leads-more-jobs-more-growth.png">
+<meta property="og:image" content="https://advertisingforcontractors.com/images/contractor-marketing-more-leads-more-jobs-more-growth.jpg">
 <meta property="og:image:alt" content="AFC contractor marketing — more leads, more jobs, more growth">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Advertising for Contractors | Lead Generation That Makes the Phone Ring">
 <meta name="twitter:description" content="Marketing for the trades, built by someone who runs a contracting business. Campaigns from $50/mo to full scale.">
-<meta name="twitter:image" content="https://advertisingforcontractors.com/images/contractor-marketing-more-leads-more-jobs-more-growth.png">
+<meta name="twitter:image" content="https://advertisingforcontractors.com/images/contractor-marketing-more-leads-more-jobs-more-growth.jpg">
 
 <!-- Favicon -->
 <link rel="icon" href="/images/advertising-for-contractors-favicon.png" sizes="any">
@@ -428,6 +428,19 @@ header.shrunk{box-shadow:0 6px 22px rgba(13,17,23,.11)}
    so it has to be overridden or the emphasis disappears. */
 .hero-sub strong{color:var(--lime-hi);font-weight:700}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.hero-call{margin-top:16px;font-size:.95rem;color:#C3CBD5}
+.hero-call a{color:var(--lime-hi);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* Local Launch Kit offer block */
+.kit{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start}
+.kit ul{list-style:none;margin:18px 0 0}
+.kit li{padding:10px 0 10px 28px;position:relative;border-bottom:1px solid var(--line);line-height:1.6}
+.kit li::before{content:'\2713';position:absolute;left:0;color:#5E8A0F;font-weight:700}
+.kit-box{background:var(--white);border:2px solid var(--ink);border-radius:10px;padding:30px 26px;box-shadow:var(--shadow)}
+.kit-price{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--ink);line-height:1}
+.kit-price small{display:block;font-family:var(--body,inherit);font-size:.95rem;font-weight:500;color:var(--slate);margin-top:8px}
+.kit-box .btn{width:100%;margin-top:22px}
+.kit-fine{font-size:.86rem;color:var(--slate);margin-top:14px;line-height:1.55}
+@media (max-width:860px){.kit{grid-template-columns:1fr}}
 .hero-trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;
   padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
 .hero-trust span{font-family:var(--mono);font-size:.75rem;letter-spacing:.09em;
@@ -769,6 +782,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
             <a href="/contractor-facebook-ads/">Facebook &amp; Social Ads</a>
             <a href="/contractor-lead-generation/">Lead Generation</a>
             <a href="/ai-search-optimization-contractors/">AI Search Optimization</a>
+            <a href="/local-launch-kit/">Local Launch Kit &middot; $497</a>
           </div>
         </div>
         <div class="dd">
@@ -826,6 +840,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
         <a href="/contractor-facebook-ads/">Facebook &amp; Social Ads</a>
         <a href="/contractor-lead-generation/">Lead Generation</a>
         <a href="/ai-search-optimization-contractors/">AI Search Optimization</a>
+            <a href="/local-launch-kit/">Local Launch Kit &middot; $497</a>
       </div>
       <div class="nav-col">
         <h2>Free Tools</h2>
@@ -858,14 +873,14 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
 <main id="main">
 
 <!-- ══════════ HERO ══════════
-     Single video source across all breakpoints. To revert to the welding
-     clip on desktop, change the <source src> below back to
-     /images/contractor-advertising-hero-video.mp4                        -->
+     The clip is ~20 MB, so the script at the bottom attaches data-src only on
+     screens 900px+ without Save-Data or reduced motion. Phones get the dark
+     scrim and a fast first paint. To use the welding clip instead, point
+     data-src at /images/contractor-advertising-hero-video.mp4              -->
 <section class="hero">
-  <video class="hero-vid" id="heroVid" autoplay muted loop playsinline
-         preload="metadata" aria-hidden="true" tabindex="-1">
-    <source src="/images/construction-site-contractor-marketing-hero.mp4" type="video/mp4">
-  </video>
+  <video class="hero-vid" id="heroVid" muted loop playsinline preload="none"
+         data-src="/images/construction-site-contractor-marketing-hero.mp4"
+         aria-hidden="true" tabindex="-1"></video>
   <div class="hero-scrim"></div>
 
   <div class="wrap hero-in">
@@ -876,9 +891,10 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
       &mdash; so you can get back on the job. Campaigns start at <strong>$50 a month</strong> and scale
       to whatever your market demands.</p>
     <div class="hero-cta">
-      <a class="btn btn-go" href="#audit">Get my free marketing audit</a>
-      <a class="btn btn-line" href="tel:18004818638">Call 1-800-481-8638</a>
+      <a class="btn btn-go" href="/local-launch-kit/">Start with the Local Launch Kit &middot; $497</a>
+      <a class="btn btn-line" href="#audit">Get a free marketing audit</a>
     </div>
+    <p class="hero-call">Rather talk first? <a href="tel:18004818638">Call 1-800-481-8638</a> and a person answers.</p>
     <div class="hero-trust">
       <span>Founded by a contractor</span>
       <span>Serving the trades since 2012</span>
@@ -916,6 +932,36 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
   </div>
 </section>
 
+<!-- ══════════ LOCAL LAUNCH KIT ══════════ -->
+<section class="sec sec-paper" id="launch-kit">
+  <div class="wrap">
+    <div class="kit rv">
+      <div>
+        <div class="level"><span class="level-bar"></span><span class="level-vial"></span>
+          <span class="level-lbl">Start here</span></div>
+        <h2>Where should a contractor start if the budget is tight?</h2>
+        <p class="spk-answer">With the groundwork that makes every other channel cheaper: being listed
+          correctly, asking every customer for a review, and answering every web lead in seconds. The
+          Local Launch Kit does all of it for a posted price, and every lead it produces comes to you,
+          not to a marketplace that sells it to your competitors too.</p>
+        <ul>
+          <li>Verified and Featured directory listings with consistent name, address and phone</li>
+          <li>One press release about your business, written and published after you approve it</li>
+          <li>Three SEO fixes on your website, chosen for the biggest effect</li>
+          <li>Review requests set up: one-tap Google review link, QR card, email after every job</li>
+          <li>An instant reply under your name to every new web form lead</li>
+        </ul>
+        <p style="margin-top:18px"><a href="/local-launch-kit/">See exactly what is in the kit and when each piece goes live</a>, including an honest comparison with Angi, Thumbtack and Yelp ads.</p>
+      </div>
+      <div class="kit-box">
+        <div class="kit-price">$497 <small>setup, once. Then $97 a month to keep it running. Cancel anytime online.</small></div>
+        <a class="btn btn-go" href="/local-launch-kit/">Start my Launch Kit</a>
+        <p class="kit-fine">No contract and no charge per lead. We guarantee the work and the dates, not a number of leads or a ranking, because nobody honest can.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ ORIGIN STORY ══════════ -->
 <section class="sec">
   <div class="wrap">
@@ -945,7 +991,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
           <a href="https://eyetoad.com/about/" rel="noopener">Eye To Ad Media's about page</a>.</p>
       </div>
       <figure class="split-media">
-        <img src="/images/eye-to-ad-media-contractor-marketing-team.png"
+        <img src="/images/eye-to-ad-media-contractor-marketing-team.jpg"
              alt="The Eye To Ad Media team reviewing a contractor marketing performance dashboard showing leads, calls and jobs won"
              width="1536" height="1024" loading="lazy" decoding="async">
         <figcaption>Our process board and the metrics we actually report on: leads, calls, jobs won.
@@ -1392,7 +1438,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
   <div class="wrap">
     <div class="split rv">
       <figure class="split-media">
-        <img src="/images/contractor-marketing-real-results-dashboard.png"
+        <img src="/images/contractor-marketing-real-results-dashboard.jpg"
              alt="Contractor marketing reporting dashboard tracking total leads, phone calls and jobs won by source"
              width="1536" height="1024" loading="lazy" decoding="async">
         <figcaption>Every account reports on the same three lines: leads, calls, jobs won &mdash; attributed
@@ -1624,7 +1670,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
           <a class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-show href="/contact/">email us</a>.</p>
 
         <figure class="split-media" style="margin-top:30px">
-          <img src="/images/contractor-lead-generation-phone-calls.png"
+          <img src="/images/contractor-lead-generation-phone-calls.jpg"
                alt="Contractor lead generation dashboard showing incoming phone calls, new leads and appointments set"
                width="1536" height="1024" loading="lazy" decoding="async">
           <figcaption>What a working campaign looks like from the truck: calls, leads, appointments.</figcaption>
@@ -1781,6 +1827,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
         <a href="/contractor-facebook-ads/">Facebook &amp; social ads</a>
         <a href="/contractor-lead-generation/">Contractor lead generation</a>
         <a href="/ai-search-optimization-contractors/">AI search optimization</a>
+        <a href="/local-launch-kit/">Local Launch Kit</a>
         <a href="/free-contractor-marketing-audit/">Free marketing audit</a>
         <a href="/free-contractor-chatbot/">Free contractor chatbot</a>
         <a href="/contractor-marketing-tools/">Free contractor tools</a>
@@ -1805,7 +1852,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
 
     <div class="ft-bot">
       <p>&copy; 2026 Advertising For Contractors. All rights reserved.
-        <a href="/accessibility/">Accessibility</a> &middot;
+        <a href="/accessibility/">Accessibility</a> &middot; <a href="/sitemap.html">Sitemap</a> &middot;
         <a href="https://eyetoad.com/privacy-policy/" rel="nofollow noopener">Privacy policy</a></p>
       <div class="ft-powered">
         <span style="font-family:var(--mono);font-size:.78rem;color:var(--slate)">Powered by</span>
@@ -2168,9 +2215,11 @@ form.addEventListener('submit', function(e){
 /* ─── Hero video: don't fight autoplay policies, just fall back to the scrim ─── */
 var hv = document.getElementById('heroVid');
 if (hv){
-  if (reduce){
-    hv.removeAttribute('autoplay'); hv.pause(); hv.style.display = 'none';
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData || window.innerWidth < 900){
+    hv.style.display = 'none';
   } else {
+    hv.src = hv.getAttribute('data-src');
     var hp = hv.play();
     if (hp && typeof hp.catch === 'function') hp.catch(function(){ hv.style.display = 'none'; });
   }
