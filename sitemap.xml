@@ -158,13 +158,19 @@
   </url>
   <url>
     <loc>https://advertisingforcontractors.com/contractor-website-scorecard/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advertisingforcontractors.com/contractor-proof-kit/</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://advertisingforcontractors.com/contractor-marketing-tools/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -230,7 +236,7 @@
   </url>
   <url>
     <loc>https://advertisingforcontractors.com/blog/how-to-get-more-google-reviews-contractors/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

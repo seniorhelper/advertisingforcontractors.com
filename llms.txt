@@ -66,6 +66,7 @@ shown rather than a single flattering number. Calculators are client-side and st
 
 - [Marketing Plan Builder](https://advertisingforcontractors.com/contractor-marketing-plan-builder/): Build a channel plan against your trade, budget and timeline.
 - [Website Scorecard](https://advertisingforcontractors.com/contractor-website-scorecard/): Score your site against the conversion benchmarks for your trade.
+- [Contractor Proof Kit](https://advertisingforcontractors.com/contractor-proof-kit/): Free in-browser tool that builds a checkable proof block (license number and issuing agency, coverage types, written warranty, review links) plus a 12-point trust self-check.
 - [Free Marketing Tools](https://advertisingforcontractors.com/contractor-marketing-tools/): Every free calculator on the site in one place.
 ## Blog
 
