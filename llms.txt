@@ -46,6 +46,8 @@ shown rather than a single flattering number. Calculators are client-side and st
 - [Remodeling Marketing](https://advertisingforcontractors.com/remodeling-marketing/): Marketing for remodelers, with a cost guide builder for long consideration cycles.
 - [Pool Builder Marketing](https://advertisingforcontractors.com/pool-builder-marketing/): Marketing for pool builders and the seasonal demand curve.
 - [Fence Company Advertising](https://advertisingforcontractors.com/fence-company-advertising/): Marketing for fencing companies, with a neighbour-effect clustering calculator.
+- [Landscaping Marketing](https://advertisingforcontractors.com/landscaping-marketing/): Marketing for landscaping and lawn care companies, with a maintenance account value calculator.
+- [Concrete Contractor Marketing](https://advertisingforcontractors.com/concrete-contractor-marketing/): Marketing for concrete contractors, with a pour season lead planner.
 ## Services
 
 - [Contractor SEO](https://advertisingforcontractors.com/contractor-seo/): Organic search for contractors, with a paid-versus-organic crossover calculator.

@@ -1123,6 +1123,8 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
             <a href="/remodeling-marketing/">Remodeling &amp; Home Improvement</a>
             <a href="/pool-builder-marketing/">Pool Builders</a>
             <a href="/fence-company-advertising/">Fence Companies</a>
+            <a href="/landscaping-marketing/">Landscaping Companies</a>
+            <a href="/concrete-contractor-marketing/">Concrete Contractors</a>
           </div>
         </div>
         <div class="dd">
@@ -1185,6 +1187,8 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
         <a href="/remodeling-marketing/">Remodeling &amp; Home Improvement</a>
         <a href="/pool-builder-marketing/">Pool Builders</a>
         <a href="/fence-company-advertising/">Fence Companies</a>
+        <a href="/landscaping-marketing/">Landscaping Companies</a>
+        <a href="/concrete-contractor-marketing/">Concrete Contractors</a>
       </div>
       <div class="nav-col">
         <h2>What We Do</h2>
@@ -1798,6 +1802,8 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
         <a href="/remodeling-marketing/">Remodeling companies</a>
         <a href="/pool-builder-marketing/">Pool builders</a>
         <a href="/fence-company-advertising/">Fence companies</a>
+        <a href="/landscaping-marketing/">Landscaping companies</a>
+        <a href="/concrete-contractor-marketing/">Concrete contractors</a>
       </div>
 
       <div class="ft-col">
@@ -2088,7 +2094,7 @@ form.addEventListener('submit', function(e){
     return;
   }
 
-  var required = ['fName','fCompany','fPhone','fEmail','fTrade','fBudget'], i, el;
+  var required = ['fName','fCompany','fPhone','fEmail','fSite','fTrade','fAds','fCity'], i, el;
   for (i=0;i<required.length;i++){
     el = document.getElementById(required[i]);
     if (!el.value.trim()){
