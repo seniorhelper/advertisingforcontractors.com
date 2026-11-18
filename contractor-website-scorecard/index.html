@@ -1278,7 +1278,7 @@ footer{background:var(--hdr-bg);border-top:3px solid var(--ink);padding:64px 0 3
             <textarea id="reNotes" name="Notes" maxlength="1200"
                       placeholder="Optional — especially useful for the items you answered 'not sure' on."></textarea></div>
         </div>
-        <!-- FormSubmit server-side spam filter. Field name must be exactly "_honey". -->
+        <!-- Honeypot. Field name must stay exactly "_honey". -->
         <div class="hp" aria-hidden="true">
           <label for="_honey">Leave this field empty</label>
           <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off">
@@ -1848,9 +1848,8 @@ if (!('IntersectionObserver' in window)){
 }
 
 /* ─── FORM ───
-       FormSubmit's server-side spam filter only triggers on the exact field
-       name "_honey", which is why it's hard-coded above and never renamed.
-       The action URL is assembled in JS at submit time so the address never
+       The honeypot field is named exactly "_honey" and is never renamed.
+       The destination address is assembled at send time so it never
        sits in the HTML for a scraper to lift.                              */
 var form   = document.getElementById('afcForm'),
     msg    = document.getElementById('afcMsg'),
@@ -1874,10 +1873,6 @@ function show(kind, text){
   msg.textContent = text;
   msg.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
 }
-function endpoint(ajax){
-  var user = 'info', host = 'eyetoad' + '.' + 'com';
-  return 'https://formsubmit.co/' + (ajax ? 'ajax/' : '') + user + '@' + host;
-}
 function collect(){
   var data = {}, els = form.elements, i, el;
   for (i=0;i<els.length;i++){
@@ -1887,40 +1882,7 @@ function collect(){
   }
   return data;
 }
-function toParams(o){
-  var out = [], k;
-  for (k in o){ if (Object.prototype.hasOwnProperty.call(o,k))
-    out.push(encodeURIComponent(k) + '=' + encodeURIComponent(o[k] == null ? '' : String(o[k]))); }
-  return out.join('&');
-}
 
-/* Fallback: a real form POST into a hidden iframe. Never blocked by CORS,
-   but the response is cross-origin and therefore unreadable — so this
-   reports "unconfirmed", never "sent". We don't claim what we can't verify. */
-function iframePost(data, done){
-  var settled = false;
-  function finish(state){ if (settled) return; settled = true; done(state); }
-  var name = 'afc-sink-' + Date.now();
-  var ifr = document.createElement('iframe');
-  ifr.name = name; ifr.setAttribute('aria-hidden','true');
-  ifr.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;border:0';
-  ifr.addEventListener('load', function(){ finish('unconfirmed'); });
-  document.body.appendChild(ifr);
-
-  var f = document.createElement('form');
-  f.method = 'POST'; f.action = endpoint(false); f.target = name;
-  f.style.display = 'none'; f.setAttribute('accept-charset','UTF-8');
-  var k;
-  for (k in data){
-    if (!Object.prototype.hasOwnProperty.call(data,k)) continue;
-    var inp = document.createElement('input');
-    inp.type = 'hidden'; inp.name = k; inp.value = data[k] == null ? '' : String(data[k]);
-    f.appendChild(inp);
-  }
-  document.body.appendChild(f);
-  setTimeout(function(){ finish('unconfirmed'); }, 12000);
-  try { f.submit(); } catch(e){ finish('failed'); }
-}
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
@@ -1973,20 +1935,13 @@ form.addEventListener('submit', function(e){
     }
   }
 
-  if (typeof fetch === 'function'){
-    fetch(endpoint(true), {
-      method: 'POST',
-      headers: {'Content-Type':'application/x-www-form-urlencoded'},
-      body: toParams(data)
-    }).then(function(r){
-      return r.ok ? r.json().catch(function(){ return null; }) : null;
-    }).then(function(j){
-      if (j && String(j.success) === 'true') finish('confirmed');
-      else iframePost(data, finish);
-    }).catch(function(){ iframePost(data, finish); });
-    setTimeout(function(){ if (!done) iframePost(data, finish); }, 9000);
+  /* Lead Net (shared sender in /rivet.js): "confirmed" only when the server
+     says success; anything short of that is reported honestly. */
+  if (typeof window.afcLead === 'function'){
+    window.afcLead(data).then(finish, function(){ finish('failed'); });
+    setTimeout(function(){ finish('unconfirmed'); }, 15000);
   } else {
-    iframePost(data, finish);
+    finish('failed');
   }
 });
 
@@ -2346,26 +2301,6 @@ $('repEmailOpen').addEventListener('click', function(){
 var rf = $('repForm'), rmsg = $('reMsg'), rsub = $('reSubmit'), rLoaded = Date.now();
 var rsubLabel = rsub ? rsub.textContent : 'Send me the scorecard';
 function rShow(k,t){ rmsg.className = 'form-msg show ' + k; rmsg.textContent = t; }
-function endpoint(a){ var u='info',h='eyetoad'+'.'+'com'; return 'https://formsubmit.co/'+(a?'ajax/':'')+u+'@'+h; }
-function params(o){ var a=[],k; for (k in o){ if (Object.prototype.hasOwnProperty.call(o,k))
-  a.push(encodeURIComponent(k)+'='+encodeURIComponent(o[k]==null?'':String(o[k]))); } return a.join('&'); }
-function iframePost(data, done){
-  var settled=false; function fin(s){ if (settled) return; settled=true; done(s); }
-  var nm='sc-sink-'+Date.now(), ifr=document.createElement('iframe');
-  ifr.name=nm; ifr.setAttribute('aria-hidden','true');
-  ifr.style.cssText='position:absolute;left:-9999px;width:1px;height:1px;border:0';
-  ifr.addEventListener('load', function(){ fin('unconfirmed'); });
-  document.body.appendChild(ifr);
-  var f=document.createElement('form');
-  f.method='POST'; f.action=endpoint(false); f.target=nm; f.style.display='none';
-  f.setAttribute('accept-charset','UTF-8');
-  for (var k in data){ if (!Object.prototype.hasOwnProperty.call(data,k)) continue;
-    var i2=document.createElement('input'); i2.type='hidden'; i2.name=k;
-    i2.value=data[k]==null?'':String(data[k]); f.appendChild(i2); }
-  document.body.appendChild(f);
-  setTimeout(function(){ fin('unconfirmed'); }, 12000);
-  try { f.submit(); } catch(e){ fin('failed'); }
-}
 rf.addEventListener('submit', function(e){
   e.preventDefault();
   if (rf.elements['_honey'].value !== '') return;
@@ -2398,13 +2333,11 @@ rf.addEventListener('submit', function(e){
       rShow('msg-bad','That did not send, and we would rather tell you than let it disappear. Your report is still on screen — print it, or call 1-800-481-8638.');
     }
   }
-  if (typeof fetch === 'function'){
-    fetch(endpoint(true),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params(data)})
-      .then(function(r){ return r.ok ? r.json().catch(function(){return null;}) : null; })
-      .then(function(j){ if (j && String(j.success)==='true') finish('confirmed'); else iframePost(data,finish); })
-      .catch(function(){ iframePost(data,finish); });
-    setTimeout(function(){ if (!done) iframePost(data,finish); }, 9000);
-  } else { iframePost(data,finish); }
+  /* Lead Net (shared sender in /rivet.js) */
+  if (typeof window.afcLead === 'function'){
+    window.afcLead(data).then(finish, function(){ finish('failed'); });
+    setTimeout(function(){ finish('unconfirmed'); }, 15000);
+  } else { finish('failed'); }
 });
 })();
 </script>

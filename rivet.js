@@ -69,6 +69,29 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
   return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
 function addr(){ return atob(CFG.e1) + String.fromCharCode(64) + atob(CFG.e2); }
+
+/* ── Lead Net: the one sender for every lead on the site ─────────────────────
+   The chat booking flow below and every page form call this. Same request
+   the company lead server takes from eyetoad.com: multipart FormData, POST,
+   Accept: application/json, destination address assembled at call time.
+   Resolves "confirmed" only when the server answers ok with success "true";
+   anything else resolves "unconfirmed"; a network failure rejects. */
+function leadSend(o){
+  var fd = new FormData(), k;
+  for (k in o){ if (Object.prototype.hasOwnProperty.call(o, k) && k !== '_next')
+    fd.append(k, o[k] == null ? '' : String(o[k])); }
+  if (!fd.get('page_url')) fd.append('page_url', W.location.href);
+  if (!fd.get('_subject')) fd.append('_subject', 'New advertisingforcontractors.com lead — ' + D.title);
+  if (!fd.get('_template')) fd.append('_template', 'table');
+  if (!fd.get('_captcha')) fd.append('_captcha', 'false');
+  return fetch('https://clients.eyetoad.com/lead/send.php#to=' + addr(),
+    { method:'POST', headers:{'Accept':'application/json'}, body:fd })
+    .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; },
+      function(){ return {ok:r.ok, j:null}; }); })
+    .then(function(res){
+      return (res.ok && res.j && String(res.j.success) === 'true') ? 'confirmed' : 'unconfirmed'; });
+}
+if (HAS_DOM && typeof fetch === 'function' && typeof FormData === 'function') W.afcLead = leadSend;
 function rnd(a,b){ return a + Math.random()*(b-a); }
 var reduce = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -3728,20 +3751,13 @@ function build(){
       _subject: 'AFC chat lead — ' + CFG.name, _template: 'table', _captcha: 'false',
       _honey: '', Elapsed: Math.round((Date.now() - loadedAt) / 1000) + 's on page'
     };
-    var body = [], k;
-    for (k in data){ if (Object.prototype.hasOwnProperty.call(data, k))
-      body.push(encodeURIComponent(k) + '=' + encodeURIComponent(data[k])); }
-
-    var url = 'https://formsubmit.co/ajax/' + addr();
-    if (typeof fetch !== 'function'){
+    if (typeof W.afcLead !== 'function'){
       say('This browser cannot send it from here. Call ' + CFG.telView + ' and someone will pick up.');
       return;
     }
-    fetch(url, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: body.join('&') })
-    .then(function(r){ return r.ok ? r.json().catch(function(){ return null; }) : null; })
-    .then(function(j){
-      if (j && String(j.success) === 'true'){
+    W.afcLead(data)
+    .then(function(st){
+      if (st === 'confirmed'){
         say('Sent, and confirmed on our end' + (S.name ? ', ' + S.name : '') + '. Someone will call you back, usually same day, in the window you gave me. If you would rather not wait, ' + CFG.telView + ' gets you a human right now.',
           function(){ chips(['Run my numbers','Free audit','Tell me a joke']); });
       } else {
